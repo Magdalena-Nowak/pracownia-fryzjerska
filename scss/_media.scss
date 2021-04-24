@@ -1,0 +1,62 @@
+@media only screen and (min-height: 650px) {
+  header {
+    height: 40vh;
+  }
+}
+
+@media only screen and (min-height: 750px) {
+  header {
+    height: 35vh;
+  }
+}
+
+@media only screen and (min-height: 850px) {
+  header {
+    height: 30vh;
+  }
+}
+
+@media only screen and (min-height: 950px) {
+  header {
+    height: 25vh;
+  }
+}
+
+// @media only screen and (min-width: 900px) {
+//   .fa-bars,
+//   .fa-times {
+//     z-index: -3;
+//   }
+//   header {
+//     display: flex;
+//   }
+//   .navigation {
+//     display: flex;
+//     min-height: 25vh;
+//     width: 75%;
+//     margin-top: 5%;
+//     left: 30%;
+//     background-color: $mainBlack;
+
+//     a,
+//     hr {
+//       display: none;
+//     }
+//   }
+//   .navigation_list {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: flex-start;
+//     align-content: center;
+//     align-items: center;
+//     li {
+//       flex: 1 1 5rem;
+//       a {
+//         color: $mainBlack;
+//         display: block;
+//         margin: 2rem 2rem;
+//         color: $mainWhite;
+//       }
+//     }
+//   }
+// }

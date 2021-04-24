@@ -1,0 +1,84 @@
+// .appBar {
+//   height: 45vh;
+//   position: relative;
+//   background-color: $mainBlack;
+// }
+.appBar_logo {
+  width: 320px;
+  height: 250px;
+  margin: 0 auto;
+  display: block;
+}
+.fa-bars,
+.fa-times {
+  position: absolute;
+  top: 20%;
+  right: 7%;
+  font-size: 4rem;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.fa-bars {
+  color: $mainWhite;
+}
+.fa-times {
+  color: $mainBlack;
+  z-index: -1;
+}
+header {
+  width: 100%;
+  height: 45vh;
+  position: relative;
+  background-color: $mainBlack;
+}
+hr {
+  margin-bottom: 3rem;
+}
+
+#line {
+  margin-top: 2rem;
+}
+.navigation {
+  min-height: 90vh;
+  background-color: $mainWhite;
+  width: 100%;
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+  a {
+    flex: 1 1 20vh;
+    display: block;
+  }
+}
+
+.navigation_logo {
+  height: 250px;
+  width: 320px;
+  margin: 0 auto;
+  display: block;
+}
+
+.navigation_list {
+  flex: 2 2 20vh;
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  li {
+    list-style-type: none;
+    flex: 1 1 5vh;
+    &:hover {
+      background-color: $grayHighlight;
+    }
+    a {
+      color: $mainBlack;
+      display: block;
+      margin: 2rem 2rem;
+    }
+  }
+}
