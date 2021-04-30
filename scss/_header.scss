@@ -56,11 +56,11 @@ hr {
   margin: 0 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  // align-content: flex-start;
+  justify-content: center;
+  align-content: center;
   li {
     list-style-type: none;
-    flex: 1 1 5vh;
+    flex: 1 2 5vh;
     &:hover {
       background-color: $grayHighlight;
     }
