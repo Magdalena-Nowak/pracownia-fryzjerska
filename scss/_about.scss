@@ -32,3 +32,16 @@
   flex-basis: 50%;
   position: relative;
 }
+
+.gallery {
+  height: 90vh;
+  background-color: $mainBlack;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  color: $mainWhite;
+  img {
+    width: 400px;
+  }
+}
