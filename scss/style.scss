@@ -6,7 +6,7 @@
 }
 html,
 body {
-  font-size: 62.5%;
+  font-size: 10px;
   font-family: "Poppins", sans-serif;
 }
 body {
@@ -28,4 +28,4 @@ $fontText: 1.6rem;
 @import "header";
 @import "media";
 @import "about";
-@import "x";
+@import "slider";

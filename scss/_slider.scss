@@ -1,0 +1,23 @@
+.slider {
+  height: 90vh;
+}
+
+.slides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+#ble {
+  background-color: rgb(100, 49, 148);
+  font-size: 2rem;
+}

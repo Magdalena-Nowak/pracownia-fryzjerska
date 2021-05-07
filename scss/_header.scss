@@ -43,7 +43,15 @@ hr {
   justify-content: space-between;
   display: none;
 }
-
+.active {
+  display: flex;
+  .fa-bars {
+    display: none;
+  }
+  .fa-times {
+    z-index: 2;
+  }
+}
 .navigation_logo {
   height: 250px;
   width: 320px;
