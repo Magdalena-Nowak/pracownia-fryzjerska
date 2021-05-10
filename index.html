@@ -5,9 +5,12 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./scss/style.css" type="text/css" />
+  <link rel="stylesheet" href="./dist/css/style.css" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.css"
+    integrity="sha512-Yh4EqHPEJlOr5IFQ6EXPAA3RhwHgRBesEJLWJaz+xj1Bix5peuxOk40IA3gp7LH0BHJvi0e5QNL1iqvvLjdA9w=="
     crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -34,34 +37,15 @@
     </nav>
   </header>
   <main>
-    <section class="slider">
-      <div class="slides">
-        <input type="radio" name="radio-btn" id="radio1">
-        <input type="radio" name="radio-btn" id="radio2">
-        <input type="radio" name="radio-btn" id="radio3">
-        <div class="slide first">
-          <img src="./img/photo1.jpg" alt="Salon fryzjerski - wnętrze">
-        </div>
-        <div class="slide">
-          <img src="./img/photo2.jpg" alt="Salon fryzjerski - wnętrze">
-        </div>
-        <div class="slide">
-          <img src="./img/photo3.jpg" alt="Oferowane produkty">
-        </div>
-        <div class="navigation-auto">
-          <div class="auto-btn1"></div>
-          <div class="auto-btn2"></div>
-          <div class="auto-btn3"></div>
-        </div>
-        <div class="navigation-manual">
-          <label for="radio1" class="manual-btn"></label>
-          <label for="radio2" class="manual-btn"></label>
-          <label for="radio3" class="manual-btn"></label>
-        </div>
+    <div class="swiper-container mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./img/img1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./img/img2.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./img/img3.jpg" alt=""></div>
       </div>
-
-    </section>
-    <section id="about">
+      <div class="swiper-scrollbar"></div>
+    </div>
+    <!-- <section id="about">
       <img class="about--portrait" src="./img/7.jpg" alt="">
       <article class="about--description">
         <h2>O mnie</h2>
@@ -75,16 +59,11 @@
           molestiae dolor assumenda repellendus facilis esse beatae eum architecto error ut corporis qui totam id enim
           ullam maiores earum tenetur commodi voluptatem. Rem, corporis.</p>
       </article>
-    </section>
-    <section>
-      <div id="ble">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi veniam harum molestias quidem
-        laborum quos,
-        quae consequuntur ad iure provident voluptatibus blanditiis similique voluptates delectus! Voluptates laboriosam
-        expedita natus libero facilis. Aliquam quod necessitatibus magni fugit laudantium nihil, labore ad illo dolorem
-        et perferendis? Optio officiis perspiciatis esse consectetur quasi?</div>
-    </section>
-
+    </section> -->
   </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js"
+    integrity="sha512-sAHYBRXSgMOV2axInO6rUzuKKM5SkItFLlLHQ8YjRD+FBwowtATOs4njP9oim3/MzyAGrB52SLDjpAOLcOT9TA=="
+    crossorigin="anonymous"></script>
   <script src="app.js"></script>
 </body>
 
