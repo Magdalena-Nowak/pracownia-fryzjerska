@@ -1,22 +1,19 @@
-.fa-bars,
-.fa-times {
+.fa-bars {
   position: absolute;
-  top: 20%;
-  right: 7%;
-  font-size: 4rem;
-  cursor: pointer;
+  top: 50%;
+  right: 10%;
+  transform: translate(-10%, -50%);
+  font-size: 3rem;
   opacity: 0.8;
+  cursor: pointer;
 }
 .fa-bars {
   color: $mainWhite;
 }
-.fa-times {
-  color: $mainBlack;
-  z-index: -1;
-}
+
 header {
   width: 100%;
-  height: 45vh;
+  height: 20vh;
   position: relative;
   background: url(../../img/Frame1.svg);
   background-repeat: no-repeat;
@@ -25,56 +22,64 @@ header {
   background-color: $mainBlack;
 }
 hr {
-  margin-bottom: 3rem;
+  width: 200%;
+  opacity: 0.8;
 }
 
-#line {
-  margin-top: 2rem;
-}
 .navigation {
-  height: 90vh;
-  background-color: $mainWhite;
+  height: 100vh;
   width: 100%;
-  font-size: 2rem;
+  justify-content: flex-end;
+  background-color: $mainBlack;
+  z-index: 2;
+  font-size: $fontH1;
+  color: $mainWhite;
   position: absolute;
   top: 0;
   left: 0;
-  flex-direction: column;
-  justify-content: space-between;
   display: none;
 }
-.active {
-  display: flex;
-  .fa-bars {
-    display: none;
-  }
-  .fa-times {
-    z-index: 2;
-  }
-}
-.navigation_logo {
-  height: 250px;
-  width: 320px;
-  margin: 0 auto;
-  display: block;
-}
-
 .navigation_list {
-  flex: 1 1 5vh;
-  margin: 0 2rem;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  transform: translate(-10%, -10%);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
-  li {
-    list-style-type: none;
-    flex: 1 2 5vh;
-    &:hover {
-      background-color: $grayHighlight;
-    }
+  align-items: flex-end;
+  li,
+  hr {
+    margin: 0.5rem 0;
     a {
-      color: $mainBlack;
-      margin: 2rem 2rem;
+      color: $mainWhite;
     }
+  }
+  li {
+    cursor: pointer;
+
+    &:hover {
+      background-color: #474747;
+      animation: changeBackgroundWidth 1s ease-in-out forwards;
+      // transform: scaleX(2);
+      // transform: translateX(-10%);
+    }
+  }
+}
+.fa-times {
+  opacity: 0.8;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.active {
+  display: flex;
+}
+@keyframes changeBackgroundWidth {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 200%;
   }
 }

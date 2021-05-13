@@ -21,30 +21,40 @@
   <header>
     <div class="appBar">
       <i class="fas fa-bars"></i>
-      <i class="fas fa-times"></i>
+
     </div>
     <nav class="navigation">
-      <a href="#"><img class="navigation_logo" src="./img/Frame2.svg" alt=""></a>
-      <hr>
       <ul class="navigation_list">
+        <i class="fas fa-times"></i>
         <li><a href="#">Home</a></li>
+        <hr>
         <li><a href="#about">O mnie</a></li>
+        <hr>
         <li><a href="#">Cennik</a></li>
+        <hr>
         <li><a href="#">Galeria</a></li>
+        <hr>
         <li><a href="#">Kontakt</a></li>
       </ul>
-      <hr id="line">
     </nav>
   </header>
   <main>
     <div class="swiper-container mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="./img/img1.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="./img/img2.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="./img/img3.jpg" alt=""></div>
+        <div class="swiper-slide img"><img
+            srcset="./img/image1-xsmall.png 200w, ./img/image1-small.png 600w, ./img/image1-medium.png 1000w, ./img/image1-large.png 1900w"
+            sizes="(min-width: 280px) 100vw" src="./img/image1-small.png" alt="Wygląd salonu od środka"></div>
+        <div class="swiper-slide img"><img
+            srcset="./img/image2-xsmall.png 200w, ./img/image2-small.png 600w, ./img/image2-medium.png 1000w, ./img/image2-large.png 1900w"
+            sizes="(min-width: 280px) 100vw" src="./img/image2-small.png" alt="Wygląd salonu od środka"></div>
+        <div class="swiper-slide img"><img
+            srcset="./img/image3-xsmall.png 200w, ./img/image3-small.png 600w, ./img/image3-medium.png 1000w, ./img/image3-large.png 1900w"
+            sizes="(min-width: 280px) 100vw" src="./img/image3-small.png" alt="Wygląd salonu od środka"></div>
       </div>
+
       <div class="swiper-scrollbar"></div>
     </div>
+    <div id="about"></div>
     <!-- <section id="about">
       <img class="about--portrait" src="./img/7.jpg" alt="">
       <article class="about--description">
