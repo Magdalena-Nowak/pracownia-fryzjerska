@@ -2,6 +2,7 @@ const openNavBtn = document.querySelector(".fa-bars");
 const swiperContainer = document.querySelector(".swiper-container");
 const navigation = document.querySelector(".navigation");
 const closeNavBtn = document.querySelector(".fa-times");
+
 var swiper = new Swiper(".mySwiper", {
   scrollbar: {
     el: ".swiper-scrollbar",
@@ -24,5 +25,4 @@ function openingNavigation() {
 
 function closingNavigation() {
   navigation.classList.remove("active");
-  console.log("bla bla");
 }
