@@ -31,7 +31,7 @@ header {
   background-color: $mainBlack;
 }
 
-hr {
+.navigation_list > hr {
   width: 200%;
   opacity: 0.8;
 }
@@ -67,13 +67,13 @@ hr {
   }
 }
 
-li:hover {
+.navigation_list li:hover {
   background-color: #333333;
   animation: changeBackgroundWidth 1s ease-in-out forwards;
 }
 
-li,
-hr {
+.navigation_list li,
+.navigation_list hr {
   margin: 1rem 0;
 }
 
@@ -121,10 +121,10 @@ hr {
     font-size: 5rem;
   }
 
-  hr {
+  header > hr {
     width: 300%;
   }
-  li:hover {
+  header > li:hover {
     animation: biggerBackgroundWidth 1s ease-in-out forwards;
   }
   header {
@@ -161,14 +161,14 @@ hr {
       display: none;
     }
   }
-  hr {
+  .navigation_list > hr {
     display: none;
   }
-  li {
+  .navigation_list > li {
     padding: 0.5rem 1rem;
     margin: 1rem 2rem;
-    &:hover {
-      animation: smallerBackgroundWidth 1s ease-in-out forwards;
-    }
+  }
+  .navigation_list > li:hover {
+    animation: smallerBackgroundWidth 1s ease-in-out forwards;
   }
 }

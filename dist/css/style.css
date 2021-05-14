@@ -55,7 +55,7 @@ header {
   background-color: #191919;
 }
 
-hr {
+.navigation_list > hr {
   width: 200%;
   opacity: 0.8;
 }
@@ -93,13 +93,13 @@ hr {
   color: #f5f5f5;
 }
 
-li:hover {
+.navigation_list li:hover {
   background-color: #333333;
   animation: changeBackgroundWidth 1s ease-in-out forwards;
 }
 
-li,
-hr {
+.navigation_list li,
+.navigation_list hr {
   margin: 1rem 0;
 }
 
@@ -146,10 +146,10 @@ hr {
   .fa-times {
     font-size: 5rem;
   }
-  hr {
+  header > hr {
     width: 300%;
   }
-  li:hover {
+  header > li:hover {
     animation: biggerBackgroundWidth 1s ease-in-out forwards;
   }
   header {
@@ -184,20 +184,20 @@ hr {
   .navigation_list div {
     display: none;
   }
-  hr {
+  .navigation_list > hr {
     display: none;
   }
-  li {
+  .navigation_list > li {
     padding: 0.5rem 1rem;
     margin: 1rem 2rem;
   }
-  li:hover {
+  .navigation_list > li:hover {
     animation: smallerBackgroundWidth 1s ease-in-out forwards;
   }
 }
 
 #about {
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   background-color: #f5f5f5;
   display: flex;
@@ -215,29 +215,43 @@ hr {
 
 .about__description h1 {
   font-size: 3rem;
-  font-family: "Open Sans Condensed", sans-serif;
-  margin: 2rem 0;
-  letter-spacing: 0.2rem;
+  font-family: "Nunito", sans-serif;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  margin: 1rem 0;
 }
 
 .about__description p {
   margin: 1rem 0;
   letter-spacing: 0.08rem;
+  font-size: 1.2rem;
 }
 
-.about__description--invite,
 .about__description--name {
   align-self: flex-end;
   margin: 0.5rem 0;
   font-family: "Open Sans Condensed", sans-serif;
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: bolder;
   letter-spacing: initial;
+}
+
+@media screen and (min-width: 920px) {
+  .about__description {
+    width: 70%;
+  }
+  .about__description h1 {
+    font-size: 3.6rem;
+  }
+  .about__description p {
+    font-size: 1.44rem;
+  }
 }
 
 .swiper-container {
   width: 100%;
   height: 100vh;
+  box-shadow: 0px 7px 14px 1px rgba(0, 0, 0, 0.57);
 }
 
 .swiper-slide {
@@ -251,5 +265,186 @@ hr {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.priceList {
+  background-color: #191919;
+  box-shadow: 0px -7px 14px 1px rgba(0, 0, 0, 0.57);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+.priceList h1 {
+  color: #f5f5f5;
+  font-size: 3rem;
+  font-family: "Nunito", sans-serif;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.priceList__card {
+  background-color: #f5f5f5;
+  border-top-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  margin: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  padding: 2rem;
+  position: relative;
+}
+
+.priceList__card h2 {
+  font-family: "Nunito", sans-serif;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.card--body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  font-size: 1.2rem;
+  letter-spacing: 0.08rem;
+}
+
+.card--body h3 {
+  font-family: "Nunito", sans-serif;
+  letter-spacing: 0.1rem;
+  font-weight: bolder;
+  margin: 2rem 0;
+  font-size: 1.6rem;
+}
+
+.body--note {
+  margin-bottom: 1rem;
+}
+
+.body--note p {
+  font-size: 1rem;
+}
+
+.card--body hr {
+  margin: 0.8rem 0;
+}
+
+.card--body span {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  padding: 0 0.5rem;
+}
+
+.body--hide {
+  display: none;
+}
+
+.body--uncover,
+.body--hide {
+  font-size: 3rem;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  transform: translate(-5%, 0);
+}
+
+.body--uncover .fas,
+.body--hide .fas {
+  pointer-events: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  display: none;
+}
+
+.open {
+  display: flex;
+}
+
+.conditionalOpen {
+  animation: openContainer 2s normal forwards linear;
+}
+
+.conditionalClose {
+  animation: closeContainer 2s normal forwards linear;
+}
+
+@keyframes openContainer {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes closeContainer {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .priceList {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .priceList h1 {
+    flex-basis: 100%;
+  }
+  .priceList .card1 {
+    flex-basis: 100%;
+  }
+  .priceList .card2 {
+    flex-basis: 40%;
+  }
+  .priceList .card3 {
+    flex-basis: 40%;
+  }
+}
+
+@media screen and (min-width: 920px) {
+  .container {
+    display: flex;
+  }
+  .body--uncover {
+    display: none;
+  }
+  .priceList__card {
+    width: 70%;
+    margin: 3rem auto;
+  }
+  .priceList {
+    flex-direction: column;
+    align-items: space-evenly;
+  }
+  .card--body {
+    font-size: 1.44rem;
+  }
+  .card--body h3 {
+    font-size: 1.92rem;
+  }
+  .priceList__card > h2 {
+    font-size: 2.4rem;
+  }
+  .priceList > h1 {
+    font-size: 3.6rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

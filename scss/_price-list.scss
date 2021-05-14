@@ -1,0 +1,168 @@
+.priceList {
+  background-color: $mainBlack;
+  box-shadow: 0px -7px 14px 1px rgba(0, 0, 0, 0.57);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  h1 {
+    color: $mainWhite;
+    font-size: $sectionHeader;
+    font-family: $headerFamily;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 2rem 0;
+  }
+}
+
+.priceList__card {
+  background-color: $mainWhite;
+  border-top-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  margin: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  padding: 2rem;
+  position: relative;
+  h2 {
+    font-family: $headerFamily;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    margin: 2rem 0;
+    font-size: $cardsHeader;
+    font-weight: 800;
+  }
+}
+
+.card--body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  font-size: $fontText;
+  letter-spacing: 0.08rem;
+  h3 {
+    font-family: $headerFamily;
+    letter-spacing: 0.1rem;
+    font-weight: bolder;
+    margin: 2rem 0;
+    font-size: $cardsBodyHeader;
+  }
+}
+.body--note {
+  margin-bottom: 1rem;
+  p {
+    font-size: 1rem;
+  }
+}
+.card--body hr {
+  margin: 0.8rem 0;
+}
+
+.card--body span {
+  font-family: $headerFamily;
+  font-weight: 700;
+  padding: 0 0.5rem;
+}
+
+.body--hide {
+  display: none;
+}
+
+.body--uncover,
+.body--hide {
+  font-size: 3rem;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  transform: translate(-5%, 0);
+  .fas {
+    pointer-events: none;
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  display: none;
+}
+.open {
+  display: flex;
+}
+.conditionalOpen {
+  animation: openContainer 2s normal forwards linear;
+}
+.conditionalClose {
+  animation: closeContainer 2s normal forwards linear;
+}
+
+@keyframes openContainer {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes closeContainer {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .priceList {
+    flex-wrap: wrap;
+    flex-direction: row;
+    h1 {
+      flex-basis: 100%;
+    }
+    .card1 {
+      flex-basis: 100%;
+    }
+    .card2 {
+      flex-basis: 40%;
+    }
+    .card3 {
+      flex-basis: 40%;
+    }
+  }
+}
+
+@media screen and (min-width: 920px) {
+  .container {
+    display: flex;
+  }
+  .body--uncover {
+    display: none;
+  }
+  .priceList__card {
+    width: 70%;
+    margin: 3rem auto;
+  }
+  .priceList {
+    flex-direction: column;
+    align-items: space-evenly;
+  }
+  .card--body {
+    font-size: $fontText * 1.2;
+    h3 {
+      font-size: $cardsBodyHeader * 1.2;
+    }
+  }
+  .priceList__card > h2 {
+    font-size: $cardsHeader * 1.2;
+  }
+  .priceList > h1 {
+    font-size: $sectionHeader * 1.2;
+  }
+}
