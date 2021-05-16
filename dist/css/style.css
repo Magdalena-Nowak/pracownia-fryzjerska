@@ -447,4 +447,32 @@ header {
     font-size: 3.6rem;
   }
 }
+
+@media screen and (min-width: 1400px) {
+  .priceList {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+  }
+  .priceList > h1 {
+    grid-row: 1/2;
+    grid-column: 1/7;
+  }
+  .card1 {
+    grid-row: 2/8;
+    grid-column: 1/4;
+  }
+  .card2 {
+    grid-row: 2/4;
+    grid-column: 4/7;
+  }
+  .card3 {
+    grid-column: 4/7;
+    grid-row: 4/5;
+  }
+}
+
+#gallery {
+  height: 100vh;
+}
 /*# sourceMappingURL=style.css.map */
