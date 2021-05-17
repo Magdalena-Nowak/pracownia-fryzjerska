@@ -53,6 +53,8 @@ header {
   background-position: center;
   background-size: contain;
   background-color: #191919;
+  position: fixed;
+  z-index: 2;
 }
 
 .navigation_list > hr {
@@ -152,10 +154,6 @@ header {
   header > li:hover {
     animation: biggerBackgroundWidth 1s ease-in-out forwards;
   }
-  header {
-    position: fixed;
-    z-index: 2;
-  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -197,7 +195,7 @@ header {
 }
 
 #about {
-  height: 100vh;
+  height: 110vh;
   width: 100%;
   background-color: #f5f5f5;
   display: flex;
@@ -221,7 +219,7 @@ header {
   margin: 1rem 0;
 }
 
-.about__description p {
+.about__description--content {
   margin: 1rem 0;
   letter-spacing: 0.08rem;
   font-size: 1.2rem;
@@ -229,11 +227,11 @@ header {
 
 .about__description--name {
   align-self: flex-end;
-  margin: 0.5rem 0;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-size: 2rem;
+  margin: 2rem 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.8rem;
   font-weight: bolder;
-  letter-spacing: initial;
+  letter-spacing: 0.1rem;
 }
 
 @media screen and (min-width: 920px) {
@@ -245,6 +243,12 @@ header {
   }
   .about__description p {
     font-size: 1.44rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #about {
+    height: 100vh;
   }
 }
 
@@ -323,6 +327,7 @@ header {
   font-weight: bolder;
   margin: 2rem 0;
   font-size: 1.6rem;
+  text-align: center;
 }
 
 .body--note {
@@ -375,11 +380,11 @@ header {
 }
 
 .conditionalOpen {
-  animation: openContainer 2s normal forwards linear;
+  animation: openContainer 1.5s normal forwards linear;
 }
 
 .conditionalClose {
-  animation: closeContainer 2s normal forwards linear;
+  animation: closeContainer 1.5s normal forwards linear;
 }
 
 @keyframes openContainer {
@@ -400,25 +405,6 @@ header {
   }
 }
 
-@media screen and (min-width: 425px) {
-  .priceList {
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-  .priceList h1 {
-    flex-basis: 100%;
-  }
-  .priceList .card1 {
-    flex-basis: 100%;
-  }
-  .priceList .card2 {
-    flex-basis: 40%;
-  }
-  .priceList .card3 {
-    flex-basis: 40%;
-  }
-}
-
 @media screen and (min-width: 920px) {
   .container {
     display: flex;
@@ -426,14 +412,38 @@ header {
   .body--uncover {
     display: none;
   }
-  .priceList__card {
-    width: 70%;
-    margin: 3rem auto;
-  }
   .priceList {
-    flex-direction: column;
-    align-items: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 15rem repeat(7, 34rem);
+    height: 255rem;
   }
+  .priceList > h1 {
+    grid-column: 1/5;
+    grid-row: 1/2;
+    align-self: center;
+  }
+  .card1 {
+    grid-column: 1/3;
+    grid-row: 2/9;
+  }
+  .card1 .container {
+    margin-bottom: 4rem;
+  }
+  .card2 {
+    grid-column: 3/5;
+    grid-row: 2/4;
+  }
+  .card2 .container {
+    margin-bottom: 4rem;
+  }
+  .card3 {
+    grid-column: 3/5;
+    grid-row: 4/5;
+  }
+}
+
+@media screen and (min-width: 1400px) {
   .card--body {
     font-size: 1.44rem;
   }
@@ -446,33 +456,14 @@ header {
   .priceList > h1 {
     font-size: 3.6rem;
   }
-}
-
-@media screen and (min-width: 1400px) {
-  .priceList {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-  }
-  .priceList > h1 {
-    grid-row: 1/2;
-    grid-column: 1/7;
-  }
   .card1 {
-    grid-row: 2/8;
-    grid-column: 1/4;
+    margin-left: 30%;
+    margin-right: 5rem;
   }
-  .card2 {
-    grid-row: 2/4;
-    grid-column: 4/7;
-  }
+  .card2,
   .card3 {
-    grid-column: 4/7;
-    grid-row: 4/5;
+    margin-right: 30%;
+    margin-left: 5rem;
   }
-}
-
-#gallery {
-  height: 100vh;
 }
 /*# sourceMappingURL=style.css.map */
