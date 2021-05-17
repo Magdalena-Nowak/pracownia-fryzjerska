@@ -59,3 +59,9 @@ function closingPrices(index) {
   openPriceBtns[index].style.display = "block";
   hidePriceBtns[index].style.display = "none";
 }
+
+jQuery("#my_nanogallery").nanogallery2({
+  thumbnailHoverEffect2: "imageGrayOn",
+  galleryMaxRows: 2,
+  galleryDisplayMode: "rows",
+});

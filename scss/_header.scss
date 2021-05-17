@@ -29,6 +29,8 @@ header {
   background-position: center;
   background-size: contain;
   background-color: $mainBlack;
+  position: fixed;
+  z-index: 2;
 }
 
 .navigation_list > hr {
@@ -126,10 +128,6 @@ header {
   }
   header > li:hover {
     animation: biggerBackgroundWidth 1s ease-in-out forwards;
-  }
-  header {
-    position: fixed;
-    z-index: 2;
   }
 }
 

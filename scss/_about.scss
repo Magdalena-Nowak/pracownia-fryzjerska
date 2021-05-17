@@ -1,5 +1,5 @@
 #about {
-  height: 100vh;
+  height: 110vh;
   width: 100%;
   background-color: $mainWhite;
   display: flex;
@@ -20,20 +20,19 @@
     font-weight: 600;
     margin: 1rem 0;
   }
-  p {
-    margin: 1rem 0;
-    letter-spacing: 0.08rem;
-    font-size: $fontText;
-  }
 }
-
+.about__description--content {
+  margin: 1rem 0;
+  letter-spacing: 0.08rem;
+  font-size: $fontText;
+}
 .about__description--name {
   align-self: flex-end;
-  margin: 0.5rem 0;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-size: 2rem;
+  margin: 2rem 0;
+  font-family: $headerFamily;
+  font-size: 1.8rem;
   font-weight: bolder;
-  letter-spacing: initial;
+  letter-spacing: 0.1rem;
 }
 
 @media screen and (min-width: 920px) {
@@ -45,5 +44,11 @@
     p {
       font-size: $fontText * 1.2;
     }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #about {
+    height: 100vh;
   }
 }
