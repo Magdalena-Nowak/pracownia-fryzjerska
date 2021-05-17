@@ -1,1 +1,10 @@
-
+#gallery {
+  padding: 5rem 0;
+  background-color: $mainWhite;
+}
+@media screen and (min-width: 1400px) {
+  #my_nanogallery2 {
+    width: 70%;
+    margin: auto;
+  }
+}

@@ -1,0 +1,61 @@
+#contact {
+  background-color: $mainBlack;
+  color: $mainWhite;
+  height: 45vh;
+  h2 {
+    font-family: $headerFamily;
+    letter-spacing: 0.1rem;
+    font-size: $cardsBodyHeader;
+  }
+}
+.contact__wrapper {
+  width: 90%;
+  margin: auto;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wrapper__socials > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social {
+  font-size: 2.5rem;
+  margin: 0 2rem;
+  cursor: pointer;
+}
+.wrapper__contains {
+  margin: 0.5rem 0;
+  h2,
+  p {
+    margin: 0.2rem 0;
+  }
+}
+
+@media screen and (min-width: 560px) {
+  .social {
+    font-size: 4rem;
+  }
+  #contact {
+    height: 30vh;
+  }
+  .contact__wrapper {
+    width: 80%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .wrapper__contains {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #contact h2 {
+    font-size: $cardsBodyHeader * 1.2;
+  }
+  .wrapper__contains p {
+    font-size: 1.4rem;
+  }
+}
