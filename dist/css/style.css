@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   position: relative;
@@ -44,7 +48,7 @@ body {
   color: #f5f5f5;
 }
 
-header {
+.navigation__wrapper {
   width: 100%;
   height: 20vh;
   position: relative;
@@ -89,15 +93,16 @@ header {
 
 .navigation_list li {
   cursor: pointer;
-}
-
-.navigation_list li a {
-  color: #f5f5f5;
+  transition: background 1s ease-in-out;
 }
 
 .navigation_list li:hover {
   background-color: #333333;
   animation: changeBackgroundWidth 1s ease-in-out forwards;
+}
+
+.navigation_list li a {
+  color: #f5f5f5;
 }
 
 .navigation_list li,
@@ -143,10 +148,6 @@ header {
   .navigation {
     font-size: 2.4rem;
     width: 60%;
-  }
-  .fa-bars,
-  .fa-times {
-    font-size: 5rem;
   }
   header > hr {
     width: 300%;
