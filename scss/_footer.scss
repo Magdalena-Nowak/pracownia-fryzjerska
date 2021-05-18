@@ -2,6 +2,7 @@
   background-color: $mainBlack;
   color: $mainWhite;
   height: 45vh;
+
   h2 {
     font-family: $headerFamily;
     letter-spacing: 0.1rem;
@@ -52,8 +53,11 @@
   }
 }
 @media screen and (min-width: 1200px) {
-  #contact h2 {
-    font-size: $cardsBodyHeader * 1.2;
+  #contact {
+    height: 20vh;
+    h2 {
+      font-size: $cardsBodyHeader * 1.2;
+    }
   }
   .wrapper__contains p {
     font-size: 1.4rem;
