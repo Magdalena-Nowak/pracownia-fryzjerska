@@ -6,6 +6,7 @@ const openPriceBtns = document.querySelectorAll(".body--uncover");
 const hidePriceBtns = document.querySelectorAll(".body--hide");
 const cardsContainers = document.querySelectorAll(".container");
 const priceCards = document.querySelectorAll(".priceList__card");
+const navItems = document.querySelectorAll(".navigation_list li");
 
 var swiper = new Swiper(".mySwiper", {
   scrollbar: {
@@ -33,6 +34,12 @@ openPriceBtns.forEach((button, index) => {
 hidePriceBtns.forEach((button, index) => {
   button.addEventListener("click", () => {
     closingPrices(index);
+  });
+});
+
+navItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    navigation.classList.toggle("active");
   });
 });
 
@@ -65,3 +72,5 @@ jQuery("#my_nanogallery").nanogallery2({
   galleryMaxRows: 2,
   galleryDisplayMode: "rows",
 });
+
+console.log(navItems);

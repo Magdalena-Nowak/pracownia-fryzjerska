@@ -20,7 +20,7 @@ body {
   color: $mainWhite;
 }
 
-header {
+.navigation__wrapper {
   width: 100%;
   height: 20vh;
   position: relative;
@@ -63,15 +63,15 @@ header {
   align-items: flex-end;
   li {
     cursor: pointer;
+    transition: background 1s ease-in-out;
+    &:hover {
+      background-color: #333333;
+      animation: changeBackgroundWidth 1s ease-in-out forwards;
+    }
     a {
       color: $mainWhite;
     }
   }
-}
-
-.navigation_list li:hover {
-  background-color: #333333;
-  animation: changeBackgroundWidth 1s ease-in-out forwards;
 }
 
 .navigation_list li,
@@ -118,10 +118,10 @@ header {
     font-size: 2.4rem;
     width: 60%;
   }
-  .fa-bars,
-  .fa-times {
-    font-size: 5rem;
-  }
+  // .fa-bars,
+  // .fa-times {
+  //   font-size: 5rem;
+  // }
 
   header > hr {
     width: 300%;
