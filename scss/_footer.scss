@@ -29,9 +29,11 @@
 }
 .wrapper__contains {
   margin: 0.5rem 0;
-  h2,
-  p {
-    margin: 0.2rem 0;
+  h2 {
+    margin: 0.5rem 0;
+  }
+  div {
+    padding: 0.5rem 0;
   }
 }
 
@@ -40,7 +42,7 @@
     font-size: 4rem;
   }
   #contact {
-    height: 30vh;
+    height: 32vh;
   }
   .contact__wrapper {
     width: 80%;
@@ -52,9 +54,17 @@
     margin-right: 1rem;
   }
 }
+@media (min-width: 900px) {
+  #contact {
+    height: 25vh;
+  }
+  .contact__wrapper {
+    padding-top: 5rem;
+  }
+}
 @media screen and (min-width: 1200px) {
   #contact {
-    height: 20vh;
+    height: 28vh;
     h2 {
       font-size: $cardsBodyHeader * 1.2;
     }
