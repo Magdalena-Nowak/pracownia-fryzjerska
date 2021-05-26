@@ -11,28 +11,29 @@
   width: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  text-align: justify;
+  text-justify: inter-word;
   h1 {
     font-size: $sectionHeader;
     font-family: $headerFamily;
     letter-spacing: 0.1rem;
     font-weight: 600;
-    margin: 1rem 0;
+    margin: 5rem 0;
   }
 }
 .about__description--content {
-  margin: 1rem 0;
   letter-spacing: 0.08rem;
   font-size: $fontText;
+  padding: 3rem 0;
 }
 .about__description--name {
   align-self: flex-end;
-  margin: 2rem 0;
   font-family: $headerFamily;
   font-size: 1.8rem;
   font-weight: bolder;
   letter-spacing: 0.1rem;
+  margin: 5rem 0;
 }
 
 @media screen and (min-width: 920px) {
