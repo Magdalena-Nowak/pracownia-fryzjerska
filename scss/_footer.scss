@@ -1,7 +1,7 @@
 #contact {
   background-color: $mainBlack;
   color: $mainWhite;
-  height: 45vh;
+  height: 48vh;
 
   h2 {
     font-family: $headerFamily;
@@ -23,7 +23,7 @@
   align-items: center;
 }
 .social {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 0 2rem;
   cursor: pointer;
 }
@@ -35,6 +35,9 @@
   div {
     padding: 0.5rem 0;
   }
+}
+.wrapper__contains p {
+  font-size: 1.4rem;
 }
 
 @media screen and (min-width: 560px) {
@@ -68,8 +71,5 @@
     h2 {
       font-size: $cardsBodyHeader * 1.2;
     }
-  }
-  .wrapper__contains p {
-    font-size: 1.4rem;
   }
 }
