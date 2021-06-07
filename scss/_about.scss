@@ -1,55 +1,63 @@
 #about {
-  height: 110vh;
   width: 100%;
   background-color: $mainWhite;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  @include flex(column, space-between, center);
 }
 
 .about__description {
+  min-height: 90vh;
   width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex(column, center, center);
   text-align: justify;
   text-justify: inter-word;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   h1 {
     font-size: $sectionHeader;
     font-family: $headerFamily;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.2rem;
     font-weight: 600;
-    margin: 5rem 0;
+    margin: 3rem 0;
   }
-}
-.about__description--content {
-  letter-spacing: 0.08rem;
-  font-size: $fontText;
-  padding: 3rem 0;
-}
-.about__description--name {
-  align-self: flex-end;
-  font-family: $headerFamily;
-  font-size: 1.8rem;
-  font-weight: bolder;
-  letter-spacing: 0.1rem;
-  margin: 5rem 0;
-}
-
-@media screen and (min-width: 920px) {
-  .about__description {
-    width: 70%;
-    h1 {
-      font-size: $sectionHeader * 1.2;
-    }
-    p {
-      font-size: $fontText * 1.2;
-    }
+  p {
+    letter-spacing: 0.08rem;
+    font-size: $fontText;
+    padding: 2rem 0;
+  }
+  .about__description--name {
+    align-self: flex-end;
+    font-family: $headerFamily;
+    font-size: $cardsBodyHeader;
+    font-weight: 800;
+    letter-spacing: 0.2rem;
+    margin: 2rem 0;
   }
 }
 
-@media screen and (min-width: 1200px) {
-  #about {
-    height: 100vh;
+.about__photo {
+  // @include flex(row, center, center);
+  width: 100%;
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
+// @media screen and (min-width: 920px) {
+//   .about__description {
+//     width: 70%;
+//     h1 {
+//       font-size: $sectionHeader * 1.2;
+//     }
+//     p {
+//       font-size: $fontText * 1.2;
+//     }
+//   }
+// }
+
+// @media screen and (min-width: 1200px) {
+//   #about {
+//     height: 100vh;
+//   }
+// }

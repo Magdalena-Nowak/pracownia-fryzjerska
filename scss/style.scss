@@ -28,6 +28,14 @@ $fontText: 1.2rem;
 $cardsHeader: 2rem;
 $cardsBodyHeader: 1.6rem;
 $headerFamily: "Nunito", sans-serif;
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
 @import "header";
 @import "media";
 @import "about";
