@@ -26,6 +26,12 @@
 
 @media (min-width: 1200px) {
   .navigation {
+    height: 17vh;
+  }
+}
+
+@media (min-width: 1800px) {
+  .navigation {
     height: 20vh;
   }
 }
@@ -67,6 +73,18 @@
     height: 15vh;
     display: flex;
     align-items: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navigation__wrapper {
+    height: 17vh;
+  }
+}
+
+@media (min-width: 1800px) {
+  .navigation__wrapper {
+    height: 20vh;
   }
 }
 
@@ -117,13 +135,15 @@
 
 @media (min-width: 1200px) {
   .navigation__list {
+    font-size: $fontH1 * 1.2;
+  }
+}
+
+@media (min-width: 1800px) {
+  .navigation__list {
     font-size: $fontH1 * 1.4;
     li {
-      min-width: 20rem;
-      @include flex(row, center, center);
-    }
-    #nav-about {
-      min-width: 20rem;
+      padding: 2rem 4rem;
     }
   }
 }
