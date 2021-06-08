@@ -13,7 +13,6 @@ html,
 body {
   position: relative;
   font-size: 10px;
-  font-family: "Poppins", sans-serif;
 }
 
 li {
@@ -26,6 +25,7 @@ li {
   position: relative;
   background-color: #191919;
   position: fixed;
+  z-index: 2;
 }
 
 .navigation a {
@@ -82,8 +82,9 @@ li {
 .navigation__wrapper {
   height: 100vh;
   width: 100%;
-  font-size: 2rem;
+  font-size: 2.4rem;
   color: #f5f5f5;
+  font-family: "Open Sans Condensed", sans-serif;
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -126,6 +127,7 @@ li {
 .navigation__list li {
   padding: 1.5rem 2rem;
   transition: all 0.6s ease-in-out;
+  cursor: pointer;
 }
 
 .navigation__list li:hover {
@@ -158,9 +160,6 @@ li {
   #nav-about {
     min-width: 10rem;
   }
-  #nav-about a {
-    width: 100%;
-  }
   .navigation__list--close {
     display: none;
   }
@@ -168,13 +167,13 @@ li {
 
 @media (min-width: 1200px) {
   .navigation__list {
-    font-size: 2.4rem;
+    font-size: 2.88rem;
   }
 }
 
 @media (min-width: 1800px) {
   .navigation__list {
-    font-size: 2.8rem;
+    font-size: 3.36rem;
   }
   .navigation__list li {
     padding: 2rem 4rem;
@@ -210,7 +209,7 @@ li {
 
 .about__description h1 {
   font-size: 3rem;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   letter-spacing: 0.2rem;
   font-weight: 600;
   margin: 3rem 0;
@@ -224,7 +223,7 @@ li {
 
 .about__description .about__description--name {
   align-self: flex-end;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   font-size: 1.6rem;
   font-weight: 800;
   letter-spacing: 0.2rem;
@@ -302,20 +301,21 @@ li {
   }
 }
 
-.swiper-container {
-  width: 100%;
+#slider {
+  padding-top: 15vh;
+  background-color: #f5f5f5;
   height: 100vh;
-}
-
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: scroll;
+}
+
+#slider img {
+  width: 98vw;
+  margin-right: 1rem;
   height: 100%;
   object-fit: cover;
 }
@@ -332,7 +332,7 @@ li {
 .priceList h1 {
   color: #f5f5f5;
   font-size: 3rem;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   letter-spacing: 0.1rem;
   font-weight: 600;
   text-align: center;
@@ -353,7 +353,7 @@ li {
 }
 
 .priceList__card h2 {
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   letter-spacing: 0.2rem;
   text-align: center;
   margin: 2rem 0;
@@ -369,7 +369,7 @@ li {
 }
 
 .card--body h3 {
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   letter-spacing: 0.1rem;
   font-weight: bolder;
   margin: 2rem 0;
@@ -390,7 +390,7 @@ li {
 }
 
 .card--body span {
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 700;
   padding: 0 0.5rem;
 }
@@ -595,7 +595,7 @@ li {
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   cursor: pointer;
 }
 
@@ -688,7 +688,7 @@ li {
 }
 
 #contact h2 {
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   letter-spacing: 0.1rem;
   font-size: 1.6rem;
 }
@@ -769,5 +769,9 @@ li {
 a {
   text-decoration: none;
   color: #f5f5f5;
+}
+
+body {
+  font-family: "Lato", sans-serif;
 }
 /*# sourceMappingURL=style.css.map */

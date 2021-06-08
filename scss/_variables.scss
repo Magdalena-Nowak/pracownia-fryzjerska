@@ -1,12 +1,13 @@
 $mainBlack: #191919;
 $mainWhite: #f5f5f5;
 $grayHighlight: #bfc0c0;
-$fontH1: 2rem;
+$fontH1: 2.4rem;
 $sectionHeader: 3rem;
 $fontText: 1.2rem;
 $cardsHeader: 2rem;
 $cardsBodyHeader: 1.6rem;
-$headerFamily: "Nunito", sans-serif;
+$headerFamily: "Open Sans Condensed", sans-serif;
+$textFamily: "Lato", sans-serif;
 $hoverBg: #3d3d3d;
 
 @mixin flex($direction, $justify, $align) {

@@ -1,49 +1,38 @@
-const openNavBtn = document.querySelector(".appBar");
-const swiperContainer = document.querySelector(".swiper-container");
-const navigation = document.querySelector(".navigation__wrapper");
-const closeNavBtn = document.querySelector(".navigation__list--close");
+// const swiperContainer = document.querySelector(".swiper-container");
+
 const openPriceBtns = document.querySelectorAll(".body--uncover");
 const hidePriceBtns = document.querySelectorAll(".body--hide");
 const cardsContainers = document.querySelectorAll(".container");
 const priceCards = document.querySelectorAll(".priceList__card");
-const navItems = document.querySelectorAll(".navigation_list li");
+
 const mainContent = document.querySelector("main");
 const footerContent = document.querySelector("footer");
+// console.log(sliderImages);
 
-var swiper = new Swiper(".mySwiper", {
-  scrollbar: {
-    el: ".swiper-scrollbar",
-    hide: true,
-  },
-  spaceBetween: 30,
-  centeredSlides: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-});
+// var swiper = new Swiper(".mySwiper", {
+//   scrollbar: {
+//     el: ".swiper-scrollbar",
+//     hide: true,
+//   },
+//   spaceBetween: 30,
+//   centeredSlides: true,
+//   autoplay: {
+//     delay: 2500,
+//     disableOnInteraction: false,
+//   },
+// });
 
+// NAVIGATION
+//Zmienne
+const navigation = document.querySelector(".navigation__wrapper");
+const navItems = document.querySelectorAll(".navigation__list li");
+const sections = document.querySelectorAll("#home section");
+const openNavBtn = document.querySelector(".appBar");
+const closeNavBtn = document.querySelector(".navigation__list--close");
+
+//Funkcje
 openNavBtn.addEventListener("click", openingNavigation);
-
 closeNavBtn.addEventListener("click", closingNavigation);
-
-openPriceBtns.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    openingPrices(index);
-  });
-});
-
-hidePriceBtns.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    closingPrices(index);
-  });
-});
-
-navItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    navigation.classList.toggle("active");
-  });
-});
 
 function openingNavigation() {
   navigation.classList.add("active");
@@ -57,6 +46,26 @@ function closingNavigation() {
   mainContent.style.display = "block";
   footerContent.style.display = "block";
 }
+
+navItems.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    navigation.classList.remove("active");
+    mainContent.style.display = "block";
+    footerContent.style.display = "block";
+    sections[index].scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
+
+//SLIDER GALLERY
+//Zmienne
+const sliderImages = document.querySelectorAll("#slider img");
+// sliderImages.forEach((image, index) => {
+//   image.addEventListener("click", () => {
+//     sliderImages[index].;
+//   });
+// });
 
 function openingPrices(index) {
   cardsContainers[index].classList.add("open");
@@ -73,7 +82,17 @@ function closingPrices(index) {
   openPriceBtns[index].style.display = "block";
   hidePriceBtns[index].style.display = "none";
 }
+openPriceBtns.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    openingPrices(index);
+  });
+});
 
+hidePriceBtns.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    closingPrices(index);
+  });
+});
 // jQuery("#my_nanogallery").nanogallery2({
 //   thumbnailHoverEffect2: "imageGrayOn",
 //   galleryMaxRows: 2,
@@ -118,7 +137,7 @@ let index;
 // });
 // }
 
-moreBtn.addEventListener("click", openGallery);
+// moreBtn.addEventListener("click", openGallery);
 
 regularImages.forEach((image, index) => {
   image.addEventListener("click", function () {
