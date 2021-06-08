@@ -59,13 +59,26 @@ navItems.forEach((item, index) => {
 });
 
 //SLIDER GALLERY
+
 //Zmienne
-const sliderImages = document.querySelectorAll("#slider img");
-// sliderImages.forEach((image, index) => {
-//   image.addEventListener("click", () => {
-//     sliderImages[index].;
-//   });
-// });
+const sliderImages = document.querySelectorAll(".slider--image");
+const sliderBelts = document.querySelectorAll(".belt");
+console.log(sliderBelts);
+
+//Funkcje
+
+sliderBelts.forEach((belt, index) => {
+  belt.addEventListener("click", () => {
+    sliderBelts.forEach((belt) => {
+      belt.classList.remove("active");
+    });
+    belt.classList.add("active");
+    sliderImages.forEach((img) => {
+      img.classList.remove("active");
+    });
+    sliderImages[index].classList.add("active");
+  });
+});
 
 function openingPrices(index) {
   cardsContainers[index].classList.add("open");

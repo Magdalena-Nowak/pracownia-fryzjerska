@@ -6,7 +6,7 @@
 }
 
 .about__description {
-  min-height: 90vh;
+  min-height: 160vh;
   width: 80%;
   @include flex(column, center, center);
   text-align: justify;
