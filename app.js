@@ -1,12 +1,14 @@
-const openNavBtn = document.querySelector(".fa-bars");
+const openNavBtn = document.querySelector(".appBar");
 const swiperContainer = document.querySelector(".swiper-container");
-const navigation = document.querySelector(".navigation");
-const closeNavBtn = document.querySelector(".fa-times");
+const navigation = document.querySelector(".navigation__wrapper");
+const closeNavBtn = document.querySelector(".navigation__list--close");
 const openPriceBtns = document.querySelectorAll(".body--uncover");
 const hidePriceBtns = document.querySelectorAll(".body--hide");
 const cardsContainers = document.querySelectorAll(".container");
 const priceCards = document.querySelectorAll(".priceList__card");
 const navItems = document.querySelectorAll(".navigation_list li");
+const mainContent = document.querySelector("main");
+const footerContent = document.querySelector("footer");
 
 var swiper = new Swiper(".mySwiper", {
   scrollbar: {
@@ -45,10 +47,15 @@ navItems.forEach((item) => {
 
 function openingNavigation() {
   navigation.classList.add("active");
+  navigation.style.backgroundColor = "#191919";
+  mainContent.style.display = "none";
+  footerContent.style.display = "none";
 }
 
 function closingNavigation() {
   navigation.classList.remove("active");
+  mainContent.style.display = "block";
+  footerContent.style.display = "block";
 }
 
 function openingPrices(index) {
@@ -75,65 +82,81 @@ function closingPrices(index) {
 
 // console.log(navItems);
 
-// const moreBtn = document.querySelector(".more");
-// const hideImages = document.querySelectorAll(".hide");
-// const gallery = document.querySelector(".gallery");
-// const regularImages = document.querySelectorAll(".regular-image");
-// const reguarGallery = document.querySelector(".container");
-// let galleryImage = document.querySelector(".gallery-image");
-// const rightBtn = document.querySelector(".fa-chevron-right");
-// const leftBtn = document.querySelector(".fa-chevron-left");
-// const closeRegularGallery = document.querySelector(".fa-times");
-// const smallImages = document.querySelectorAll(".small-image");
-// const bigImage = document.querySelector(".big-image");
-// let index;
+const moreBtn = document.querySelector(".more");
+const allImages = document.querySelectorAll(".regular-image");
+const hideImages = document.querySelectorAll("[data-type='hide']");
+const hideMoreImages = document.querySelectorAll("[data-type='hide1']");
+const gallery = document.querySelector(".gallery__slider");
+const regularImages = document.querySelectorAll(".regular-image");
+const reguarGallery = document.querySelector(".container");
+let galleryImage = document.querySelector(".gallery-image");
+const rightBtn = document.querySelector(".fa-chevron-right");
+const leftBtn = document.querySelector(".fa-chevron-left");
+const closeRegularGallery = document.querySelector(".fa-times");
+const smallImages = document.querySelectorAll(".small-image");
+const bigImage = document.querySelector(".big-image");
+let index;
+
+// console.log(allImages);
 
 // function openGallery() {
-//   hideImages.forEach((image) => {
-//     image.classList.remove("hide");
-//     image.classList.add("active");
+// allImages.forEach((image) => {
+// if (image.dataset.type === "show") {
+// hideImages.forEach((img) => {
+// img.classList.remove("hide");
+// img.classList.add("active");
+// img.classList.add("show");
+// console.log(img);
+// });
+// }
+// if (image.classList.contains === "active") {
+//   hideMoreImages.forEach((img) => {
+//     img.classList.remove("hide1");
+//     img.classList.add("active");
 //   });
 // }
-
-// moreBtn.addEventListener("click", openGallery);
-
-// regularImages.forEach((image, index) => {
-//   image.addEventListener("click", function () {
-//     gallery.classList.add("active");
-//     reguarGallery.style.display = "none";
-//     bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
-//     rightBtn.addEventListener("click", function () {
-//       if (index >= smallImages.length - 1) {
-//         index = 0;
-//         bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
-//         console.log(index);
-//       } else {
-//         index++;
-//         bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
-//         console.log(index);
-//       }
-//     });
-//     leftBtn.addEventListener("click", function () {
-//       if (index <= 0) {
-//         index = smallImages.length - 1;
-//         bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
-//         console.log(index);
-//       } else {
-//         index--;
-//         bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
-//         console.log(index);
-//       }
-//     });
-//   });
 // });
+// }
 
-// smallImages.forEach((image, index) => {
-//   image.addEventListener("click", function () {
-//     bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
-//   });
-// });
+moreBtn.addEventListener("click", openGallery);
 
-// closeRegularGallery.addEventListener("click", function () {
-//   gallery.classList.remove("active");
-//   reguarGallery.style.display = "block";
-// });
+regularImages.forEach((image, index) => {
+  image.addEventListener("click", function () {
+    gallery.classList.add("active");
+    reguarGallery.style.display = "none";
+    bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
+    rightBtn.addEventListener("click", function () {
+      if (index >= smallImages.length - 1) {
+        index = 0;
+        bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
+        console.log(index);
+      } else {
+        index++;
+        bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
+        console.log(index);
+      }
+    });
+    leftBtn.addEventListener("click", function () {
+      if (index <= 0) {
+        index = smallImages.length - 1;
+        bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
+        console.log(index);
+      } else {
+        index--;
+        bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
+        console.log(index);
+      }
+    });
+  });
+});
+
+smallImages.forEach((image, index) => {
+  image.addEventListener("click", function () {
+    bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
+  });
+});
+
+closeRegularGallery.addEventListener("click", function () {
+  gallery.classList.remove("active");
+  reguarGallery.style.display = "block";
+});

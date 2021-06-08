@@ -10,7 +10,6 @@ html {
 html,
 body {
   position: relative;
-  height: 100%;
   font-size: 10px;
   font-family: "Poppins", sans-serif;
 }
@@ -19,23 +18,7 @@ li {
   list-style-type: none;
 }
 
-$mainBlack: #191919;
-$mainWhite: #f5f5f5;
-$grayHighlight: #bfc0c0;
-$fontH1: 2rem;
-$sectionHeader: 3rem;
-$fontText: 1.2rem;
-$cardsHeader: 2rem;
-$cardsBodyHeader: 1.6rem;
-$headerFamily: "Nunito", sans-serif;
-
-@mixin flex($direction, $justify, $align) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
-}
-
+@import "variables";
 @import "header";
 @import "media";
 @import "about";
@@ -49,3 +32,7 @@ a {
   text-decoration: none;
   color: $mainWhite;
 }
+
+// HEADER
+
+

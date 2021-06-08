@@ -1,185 +1,133 @@
-body {
+.navigation {
+  width: 100%;
+  height: 15vh;
   position: relative;
+  background-color: $mainBlack;
+  position: fixed;
+  a {
+    display: block;
+    width: 60%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
 }
-.fa-bars {
+
+@media (min-width: 992px) {
+  .navigation {
+    a {
+      width: 40%;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .navigation {
+    height: 20vh;
+  }
+}
+
+.appBar {
   position: absolute;
   top: 50%;
   right: 10%;
   transform: translate(-10%, -50%);
-  font-size: 3rem;
-  opacity: 0.8;
   cursor: pointer;
-  color: $mainWhite;
-}
-
-.fa-times {
-  opacity: 0.8;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  cursor: pointer;
-  color: $mainWhite;
-}
-
-.navigation__wrapper {
-  width: 100%;
-  height: 20vh;
-  position: relative;
-  background: url(../../img/Frame1.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-color: $mainBlack;
-  position: fixed;
-  z-index: 2;
-}
-
-.navigation_list > hr {
-  width: 200%;
-  opacity: 0.8;
-}
-
-.navigation {
-  height: 100vh;
-  width: 100%;
-  justify-content: flex-end;
-  background-color: $mainBlack;
-  z-index: 2;
-  font-size: $fontH1;
-  color: $mainWhite;
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: none;
-}
-
-.navigation_list {
-  position: absolute;
-  top: 20%;
-  right: 10%;
-  transform: translate(-10%, -20%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  li {
-    cursor: pointer;
-    transition: background 1s ease-in-out;
-    &:hover {
-      background-color: #333333;
-      animation: changeBackgroundWidth 1s ease-in-out forwards;
-    }
-    a {
-      color: $mainWhite;
-    }
+  .fa-bars {
+    opacity: 0.8;
+    font-size: 3rem;
+    color: $mainWhite;
+    pointer-events: none;
   }
 }
 
-.navigation_list li,
-.navigation_list hr {
-  margin: 1rem 0;
+@media (min-width: 992px) {
+  .appBar {
+    display: none;
+  }
+}
+
+.navigation__wrapper {
+  height: 100vh;
+  width: 100%;
+  font-size: $fontH1;
+  color: $mainWhite;
+  position: absolute;
+  @include flex(row, flex-end, flex-start);
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .navigation__wrapper {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.navigation__list {
+  @include flex(column, center, stretch);
+  flex: 0 0 50%;
+  margin: 5rem 5rem;
+  li {
+    padding: 1.5rem 2rem;
+    transition: all 0.6s ease-in-out;
+    &:hover {
+      background-color: $hoverBg;
+    }
+  }
+}
+.navigation__list--close {
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 1.5rem;
+  .fa-times {
+    opacity: 0.8;
+    font-size: 3rem;
+    color: $mainWhite;
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .navigation__list {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1 0 60%;
+    hr {
+      display: none;
+    }
+  }
+  #nav-about {
+    min-width: 10rem;
+    a {
+      width: 100%;
+    }
+  }
+  .navigation__list--close {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navigation__list {
+    font-size: $fontH1 * 1.4;
+    li {
+      min-width: 20rem;
+      @include flex(row, center, center);
+    }
+    #nav-about {
+      min-width: 20rem;
+    }
+  }
 }
 
 .active {
   display: flex;
-}
-
-@keyframes changeBackgroundWidth {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 200%;
-  }
-}
-
-@keyframes biggerBackgroundWidth {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 300%;
-  }
-}
-
-@keyframes smallerBackgroundWidth {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.2);
-  }
-}
-
-@media screen and (min-width: 800px) {
-  li {
-    padding: 2rem 0;
-  }
-  .navigation {
-    font-size: 2.4rem;
-    width: 60%;
-  }
-  // .fa-bars,
-  // .fa-times {
-  //   font-size: 5rem;
-  // }
-
-  header > hr {
-    width: 300%;
-  }
-  header > li:hover {
-    animation: biggerBackgroundWidth 1s ease-in-out forwards;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .fa-bars {
-    z-index: -1;
-  }
-
-  .navigation__wrapper {
-    background-position: 0%;
-    background: url(../../img/Frame3.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: $mainBlack;
-  }
-
-  .navigation {
-    display: flex;
-    z-index: 1;
-    height: 20vh;
-    width: 55%;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0;
-  }
-  .navigation_list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    position: static;
-    div {
-      display: none;
-    }
-  }
-  .navigation_list > hr {
-    display: none;
-  }
-  .navigation_list > li {
-    padding: 0.5rem 1rem;
-    // margin: 1rem 2rem;
-  }
-  .navigation_list > li:hover {
-    animation: smallerBackgroundWidth 1s ease-in-out forwards;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .navigation_list > li {
-    margin: 1rem 2rem;
-  }
-  .navigation__wrapper {
-    background-position: 5%;
-  }
 }
