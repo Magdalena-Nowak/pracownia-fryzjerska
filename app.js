@@ -1,5 +1,3 @@
-// const swiperContainer = document.querySelector(".swiper-container");
-
 const openPriceBtns = document.querySelectorAll(".body--uncover");
 const hidePriceBtns = document.querySelectorAll(".body--hide");
 const cardsContainers = document.querySelectorAll(".container");
@@ -7,20 +5,6 @@ const priceCards = document.querySelectorAll(".priceList__card");
 
 const mainContent = document.querySelector("main");
 const footerContent = document.querySelector("footer");
-// console.log(sliderImages);
-
-// var swiper = new Swiper(".mySwiper", {
-//   scrollbar: {
-//     el: ".swiper-scrollbar",
-//     hide: true,
-//   },
-//   spaceBetween: 30,
-//   centeredSlides: true,
-//   autoplay: {
-//     delay: 2500,
-//     disableOnInteraction: false,
-//   },
-// });
 
 // NAVIGATION
 //Zmienne
@@ -30,7 +14,7 @@ const sections = document.querySelectorAll("#home section");
 const openNavBtn = document.querySelector(".appBar");
 const closeNavBtn = document.querySelector(".navigation__list--close");
 
-//Funkcje
+//Implementacja
 openNavBtn.addEventListener("click", openingNavigation);
 closeNavBtn.addEventListener("click", closingNavigation);
 
@@ -61,24 +45,50 @@ navItems.forEach((item, index) => {
 //SLIDER GALLERY
 
 //Zmienne
-const sliderImages = document.querySelectorAll(".slider--image");
-const sliderBelts = document.querySelectorAll(".belt");
-console.log(sliderBelts);
 
-//Funkcje
+const slideList = [
+  { img: "./img/image1-large.png" },
+  { img: "./img/image2-large.png" },
+  { img: "./img/image3-large.png" },
+];
+const slideImage = document.querySelector(".slider__wrapper img");
+const slideBelts = document.querySelectorAll(".belt");
+//Interfejs
 
-sliderBelts.forEach((belt, index) => {
-  belt.addEventListener("click", () => {
-    sliderBelts.forEach((belt) => {
-      belt.classList.remove("active");
+const time = 2000;
+let active = 0;
+
+//Implementacje
+
+const autoChangeBelt = () => {
+  slideBelts.forEach((slide) => slide.classList.remove("active"));
+  slideBelts[active].classList.add("active");
+};
+
+const changeSlide = () => {
+  active++;
+  if (active === slideList.length) {
+    active = 0;
+  }
+  slideImage.src = slideList[active].img;
+  autoChangeBelt();
+};
+
+let timeInterval = setInterval(changeSlide, time);
+
+const changeBelt = () => {
+  slideBelts.forEach((belt, index) => {
+    belt.addEventListener("click", () => {
+      slideBelts.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideBelts[index].classList.add("active");
+      slideImage.src = slideList[index].img;
     });
-    belt.classList.add("active");
-    sliderImages.forEach((img) => {
-      img.classList.remove("active");
-    });
-    sliderImages[index].classList.add("active");
   });
-});
+};
+
+changeBelt();
 
 function openingPrices(index) {
   cardsContainers[index].classList.add("open");
