@@ -127,101 +127,47 @@ hidePriceBtns.forEach((btn, index) => {
 // Zmienne
 const moreBtn = document.querySelector(".more");
 const galleryContent = document.querySelector(".gallery__wrapper");
-const allImages = 49;
+const allImages = 48;
 
 //Implementacja
 moreBtn.addEventListener("click", addElements);
+let currentImageNr = 13;
 
-let currentImageNr = 10;
+
 function addElements() {
-  console.log("hej");
-  for (currentImageNr; currentImageNr < allImages; currentImageNr++) {
+  let allButtons = document.querySelectorAll('.more');
+  if(currentImageNr > allImages)
+    return;
+  let currentMax = currentImageNr + 12;
+  for (let i = currentImageNr ; i < currentMax; i++) {
+    if (i > allImages) {
+      break;
+    }
     const imageDiv = document.createElement("div");
     imageDiv.classList.add("regular-image");
     galleryContent.appendChild(imageDiv);
-    imageDiv.innerHTML = `<img src="./img//img${currentImageNr}.jpg" alt="Zdjęcie fryzury">`;
+    imageDiv.innerHTML = `<img src="./img//img${i}.jpg" alt="Zdjęcie fryzury">`;
+    allButtons.forEach(btn => {
+      btn.style.display = "none";
+    })
   }
-  console.log(currentImageNr);
+  currentImageNr = currentMax;
+  const btnMore = document.createElement('div');
+  btnMore.classList.add('more');
+  const textMore = document.createElement('p');
+  btnMore.appendChild(textMore);
+  textMore.innerText = "Więcej";
+  galleryContent.appendChild(btnMore);
+  btnMore.addEventListener('click', addElements);
+  allButtons = document.querySelectorAll('.more');
+  allButtons[3].style.display = "none";
 }
-// function addElements() {
-//   for (let i = currentImageNr; i < currentImageNr + 10; i++) {
-//     if (i === allImages) {
-//       i = 1;
-//     }
-//     const imageDiv = document.createElement("div");
-//     imageDiv.classList.add("regular-image");
-//     galleryContent.appendChild(imageDiv);
-//     imageDiv.innerHTML = `<img src="./img//img${i}.jpg" alt="Zdjęcie fryzury">`;
-//     currentImageNr += i;
-//   }
-// }
 
-// const allImages = document.querySelectorAll(".regular-image");
-// const hideImages = document.querySelectorAll("[data-type='hide']");
-// const hideMoreImages = document.querySelectorAll("[data-type='hide1']");
-// const gallery = document.querySelector(".gallery__slider");
-// const regularImages = document.querySelectorAll(".regular-image");
-// const reguarGallery = document.querySelector(".container");
-// let galleryImage = document.querySelector(".gallery-image");
-// const rightBtn = document.querySelector(".fa-chevron-right");
-// const leftBtn = document.querySelector(".fa-chevron-left");
-// const closeRegularGallery = document.querySelector(".fa-times");
-// const smallImages = document.querySelectorAll(".small-image");
-// const bigImage = document.querySelector(".big-image");
-// let index;
+//Big image implementation
+const gallerySlider = document.querySelector('.gallery__slider');
+const galleryImage = document.querySelector('.gallery-image');
+const regularImages = document.querySelectorAll('.regular-image');
 
-// console.log(allImages);
-
-// function openGallery() {
-// allImages.forEach((image) => {
-// if (image.dataset.type === "show") {
-// hideImages.forEach((img) => {
-// img.classList.remove("hide");
-// img.classList.add("active");
-// img.classList.add("show");
-// console.log(img);
-// });
-// }
-// if (image.classList.contains === "active") {
-//   hideMoreImages.forEach((img) => {
-//     img.classList.remove("hide1");
-//     img.classList.add("active");
-//   });
-// }
-// });
-// }
-
-// moreBtn.addEventListener("click", openGallery);
-
-// regularImages.forEach((image, index) => {
-//   image.addEventListener("click", function () {
-//     gallery.classList.add("active");
-//     reguarGallery.style.display = "none";
-//     bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
-//     rightBtn.addEventListener("click", function () {
-//       if (index >= smallImages.length - 1) {
-//         index = 0;
-//         bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
-//         console.log(index);
-//       } else {
-//         index++;
-//         bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
-//         console.log(index);
-//       }
-//     });
-//     leftBtn.addEventListener("click", function () {
-//       if (index <= 0) {
-//         index = smallImages.length - 1;
-//         bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
-//         console.log(index);
-//       } else {
-//         index--;
-//         bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
-//         console.log(index);
-//       }
-//     });
-//   });
-// });
 
 // smallImages.forEach((image, index) => {
 //   image.addEventListener("click", function () {
@@ -233,3 +179,12 @@ function addElements() {
 //   gallery.classList.remove("active");
 //   reguarGallery.style.display = "block";
 // });
+
+regularImages.forEach((img,index) => {
+  img.addEventListener('click', () => {
+    gallerySlider.style.display = "flex";
+    console.log(gallerySlider);
+    mainContent.style.display = "none";
+    footerContent.style.display = "none";
+  })
+})
