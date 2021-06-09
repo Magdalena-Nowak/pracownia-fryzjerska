@@ -1,200 +1,194 @@
 .priceList {
   background-color: $mainBlack;
-  // box-shadow: 0px 0px 20px 14px rgba(0, 0, 0, 0.56);
-  padding: 5rem 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: space-between;
+  @include flex(column, center, stretch);
   h1 {
     color: $mainWhite;
     font-size: $sectionHeader;
     font-family: $headerFamily;
-    letter-spacing: 0.1rem;
-    font-weight: 600;
-    text-align: center;
     margin: 2rem 0;
+    text-align: center;
   }
 }
 
 .priceList__card {
   background-color: $mainWhite;
-  border-top-right-radius: 2rem;
-  border-bottom-left-radius: 2rem;
-  margin: 3rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: space-between;
-  padding: 3rem;
-  position: relative;
+  width: 80%;
+  margin: 2rem auto;
+  @include flex(column, space-between, stretch);
+  // opacity: 0.8;
+  // position: relative;
   h2 {
     font-family: $headerFamily;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
     text-align: center;
-    margin: 2rem 0;
+    margin-top: 2rem;
     font-size: $cardsHeader;
-    font-weight: 800;
   }
 }
 
 .card--body {
-  display: flex;
-  flex-direction: column;
-  // justify-content: space-between;
-  font-size: $fontText;
-  letter-spacing: 0.08rem;
+  @include flex(column, space-between, stretch);
+  font-size: $priceText;
+  width: 90%;
+  margin: 2rem auto;
   h3 {
     font-family: $headerFamily;
     letter-spacing: 0.1rem;
-    font-weight: bolder;
-    margin: 2rem 0;
+    // margin: 2rem 0;
     font-size: $cardsBodyHeader;
     text-align: center;
   }
-}
-.body--note {
-  margin-bottom: 1rem;
-  p {
-    font-size: 1rem;
+  hr {
+    margin: 1rem 0;
+  }
+  span {
+    font-family: $headerFamily;
+    font-weight: 700;
+    padding: 0 1rem;
   }
 }
-.card--body hr {
-  margin: 0.8rem 0;
-}
 
-.card--body span {
-  font-family: $headerFamily;
-  font-weight: 700;
-  padding: 0 0.5rem;
-}
-
-.body--hide {
-  display: none;
+.body--note {
+  margin: 1.2rem 0;
+  p {
+    font-size: 1.2rem;
+  }
 }
 
 .body--uncover,
 .body--hide {
-  font-size: 3rem;
+  font-size: 4rem;
   cursor: pointer;
-  position: absolute;
-  bottom: 0;
-  right: 5%;
-  transform: translate(-5%, 0);
+  opacity: 0.8;
+  align-self: flex-end;
+  padding: 1rem 2rem;
   .fa-chevron-circle-down {
     pointer-events: none;
   }
 }
-.container {
-  display: flex;
-  flex-direction: column;
-  // justify-content: space-between;
-  // align-items: space-between;
+
+// .video {
+//   height: 100vh;
+//   width: 100%;
+//   video {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: conver;
+//     object-position: center;
+//     opacity: 0.4;
+
+//   }
+// }
+
+.body--hide {
   display: none;
 }
-.open {
-  display: flex;
-}
-.conditionalOpen {
-  animation: openContainer 1.5s normal forwards linear;
-}
-.conditionalClose {
-  animation: closeContainer 1.5s normal forwards linear;
-}
 
-@keyframes openContainer {
-  from {
-    transform: scale(0.95);
-  }
-  to {
-    transform: scale(1);
-  }
+.container {
+  // display: flex;
+  flex-direction: column;
+  display: none;
 }
+// .open {
+//   display: flex;
+// }
+// .conditionalOpen {
+//   animation: openContainer 1.5s normal forwards linear;
+// }
+// .conditionalClose {
+//   animation: closeContainer 1.5s normal forwards linear;
+// }
 
-@keyframes closeContainer {
-  from {
-    transform: scaleY(1);
-  }
-  to {
-    transform: scaleY(0);
-  }
-}
+// @keyframes openContainer {
+//   from {
+//     transform: scale(0.95);
+//   }
+//   to {
+//     transform: scale(1);
+//   }
+// }
 
-@media screen and (min-width: 920px) {
-  .container {
-    display: flex;
-  }
-  .body--uncover {
-    display: none;
-  }
-  .priceList {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 15rem repeat(7, 34rem);
-    height: 265rem;
-  }
-  .priceList > h1 {
-    grid-column: 1/5;
-    grid-row: 1/2;
-    align-self: center;
-  }
-  .card1 {
-    grid-column: 1/3;
-    grid-row: 2/9;
-  }
-  .card2 {
-    grid-column: 3/5;
-    grid-row: 2/4;
-  }
-  .card3 {
-    grid-column: 3/5;
-    grid-row: 4/5;
-    height: 40vh;
-  }
-}
+// @keyframes closeContainer {
+//   from {
+//     transform: scaleY(1);
+//   }
+//   to {
+//     transform: scaleY(0);
+//   }
+// }
 
-@media screen and (min-width: 1400px) {
-  .card--body {
-    font-size: $fontText * 1.2;
-    h3 {
-      font-size: $cardsBodyHeader * 1.2;
-    }
-  }
-  .priceList__card > h2 {
-    font-size: $cardsHeader * 1.2;
-  }
-  .priceList > h1 {
-    font-size: $sectionHeader * 1.2;
-  }
-  .card1 {
-    margin-left: 20%;
-    margin-right: 5rem;
-  }
-  .card2,
-  .card3 {
-    margin-right: 20%;
-    margin-left: 5rem;
-  }
-  // .card3 > div > div > ul {
-  //   margin-bottom: 150px;
-  // }
-}
+// @media screen and (min-width: 920px) {
+//   .container {
+//     display: flex;
+//   }
+//   .body--uncover {
+//     display: none;
+//   }
+//   .priceList {
+//     display: grid;
+//     grid-template-columns: repeat(4, 1fr);
+//     grid-template-rows: 15rem repeat(7, 34rem);
+//     height: 265rem;
+//   }
+//   .priceList > h1 {
+//     grid-column: 1/5;
+//     grid-row: 1/2;
+//     align-self: center;
+//   }
+//   .card1 {
+//     grid-column: 1/3;
+//     grid-row: 2/9;
+//   }
+//   .card2 {
+//     grid-column: 3/5;
+//     grid-row: 2/4;
+//   }
+//   .card3 {
+//     grid-column: 3/5;
+//     grid-row: 4/5;
+//     height: 40vh;
+//   }
+// }
 
-@media screen and (min-width: 1800px) {
-  .card1 {
-    margin-left: 30%;
-  }
-  .card2,
-  .card3 {
-    margin-right: 30%;
-  }
-  .children {
-    margin-bottom: 10%;
-  }
-}
+// @media screen and (min-width: 1400px) {
+//   .card--body {
+//     font-size: $fontText * 1.2;
+//     h3 {
+//       font-size: $cardsBodyHeader * 1.2;
+//     }
+//   }
+//   .priceList__card > h2 {
+//     font-size: $cardsHeader * 1.2;
+//   }
+//   .priceList > h1 {
+//     font-size: $sectionHeader * 1.2;
+//   }
+//   .card1 {
+//     margin-left: 20%;
+//     margin-right: 5rem;
+//   }
+//   .card2,
+//   .card3 {
+//     margin-right: 20%;
+//     margin-left: 5rem;
+//   }
+// }
 
-@media screen and (min-width: 2000px) {
-  .children {
-    margin-bottom: 20%;
-  }
-}
+// @media screen and (min-width: 1800px) {
+//   .card1 {
+//     margin-left: 30%;
+//   }
+//   .card2,
+//   .card3 {
+//     margin-right: 30%;
+//   }
+//   .children {
+//     margin-bottom: 10%;
+//   }
+// }
+
+// @media screen and (min-width: 2000px) {
+//   .children {
+//     margin-bottom: 20%;
+//   }
+// }

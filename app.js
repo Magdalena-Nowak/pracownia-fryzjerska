@@ -13,6 +13,8 @@ const navItems = document.querySelectorAll(".navigation__list li");
 const sections = document.querySelectorAll("#home section");
 const openNavBtn = document.querySelector(".appBar");
 const closeNavBtn = document.querySelector(".navigation__list--close");
+const menuNav = document.querySelector("#home");
+const logoNav = document.querySelector(".navigation__logo");
 
 //Implementacja
 openNavBtn.addEventListener("click", openingNavigation);
@@ -42,6 +44,11 @@ navItems.forEach((item, index) => {
   });
 });
 
+logoNav.addEventListener("click", () => {
+  menuNav.scrollIntoView({
+    behavior: "smooth",
+  });
+});
 //SLIDER GALLERY
 
 //Zmienne
