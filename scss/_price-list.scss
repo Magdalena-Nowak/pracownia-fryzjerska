@@ -1,6 +1,7 @@
 .priceList {
   background-color: $mainBlack;
   @include flex(column, center, stretch);
+  padding-bottom: 4rem;
   h1 {
     color: $mainWhite;
     font-size: $sectionHeader;
@@ -10,19 +11,70 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .priceList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    h1 {
+      font-size: $sectionHeader * 1.2;
+      // align-self: flex-end;
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 1800px) {
+  .priceList h1 {
+    font-size: $sectionHeader * 1.4;
+  }
+}
+
 .priceList__card {
   background-color: $mainWhite;
   width: 80%;
   margin: 2rem auto;
   @include flex(column, space-between, stretch);
-  // opacity: 0.8;
-  // position: relative;
+  transition: all 2s ease-in-out;
   h2 {
     font-family: $headerFamily;
     letter-spacing: 0.1rem;
     text-align: center;
     margin-top: 2rem;
     font-size: $cardsHeader;
+  }
+}
+
+@media (min-width: 1200px) {
+  .priceList__card h2 {
+    font-size: $cardsHeader * 1.2;
+  }
+  .card1 {
+    order: 3;
+  }
+  .card2 {
+    width: 35%;
+    margin-left: 10%;
+  }
+  .card3 {
+    width: 35%;
+    margin-right: 10%;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1500px) {
+  .card1,
+  .card2,
+  .card3 {
+    margin: 2rem 5rem;
+    width: 50%;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1800px) {
+  .priceList__card h2 {
+    font-size: $cardsHeader * 1.4;
   }
 }
 
@@ -34,7 +86,6 @@
   h3 {
     font-family: $headerFamily;
     letter-spacing: 0.1rem;
-    // margin: 2rem 0;
     font-size: $cardsBodyHeader;
     text-align: center;
   }
@@ -45,6 +96,24 @@
     font-family: $headerFamily;
     font-weight: 700;
     padding: 0 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card--body {
+    font-size: $priceText * 1.2;
+    h3 {
+      font-size: $cardsBodyHeader * 1.2;
+    }
+  }
+}
+
+@media (min-width: 1800px) {
+  .card--body {
+    font-size: $priceText * 1.4;
+    h3 {
+      font-size: $cardsBodyHeader * 1.4;
+    }
   }
 }
 
@@ -67,55 +136,55 @@
   }
 }
 
-// .video {
-//   height: 100vh;
-//   width: 100%;
-//   video {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: conver;
-//     object-position: center;
-//     opacity: 0.4;
-
-//   }
-// }
+@media (min-width: 1200px) {
+  .body--uncover,
+  .body--hide {
+    display: none;
+  }
+}
 
 .body--hide {
   display: none;
 }
 
 .container {
-  // display: flex;
   flex-direction: column;
   display: none;
 }
-// .open {
-//   display: flex;
-// }
-// .conditionalOpen {
-//   animation: openContainer 1.5s normal forwards linear;
-// }
-// .conditionalClose {
-//   animation: closeContainer 1.5s normal forwards linear;
-// }
 
-// @keyframes openContainer {
-//   from {
-//     transform: scale(0.95);
-//   }
-//   to {
-//     transform: scale(1);
-//   }
-// }
+@media (min-width: 1200px) {
+  .container {
+    display: flex;
+  }
+}
 
-// @keyframes closeContainer {
-//   from {
-//     transform: scaleY(1);
-//   }
-//   to {
-//     transform: scaleY(0);
-//   }
-// }
+.open {
+  display: flex;
+}
+.opening {
+  animation: openingContainer 1.5s normal forwards linear;
+}
+.closing {
+  animation: closingContainer 1.5s normal forwards linear;
+}
+
+@keyframes openingContainer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes closingContainer {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 
 // @media screen and (min-width: 920px) {
 //   .container {

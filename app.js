@@ -1,8 +1,3 @@
-const openPriceBtns = document.querySelectorAll(".body--uncover");
-const hidePriceBtns = document.querySelectorAll(".body--hide");
-const cardsContainers = document.querySelectorAll(".container");
-const priceCards = document.querySelectorAll(".priceList__card");
-
 const mainContent = document.querySelector("main");
 const footerContent = document.querySelector("footer");
 
@@ -97,36 +92,56 @@ const changeBelt = () => {
 
 changeBelt();
 
-function openingPrices(index) {
-  cardsContainers[index].classList.add("open");
-  cardsContainers[index].classList.add("conditionalOpen");
-  cardsContainers[index].classList.remove("conditionalClose");
-  openPriceBtns[index].style.display = "none";
-  hidePriceBtns[index].style.display = "block";
-}
+// Prices
+// Zmienne
+const openPriceBtns = document.querySelectorAll(".body--uncover");
+const hidePriceBtns = document.querySelectorAll(".body--hide");
+const cardsContainers = document.querySelectorAll(".container");
+const priceCards = document.querySelectorAll(".priceList__card");
+const priceSection = document.querySelector("#prices");
+// console.log(priceHeaders);
 
-function closingPrices(index) {
-  cardsContainers[index].classList.remove("open");
-  cardsContainers[index].classList.remove("conditionalOpen");
-  cardsContainers[index].classList.add("conditionalClose");
-  openPriceBtns[index].style.display = "block";
-  hidePriceBtns[index].style.display = "none";
-}
-openPriceBtns.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    openingPrices(index);
+//Implementacja
+openPriceBtns.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    cardsContainers[index].classList.add("open");
+    cardsContainers[index].classList.add("opening");
+    openPriceBtns[index].style.display = "none";
+    hidePriceBtns[index].style.display = "flex";
   });
 });
+// function openingPrices(index) {
+//   cardsContainers[index].classList.add("open");
+//   cardsContainers[index].classList.remove("conditionalClose");
+// }
 
-hidePriceBtns.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    closingPrices(index);
+hidePriceBtns.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    cardsContainers[index].classList.remove("open");
+    openPriceBtns[index].style.display = "flex";
+    hidePriceBtns[index].style.display = "none";
+    priceSection.scrollIntoView({
+      behavior: "smooth",
+    });
   });
 });
-// jQuery("#my_nanogallery").nanogallery2({
-//   thumbnailHoverEffect2: "imageGrayOn",
-//   galleryMaxRows: 2,
-//   galleryDisplayMode: "rows",
+// function closingPrices(index) {
+//   cardsContainers[index].classList.remove("open");
+//   cardsContainers[index].classList.remove("conditionalOpen");
+//   cardsContainers[index].classList.add("conditionalClose");
+//   openPriceBtns[index].style.display = "block";
+//   hidePriceBtns[index].style.display = "none";
+// }
+// openPriceBtns.forEach((button, index) => {
+//   button.addEventListener("click", () => {
+//     openingPrices(index);
+//   });
+// });
+
+// hidePriceBtns.forEach((button, index) => {
+//   button.addEventListener("click", () => {
+//     closingPrices(index);
+//   });
 // });
 
 // console.log(navItems);
