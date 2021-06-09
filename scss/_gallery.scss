@@ -1,6 +1,12 @@
 #gallery {
   width: 95%;
   margin: 0 auto;
+  h1 {
+    font-size: $fontH1;
+    font-family: $headerFamily;
+    text-align: center;
+    margin: 2rem 0;
+  }
   img {
     width: 100%;
     min-height: 100%;
@@ -8,6 +14,23 @@
     object-position: center;
   }
 }
+
+@media (min-width: 1200px) {
+  #gallery {
+    h1 {
+      font-size: $sectionHeader * 1.2;
+    }
+  }
+}
+
+@media (min-width: 1800px) {
+  #gallery {
+    h1 {
+      font-size: $sectionHeader * 1.4;
+    }
+  }
+}
+
 .gallery__wrapper {
   @include flex(row, center, stretch);
   flex-wrap: wrap;
@@ -110,13 +133,6 @@
   right: 1%;
   transform: translate(-1%, -40%);
 }
-
-// .fa-times {
-//   position: absolute;
-//   top: 1%;
-//   right: 3%;
-//   transform: translate(-3%, -1%);
-// }
 
 .gallery-thumbs {
   display: none;

@@ -582,11 +582,30 @@ li {
   margin: 0 auto;
 }
 
+#gallery h1 {
+  font-size: 2.4rem;
+  font-family: "Open Sans Condensed", sans-serif;
+  text-align: center;
+  margin: 2rem 0;
+}
+
 #gallery img {
   width: 100%;
   min-height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+@media (min-width: 1200px) {
+  #gallery h1 {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 1800px) {
+  #gallery h1 {
+    font-size: 7rem;
+  }
 }
 
 .gallery__wrapper {
