@@ -185,53 +185,104 @@ li {
 
 #about {
   width: 100%;
-  height: 100%;
   background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: stretch;
   align-items: center;
 }
 
+@media (min-width: 992px) {
+  #about {
+    flex-direction: row;
+    height: 100vh;
+  }
+}
+
 .about__description {
-  min-height: 160vh;
-  width: 80%;
+  min-height: 90vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: justify;
-  text-justify: inter-word;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 .about__description h1 {
-  font-size: 3rem;
+  font-size: 5rem;
   font-family: "Open Sans Condensed", sans-serif;
-  letter-spacing: 0.2rem;
-  font-weight: 600;
-  margin: 3rem 0;
+  margin-top: 2rem;
 }
 
 .about__description p {
-  letter-spacing: 0.08rem;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   padding: 2rem 0;
+  max-width: 80%;
+}
+
+.about__description span a {
+  color: #191919;
+  font-weight: 800;
+}
+
+.about__description span a:hover {
+  background-color: #696969;
 }
 
 .about__description .about__description--name {
   align-self: flex-end;
+  text-align: right;
   font-family: "Open Sans Condensed", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: 0.2rem;
-  margin: 2rem 0;
+  margin: 1rem 0;
+  margin-right: 10%;
+}
+
+@media (min-width: 768px) {
+  .about__description {
+    min-height: 60vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .about__description {
+    flex: 1 0 30%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .about__description h1 {
+    font-size: 6rem;
+  }
+  .about__description p {
+    font-size: 1.92rem;
+  }
+  .about__description .about__description--name {
+    font-size: 2.16rem;
+  }
+  .about__photo img {
+    object-position: top;
+  }
+}
+
+@media (min-width: 1800px) {
+  .about__description h1 {
+    font-size: 7rem;
+  }
+  .about__description p {
+    font-size: 2.24rem;
+  }
+  .about__description .about__description--name {
+    font-size: 2.52rem;
+  }
 }
 
 .about__photo {
-  width: 100%;
-  height: 100%;
+  min-height: 90vh;
 }
 
 .about__photo img {
@@ -240,63 +291,10 @@ li {
   object-fit: cover;
 }
 
-@media screen and (min-width: 920px) {
-  .about__description {
-    width: 70%;
-  }
-  .about__description h1 {
-    font-size: 3.6rem;
-  }
-  .about__description p {
-    font-size: 1.44rem;
-  }
-  .about__description .about__description--name {
-    font-size: 1.92rem;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  #about {
-    flex-direction: row;
-    height: 110vh;
-  }
-  .about__description {
-    flex: 1 1 40%;
-  }
-  .about__description h1 {
-    font-size: 4.2rem;
-  }
-  .about__description p {
-    width: 70%;
-    font-size: 1.68rem;
-  }
-  .about__description .about__description--name {
-    align-self: center;
-    text-align: center;
-    width: 30rem;
-    font-size: 2.24rem;
-  }
+@media (min-width: 992px) {
   .about__photo {
-    flex: 1 1 50%;
-  }
-  .about__photo img {
-    object-position: top;
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  .about__description {
-    flex: 1 1 40%;
-  }
-  .about__description h1 {
-    font-size: 4.8rem;
-  }
-  .about__description p {
-    width: 70%;
-    font-size: 1.92rem;
-  }
-  .about__description .about__description--name {
-    font-size: 2.56rem;
+    flex: 1 0 40%;
+    height: 100%;
   }
 }
 
@@ -373,7 +371,7 @@ li {
 
 .priceList h1 {
   color: #f5f5f5;
-  font-size: 3rem;
+  font-size: 5rem;
   font-family: "Open Sans Condensed", sans-serif;
   letter-spacing: 0.1rem;
   font-weight: 600;
@@ -406,7 +404,7 @@ li {
 .card--body {
   display: flex;
   flex-direction: column;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   letter-spacing: 0.08rem;
 }
 
@@ -415,7 +413,7 @@ li {
   letter-spacing: 0.1rem;
   font-weight: bolder;
   margin: 2rem 0;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   text-align: center;
 }
 
@@ -527,16 +525,16 @@ li {
 
 @media screen and (min-width: 1400px) {
   .card--body {
-    font-size: 1.44rem;
+    font-size: 1.92rem;
   }
   .card--body h3 {
-    font-size: 1.92rem;
+    font-size: 2.16rem;
   }
   .priceList__card > h2 {
     font-size: 2.4rem;
   }
   .priceList > h1 {
-    font-size: 3.6rem;
+    font-size: 6rem;
   }
   .card1 {
     margin-left: 20%;
@@ -732,7 +730,7 @@ li {
 #contact h2 {
   font-family: "Open Sans Condensed", sans-serif;
   letter-spacing: 0.1rem;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 .contact__wrapper {
@@ -804,7 +802,7 @@ li {
     height: 28vh;
   }
   #contact h2 {
-    font-size: 1.92rem;
+    font-size: 2.16rem;
   }
 }
 
