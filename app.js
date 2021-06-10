@@ -1,4 +1,3 @@
-
 // NAVIGATION
 //Zmienne
 const navigation = document.querySelector(".navigation__wrapper");
@@ -131,13 +130,11 @@ const allImages = 48;
 moreBtn.addEventListener("click", addElements);
 let currentImageNr = 13;
 
-
 function addElements() {
-  let allButtons = document.querySelectorAll('.more');
-  if(currentImageNr > allImages)
-    return;
+  let allButtons = document.querySelectorAll(".more");
+  if (currentImageNr > allImages) return;
   let currentMax = currentImageNr + 12;
-  for (let i = currentImageNr ; i < currentMax; i++) {
+  for (let i = currentImageNr; i < currentMax; i++) {
     if (i > allImages) {
       break;
     }
@@ -145,47 +142,51 @@ function addElements() {
     imageDiv.classList.add("regular-image");
     galleryContent.appendChild(imageDiv);
     imageDiv.innerHTML = `<img src="./img//img${i}.jpg" alt="Zdjęcie fryzury">`;
-    allButtons.forEach(btn => {
+    allButtons.forEach((btn) => {
       btn.style.display = "none";
-    })
+    });
   }
   currentImageNr = currentMax;
-  const btnMore = document.createElement('div');
-  btnMore.classList.add('more');
-  const textMore = document.createElement('p');
+  const btnMore = document.createElement("div");
+  btnMore.classList.add("more");
+  const textMore = document.createElement("p");
   btnMore.appendChild(textMore);
   textMore.innerText = "Więcej";
   galleryContent.appendChild(btnMore);
-  btnMore.addEventListener('click', addElements);
-  allButtons = document.querySelectorAll('.more');
+  btnMore.addEventListener("click", addElements);
+  allButtons = document.querySelectorAll(".more");
   allButtons[3].style.display = "none";
 }
 
 //Big image implementation
-const gallerySlider = document.querySelector('.gallery__slider');
-const galleryImage = document.querySelector('.gallery-image');
-const regularImages = document.querySelectorAll('.regular-image');
+const gallerySlider = document.querySelector(".gallery__slider");
+const smallImages = document.querySelectorAll(".small-image");
+const regularImages = document.querySelectorAll(".regular-image");
+const closeRegularGallery = document.querySelector(".fa-times-gallery");
+const bigImage = document.querySelector(".big-image");
 const mainContent = document.querySelector("main");
 const footerContent = document.querySelector("footer");
-const headerContent = document.querySelector('header');
-
-smallImages.forEach((image, index) => {
-  image.addEventListener("click", function () {
-    bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
-  });
-});
+const headerContent = document.querySelector("header");
 
 closeRegularGallery.addEventListener("click", function () {
-  gallery.classList.remove("active");
-  reguarGallery.style.display = "block";
+  gallerySlider.classList.remove("active");
+  mainContent.style.display = "block";
+  footerContent.style.display = "flex";
+  headerContent.style.display = "block";
 });
 
-regularImages.forEach((img,index) => {
-  img.addEventListener('click', () => {
-    gallerySlider.style.display = "flex";
-    console.log(gallerySlider);
+regularImages.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    gallerySlider.classList.add("active");
     mainContent.style.display = "none";
     footerContent.style.display = "none";
     headerContent.style.display = "none";
-  })
-})
+    bigImage.setAttribute("src", `./img/img${index + 1}.jpg`);
+  });
+});
+
+smallImages.forEach((image, index) => {
+  image.addEventListener("click", function () {
+    bigImage.setAttribute("src", `./img/img${index + 1}.jpg`);
+  });
+});
