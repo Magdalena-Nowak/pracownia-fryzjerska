@@ -796,6 +796,12 @@ li {
   }
 }
 
+@media (max-width: 768px) and (min-height: 780px) {
+  #contact {
+    min-height: 40vh;
+  }
+}
+
 .contact__wrapper {
   display: flex;
   flex-direction: column;

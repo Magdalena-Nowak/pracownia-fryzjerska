@@ -23,6 +23,12 @@
   }
 }
 
+@media (max-width: 768px) and (min-height: 780px) {
+  #contact {
+    min-height: 40vh;
+  }
+}
+
 .contact__wrapper {
   @include flex(column, center, flex-start);
   margin: 3rem 0;
