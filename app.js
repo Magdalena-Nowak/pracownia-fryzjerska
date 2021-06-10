@@ -1,5 +1,3 @@
-const mainContent = document.querySelector("main");
-const footerContent = document.querySelector("footer");
 
 // NAVIGATION
 //Zmienne
@@ -167,18 +165,20 @@ function addElements() {
 const gallerySlider = document.querySelector('.gallery__slider');
 const galleryImage = document.querySelector('.gallery-image');
 const regularImages = document.querySelectorAll('.regular-image');
+const mainContent = document.querySelector("main");
+const footerContent = document.querySelector("footer");
+const headerContent = document.querySelector('header');
 
+smallImages.forEach((image, index) => {
+  image.addEventListener("click", function () {
+    bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
+  });
+});
 
-// smallImages.forEach((image, index) => {
-//   image.addEventListener("click", function () {
-//     bigImage.setAttribute("src", `./images/img${index + 1}.jpg`);
-//   });
-// });
-
-// closeRegularGallery.addEventListener("click", function () {
-//   gallery.classList.remove("active");
-//   reguarGallery.style.display = "block";
-// });
+closeRegularGallery.addEventListener("click", function () {
+  gallery.classList.remove("active");
+  reguarGallery.style.display = "block";
+});
 
 regularImages.forEach((img,index) => {
   img.addEventListener('click', () => {
@@ -186,5 +186,6 @@ regularImages.forEach((img,index) => {
     console.log(gallerySlider);
     mainContent.style.display = "none";
     footerContent.style.display = "none";
+    headerContent.style.display = "none";
   })
 })
