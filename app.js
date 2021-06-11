@@ -126,10 +126,22 @@ const moreBtn = document.querySelector(".more");
 const galleryContent = document.querySelector(".gallery__wrapper");
 const allImages = 48;
 
+//Big image implementation
+const gallerySlider = document.querySelector(".gallery__slider");
+const smallImages = document.querySelectorAll(".small-image");
+const regularImages = document.querySelectorAll(".regular-image");
+const closeRegularGallery = document.querySelector(".fa-times-gallery");
+const bigImage = document.querySelector(".big-image");
+const mainContent = document.querySelector("main");
+const footerContent = document.querySelector("footer");
+const headerContent = document.querySelector("header");
+const rightBtn = document.querySelector(".fa-chevron-right");
+const leftBtn = document.querySelector(".fa-chevron-left");
+let imageNr;
+
 //Implementacja
 moreBtn.addEventListener("click", addElements);
 let currentImageNr = 13;
-
 function addElements() {
   let allButtons = document.querySelectorAll(".more");
   if (currentImageNr > allImages) return;
@@ -145,48 +157,78 @@ function addElements() {
     allButtons.forEach((btn) => {
       btn.style.display = "none";
     });
+    clickableRegularImages();
   }
   currentImageNr = currentMax;
-  const btnMore = document.createElement("div");
-  btnMore.classList.add("more");
-  const textMore = document.createElement("p");
-  btnMore.appendChild(textMore);
-  textMore.innerText = "Więcej";
-  galleryContent.appendChild(btnMore);
-  btnMore.addEventListener("click", addElements);
-  allButtons = document.querySelectorAll(".more");
-  allButtons[3].style.display = "none";
+  console.log(currentImageNr);
+  if (currentImageNr === allImages + 1) {
+    const btnMore = document.createElement("div");
+    btnMore.classList.add("more");
+    const textMore = document.createElement("p");
+    btnMore.appendChild(textMore);
+    textMore.innerText = "Zapraszam do kontaktu";
+    galleryContent.appendChild(btnMore);
+  } else {
+    const btnMore = document.createElement("div");
+    btnMore.classList.add("more");
+    const textMore = document.createElement("p");
+    btnMore.appendChild(textMore);
+    textMore.innerText = "Więcej";
+    galleryContent.appendChild(btnMore);
+    btnMore.addEventListener("click", addElements);
+  }
 }
-
-//Big image implementation
-const gallerySlider = document.querySelector(".gallery__slider");
-const smallImages = document.querySelectorAll(".small-image");
-const regularImages = document.querySelectorAll(".regular-image");
-const closeRegularGallery = document.querySelector(".fa-times-gallery");
-const bigImage = document.querySelector(".big-image");
-const mainContent = document.querySelector("main");
-const footerContent = document.querySelector("footer");
-const headerContent = document.querySelector("header");
 
 closeRegularGallery.addEventListener("click", function () {
   gallerySlider.classList.remove("active");
   mainContent.style.display = "block";
   footerContent.style.display = "flex";
   headerContent.style.display = "block";
-});
-
-regularImages.forEach((img, index) => {
-  img.addEventListener("click", () => {
-    gallerySlider.classList.add("active");
-    mainContent.style.display = "none";
-    footerContent.style.display = "none";
-    headerContent.style.display = "none";
-    bigImage.setAttribute("src", `./img/img${index + 1}.jpg`);
+  galleryContent.scrollIntoView({
+    behavior: "smooth",
   });
 });
-
-smallImages.forEach((image, index) => {
-  image.addEventListener("click", function () {
-    bigImage.setAttribute("src", `./img/img${index + 1}.jpg`);
+function clickableRegularImages() {
+  regularImages.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      imageNr = index;
+      gallerySlider.classList.add("active");
+      mainContent.style.display = "none";
+      footerContent.style.display = "none";
+      headerContent.style.display = "none";
+      bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
+      dynamicChangeImages();
+      handlingArrows();
+    });
   });
-});
+}
+function dynamicChangeImages() {
+  smallImages.forEach((image, index) => {
+    image.addEventListener("click", function () {
+      imageNr = index;
+      bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
+    });
+  });
+}
+
+function handlingArrows() {
+  rightBtn.addEventListener("click", function () {
+    if (imageNr >= smallImages.length - 1) {
+      imageNr = 0;
+      bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
+    } else {
+      imageNr++;
+      bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
+    }
+  });
+  leftBtn.addEventListener("click", function () {
+    if (imageNr <= 0) {
+      imageNr = smallImages.length - 1;
+      bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
+    } else {
+      imageNr--;
+      bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
+    }
+  });
+}
+// clickableRegularImages();
