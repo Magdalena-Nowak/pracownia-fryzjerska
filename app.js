@@ -3,10 +3,10 @@
 const navigation = document.querySelector(".navigation__wrapper");
 const navItems = document.querySelectorAll(".navigation__list li");
 const sections = document.querySelectorAll("#home section");
-const openNavBtn = document.querySelector(".appBar");
-const closeNavBtn = document.querySelector(".navigation__list--close");
+const openNavBtn = document.querySelector(".navigation__open-btn");
+const closeNavBtn = document.querySelector(".navigation__close-btn");
 const menuNav = document.querySelector("#home");
-const logoNav = document.querySelector(".navigation__logo");
+const logoNav = document.querySelector(".navigation__link");
 
 //Implementacja
 openNavBtn.addEventListener("click", openingNavigation);

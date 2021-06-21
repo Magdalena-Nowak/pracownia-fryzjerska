@@ -5,98 +5,18 @@
   background-color: $mainBlack;
   position: fixed;
   z-index: 1;
-  a {
-    display: block;
+  &__close-btn {
     cursor: pointer;
-    width: 60%;
-    height: 100%;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      pointer-events: none;
-    }
+    align-self: flex-end;
+    margin-bottom: 1.5rem;
   }
-}
-
-@media (min-width: 992px) {
-  .navigation {
-    a {
-      width: 40%;
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  .navigation {
-    height: 17vh;
-  }
-}
-
-@media (min-width: 1800px) {
-  .navigation {
-    height: 20vh;
-  }
-}
-
-.appBar {
-  position: absolute;
-  top: 50%;
-  right: 10%;
-  transform: translate(-10%, -50%);
-  cursor: pointer;
-  .fa-bars {
+  &__close-icon {
     opacity: 0.8;
     font-size: 3rem;
     color: $mainWhite;
     pointer-events: none;
   }
-}
-
-@media (min-width: 992px) {
-  .appBar {
-    display: none;
-  }
-}
-
-.navigation__wrapper {
-  height: 100vh;
-  width: 100%;
-  font-size: $fontH1;
-  color: $mainWhite;
-  font-family: $headerFamily;
-  position: absolute;
-  @include flex(row, flex-end, flex-start);
-  top: 0;
-  left: 0;
-  display: none;
-}
-
-@media (min-width: 992px) {
-  .navigation__wrapper {
-    height: 15vh;
-    display: flex;
-    align-items: center;
-  }
-}
-
-@media (min-width: 1200px) {
-  .navigation__wrapper {
-    height: 17vh;
-  }
-}
-
-@media (min-width: 1800px) {
-  .navigation__wrapper {
-    height: 20vh;
-  }
-}
-
-.navigation__list {
-  @include flex(column, center, stretch);
-  flex: 0 0 50%;
-  margin: 5rem 5rem;
-  li {
+  &__item {
     padding: 1.5rem 2rem;
     transition: all 0.6s ease-in-out;
     cursor: pointer;
@@ -104,52 +24,108 @@
       background-color: $hoverBg;
     }
   }
-}
-.navigation__list--close {
-  cursor: pointer;
-  align-self: flex-end;
-  margin-bottom: 1.5rem;
-  .fa-times {
+  &__link {
+    display: block;
+    cursor: pointer;
+    width: 60%;
+    height: 100%;
+  }
+  &__logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+  }
+  &__list {
+    @include flex(column, center, stretch);
+    flex: 0 0 50%;
+    margin: 5rem 5rem;
+  }
+  &__open-btn {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(-10%, -50%);
+    cursor: pointer;
+  }
+  &__open-icon {
     opacity: 0.8;
     font-size: 3rem;
     color: $mainWhite;
     pointer-events: none;
   }
-}
-
-@media (min-width: 992px) {
-  .navigation__list {
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    flex: 1 0 60%;
-    hr {
-      display: none;
-    }
-  }
-  #nav-about {
-    min-width: 10rem;
-  }
-  .navigation__list--close {
+  &__wrapper {
+    height: 100vh;
+    width: 100%;
+    font-size: $fontH1;
+    color: $mainWhite;
+    font-family: $headerFamily;
+    position: absolute;
+    @include flex(row, flex-end, flex-start);
+    top: 0;
+    left: 0;
     display: none;
-  }
-}
-
-@media (min-width: 1200px) {
-  .navigation__list {
-    font-size: $fontH1 * 1.2;
-  }
-}
-
-@media (min-width: 1800px) {
-  .navigation__list {
-    font-size: $fontH1 * 1.4;
-    li {
-      padding: 2rem 4rem;
-    }
   }
 }
 
 .active {
   display: flex;
+}
+
+@media (min-width: 992px) {
+  .navigation {
+    &__close-btn {
+      display: none;
+    }
+    &__item--longer {
+      min-width: 10rem;
+    }
+    &__line {
+      display: none;
+    }
+    &__link {
+      width: 40%;
+    }
+    &__list {
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      flex: 1 0 60%;
+    }
+    &__open-btn {
+      display: none;
+    }
+    &__wrapper {
+      height: 15vh;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .navigation {
+    height: 17vh;
+    &__list {
+      font-size: $fontH1 * 1.2;
+    }
+    &__wrapper {
+      height: 17vh;
+    }
+  }
+}
+
+@media (min-width: 1800px) {
+  .navigation {
+    height: 20vh;
+    &__wrapper {
+      height: 20vh;
+    }
+    &__list {
+      font-size: $fontH1 * 1.4;
+    }
+    &__item {
+      padding: 2rem 4rem;
+    }
+  }
 }
