@@ -1,7 +1,7 @@
 // NAVIGATION
 //Zmienne
 const navigation = document.querySelector(".navigation__wrapper");
-const navItems = document.querySelectorAll(".navigation__list li");
+const navItems = document.querySelectorAll(".navigation__item");
 const sections = document.querySelectorAll("#home section");
 const openNavBtn = document.querySelector(".navigation__open-btn");
 const closeNavBtn = document.querySelector(".navigation__close-btn");
@@ -45,13 +45,13 @@ logoNav.addEventListener("click", () => {
 
 //Zmienne
 
-const slideList = [
+const swipeList = [
   { img: "./img/image1-large.png" },
   { img: "./img/image2-large.png" },
   { img: "./img/image3-large.png" },
 ];
-const slideImage = document.querySelector(".slider__wrapper img");
-const slideBelts = document.querySelectorAll(".belt");
+const swipeImage = document.querySelector(".swiper__image");
+const swipeSlides = document.querySelectorAll(".swiper__slide");
 //Interfejs
 
 const time = 2000;
@@ -59,35 +59,35 @@ let active = 0;
 
 //Implementacje
 
-const autoChangeBelt = () => {
-  slideBelts.forEach((slide) => slide.classList.remove("active"));
-  slideBelts[active].classList.add("active");
+const autoChangeSlides = () => {
+  swipeSlides.forEach((swipe) => swipe.classList.remove("active"));
+  swipeSlides[active].classList.add("active");
 };
 
-const changeSlide = () => {
+const changeSwipe = () => {
   active++;
-  if (active === slideList.length) {
+  if (active === swipeList.length) {
     active = 0;
   }
-  slideImage.src = slideList[active].img;
-  autoChangeBelt();
+  swipeImage.src = swipeList[active].img;
+  autoChangeSlides();
 };
 
-let timeInterval = setInterval(changeSlide, time);
+let timeInterval = setInterval(changeSwipe, time);
 
-const changeBelt = () => {
-  slideBelts.forEach((belt, index) => {
-    belt.addEventListener("click", () => {
-      slideBelts.forEach((slide) => {
-        slide.classList.remove("active");
+const changeSlides = () => {
+  swipeSlides.forEach((slide, index) => {
+    slide.addEventListener("click", () => {
+      swipeBelts.forEach((swipe) => {
+        swipe.classList.remove("active");
       });
-      slideBelts[index].classList.add("active");
-      slideImage.src = slideList[index].img;
+      swipeSlides[index].classList.add("active");
+      swipeImage.src = swipeList[index].img;
     });
   });
 };
 
-changeBelt();
+changeSlides();
 
 // Prices
 // Zmienne
