@@ -1,50 +1,22 @@
-#about {
+.about {
   width: 100%;
-  height: 180vh;
+  height: 200vh;
   background-color: $mainWhite;
-  @include flex(column, stretch, center);
-}
-
-@media (min-width: 768px) {
-  #about {
-    height: 150vh;
-  }
-}
-
-@media (min-width: 992px) {
-  #about {
-    flex-direction: row;
-    height: 100vh;
-  }
-}
-@media (min-width: 1200px) and (max-height: 740px) {
-  #about {
-    height: 120vh;
-  }
-}
-.about__description {
-  height: 90vh;
-  width: 100%;
+  color: $mainBlack;
   @include flex(column, center, center);
-  text-align: justify;
-  h1 {
-    font-size: $sectionHeader;
-    font-family: $headerFamily;
-    margin-top: 2rem;
+  &__description {
+    margin: 1rem 0;
   }
-  p {
+  &__description-wrapper {
+    height: 100vh;
+    width: 100%;
+    @include flex(column, center, center);
+    text-align: justify;
     font-size: $fontText;
     padding: 2rem 0;
     max-width: 80%;
   }
-  span a {
-    color: $mainBlack;
-    font-weight: 800;
-    &:hover {
-      background-color: #696969;
-    }
-  }
-  .about__description--name {
+  &__description--name {
     align-self: flex-end;
     text-align: right;
     font-family: $headerFamily;
@@ -54,80 +26,98 @@
     margin: 1rem 0;
     margin-right: 10%;
   }
-}
-
-@media (min-width: 768px) {
-  .about__description {
-    height: 60vh;
+  &__header {
+    font-size: $sectionHeader;
+    font-family: $headerFamily;
+    margin-top: 2rem;
+  }
+  &__link {
+    color: $mainBlack;
+    font-weight: 800;
+    &:hover {
+      background-color: #696969;
+    }
+  }
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__photo-wrapper {
+    height: 100vh;
+    align-self: flex-end;
   }
 }
 
+// @media (min-width: 768px) {
+//   .about {
+//     height: 150vh;
+//     &__description-wrapper {
+//       height: 60vh;
+//     }
+//   }
+// }
+
 @media (min-width: 992px) {
-  .about__description {
-    flex: 1 0 30%;
+  .about {
+    flex-direction: row;
     height: 100vh;
+    &__description-wrapper {
+      flex: 1 0 30%;
+      height: 100vh;
+    }
+    &__photo-wrapper {
+      flex: 1 0 40%;
+      height: 100%;
+    }
   }
 }
 
 @media (min-width: 1200px) {
-  .about__description {
-    h1 {
-      font-size: $sectionHeader * 1.2;
-    }
-    p {
+  .about {
+    &__description-wrapper {
       font-size: $fontText * 1.2;
     }
-    .about__description--name {
+    &__description--name {
       font-size: $cardsBodyHeader * 1.2;
+    }
+    &__header {
+      font-size: $sectionHeader * 1.2;
+    }
+    &__photo {
+      object-position: top;
     }
   }
 }
 
 @media (min-width: 1800px) {
-  .about__description {
-    h1 {
+  .about {
+    &__header {
       font-size: $sectionHeader * 1.4;
     }
-    p {
+    &__description-wrapper {
       font-size: $fontText * 1.4;
     }
-    .about__description--name {
+    &__description--name {
       font-size: $cardsBodyHeader * 1.4;
     }
   }
 }
 
-.about__photo {
-  height: 90vh;
-  align-self: flex-end;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+@media (min-width: 320px) and (max-height: 500px) {
+  .about {
+    height: 260vh;
+    &__description-wrapper {
+      height: 160vh;
+    }
+    &__photo-wrapper {
+      height: 100vh;
+    }
   }
 }
 
-@media (min-width: 992px) {
-  .about__photo {
-    flex: 1 0 40%;
-    height: 100%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .about__photo img {
-    object-position: top;
-  }
-}
-
-@media (min-width: 992px) {
-  #about {
-    flex-direction: row;
-    height: 100vh;
-  }
-}
 @media (min-width: 1200px) and (max-height: 740px) {
-  #about {
+  .about {
     height: 120vh;
   }
 }
