@@ -91,10 +91,10 @@ changeSlides();
 
 // Prices
 // Zmienne
-const openPriceBtns = document.querySelectorAll(".body--uncover");
-const hidePriceBtns = document.querySelectorAll(".body--hide");
-const cardsContainers = document.querySelectorAll(".container");
-const priceCards = document.querySelectorAll(".priceList__card");
+const openPriceBtns = document.querySelectorAll(".price-list__reveal");
+const hidePriceBtns = document.querySelectorAll(".price-list__hide");
+const cardsContainers = document.querySelectorAll(".price-list__container");
+const priceCards = document.querySelectorAll(".price-list__card");
 const priceSection = document.querySelector("#prices");
 // console.log(priceHeaders);
 
