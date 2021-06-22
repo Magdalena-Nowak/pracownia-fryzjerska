@@ -122,28 +122,28 @@ hidePriceBtns.forEach((btn, index) => {
 //Gallery
 
 // Zmienne
-const moreBtn = document.querySelector(".more");
+const moreBtn = document.querySelector(".gallery__more");
 const galleryContent = document.querySelector(".gallery__wrapper");
 const allImages = 48;
 
 //Big image implementation
-const gallerySlider = document.querySelector(".gallery__slider");
-const smallImages = document.querySelectorAll(".small-image");
-const regularImages = document.querySelectorAll(".regular-image");
-const closeRegularGallery = document.querySelector(".fa-times-gallery");
-const bigImage = document.querySelector(".big-image");
+const gallerySlider = document.querySelector(".gallery__swiper");
+const smallImages = document.querySelectorAll(".gallery__thumb");
+const regularImages = document.querySelectorAll(".gallery__regular-image ");
+const closeRegularGallery = document.querySelector(".gallery_close-icon");
+const bigImage = document.querySelector(".gallery__big-wrapper");
 const mainContent = document.querySelector("main");
 const footerContent = document.querySelector("footer");
 const headerContent = document.querySelector("header");
-const rightBtn = document.querySelector(".fa-chevron-right");
-const leftBtn = document.querySelector(".fa-chevron-left");
+const rightBtn = document.querySelector(".gallery__right-icon");
+const leftBtn = document.querySelector(".gallery__left-icon");
 let imageNr;
 
 //Implementacja
 moreBtn.addEventListener("click", addElements);
 let currentImageNr = 13;
 function addElements() {
-  let allButtons = document.querySelectorAll(".more");
+  let allButtons = document.querySelectorAll(".gallery__more");
   if (currentImageNr > allImages) return;
   let currentMax = currentImageNr + 12;
   for (let i = currentImageNr; i < currentMax; i++) {
@@ -151,9 +151,9 @@ function addElements() {
       break;
     }
     const imageDiv = document.createElement("div");
-    imageDiv.classList.add("regular-image");
+    imageDiv.classList.add("gallery__regular-wrapper");
     galleryContent.appendChild(imageDiv);
-    imageDiv.innerHTML = `<img src="./img//img${i}.jpg" alt="Zdjęcie fryzury">`;
+    imageDiv.innerHTML = `<img class="gallery__regular-image" src="./img//img${i}.jpg" alt="Zdjęcie fryzury">`;
     allButtons.forEach((btn) => {
       btn.style.display = "none";
     });
@@ -163,15 +163,17 @@ function addElements() {
   console.log(currentImageNr);
   if (currentImageNr === allImages + 1) {
     const btnMore = document.createElement("div");
-    btnMore.classList.add("more");
+    btnMore.classList.add("gallery__more");
     const textMore = document.createElement("p");
+    textMore.classList.add("gallery__more-txt");
     btnMore.appendChild(textMore);
     textMore.innerText = "Zapraszam do kontaktu";
     galleryContent.appendChild(btnMore);
   } else {
     const btnMore = document.createElement("div");
-    btnMore.classList.add("more");
+    btnMore.classList.add("gallery__more");
     const textMore = document.createElement("p");
+    textMore.classList.add("gallery__more-txt");
     btnMore.appendChild(textMore);
     textMore.innerText = "Więcej";
     galleryContent.appendChild(btnMore);
@@ -231,4 +233,4 @@ function handlingArrows() {
     }
   });
 }
-// clickableRegularImages();
+clickableRegularImages();

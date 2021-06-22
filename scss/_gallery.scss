@@ -1,90 +1,212 @@
-#gallery {
+.gallery {
   width: 95%;
   margin: 0 auto;
-  h1 {
+  &__header {
+    color: $mainBlack;
     font-size: $fontH1;
     font-family: $headerFamily;
     text-align: center;
-    margin: 2rem 0;
+    margin: 4rem 0;
   }
-  img {
+  &__more {
+    background-color: $mainBlack;
+    color: $mainWhite;
+    @include flex(row, center, center);
+    font-size: 3rem;
+    font-family: $headerFamily;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &__more-txt {
+    padding: 5rem;
+  }
+  &__regular-image {
+    transition: all 1s ease-in-out;
     width: 100%;
     min-height: 100%;
     object-fit: cover;
     object-position: center;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  &__regular-wrapper,
+  &__more {
+    flex: 1 0 40%;
+    margin: 0.5rem;
+    overflow: hidden;
+  }
+  &__wrapper {
+    @include flex(row, center, stretch);
+    flex-wrap: wrap;
+  }
+  &__swiper {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    @include flex(column, center, center);
+    position: relative;
+    display: none;
+  }
+  &__close-icon,
+  &__left-icon,
+  &__right-icon {
+    color: white;
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  &__close-icon {
+    top: 2%;
+    right: 3%;
+    transform: translate(-3%, -2%);
+  }
+  &__big-image {
+    width: 75%;
+    height: 65%;
+  }
+  &__thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__thumbs {
+    display: none;
+    height: 20%;
+    width: 100%;
+    margin-top: 3rem;
+    @include flex(row, center, center);
+    overflow-x: scroll;
+  }
+  &__thumb {
+    width: 130px;
+    height: 100%;
+    cursor: pointer;
+    translate: all 0.6s ease-in-out;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &__swiper.active {
+    display: flex;
+  }
+
+  &__left-icon {
+    top: 40%;
+    left: 1%;
+    transform: translate(-1%, -40%);
+  }
+  &__right-icon {
+    top: 40%;
+    right: 1%;
+    transform: translate(-1%, -40%);
+  }
+}
+
+@media (min-width: 560px) {
+  .gallery {
+    &__regular-wrapper,
+    &__more {
+      flex: 1 0 30%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .gallery {
+    &__close-icon {
+      top: 5%;
+      right: 5%;
+      transform: translate(-5%, -5%);
+    }
+    &__right-icon {
+      top: 40%;
+      right: 10%;
+      transform: translate(-10%, -40%);
+    }
+    &__big-wrapper {
+      width: 55%;
+    }
+    &__big-image {
+      object-position: top;
+    }
+    &__left-icon {
+      top: 40%;
+      left: 10%;
+      transform: translate(-10%, -40%);
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .gallery {
+    &__regular-wrapper,
+    &__more {
+      flex: 1 0 20%;
+    }
+    &__close-icon,
+    &__right-icon,
+    &__left-icon {
+      font-size: 4rem;
+    }
+    &__big-image {
+      width: 45%;
+    }
+    &__left-icon {
+      top: 40%;
+      left: 20%;
+      transform: translate(-20%, -40%);
+    }
+    &__right-icon {
+      top: 40%;
+      right: 20%;
+      transform: translate(-20%, -40%);
+    }
   }
 }
 
 @media (min-width: 1200px) {
-  #gallery {
-    h1 {
+  .gallery {
+    &__header {
       font-size: $sectionHeader * 1.2;
+    }
+    &__close-icon,
+    &__right-icon,
+    &__left-icon {
+      font-size: 5rem;
+    }
+    &__big-wrapper {
+      width: 35%;
+      width: 60rem;
+      height: 70%;
     }
   }
 }
 
 @media (min-width: 1800px) {
-  #gallery {
-    h1 {
+  .gallery {
+    &__header {
       font-size: $sectionHeader * 1.4;
     }
-  }
-}
-
-.gallery__wrapper {
-  @include flex(row, center, stretch);
-  flex-wrap: wrap;
-}
-
-.regular-image,
-.more {
-  flex: 1 0 40%;
-  margin: 0.5rem;
-}
-
-@media (min-width: 560px) {
-  .regular-image,
-  .more {
-    flex: 1 0 30%;
-  }
-}
-
-@media (min-width: 960px) {
-  .regular-image,
-  .more {
-    flex: 1 0 20%;
-  }
-}
-
-@media (min-width: 1480px) {
-  .regular-image,
-  .more {
-    flex: 1 0 15%;
-  }
-}
-
-.regular-image {
-  cursor: pointer;
-  overflow: hidden;
-  img {
-    transition: all 1s ease-in-out;
-    &:hover {
-      transform: scale(1.2);
+    &__close-icon {
+      top: 2%;
+      right: 30%;
+      transform: translate(-30%, -2%);
     }
-  }
-}
-.more {
-  background-color: $mainBlack;
-  opacity: 0.95;
-  color: white;
-  @include flex(row, center, center);
-  font-size: 3rem;
-  font-family: $headerFamily;
-  cursor: pointer;
-  p {
-    padding: 5rem;
-  }
-  &:hover {
-    opacity: 0.8;
+    &__left-icon {
+      top: 40%;
+      left: 30%;
+      transform: translate(-30%, -40%);
+    }
+    &__right-icon {
+      top: 40%;
+      right: 30%;
+      transform: translate(-30%, -40%);
+    }
   }
 }

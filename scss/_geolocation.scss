@@ -1,7 +1,7 @@
-#geolocation {
+.geolocation {
   width: 100%;
   height: 80vh;
-  iframe {
+  &__iframe {
     width: 100%;
     height: 100%;
   }
