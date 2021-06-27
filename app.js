@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
 // NAVIGATION
 //Zmienne
 const navigation = document.querySelector(".navigation__wrapper");
@@ -100,7 +102,86 @@ const changeSlides = (e) => {
 window.addEventListener("click", changeSlides);
 
 changeSwipe();
+// About
 
+const descriptionWrapper = document.querySelector(
+  ".about__description-wrapper"
+);
+const photoWrapper = document.querySelector(".about__photo-wrapper");
+ScrollTrigger.matchMedia({
+  //small
+  "(max-width: 991px)": function () {
+    gsap.fromTo(
+      descriptionWrapper,
+      3,
+      { opacity: 0, y: "100%" },
+      {
+        opacity: 1,
+        y: "0%",
+        scrollTrigger: {
+          trigger: ".about",
+          start: "top 40%",
+          markers: true,
+        },
+        duration: 3,
+      }
+    );
+
+    gsap.fromTo(
+      photoWrapper,
+      4,
+      { x: "100%"},
+      {
+        x: "0%",
+        scrollTrigger: {
+          trigger: photoWrapper,
+          start: "top 40%",
+          markers: true,
+        },
+        duration: 3,
+      },
+      "-=3"
+    );
+  },
+  // large
+  "(min-width: 992px)": function () {
+    gsap.fromTo(
+      descriptionWrapper,
+      3,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: descriptionWrapper,
+          start: "top 20%",
+          markers: true,
+        },
+        duration: 3,
+      }
+    );
+
+    gsap.fromTo(
+      photoWrapper,
+      4,
+      { x: "100%"},
+      {
+        x: "0%",
+        scrollTrigger: {
+          trigger: descriptionWrapper,
+          start: "top 20%",
+          markers: true,
+        },
+        duration: 3,
+      },
+      "-=1"
+    );
+  },
+
+  all: function () {
+    // ScrollTriggers created here aren't associated with a particular media query,
+    // so they persist.
+  },
+});
 // Prices
 // Zmienne
 const openPriceBtns = document.querySelectorAll(".price-list__reveal");
