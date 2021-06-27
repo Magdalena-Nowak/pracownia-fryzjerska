@@ -51,16 +51,19 @@ const swipeList = [
   { img: "./img/image3-large.png" },
 ];
 const swipeImage = document.querySelector(".swiper__image");
-const swipeSlides = document.querySelectorAll(".swiper__slide");
+const swipeSlides = [...document.querySelectorAll(".swiper__slide")];
 //Interfejs
 
-const time = 2000;
+const time = 3000;
 let active = 0;
 
 //Implementacje
 
 const autoChangeSlides = () => {
-  swipeSlides.forEach((swipe) => swipe.classList.remove("active"));
+  const activeSlide = swipeSlides.findIndex((slide) =>
+    slide.classList.contains("active")
+  );
+  swipeSlides[activeSlide].classList.remove("active");
   swipeSlides[active].classList.add("active");
 };
 
@@ -74,20 +77,29 @@ const changeSwipe = () => {
 };
 
 let timeInterval = setInterval(changeSwipe, time);
+const swiperControllers = document.querySelectorAll(".swiper i");
 
-const changeSlides = () => {
-  swipeSlides.forEach((slide, index) => {
-    slide.addEventListener("click", () => {
-      swipeBelts.forEach((swipe) => {
-        swipe.classList.remove("active");
-      });
-      swipeSlides[index].classList.add("active");
-      swipeImage.src = swipeList[index].img;
-    });
-  });
+const changeSlides = (e) => {
+  if (
+    e.target.classList.contains("swiper__left-icon") ||
+    e.target.classList.contains("swiper__right-icon")
+  ) {
+    clearInterval(timeInterval);
+    e.target.classList.contains("swiper__left-icon") ? active-- : active++;
+    if (active === swipeList.length) {
+      active = 0;
+    } else if (active < 0) {
+      active = swipeList.length - 1;
+    }
+    swipeImage.src = swipeList[active].img;
+    autoChangeSlides();
+    timeInterval = setInterval(changeSwipe, time);
+  }
 };
 
-changeSlides();
+window.addEventListener("click", changeSlides);
+
+changeSwipe();
 
 // Prices
 // Zmienne
@@ -124,12 +136,13 @@ hidePriceBtns.forEach((btn, index) => {
 // Zmienne
 const moreBtn = document.querySelector(".gallery__more");
 const galleryContent = document.querySelector(".gallery__wrapper");
-const allImages = 48;
 
 //Big image implementation
 const gallerySlider = document.querySelector(".gallery__swiper");
 const smallImages = document.querySelectorAll(".gallery__thumb");
-const regularImages = document.querySelectorAll(".gallery__regular-image ");
+const regularImages = document.getElementsByClassName(
+  "gallery__regular-image "
+);
 const closeRegularGallery = document.querySelector(".gallery_close-icon");
 const bigImage = document.querySelector(".gallery__big-wrapper");
 const mainContent = document.querySelector("main");
@@ -137,6 +150,7 @@ const footerContent = document.querySelector("footer");
 const headerContent = document.querySelector("header");
 const rightBtn = document.querySelector(".gallery__right-icon");
 const leftBtn = document.querySelector(".gallery__left-icon");
+const allImages = regularImages.length - 1;
 let imageNr;
 
 //Implementacja
@@ -181,29 +195,29 @@ function addElements() {
   }
 }
 
-closeRegularGallery.addEventListener("click", function () {
-  gallerySlider.classList.remove("active");
-  mainContent.style.display = "block";
-  footerContent.style.display = "flex";
-  headerContent.style.display = "block";
-  galleryContent.scrollIntoView({
-    behavior: "smooth",
-  });
-});
-function clickableRegularImages() {
-  regularImages.forEach((img, index) => {
-    img.addEventListener("click", () => {
-      imageNr = index;
-      gallerySlider.classList.add("active");
-      mainContent.style.display = "none";
-      footerContent.style.display = "none";
-      headerContent.style.display = "none";
-      bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
-      dynamicChangeImages();
-      handlingArrows();
-    });
-  });
-}
+// closeRegularGallery.addEventListener("click", function () {
+//   gallerySlider.classList.remove("active");
+//   mainContent.style.display = "block";
+//   footerContent.style.display = "flex";
+//   headerContent.style.display = "block";
+//   galleryContent.scrollIntoView({
+//     behavior: "smooth",
+//   });
+// });
+// function clickableRegularImages() {
+//   regularImages.forEach((img, index) => {
+//     img.addEventListener("click", () => {
+//       imageNr = index;
+//       gallerySlider.classList.add("active");
+//       mainContent.style.display = "none";
+//       footerContent.style.display = "none";
+//       headerContent.style.display = "none";
+//       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
+//       dynamicChangeImages();
+//       handlingArrows();
+//     });
+//   });
+// }
 function dynamicChangeImages() {
   smallImages.forEach((image, index) => {
     image.addEventListener("click", function () {
@@ -233,4 +247,4 @@ function handlingArrows() {
     }
   });
 }
-clickableRegularImages();
+// clickableRegularImages();

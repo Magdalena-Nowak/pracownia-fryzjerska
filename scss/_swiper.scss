@@ -27,6 +27,29 @@
     border-radius: 5rem;
     cursor: pointer;
   }
+  &__icon {
+    color: black;
+  }
+  &__left-icon,
+  &__right-icon {
+    position: absolute;
+    color: black;
+    font-size: 6rem;
+    opacity: 0.8;
+    top: 50%;
+    // transform: translateY(-50%);
+    cursor: pointer;
+    &:hover {
+      color: black;
+      opacity: 1;
+    }
+  }
+  &__left-icon {
+    left: 0;
+  }
+  &__right-icon {
+    right: 0;
+  }
   &__slide.active {
     background-color: rgb(42, 42, 42);
   }
