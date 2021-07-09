@@ -31,6 +31,7 @@ const rightBtn = document.querySelector(".gallery__right-icon");
 const leftBtn = document.querySelector(".gallery__left-icon");
 const sectionAbout = document.querySelector(".about");
 const allImages = regularImages.length - 1;
+const thumbsGallery = document.querySelector(".gallery__thumbs");
 let imageNr;
 let currentImageNr = 6;
 let more = 0;
@@ -133,7 +134,7 @@ ScrollTrigger.matchMedia({
         x: "0%",
         scrollTrigger: {
           trigger: sectionAbout,
-          start: "top 50%",
+          start: "0% 50%",
         },
         duration: 3,
       }
@@ -146,7 +147,7 @@ ScrollTrigger.matchMedia({
         x: "0%",
         scrollTrigger: {
           trigger: photoWrapper,
-          start: "top 50%",
+          start: "-20% 50%",
         },
         duration: 6,
       },
@@ -237,8 +238,7 @@ function galleryExtend() {
         duration: 1,
         scrollTrigger: {
           trigger: div,
-          start: "top 50%",
-          end: "-10 top",
+          start: "top 30%",
         },
       }
     );
@@ -281,6 +281,7 @@ function clickableRegularImages() {
       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
       dynamicChangeImages();
       handlingArrows();
+      creatingSwiper();
     });
   });
 }
@@ -305,7 +306,7 @@ function handlingArrows() {
       imageNr++;
       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
     }
-    changingPhotoOrder();
+    // changingPhotoOrder();
   });
   leftBtn.addEventListener("click", function () {
     if (imageNr <= 0) {
@@ -319,10 +320,19 @@ function handlingArrows() {
   });
 }
 
-function changingPhotoOrder(imageNr) {
-  if(imageNr) {
-  imageOrder = 25;
-  bigImage.style.order = imageOrder;
-  console.log(imageOrder);
+// function changingPhotoOrder(imageNr) {
+//   if (imageNr) {
+//     imageOrder = 25;
+//     bigImage.style.order = imageOrder;
+//     console.log(imageOrder);
+//   }
+// }
+
+function creatingSwiper() {
+  for (let i = 0; i < 48; i++) {
+    let thumbImage = document.createElement("img");
+    thumbImage.classList.add("gallery__thumb");
+    thumbImage.setAttribute("src", `./img/img${i + 1}.jpg`);
+    thumbsGallery.appendChild(thumbImage);
   }
 }
