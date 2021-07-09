@@ -1,6 +1,5 @@
 .about {
   width: 100%;
-  height: 300vh;
   background-color: $mainWhite;
   color: $mainBlack;
   @include flex(column, center, center);
@@ -8,7 +7,6 @@
     margin: 1rem 0;
   }
   &__description-wrapper {
-    height: 200vh;
     width: 100%;
     @include flex(column, center, center);
     text-align: justify;
@@ -45,98 +43,55 @@
     object-position: top;
   }
   &__photo-wrapper {
-    height: 100vh;
     width: 100%;
     align-self: flex-end;
   }
 }
 
-// @media (max-width: 320px) and (max-height: 500px) {
-//   .about {
-//     height: 260vh;
-//     &__description-wrapper {
-//       height: 160vh;
-//     }
-//     &__photo-wrapper {
-//       height: 100vh;
-//     }
-//   }
-// }
-
-@media (min-width: 320px) and (min-height: 500px) {
+@media (min-width: 520px) {
   .about {
-    height: 230vh;
     &__description-wrapper {
-      height: 130vh;
+      padding: 5rem 2rem;
     }
-  }
-}
-
-@media (min-width: 320px) and (min-height: 550px) {
-  .about {
-    height: 225vh;
-    &__description-wrapper {
-      height: 125vh;
+    &__header {
+      padding-bottom: 2rem;
     }
-  }
-}
-
-@media (min-width: 360px) and (min-height: 600px) {
-  .about {
-    height: 215vh;
-    &__description-wrapper {
-      height: 115vh;
+    &__description {
+      padding: 1rem 0;
     }
-  }
-}
-
-@media (min-width: 500px) and (min-height: 600px) {
-  .about {
-    height: 200vh;
-    &__description-wrapper {
+    &__photo-wrapper {
       height: 100vh;
     }
   }
 }
-@media (min-width: 600px) and (min-height: 700px) {
+
+@media (min-width: 700px) {
   .about {
-    height: 180vh;
     &__description-wrapper {
-      height: 80vh;
+      width: 60%;
     }
   }
 }
 
-// @media (min-width: 768px) {
-//   .about {
-//     height: 150vh;
-//     &__description-wrapper {
-//       height: 60vh;
-//     }
-//   }
-// }
-
 @media (min-width: 992px) {
   .about {
+    height: 100vh;
     flex-direction: row;
-    height: 110vh;
     &__description {
-      margin: 2rem 0;
+      padding: 2rem 0;
     }
     &__header {
-      margin-bottom: 5rem;
+      padding-bottom: 5rem;
     }
     &__description--name {
-      margin: 3rem 0;
+      padding: 3rem 0;
     }
     &__description-wrapper {
       flex: 1 0 30%;
-      height: 110vh;
       padding: 0 4rem;
     }
     &__photo-wrapper {
       flex: 1 0 40%;
-      height: 100%;
     }
   }
 }
@@ -168,21 +123,6 @@
     }
     &__description--name {
       font-size: $cardsBodyHeader * 1.4;
-    }
-  }
-}
-
-@media (min-width: 1800px) and (min-height: 1000px) {
-  .about {
-    height: 100vh;
-    &__desription-wrapper{
-      height: 100vh;
-    }
-    &__photo-wrapper {
-      height: 100vh;
-    }
-    &__description {
-      margin: 4rem 10rem;
     }
   }
 }

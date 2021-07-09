@@ -6,7 +6,7 @@
   &__body {
     @include flex(column, space-between, stretch);
     font-size: $priceText;
-    width: 90%;
+    width: 98%;
     margin: 2rem auto;
   }
   &__body-header {
@@ -17,9 +17,9 @@
   }
   &__card {
     background-color: $mainWhite;
-    margin: 1rem 2rem;
+    margin: 1rem 1.5rem;
     padding: 2rem 1.5rem;
-    @include flex(column, space-between, center);
+    @include flex(column, space-between, stretch);
     transition: all 2s ease-in-out;
   }
   &__container {
@@ -45,14 +45,14 @@
   &__price {
     font-family: $headerFamily;
     font-weight: 700;
-    padding: 0 1rem;
+    // padding: 0 1rem;
   }
   &__reveal,
   &__hide {
     cursor: pointer;
     opacity: 0.8;
-    margin-top: 1.5rem;
-    // align-self: flex-end;
+    margin-top: 0.5rem;
+    align-self: flex-end;
     // padding: 1rem 2rem;
   }
   &__hide {

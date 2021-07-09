@@ -243,7 +243,7 @@ function galleryExtend() {
       }
     );
     const newImage = document.createElement("img");
-    const imageSrc = newImage.setAttribute("src", `./img//img${i + 1}t.jpg`);
+    const imageSrc = newImage.setAttribute("src", `./img//img${i + 1}.jpg`);
     newImage.classList.add("gallery__regular-image");
     div.appendChild(newImage);
     more += 1;
@@ -278,7 +278,7 @@ function clickableRegularImages() {
       mainContent.style.display = "none";
       footerContent.style.display = "none";
       headerContent.style.display = "none";
-      bigImage.setAttribute("src", `./img/img${imageNr + 1}t.jpg`);
+      bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
       dynamicChangeImages();
       handlingArrows();
     });

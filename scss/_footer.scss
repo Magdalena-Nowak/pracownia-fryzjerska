@@ -1,14 +1,13 @@
 .contact {
   background-color: $mainBlack;
   color: $mainWhite;
-  min-height: 70vh;
+  min-height: min-content;
   @include flex(column, center, center);
   &__copy-rights {
     font-size: $priceText;
     opacity: 0.8;
     width: 100%;
-    min-height: 20vh;
-    max-height: 30vh;
+    padding: 1.5rem 0;
     background-color: $hoverBg;
     @include flex(column, center, center);
   }
@@ -57,11 +56,6 @@
 
 @media (min-width: 768px) {
   .contact {
-    min-height: 50vh;
-    &__copy-rights {
-      min-height: 10vh;
-      max-height: 15vh;
-    }
     &__text-span {
       display: inline;
     }
@@ -84,7 +78,7 @@
 
 @media (min-width: 1200px) {
   .contact {
-    min-height: 30vh;
+    // min-height: 30vh;
     &__wrapper {
       flex-wrap: nowrap;
     }
@@ -100,11 +94,11 @@
   }
 }
 
-@media (max-width: 768px) and (min-height: 780px) {
-  .contact {
-    min-height: 40vh;
-  }
-}
+// @media (max-width: 768px) and (min-height: 780px) {
+//   .contact {
+//     min-height: 40vh;
+//   }
+// }
 
 @media (min-width: 1800px) {
   .contact {
