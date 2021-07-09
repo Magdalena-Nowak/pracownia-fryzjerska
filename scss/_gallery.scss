@@ -132,6 +132,13 @@
     }
   }
 }
+@media (min-width: 576px) {
+  .gallery {
+    &__header {
+      font-size: $sectionHeader * 1.2;
+    }
+  }
+}
 
 @media (min-width: 768px) {
   .gallery {
@@ -155,6 +162,9 @@
       top: 40%;
       left: 10%;
       transform: translate(-10%, -40%);
+    }
+    &__header {
+      font-size: $sectionHeader * 1.4;
     }
   }
 }
@@ -189,7 +199,7 @@
 @media (min-width: 1200px) {
   .gallery {
     &__header {
-      font-size: $sectionHeader * 1.2;
+      font-size: $sectionHeader * 1.6;
     }
     &__close-icon,
     &__right-icon,
@@ -223,7 +233,7 @@
 @media (min-width: 1800px) {
   .gallery {
     &__header {
-      font-size: $sectionHeader * 1.4;
+      font-size: $sectionHeader * 1.8;
     }
     &__close-icon {
       top: 2%;

@@ -20,6 +20,7 @@
     padding: 0.5rem 1rem;
     transition: all 0.6s ease-in-out;
     cursor: pointer;
+    font-size: $fontH1;
     &:hover {
       background-color: $hoverBg;
     }
@@ -36,8 +37,7 @@
     object-fit: contain;
   }
   &__list {
-    @include flex(column, center, stretch);
-    flex: 0 0 50%;
+    @include flex(column, flex-start, stretch);
     margin: 5rem 5rem;
   }
   &__open-btn {
@@ -56,11 +56,10 @@
   &__wrapper {
     height: 100vh;
     width: 100%;
-    font-size: $fontH1;
     color: $mainWhite;
     font-family: $headerFamily;
     position: absolute;
-    @include flex(row, flex-end, flex-start);
+    @include flex(column, center, stretch);
     top: 0;
     left: 0;
     display: none;
@@ -71,25 +70,52 @@
   display: flex;
 }
 
+@media (min-width: 576px) {
+  .navigation {
+    &__close-icon,
+    &__open-icon {
+      font-size: $iconSize;
+    }
+    &__item {
+      padding: 1.5rem 2rem;
+      font-size: $fontH1 * 1.2;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .navigation {
+    &__close-icon,
+    &__open-icon {
+      font-size: $iconSize * 1.2;
+    }
+    &__item {
+      font-size: $fontH1 * 1.4;
+    }
+  }
+}
+
 @media (min-width: 992px) {
   .navigation {
+    @include flex(row, flex-start, center);
     &__close-btn {
       display: none;
-    }
-    &__item--longer {
-      min-width: 10rem;
     }
     &__line {
       display: none;
     }
-    &__link {
-      width: 40%;
+    &__item {
+      min-width: 10rem;
+      padding: 1rem 0;
+      @include flex(row, center, center);
     }
     &__list {
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
-      flex: 1 0 60%;
+      @include flex(row, space-around, center);
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      right: 20%;
+      transform: translate(-10%, -50%);
     }
     &__open-btn {
       display: none;
@@ -97,7 +123,7 @@
     &__wrapper {
       height: 15vh;
       display: flex;
-      align-items: center;
+      position: relative;
     }
   }
 }
@@ -106,10 +132,21 @@
   .navigation {
     height: 17vh;
     &__list {
-      font-size: $fontH1 * 1.2;
+      font-size: $fontH1 * 1.4;
     }
     &__wrapper {
       height: 17vh;
+    }
+    &__close-icon,
+    &__open-icon {
+      font-size: $iconSize * 1.4;
+    }
+    &__item {
+      font-size: $fontH1 * 1.6;
+      padding: 1.5rem 1rem;
+    }
+    &__link {
+      width: 80%;
     }
   }
 }
@@ -121,10 +158,38 @@
       height: 20vh;
     }
     &__list {
-      font-size: $fontH1 * 1.4;
+      font-size: $fontH1 * 1.6;
+    }
+    &__close-icon,
+    &__open-icon {
+      font-size: $iconSize * 1.6;
     }
     &__item {
-      padding: 2rem 4rem;
+      font-size: $fontH1 * 1.8;
+      min-width: 15rem;
+    }
+  }
+}
+
+@media (min-height: 460px) and (max-width: 991px) {
+  .navigation {
+    &__item {
+      padding: 1rem 2rem;
+    }
+    &__wrapper {
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+    &__list {
+      width: 50%;
+    }
+  }
+}
+
+@media (min-height: 640px) and (min-width: 700px) {
+  .navigation {
+    &__list {
+      width: 40%;
     }
   }
 }

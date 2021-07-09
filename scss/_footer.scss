@@ -2,7 +2,7 @@
   background-color: $mainBlack;
   color: $mainWhite;
   min-height: min-content;
-  @include flex(column, center, center);
+  @include flex(column, space-between, center);
   &__copy-rights {
     font-size: $priceText;
     opacity: 0.8;
@@ -40,7 +40,7 @@
   &__info-header {
     font-family: $headerFamily;
     letter-spacing: 0.1rem;
-    font-size: 2rem;
+    font-size: $fontH1;
     margin-bottom: 0.5rem;
     font-weight: 700;
   }
@@ -51,6 +51,24 @@
   &__info-text {
     font-size: $priceText;
     margin: 1.5rem 0;
+  }
+}
+
+@media (min-width: 576px) {
+  .contact {
+    &__copy-rights,
+    &__info-text {
+      font-size: $priceText * 1.2;
+    }
+    &__social-item {
+      font-size: $iconSize * 1.2;
+    }
+    &__info-header {
+      font-size: $fontH1 * 1.2;
+    }
+    &__info-icon {
+      font-size: $cardsHeader * 1.2;
+    }
   }
 }
 
@@ -67,49 +85,66 @@
       padding: 0 5rem;
       flex: 1 0 40%;
     }
-  }
-}
-
-@media (min-width: 992px) {
-  .contact {
-    min-height: 40vh;
+    &__copy-rights,
+    &__info-text {
+      font-size: $priceText * 1.4;
+    }
+    &__social-item {
+      font-size: $iconSize * 1.4;
+    }
+    &__info-header {
+      font-size: $fontH1 * 1.4;
+    }
+    &__info-icon {
+      font-size: $cardsHeader * 1.4;
+    }
   }
 }
 
 @media (min-width: 1200px) {
   .contact {
-    // min-height: 30vh;
     &__wrapper {
       flex-wrap: nowrap;
     }
     &__info-header {
-      font-size: 2.4rem;
+      font-size: $fontH1 * 1.6;
     }
     &__info-icon {
-      font-size: $cardsHeader * 1.2;
+      font-size: $cardsHeader * 1.6;
     }
     &__info-text {
       font-size: $priceText * 1.2;
     }
+    &__copy-rights,
+    &__info-text {
+      font-size: $priceText * 1.6;
+    }
+    &__copy-rights {
+      padding: 2.5rem 0;
+    }
+    &__social-item {
+      font-size: $iconSize * 1.6;
+    }
   }
 }
-
-// @media (max-width: 768px) and (min-height: 780px) {
-//   .contact {
-//     min-height: 40vh;
-//   }
-// }
 
 @media (min-width: 1800px) {
   .contact {
     &__info-header {
-      font-size: 2.8rem;
+      font-size: $fontH1 * 1.8;
     }
     &__info-icon {
-      font-size: $cardsHeader * 1.4;
+      font-size: $cardsHeader * 1.8;
     }
     &__info-text {
-      font-size: $priceText * 1.4;
+      font-size: $priceText * 1.6;
+    }
+    &__copy-rights,
+    &__info-text {
+      font-size: $priceText * 1.8;
+    }
+    &__social-item {
+      font-size: $iconSize * 1.8;
     }
   }
 }

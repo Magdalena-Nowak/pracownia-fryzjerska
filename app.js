@@ -222,7 +222,7 @@ ScrollTrigger.matchMedia({
 //GALLERY
 
 function galleryExtend() {
-  for (let i = 0; i < 51; i++) {
+  for (let i = 0; i < 48; i++) {
     const div = document.createElement("div");
     div.classList.add("gallery__regular-wrapper");
     let parent = gallery.querySelector(".gallery__wrapper");

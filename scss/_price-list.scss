@@ -53,7 +53,6 @@
     opacity: 0.8;
     margin-top: 0.5rem;
     align-self: flex-end;
-    // padding: 1rem 2rem;
   }
   &__hide {
     display: none;
@@ -67,41 +66,94 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 576px) {
   .price-list {
-    flex-direction: row;
-    flex-wrap: wrap;
     &__body {
       font-size: $priceText * 1.2;
     }
     &__body-header {
       font-size: $cardsBodyHeader * 1.2;
     }
-    &__card--children {
-      width: 35%;
-      margin-right: 10%;
-      justify-content: flex-start;
-    }
-    &__card--man {
-      width: 35%;
-      margin-left: 10%;
-    }
-    &__card--woman {
-      order: 3;
-    }
-    &__container {
-      display: flex;
-    }
     &__for {
       font-size: $cardsHeader * 1.2;
     }
     &__header {
       font-size: $sectionHeader * 1.2;
+    }
+    &__reveal-icon,
+    &__hide-icon {
+      font-size: $iconSize;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .price-list {
+    &__body {
+      font-size: $priceText * 1.4;
+    }
+    &__body-header {
+      font-size: $cardsBodyHeader * 1.4;
+    }
+    &__card {
+      padding: 3rem 2rem;
+      margin: 4rem 10rem;
+    }
+    &__for {
+      font-size: $cardsHeader * 1.4;
+    }
+    &__header {
+      font-size: $sectionHeader * 1.4;
+    }
+    &__reveal-icon,
+    &__hide-icon {
+      font-size: $iconSize * 1.2;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .price-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    &__body {
+      font-size: $priceText * 1.6;
+    }
+    &__body-header {
+      font-size: $cardsBodyHeader * 1.6;
+    }
+    &__card--children {
+      width: 32%;
+      // margin-right: 10%;
+      margin: 0;
+      justify-content: flex-start;
+    }
+    &__card--man {
+      width: 32%;
+      margin: 0;
+      margin-right: 8%;
+    }
+    &__card--woman {
+      order: 3;
+      width: 72.5%;
+    }
+    &__container {
+      display: flex;
+    }
+    &__for {
+      font-size: $cardsHeader * 1.6;
+    }
+    &__header {
+      font-size: $sectionHeader * 1.6;
       width: 100%;
     }
     &__reveal,
     &__hide {
       display: none;
+    }
+    &__reveal-icon,
+    &__hide-icon {
+      font-size: $iconSize * 1.4;
     }
   }
 }
@@ -119,7 +171,8 @@
 @media (min-width: 1800px) {
   .price-list {
     &__header {
-      font-size: $sectionHeader * 1.4;
+      font-size: $sectionHeader * 1.8;
+      padding: 2rem 0;
     }
     &__card-header {
       font-size: $cardsHeader * 1.4;
@@ -128,11 +181,17 @@
       font-size: $priceText * 1.4;
     }
     &__body-header {
-      font-size: $cardsBodyHeader * 1.4;
+      font-size: $cardsBodyHeader * 1.8;
     }
     &__note {
       margin: 2rem 0;
       font-size: 1.2rem;
+    }
+    &__body {
+      font-size: $priceText * 1.8;
+    }
+    &__for {
+      font-size: $cardsHeader * 1.8;
     }
   }
 }

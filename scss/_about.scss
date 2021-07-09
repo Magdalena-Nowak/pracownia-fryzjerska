@@ -65,38 +65,7 @@
   }
 }
 
-@media (min-width: 700px) {
-  .about {
-    &__description-wrapper {
-      width: 60%;
-    }
-  }
-}
-
-@media (min-width: 992px) {
-  .about {
-    height: 100vh;
-    flex-direction: row;
-    &__description {
-      padding: 2rem 0;
-    }
-    &__header {
-      padding-bottom: 5rem;
-    }
-    &__description--name {
-      padding: 3rem 0;
-    }
-    &__description-wrapper {
-      flex: 1 0 30%;
-      padding: 0 4rem;
-    }
-    &__photo-wrapper {
-      flex: 1 0 40%;
-    }
-  }
-}
-
-@media (min-width: 1200px) {
+@media (min-width: 576px) {
   .about {
     &__description-wrapper {
       font-size: $fontText * 1.2;
@@ -107,6 +76,60 @@
     &__header {
       font-size: $sectionHeader * 1.2;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .about {
+    &__description-wrapper {
+      font-size: $fontText * 1.4;
+      width: 75%;
+    }
+    &__description--name {
+      font-size: $cardsBodyHeader * 1.4;
+    }
+    &__header {
+      font-size: $sectionHeader * 1.4;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .about {
+    height: 100vh;
+    flex-direction: row;
+    &__description {
+      padding: 0;
+    }
+    &__header {
+      padding-bottom: 0;
+    }
+    &__description--name {
+      padding: 3rem 0;
+    }
+    &__description-wrapper {
+      // height: 100%;
+      flex: 1 0 30%;
+      padding: 0 4rem;
+    }
+    &__photo-wrapper {
+      flex: 1 0 40%;
+      height: 100%;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .about {
+    &__description-wrapper {
+      font-size: $fontText * 1.6;
+    }
+    &__description--name {
+      font-size: $cardsBodyHeader * 1.6;
+    }
+    &__header {
+      font-size: $sectionHeader * 1.6;
+    }
     &__photo {
       object-position: top;
     }
@@ -116,13 +139,13 @@
 @media (min-width: 1800px) {
   .about {
     &__header {
-      font-size: $sectionHeader * 1.4;
+      font-size: $sectionHeader * 1.8;
     }
     &__description-wrapper {
-      font-size: $fontText * 1.4;
+      font-size: $fontText * 1.8;
     }
     &__description--name {
-      font-size: $cardsBodyHeader * 1.4;
+      font-size: $cardsBodyHeader * 1.8;
     }
   }
 }
