@@ -17,20 +17,19 @@
   }
   &__card {
     background-color: $mainWhite;
-    width: 80%;
-    margin: 2rem auto;
-    @include flex(column, space-between, stretch);
+    margin: 1rem 2rem;
+    padding: 2rem 1.5rem;
+    @include flex(column, space-between, center);
     transition: all 2s ease-in-out;
   }
   &__container {
-    flex-direction: column;
+    @include flex(column, space-between, center);
     display: none;
   }
   &__for {
     font-family: $headerFamily;
     letter-spacing: 0.1rem;
     text-align: center;
-    margin-top: 2rem;
     font-size: $cardsHeader;
   }
   &__header {
@@ -50,17 +49,21 @@
   }
   &__reveal,
   &__hide {
-    font-size: 4rem;
     cursor: pointer;
     opacity: 0.8;
-    align-self: flex-end;
-    padding: 1rem 2rem;
+    margin-top: 1.5rem;
+    // align-self: flex-end;
+    // padding: 1rem 2rem;
   }
   &__hide {
     display: none;
   }
   &__reveal-icon {
     pointer-events: none;
+    font-size: $iconSize * 0.8;
+  }
+  &__hide-icon {
+    font-size: $iconSize * 0.8;
   }
 }
 
@@ -131,33 +134,5 @@
       margin: 2rem 0;
       font-size: 1.2rem;
     }
-  }
-}
-
-.open {
-  display: flex;
-}
-.opening {
-  animation: openingContainer 1.5s normal forwards linear;
-}
-.closing {
-  animation: closingContainer 1.5s normal forwards linear;
-}
-
-@keyframes openingContainer {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes closingContainer {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
   }
 }
