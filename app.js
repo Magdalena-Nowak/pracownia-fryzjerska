@@ -49,20 +49,20 @@ function openingNavigation() {
   navigation.classList.add("active");
   navigation.style.backgroundColor = "#191919";
   mainContent.style.display = "none";
-  footerContent.style.display = "none";
+  footerContent.style.display = "flex";
 }
 
 function closingNavigation() {
   navigation.classList.remove("active");
   mainContent.style.display = "block";
-  footerContent.style.display = "block";
+  footerContent.style.display = "flex";
 }
 
 navItems.forEach((item, index) => {
   item.addEventListener("click", () => {
     navigation.classList.remove("active");
     mainContent.style.display = "block";
-    footerContent.style.display = "block";
+    footerContent.style.display = "flex";
     sections[index].scrollIntoView({
       behavior: "smooth",
     });
@@ -226,9 +226,9 @@ function galleryExtend() {
   for (let i = 0; i < 48; i++) {
     const div = document.createElement("div");
     div.classList.add("gallery__regular-wrapper");
-    let parent = gallery.querySelector(".gallery__wrapper");
-    let parentLastChild = parent.lastElementChild;
-    parent.insertBefore(div, parentLastChild);
+    // let parent = gallery.querySelector(".gallery__wrapper");
+    // let parentLastChild = parent.lastElementChild;
+    // parent.insertBefore(div, parentLastChild);
     galleryContent.appendChild(div);
     gsap.fromTo(
       div,
@@ -242,11 +242,11 @@ function galleryExtend() {
         },
       }
     );
-    const newImage = document.createElement("img");
-    const imageSrc = newImage.setAttribute("src", `./img//img${i + 1}.jpg`);
-    newImage.classList.add("gallery__regular-image");
-    div.appendChild(newImage);
-    more += 1;
+    const image = document.createElement("img");
+    image.setAttribute("src", `./img//img${i + 1}.jpg`);
+    image.classList.add("gallery__regular-image");
+    div.appendChild(image);
+    // more += 1;
     regularImagesArray.push(div);
     // }
     clickableRegularImages();
@@ -280,7 +280,7 @@ function clickableRegularImages() {
       headerContent.style.display = "none";
       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
       dynamicChangeImages();
-      handlingArrows();
+      // handlingArrows();
       creatingSwiper();
     });
   });
@@ -288,11 +288,12 @@ function clickableRegularImages() {
 
 //console.log(regularImagesArray);
 
+const thumbImages = [];
+
 function dynamicChangeImages() {
-  smallImages.forEach((image, index) => {
+  thumbImages.forEach((image, index) => {
     image.addEventListener("click", function () {
-      imageNr = index;
-      bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
+      bigImage.setAttribute("src", `./img/img${index + 1}.jpg`);
     });
   });
 }
@@ -316,23 +317,16 @@ function handlingArrows() {
       imageNr--;
       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
     }
-    changingPhotoOrder();
+    // changingPhotoOrder();
   });
 }
 
-// function changingPhotoOrder(imageNr) {
-//   if (imageNr) {
-//     imageOrder = 25;
-//     bigImage.style.order = imageOrder;
-//     console.log(imageOrder);
-//   }
-// }
-
 function creatingSwiper() {
-  for (let i = 0; i < 48; i++) {
+  regularImagesArray.forEach((image, index) => {
     let thumbImage = document.createElement("img");
     thumbImage.classList.add("gallery__thumb");
-    thumbImage.setAttribute("src", `./img/img${i + 1}.jpg`);
+    thumbImage.setAttribute("src", `./img/img${index + 1}.jpg`);
     thumbsGallery.appendChild(thumbImage);
-  }
+    thumbImages.push(thumbImage);
+  });
 }
