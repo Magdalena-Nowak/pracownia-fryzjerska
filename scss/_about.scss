@@ -50,14 +50,14 @@
 
 @media (min-width: 520px) {
   .about {
+    &__description {
+      padding: 1rem 0;
+    }
     &__description-wrapper {
       padding: 5rem 2rem;
     }
     &__header {
       padding-bottom: 2rem;
-    }
-    &__description {
-      padding: 1rem 0;
     }
     &__photo-wrapper {
       height: 100vh;
@@ -67,11 +67,11 @@
 
 @media (min-width: 576px) {
   .about {
-    &__description-wrapper {
-      font-size: $fontText * 1.2;
-    }
     &__description--name {
       font-size: $cardsBodyHeader * 1.2;
+    }
+    &__description-wrapper {
+      font-size: $fontText * 1.2;
     }
     &__header {
       font-size: $sectionHeader * 1.2;
@@ -81,12 +81,12 @@
 
 @media (min-width: 768px) {
   .about {
+    &__description--name {
+      font-size: $cardsBodyHeader * 1.4;
+    }
     &__description-wrapper {
       font-size: $fontText * 1.4;
       width: 75%;
-    }
-    &__description--name {
-      font-size: $cardsBodyHeader * 1.4;
     }
     &__header {
       font-size: $sectionHeader * 1.4;
@@ -101,16 +101,15 @@
     &__description {
       padding: 0;
     }
-    &__header {
-      padding-bottom: 0;
-    }
     &__description--name {
       padding: 3rem 0;
     }
     &__description-wrapper {
-      // height: 100%;
       flex: 1 0 30%;
       padding: 0 4rem;
+    }
+    &__header {
+      padding-bottom: 0;
     }
     &__photo-wrapper {
       flex: 1 0 40%;
@@ -140,6 +139,10 @@
   .about {
     &__header {
       font-size: $sectionHeader * 1.8;
+      padding-bottom: 4rem;
+    }
+    &__description {
+      padding: 2rem 6rem;
     }
     &__description-wrapper {
       font-size: $fontText * 1.8;

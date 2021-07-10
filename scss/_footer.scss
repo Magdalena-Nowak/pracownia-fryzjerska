@@ -11,29 +11,6 @@
     background-color: $hoverBg;
     @include flex(column, center, center);
   }
-  &__text {
-    margin: 0 2rem;
-    align-self: center;
-  }
-  &__text-span {
-    display: flex;
-    margin: 0.5rem 0;
-  }
-  &__wrapper {
-    @include flex(column, center, flex-start);
-    margin: 3rem 0;
-  }
-  &__social-list {
-    @include flex(row, center, center);
-  }
-  &__social-item {
-    font-size: $iconSize;
-    margin: 0 1.5rem;
-    cursor: pointer;
-  }
-  &__socials {
-    align-self: center;
-  }
   &__info {
     margin: 2rem 0;
   }
@@ -52,6 +29,29 @@
     font-size: $priceText;
     margin: 1.5rem 0;
   }
+  &__socials {
+    align-self: center;
+  }
+  &__social-item {
+    font-size: $iconSize;
+    margin: 0 1.5rem;
+    cursor: pointer;
+  }
+  &__social-list {
+    @include flex(row, center, center);
+  }
+  &__text {
+    margin: 0 2rem;
+    align-self: center;
+  }
+  &__text-span {
+    display: flex;
+    margin: 0.5rem 0;
+  }
+  &__wrapper {
+    @include flex(column, center, flex-start);
+    margin: 3rem 0;
+  }
 }
 
 @media (min-width: 576px) {
@@ -60,37 +60,27 @@
     &__info-text {
       font-size: $priceText * 1.2;
     }
-    &__social-item {
-      font-size: $iconSize * 1.2;
-    }
     &__info-header {
       font-size: $fontH1 * 1.2;
     }
     &__info-icon {
       font-size: $cardsHeader * 1.2;
     }
+    &__social-item {
+      font-size: $iconSize * 1.2;
+    }
   }
 }
 
 @media (min-width: 768px) {
   .contact {
-    &__text-span {
-      display: inline;
-    }
-    &__wrapper {
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-    &__info {
-      padding: 0 5rem;
-      flex: 1 0 40%;
-    }
     &__copy-rights,
     &__info-text {
       font-size: $priceText * 1.4;
     }
-    &__social-item {
-      font-size: $iconSize * 1.4;
+    &__info {
+      padding: 0 5rem;
+      flex: 1 0 40%;
     }
     &__info-header {
       font-size: $fontH1 * 1.4;
@@ -98,13 +88,27 @@
     &__info-icon {
       font-size: $cardsHeader * 1.4;
     }
+    &__social-item {
+      font-size: $iconSize * 1.4;
+    }
+    &__text-span {
+      display: inline;
+    }
+    &__wrapper {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   }
 }
 
 @media (min-width: 1200px) {
   .contact {
-    &__wrapper {
-      flex-wrap: nowrap;
+    &__copy-rights {
+      padding: 2.5rem 0;
+    }
+    &__copy-rights,
+    &__info-text {
+      font-size: $priceText * 1.6;
     }
     &__info-header {
       font-size: $fontH1 * 1.6;
@@ -115,21 +119,21 @@
     &__info-text {
       font-size: $priceText * 1.2;
     }
-    &__copy-rights,
-    &__info-text {
-      font-size: $priceText * 1.6;
-    }
-    &__copy-rights {
-      padding: 2.5rem 0;
-    }
     &__social-item {
       font-size: $iconSize * 1.6;
+    }
+    &__wrapper {
+      flex-wrap: nowrap;
     }
   }
 }
 
 @media (min-width: 1800px) {
   .contact {
+    &__copy-rights,
+    &__info-text {
+      font-size: $priceText * 1.8;
+    }
     &__info-header {
       font-size: $fontH1 * 1.8;
     }
@@ -138,10 +142,6 @@
     }
     &__info-text {
       font-size: $priceText * 1.6;
-    }
-    &__copy-rights,
-    &__info-text {
-      font-size: $priceText * 1.8;
     }
     &__social-item {
       font-size: $iconSize * 1.8;

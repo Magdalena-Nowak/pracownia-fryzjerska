@@ -1,12 +1,41 @@
 .gallery {
   width: 95%;
   margin: 0 auto;
+  &__big-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  &__big-wrapper {
+    width: 70%;
+    height: 70%;
+  }
+  &__close-icon {
+    top: 2%;
+    right: 3%;
+    transform: translate(-3%, -2%);
+  }
+  &__close-icon,
+  &__left-icon,
+  &__right-icon {
+    color: white;
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.8;
+    cursor: pointer;
+  }
   &__header {
     color: $mainBlack;
     font-size: $sectionHeader;
     font-family: $headerFamily;
     text-align: center;
     margin: 2rem 0;
+  }
+  &__left-icon {
+    top: 40%;
+    left: 1%;
+    transform: translate(-1%, -40%);
   }
   &__more {
     background-color: $mainBlack;
@@ -35,9 +64,10 @@
     margin: 0.5rem;
     overflow: hidden;
   }
-  &__wrapper {
-    @include flex(row, center, stretch);
-    flex-wrap: wrap;
+  &__right-icon {
+    top: 40%;
+    right: 1%;
+    transform: translate(-1%, -40%);
   }
   &__swiper {
     height: 100vh;
@@ -51,30 +81,9 @@
     padding-top: 3.4rem;
     padding-bottom: 1rem;
   }
-
-  &__close-icon,
-  &__left-icon,
-  &__right-icon {
-    color: white;
-    position: absolute;
-    font-size: 3rem;
-    opacity: 0.8;
-    cursor: pointer;
-  }
-  &__close-icon {
-    top: 2%;
-    right: 3%;
-    transform: translate(-3%, -2%);
-  }
-  &__big-wrapper {
-    width: 70%;
-    height: 70%;
-  }
-  &__big-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
+  &__swiper.active {
+    position: fixed;
+    display: flex;
   }
   &__thumb {
     object-fit: cover;
@@ -95,20 +104,9 @@
     @include flex(row, center, center);
     overflow-x: scroll;
   }
-  &__swiper.active {
-    position: fixed;
-    display: flex;
-  }
-
-  &__left-icon {
-    top: 40%;
-    left: 1%;
-    transform: translate(-1%, -40%);
-  }
-  &__right-icon {
-    top: 40%;
-    right: 1%;
-    transform: translate(-1%, -40%);
+  &__wrapper {
+    @include flex(row, center, stretch);
+    flex-wrap: wrap;
   }
 }
 
@@ -132,6 +130,9 @@
 
 @media (min-width: 768px) {
   .gallery {
+    &__big-image {
+      object-position: top;
+    }
     &__big-wrapper {
       width: 55%;
     }
@@ -140,32 +141,31 @@
       right: 15%;
       transform: translate(-15%, -5%);
     }
-    &__right-icon {
-      top: 40%;
-      right: 15%;
-      transform: translate(-15%, -40%);
-    }
-    &__big-image {
-      object-position: top;
+    &__header {
+      font-size: $sectionHeader * 1.4;
     }
     &__left-icon {
       top: 40%;
       left: 15%;
       transform: translate(-15%, -40%);
     }
-    &__header {
-      font-size: $sectionHeader * 1.4;
+    &__right-icon {
+      top: 40%;
+      right: 15%;
+      transform: translate(-15%, -40%);
     }
   }
 }
 
 @media (min-width: 992px) {
   .gallery {
-    &__regular-wrapper {
-      flex: 1 0 20%;
-    }
     &__big-wrapper {
       max-width: 40%;
+    }
+    &__close-icon {
+      top: 5%;
+      right: 20%;
+      transform: translate(-20%, -5%);
     }
     &__close-icon,
     &__right-icon,
@@ -182,29 +182,27 @@
       right: 20%;
       transform: translate(-20%, -40%);
     }
-    &__close-icon {
-      top: 5%;
-      right: 20%;
-      transform: translate(-20%, -5%);
+    &__regular-wrapper {
+      flex: 1 0 20%;
     }
   }
 }
 
 @media (min-width: 1200px) {
   .gallery {
-    &__regular-wrapper {
-      flex: 1 0 15%;
-    }
-    &__header {
-      font-size: $sectionHeader * 1.6;
+    &__big-wrapper {
+      width: 45%;
     }
     &__close-icon,
     &__right-icon,
     &__left-icon {
       font-size: $iconSize * 1.4;
     }
-    &__big-wrapper {
-      width: 45%;
+    &__header {
+      font-size: $sectionHeader * 1.6;
+    }
+    &__regular-wrapper {
+      flex: 1 0 15%;
     }
   }
 }
@@ -219,11 +217,11 @@
 
 @media (min-height: 800px) {
   .gallery {
-    &__thumbs {
-      height: 15%;
-    }
     &__big-wrapper {
       height: 80%;
+    }
+    &__thumbs {
+      height: 15%;
     }
   }
 }

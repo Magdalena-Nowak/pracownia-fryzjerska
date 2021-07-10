@@ -262,7 +262,7 @@ closeBigGallery.addEventListener("click", function () {
   gallerySlider.style.display = "none";
   mainContent.style.display = "block";
   footerContent.style.display = "flex";
-  headerContent.style.display = "block";
+  headerContent.style.display = "flex";
   galleryContent.scrollIntoView({
     behavior: "smooth",
   });

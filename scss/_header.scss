@@ -31,14 +31,14 @@
     width: 60%;
     height: 100%;
   }
+  &__list {
+    @include flex(column, flex-start, stretch);
+    margin: 5rem 5rem;
+  }
   &__logo {
     width: 100%;
     height: 100%;
     object-fit: contain;
-  }
-  &__list {
-    @include flex(column, flex-start, stretch);
-    margin: 5rem 5rem;
   }
   &__open-btn {
     position: absolute;
@@ -101,13 +101,13 @@
     &__close-btn {
       display: none;
     }
-    &__line {
-      display: none;
-    }
     &__item {
       min-width: 10rem;
       padding: 1rem 0;
       @include flex(row, center, center);
+    }
+    &__line {
+      display: none;
     }
     &__list {
       @include flex(row, space-around, center);
@@ -131,12 +131,6 @@
 @media (min-width: 1200px) {
   .navigation {
     height: 17vh;
-    &__list {
-      font-size: $fontH1 * 1.4;
-    }
-    &__wrapper {
-      height: 17vh;
-    }
     &__close-icon,
     &__open-icon {
       font-size: $iconSize * 1.4;
@@ -148,18 +142,18 @@
     &__link {
       width: 80%;
     }
+    &__list {
+      font-size: $fontH1 * 1.4;
+    }
+    &__wrapper {
+      height: 17vh;
+    }
   }
 }
 
 @media (min-width: 1800px) {
   .navigation {
     height: 20vh;
-    &__wrapper {
-      height: 20vh;
-    }
-    &__list {
-      font-size: $fontH1 * 1.6;
-    }
     &__close-icon,
     &__open-icon {
       font-size: $iconSize * 1.6;
@@ -167,6 +161,12 @@
     &__item {
       font-size: $fontH1 * 1.8;
       min-width: 15rem;
+    }
+    &__list {
+      font-size: $fontH1 * 1.6;
+    }
+    &__wrapper {
+      height: 20vh;
     }
   }
 }
@@ -176,12 +176,12 @@
     &__item {
       padding: 1rem 2rem;
     }
+    &__list {
+      width: 50%;
+    }
     &__wrapper {
       align-items: flex-end;
       justify-content: flex-start;
-    }
-    &__list {
-      width: 50%;
     }
   }
 }
