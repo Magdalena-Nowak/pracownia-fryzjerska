@@ -41,7 +41,9 @@
     object-fit: contain;
   }
   &__open-btn {
+    background-color: $mainBlack;
     position: absolute;
+    border: none;
     top: 50%;
     right: 10%;
     transform: translate(-10%, -50%);
@@ -52,6 +54,7 @@
     font-size: $iconSize * 0.8;
     color: $mainWhite;
     pointer-events: none;
+    background-color: transparent;
   }
   &__wrapper {
     height: 100vh;
@@ -207,4 +210,9 @@
       width: 40%;
     }
   }
+}
+
+button {
+  background-color: $mainBlack;
+  border: none;
 }
