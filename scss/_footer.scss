@@ -2,6 +2,7 @@
   background-color: $mainBlack;
   color: $mainWhite;
   min-height: min-content;
+  width: 100vw;
   @include flex(column, space-between, center);
   &__copy-rights {
     font-size: $priceText;
