@@ -134,7 +134,7 @@ ScrollTrigger.matchMedia({
         x: "0%",
         scrollTrigger: {
           trigger: sectionAbout,
-          start: "top top",
+          start: "top 70%",
           markers: true,
         },
         duration: 2,
