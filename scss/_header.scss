@@ -11,7 +11,7 @@
     margin-bottom: 1.5rem;
   }
   &__close-icon {
-    opacity: 0.8;
+    // opacity: 0.8;
     font-size: $iconSize * 0.8;
     color: $mainWhite;
     pointer-events: none;
@@ -48,7 +48,7 @@
     cursor: pointer;
   }
   &__open-icon {
-    opacity: 0.8;
+    // opacity: 0.8;
     font-size: $iconSize * 0.8;
     color: $mainWhite;
     pointer-events: none;
@@ -58,7 +58,7 @@
     width: 100%;
     color: $mainWhite;
     font-family: $headerFamily;
-    position: absolute;
+    position: fixed;
     @include flex(column, center, stretch);
     top: 0;
     left: 0;
