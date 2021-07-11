@@ -134,7 +134,7 @@ gsap.fromTo(
     scrollTrigger: {
       trigger: ".about",
       start: "top 50%",
-      markers: true,
+      // markers: true,
     },
     duration: 3,
   }
@@ -147,7 +147,7 @@ gsap.fromTo(
     scrollTrigger: {
       trigger: photoWrapper,
       start: "top 50%",
-      markers: true,
+      // markers: true,
     },
     duration: 3,
   }
@@ -162,7 +162,7 @@ gsap.fromTo(
     scrollTrigger: {
       trigger: ".price-list__card--woman",
       start: "top 70%",
-      markers: true,
+      // markers: true,
     },
   }
 );
@@ -176,7 +176,7 @@ gsap.fromTo(
     scrollTrigger: {
       trigger: ".price-list__card--man",
       start: "top 70%",
-      markers: true,
+      // markers: true,
     },
   }
 );
@@ -190,7 +190,7 @@ gsap.fromTo(
     scrollTrigger: {
       trigger: ".price-list__card--children",
       start: "top 70%",
-      markers: true,
+      // markers: true,
     },
   }
 );
