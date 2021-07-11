@@ -157,6 +157,27 @@
   }
 }
 
+@media (min-width: 1200px) and (max-height: 1000px) {
+  .price-list {
+    &__body {
+      font-size: $priceText * 1.4;
+    }
+    &__body-header {
+      font-size: $cardsBodyHeader * 1.4;
+    }
+    &__for {
+      font-size: $cardsHeader * 1.4;
+    }
+    &__header {
+      font-size: $sectionHeader * 1.4;
+    }
+    &__reveal-icon,
+    &__hide-icon {
+      font-size: $iconSize * 1.2;
+    }
+  }
+}
+
 @media (min-width: 1500px) {
   .price-list {
     &__card {
