@@ -134,7 +134,7 @@ ScrollTrigger.matchMedia({
         x: "0%",
         scrollTrigger: {
           trigger: sectionAbout,
-          start: "0% 50%",
+          start: "0% 60%",
         },
         duration: 3,
       }
@@ -147,11 +147,11 @@ ScrollTrigger.matchMedia({
         x: "0%",
         scrollTrigger: {
           trigger: photoWrapper,
-          start: "-20% 50%",
+          start: "-20% 60%",
         },
         duration: 6,
       },
-      "-=3"
+      // "-=3"
     );
   },
   "(min-width: 992px)": function () {
