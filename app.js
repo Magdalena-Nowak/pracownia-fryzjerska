@@ -133,7 +133,7 @@ ScrollTrigger.matchMedia({
         opacity: 1,
         x: "0%",
         scrollTrigger: {
-          trigger: sectionAbout,
+          trigger: descriptionWrapper,
           start: "top 70%",
           markers: true,
         },
