@@ -124,102 +124,64 @@ window.addEventListener("click", changeSlides);
 changeSwipe();
 
 //ABOUT
-ScrollTrigger.matchMedia({
-  "(max-width: 991px)": function () {
-    gsap.fromTo(
-      descriptionWrapper,
-      { opacity: 0, x: "-100%" },
-      {
-        opacity: 1,
-        x: "0%",
-        scrollTrigger: {
-          trigger: descriptionWrapper,
-          start: "top 70%",
-          markers: true,
-        },
-        duration: 2,
-      }
-    );
 
-    gsap.fromTo(
-      photoWrapper,
-      { x: "100%" },
-      {
-        x: "0%",
-        scrollTrigger: {
-          trigger: photoWrapper,
-          start: "-20% 70%",
-        },
-        duration: 5,
-      }
-      // "-=3"
-    );
+gsap.fromTo(
+  descriptionWrapper,
+  { opacity: 0, x: "-100%" },
+  {
+    opacity: 1,
+    x: "0%",
+    scrollTrigger: {
+      trigger: ".about",
+      start: "top 60%",
+      markers: true,
+    },
+    duration: 3,
+  }
+);
+gsap.fromTo(
+  photoWrapper,
+  { x: "100%" },
+  {
+    x: "0%",
+    scrollTrigger: {
+      trigger: photoWrapper,
+      start: "top 60%",
+      markers: true,
+    },
+    duration: 3,
   },
-  "(min-width: 992px)": function () {
-    gsap.fromTo(
-      descriptionWrapper,
-      3,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: ".about",
-          start: "top 40%",
-        },
-        duration: 3,
-      }
-    );
-    gsap.fromTo(
-      photoWrapper,
-      4,
-      { x: "100%" },
-      {
-        x: "0%",
-        scrollTrigger: {
-          trigger: ".about",
-          start: "top 40%",
-        },
-        duration: 3,
-      },
-      "-=1"
-    );
-  },
-  "(max-width: 1199px)": function () {
-    openPriceBtns.forEach((btn, index) => {
-      btn.addEventListener("click", () => {
-        gsap.fromTo(
-          cardsContainers[index],
-          1,
-          { display: "none" },
-          { display: "flex" }
-        );
-        const cards =
-          cardsContainers[index].querySelectorAll(".price-list__body");
-        gsap.fromTo(cards, 2, { x: "-150%" }, { x: "0%", ease: "back" });
-        openPriceBtns[index].style.display = "none";
-        hidePriceBtns[index].style.display = "flex";
-      });
-    });
-    hidePriceBtns.forEach((btn, index) => {
-      btn.addEventListener("click", () => {
-        const cards =
-          cardsContainers[index].querySelectorAll(".price-list__body");
-        gsap.fromTo(cards, 2, { x: "0%" }, { x: "-150%" });
-        gsap.fromTo(
-          cardsContainers[index],
-          1,
-          { display: "flex" },
-          { display: "none", delay: 0.8 }
-        );
-        openPriceBtns[index].style.display = "flex";
-        hidePriceBtns[index].style.display = "none";
-        priceSection.scrollIntoView({
-          behavior: "smooth",
-        });
-      });
-    });
-  },
-});
+  // "-=2"
+);
+
+// sap.fromTo(
+//   descriptionWrapper,
+//   { opacity: 0, x: "-100%" },
+//   {
+//     opacity: 1,
+//     x: "0%",
+//     scrollTrigger: {
+//       trigger: descriptionWrapper,
+//       start: "top 70%",
+//       markers: true,
+//     },
+//     duration: 2,
+//   }
+// );
+
+// gsap.fromTo(
+//   photoWrapper,
+//   { x: "100%" },
+//   {
+//     x: "0%",
+//     scrollTrigger: {
+//       trigger: photoWrapper,
+//       start: "-20% 70%",
+//     },
+//     duration: 5,
+//   }
+//   // "-=3"
+// );
 
 //GALLERY
 
@@ -331,3 +293,37 @@ function creatingSwiper() {
     thumbImages.push(thumbImage);
   });
 }
+
+openPriceBtns.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    gsap.fromTo(
+      cardsContainers[index],
+      1,
+      { display: "none" },
+      { display: "flex" }
+    );
+    const cards =
+      cardsContainers[index].querySelectorAll(".price-list__body");
+    gsap.fromTo(cards, 2, { x: "-150%" }, { x: "0%", ease: "back" });
+    openPriceBtns[index].style.display = "none";
+    hidePriceBtns[index].style.display = "flex";
+  });
+});
+hidePriceBtns.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    const cards =
+      cardsContainers[index].querySelectorAll(".price-list__body");
+    gsap.fromTo(cards, 2, { x: "0%" }, { x: "-150%" });
+    gsap.fromTo(
+      cardsContainers[index],
+      { display: "flex" },
+      { display: "none", delay: 0.6 }
+    );
+    openPriceBtns[index].style.display = "flex";
+    hidePriceBtns[index].style.display = "none";
+    priceSection.scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
+
