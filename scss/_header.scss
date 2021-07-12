@@ -99,111 +99,111 @@
   }
 }
 
-// @media (min-width: 576px) {
-//   .navigation {
-//     &__item {
-//       padding: 1.5rem 2rem;
-//       font-size: $fontH1 * 1.2;
-//     }
-//   }
-// }
+@media (min-width: 576px) {
+  .navigation {
+    &__item {
+      padding: 1.5rem 2rem;
+      font-size: $fontH1 * 1.2;
+    }
+  }
+}
 
-// @media (min-width: 768px) {
-//   .navigation {
-//     &__item {
-//       font-size: $fontH1 * 1.4;
-//     }
-//   }
-// }
+@media (min-width: 768px) {
+  .navigation {
+    &__item {
+      font-size: $fontH1 * 1.4;
+    }
+  }
+}
 
-// @media (min-width: 992px) {
-//   .navigation {
-//     height: 15vh;
-//     @include flex(row, flex-start, center);
-//     &__btn {
-//       display: none;
-//     }
-//     &__item {
-//       min-width: 10rem;
-//       padding: 1rem 0;
-//       @include flex(row, center, center);
-//     }
-//     &__line {
-//       display: none;
-//     }
-//     &__list {
-//       @include flex(row, space-around, center);
-//       margin: 0;
-//       margin-top: 0;
-//     }
-//     &__wrapper {
-//       position: initial;
-//       height: 15vh;
-//       width: auto;
-//       @include flex(row, center, center);
-//       margin-right: 5%;
-//     }
-//   }
-// }
+@media (min-width: 992px) {
+  .navigation {
+    height: 15vh;
+    @include flex(row, flex-start, center);
+    &__btn {
+      display: none;
+    }
+    &__item {
+      min-width: 10rem;
+      padding: 1rem 0;
+      @include flex(row, center, center);
+    }
+    &__line {
+      display: none;
+    }
+    &__list {
+      @include flex(row, space-around, center);
+      margin: 0;
+      margin-top: 0;
+    }
+    &__wrapper {
+      position: initial;
+      height: 15vh;
+      width: auto;
+      @include flex(row, center, center);
+      margin-right: 5%;
+    }
+  }
+}
 
-// @media (min-width: 1200px) {
-//   .navigation {
-//     height: 17vh;
-//     &__item {
-//       padding: 1.5rem 1rem;
-//     }
-//     &__link {
-//       width: 80%;
-//     }
-//     &__wrapper {
-//       height: 17vh;
-//       margin-right: 10%;
-//     }
-//   }
-// }
+@media (min-width: 1200px) {
+  .navigation {
+    height: 17vh;
+    &__item {
+      padding: 1.5rem 1rem;
+    }
+    &__link {
+      width: 80%;
+    }
+    &__wrapper {
+      height: 17vh;
+      margin-right: 10%;
+    }
+  }
+}
 
-// @media (min-height: 380px) and (max-width: 991px){
-//   .navigation {
-//     &__list {
-//       margin-top: 12rem;
-//     }
-//   }
-// }
+@media (min-height: 380px) and (max-width: 991px){
+  .navigation {
+    &__list {
+      margin-top: 12rem;
+    }
+  }
+}
 
-// @media (min-width: 1800px) {
-//   .navigation {
-//     height: 20vh;
-//     &__item {
-//       min-width: 15rem;
-//     }
-//     &__wrapper {
-//       height: 20vh;
-//     }
-//   }
-// }
+@media (min-width: 1800px) {
+  .navigation {
+    height: 20vh;
+    &__item {
+      min-width: 15rem;
+    }
+    &__wrapper {
+      height: 20vh;
+    }
+  }
+}
 
-// @media (min-height: 460px) and (max-width: 991px) {
-//   .navigation {
-//     &__item {
-//       padding: 1rem 2rem;
-//     }
-//     &__list {
-//       width: 50%;
-//     }
-//     &__wrapper {
-//       align-items: flex-end;
-//       justify-content: flex-start;
-//     }
-//   }
-// }
+@media (min-height: 460px) and (max-width: 991px) {
+  .navigation {
+    &__item {
+      padding: 1rem 2rem;
+    }
+    &__list {
+      width: 50%;
+    }
+    &__wrapper {
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+  }
+}
 
-// @media (min-height: 640px) and (min-width: 700px) {
-//   .navigation {
-//     &__list {
-//       width: 40%;
-//     }
-//   }
-// }
+@media (min-height: 640px) and (min-width: 700px) {
+  .navigation {
+    &__list {
+      width: 40%;
+    }
+  }
+}
 
 button {
   background-color: $mainBlack;
