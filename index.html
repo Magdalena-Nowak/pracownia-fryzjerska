@@ -25,33 +25,31 @@
       <ul class="navigation__list">
         <button class="navigation__close-btn"><i class="navigation__close-icon fas fa-times"></i></button>
         <hr class="navigation__line">
-        <li class="navigation__item">Home</li>
+        <li class="navigation__item" tabindex="0">Home</li>
         <hr class="navigation__line">
-        <li class="navigation__item navigation__item--longer">O mnie</li>
+        <li class="navigation__item" tabindex="0">O mnie</li>
         <hr class="navigation__line">
-        <li class="navigation__item">Cennik</li>
+        <li class="navigation__item" tabindex="0">Cennik</li>
         <hr class="navigation__line">
-        <li class="navigation__item">Galeria</li>
+        <li class="navigation__item" tabindex="0">Galeria</li>
         <hr class="navigation__line">
-        <li class="navigation__item">Kontakt</li>
+        <li class="navigation__item" tabindex="0">Kontakt</li>
       </ul>
     </nav>
   </header>
   <main id="home">
-    <section class="swiper">
+    <section class="swiper" tabindex="0">
       <div class="swiper__image-wrapper">
-        <img class="swiper__image active" src="./img/image1-large.png" alt="Zdjęcie wnętrza pracowni">
-      </div>
+        <img class="swiper__image active" src="./img/pracownia_fryzjerska_wnetrze1-large.png" alt="Pracownia fryzjerska Agnieszka Nowak- wnętrze, wygląd">
       <div class="swiper__slides">
         <div class="swiper__slide active"></div>
         <div class="swiper__slide"></div>
         <div class="swiper__slide"></div>
       </div>
-      <i class="swiper__left-icon  fas fa-chevron-left"></i>
-      <i class="swiper__right-icon  fas fa-chevron-right"></i>
-
+      <i class="swiper__left-icon  fas fa-chevron-left" tabindex="0"></i>
+      <i class="swiper__right-icon  fas fa-chevron-right" tabindex="0"></i>
     </section>
-    <section id="about" class="about">
+    <section id="about" class="about" tabindex="0">
       <div class="about__description-wrapper">
         <h1 class="about__header">O mnie</h1>
         <p class="about__description">Moja pracownia powstała dzięki ogromnej pasji do fryzjerstwa oraz
@@ -73,7 +71,7 @@
         <img class="about__photo" src="./img/aga.jpg" alt="Zdjęcie właścicielki">
       </div>
     </section>
-    <section id="prices" class="price-list">
+    <section id="prices" class="price-list" tabindex="0">
       <h1 class="price-list__header">Cennik</h1>
       <div class="price-list__card price-list__card--woman">
         <h2 class="price-list__for">Dla Kobiet</h2>
@@ -164,10 +162,10 @@
             </ul>
           </div>
         </div>
-        <div class="price-list__reveal">
+        <div class="price-list__reveal" tabindex="0">
           <i class="price-list__reveal-icon fas fa-chevron-circle-down"></i>
         </div>
-        <div class="price-list__hide">
+        <div class="price-list__hide" tabindex="0">
           <i class="price-list__hide-icon fas fa-chevron-circle-up"></i>
         </div>
       </div>
@@ -192,10 +190,10 @@
             </ul>
           </div>
         </div>
-        <div class="price-list__reveal">
+        <div class="price-list__reveal" tabindex="0">
           <i class="price-list__reveal-icon fas fa-chevron-circle-down"></i>
         </div>
-        <div class="price-list__hide">
+        <div class="price-list__hide" tabindex="0">
           <i class="price-list__hide-icon fas fa-chevron-circle-up"></i>
         </div>
       </div>
@@ -212,21 +210,21 @@
             </ul>
           </div>
         </div>
-        <div class="price-list__reveal">
+        <div class="price-list__reveal" tabindex="0">
           <i class="price-list__reveal-icon fas fa-chevron-circle-down"></i>
         </div>
-        <div class="price-list__hide">
+        <div class="price-list__hide" tabindex="0">
           <i class="price-list__hide-icon fas fa-chevron-circle-up"></i>
         </div>
       </div>
     </section>
-    <section id="gallery" class="gallery">
+    <section id="gallery" class="gallery" tabindex="0">
       <h1 class="gallery__header">Galeria</h1>
       <div id="gallery__wrapper" class="gallery__wrapper">
       </div>
     </section>
-    <section id="geolocation" class="geolocation">
-      <iframe class="geolocation__iframe"
+    <section id="geolocation" class="geolocation" tabindex="0">
+      <iframe class="geolocation__iframe" title="lokalizacja Pracownia Fryzjerska Agnieszka Nowak"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2461.7922672458567!2d21.608665851527263!3d51.90125497960227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4718c7c201e9d7b7%3A0x2481660b09b04b33!2sPracownia%20Fryzjerska%20Agnieszka%20Nowak!5e0!3m2!1sen!2spl!4v1621255925921!5m2!1sen!2spl"
         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </section>
@@ -241,12 +239,12 @@
     <div class="gallery__thumbs">
     </div>
   </div>
-  <footer id="contact" class="contact">
+  <footer id="contact" class="contact" tabindex="0">
     <div class="contact__wrapper">
       <div class="contact__info">
         <h2 class="contact__info-header">Kontakt</h2>
-        <p class="contact__info-text"><span class="contact__info-icon"><i class="fas fa-phone"></i></span><a href="tel:+48669249106">(+48) 669 249 106</a></p>
-        <p class="contact__info-text"><span class="contact__info-icon"><i class="fas fa-envelope"></i></span><a
+        <p class="contact__info-text"><span class="contact__info-icon"><i class="fas fa-phone"></i></span><a tabindex="0" href="tel:+48669249106">(+48) 669 249 106</a></p>
+        <p class="contact__info-text"><span class="contact__info-icon"><i class="fas fa-envelope"></i></span><a tabindex="0"
             href="mailto:pracownia.agnieszkanowak@gmail.com">pracownia.agnieszkanowak@gmail.com</a></p>
         <p class="contact__info-text"><span class="contact__info-icon"><i class="fas fa-home"></i></span>Garwolin, ul. Tadeusza Kościuszki 49D</p>
       </div>
@@ -257,9 +255,9 @@
       </div>
       <div class="contact__socials">
         <ul class="contact__social-list">
-          <li class="contact__social-item"><a href="https://www.facebook.com/PracowniaFryzjerskaAg" target="_blank"><i
+          <li class="contact__social-item" tabindex="0"><a href="https://www.facebook.com/PracowniaFryzjerskaAg" target="_blank"><i
                 class="fab fa-facebook"></i></a></li>
-          <li class="contact__social-item"><a href="https://www.instagram.com/pracownia.agnieszkanowak/"
+          <li class="contact__social-item" tabindex="0"><a href="https://www.instagram.com/pracownia.agnieszkanowak/"
               target="_blank"><i class="fab fa-instagram-square"></i></a></li>
         </ul>
       </div>

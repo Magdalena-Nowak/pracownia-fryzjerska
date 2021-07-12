@@ -193,33 +193,33 @@
     &__big-wrapper {
       width: 45%;
     }
-    &__close-icon,
-    &__right-icon,
-    &__left-icon {
-      font-size: $iconSize * 1.4;
-    }
-    &__header {
-      font-size: $sectionHeader * 1.6;
-    }
+    // &__close-icon,
+    // &__right-icon,
+    // &__left-icon {
+    //   font-size: $iconSize * 1.4;
+    // }
+    // &__header {
+    //   font-size: $sectionHeader * 1.6;
+    // }
     &__regular-wrapper {
       flex: 1 0 15%;
     }
   }
 }
 
-@media (min-width: 1200px) and (max-height: 1000px) {
-  &__header {
-    font-size: $sectionHeader * 1.4;
-  }
-}
+// @media (min-width: 1200px) and (max-height: 1000px) {
+//   &__header {
+//     font-size: $sectionHeader * 1.4;
+//   }
+// }
 
-@media (min-width: 1800px) {
-  .gallery {
-    &__header {
-      font-size: $sectionHeader * 1.8;
-    }
-  }
-}
+// @media (min-width: 1800px) {
+//   .gallery {
+//     &__header {
+//       font-size: $sectionHeader * 1.8;
+//     }
+//   }
+// }
 
 @media (min-height: 800px) {
   .gallery {
