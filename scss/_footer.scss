@@ -82,9 +82,9 @@
       padding: 0 5rem;
       flex: 1 0 40%;
     }
-    &__info-header {
-      font-size: $fontH1 * 1.4;
-    }
+    // &__info-header {
+    //   font-size: $fontH1 * 1.2;
+    // }
     &__info-icon {
       font-size: $cardsHeader * 1.4;
     }
@@ -106,22 +106,22 @@
     &__copy-rights {
       padding: 2.5rem 0;
     }
-    &__copy-rights,
-    &__info-text {
-      font-size: $priceText * 1.6;
-    }
-    &__info-header {
-      font-size: $fontH1 * 1.6;
-    }
-    &__info-icon {
-      font-size: $cardsHeader * 1.6;
-    }
-    &__info-text {
-      font-size: $priceText * 1.2;
-    }
-    &__social-item {
-      font-size: $iconSize * 1.6;
-    }
+    // &__copy-rights,
+    // &__info-text {
+    //   font-size: $priceText * 1.6;
+    // }
+    // &__info-header {
+    //   font-size: $fontH1 * 1.6;
+    // }
+    // &__info-icon {
+    //   font-size: $cardsHeader * 1.6;
+    // }
+    // &__info-text {
+    //   font-size: $priceText * 1.2;
+    // }
+    // &__social-item {
+    //   font-size: $iconSize * 1.6;
+    // }
     &__wrapper {
       flex-wrap: nowrap;
     }
@@ -129,41 +129,42 @@
 }
 @media (min-width: 1200px) and (max-height: 1000px) {
   .contact {
-    &__copy-rights,
-    &__info-text {
-      font-size: $priceText * 1.4;
-    }
+    // &__copy-rights,
+    // &__info-text {
+    //   font-size: $priceText * 1.4;
+    // }
     &__info {
       padding: 0 5rem;
       flex: 1 0 40%;
     }
-    &__info-header {
-      font-size: $fontH1 * 1.4;
-    }
-    &__info-icon {
-      font-size: $cardsHeader * 1.4;
-    }
-    &__social-item {
-      font-size: $iconSize * 1.4;
-    }
+    // &__info-header {
+    //   font-size: $fontH1 * 1.4;
+    // }
+    // &__info-icon {
+    //   font-size: $cardsHeader * 1.4;
+    // }
+    // &__social-item {
+    //   font-size: $iconSize * 1.4;
+    // }
 }
-@media (min-width: 1800px) {
-  .contact {
-    &__copy-rights,
-    &__info-text {
-      font-size: $priceText * 1.8;
-    }
-    &__info-header {
-      font-size: $fontH1 * 1.8;
-    }
-    &__info-icon {
-      font-size: $cardsHeader * 1.8;
-    }
-    &__info-text {
-      font-size: $priceText * 1.6;
-    }
-    &__social-item {
-      font-size: $iconSize * 1.8;
-    }
-  }
 }
+// @media (min-width: 1800px) {
+//   .contact {
+//     &__copy-rights,
+//     &__info-text {
+//       font-size: $priceText * 1.8;
+//     }
+//     &__info-header {
+//       font-size: $fontH1 * 1.8;
+//     }
+//     &__info-icon {
+//       font-size: $cardsHeader * 1.8;
+//     }
+//     &__info-text {
+//       font-size: $priceText * 1.6;
+//     }
+//     &__social-item {
+//       font-size: $iconSize * 1.8;
+//     }
+//   }
+// }

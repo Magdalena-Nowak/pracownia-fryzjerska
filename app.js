@@ -77,9 +77,9 @@ logoNav.addEventListener("click", () => {
 
 //SLIDER GALLERY
 const swipeList = [
-  { img: "./img/image1-large.png" },
-  { img: "./img/image2-large.png" },
-  { img: "./img/image3-large.png" },
+  { img: "./img/pracownia_fryzjerska_wnetrze1-small.png" },
+  { img: "./img/pracownia_fryzjerska_wnetrze2-small.png" },
+  { img: "./img/pracownia_fryzjerska_wnetrze3-small.png" },
 ];
 
 const autoChangeSlides = () => {
@@ -244,6 +244,8 @@ function galleryExtend() {
     );
     const image = document.createElement("img");
     image.setAttribute("src", `./img//img${i + 1}.jpg`);
+    image.setAttribute('alt', "fryzura, loki, fale, proste włosy");
+    image.setAttribute("thumbindex", "0");
     image.classList.add("gallery__regular-image");
     div.appendChild(image);
     // more += 1;
@@ -279,6 +281,8 @@ function clickableRegularImages() {
       footerContent.style.display = "none";
       headerContent.style.display = "none";
       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
+      bigImage.setAttribute('alt', "fryzura, loki, fale, proste włosy");
+      bigImage.setAttribute("thumbindex", "0");
       dynamicChangeImages();
       // handlingArrows();
       creatingSwiper();
@@ -294,6 +298,8 @@ function dynamicChangeImages() {
   thumbImages.forEach((image, index) => {
     image.addEventListener("click", function () {
       bigImage.setAttribute("src", `./img/img${index + 1}.jpg`);
+      bigImage.setAttribute('alt', "fryzura, loki, fale, proste włosy");
+      bigImage.setAttribute("thumbindex", "0");
     });
   });
 }
@@ -303,9 +309,13 @@ function handlingArrows() {
     if (imageNr >= smallImages.length - 1) {
       imageNr = 0;
       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
+      bigImage.setAttribute('alt', "fryzura, loki, fale, proste włosy");
+      bigImage.setAttribute("thumbindex", "0");
     } else {
       imageNr++;
       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
+      bigImage.setAttribute('alt', "fryzura, loki, fale, proste włosy");
+      bigImage.setAttribute("thumbindex", "0");
     }
     // changingPhotoOrder();
   });
@@ -313,9 +323,13 @@ function handlingArrows() {
     if (imageNr <= 0) {
       imageNr = smallImages.length - 1;
       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
-    } else {
+    bigImage.setAttribute('alt', "fryzura, loki, fale, proste włosy");
+    bigImage.setAttribute("thumbindex", "0");  
+  } else {
       imageNr--;
       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
+      bigImage.setAttribute('alt', "fryzura, loki, fale, proste włosy");
+      bigImage.setAttribute("thumbindex", "0");
     }
     // changingPhotoOrder();
   });
@@ -326,6 +340,8 @@ function creatingSwiper() {
     let thumbImage = document.createElement("img");
     thumbImage.classList.add("gallery__thumb");
     thumbImage.setAttribute("src", `./img/img${index + 1}.jpg`);
+    thumbImage.setAttribute("alt", "fryzura, loki, fale, proste włosy");
+    thumbImage.setAttribute("thumbindex", "0");
     thumbsGallery.appendChild(thumbImage);
     thumbImages.push(thumbImage);
   });
