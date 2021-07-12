@@ -201,40 +201,71 @@ gsap.fromTo(
 
 //GALLERY
 
-function galleryExtend() {
-  for (let i = 0; i < 48; i++) {
-    const div = document.createElement("div");
-    div.classList.add("gallery__regular-wrapper");
-    // let parent = gallery.querySelector(".gallery__wrapper");
-    // let parentLastChild = parent.lastElementChild;
-    // parent.insertBefore(div, parentLastChild);
-    galleryContent.appendChild(div);
-    gsap.fromTo(
-      div,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: div,
-          start: "top 30%",
-        },
-      }
-    );
-    const image = document.createElement("img");
-    image.setAttribute("src", `./img//img${i + 1}.jpg`);
-    image.setAttribute('alt', "fryzura, loki, fale, proste włosy");
-    image.setAttribute("thumbindex", "0");
-    image.classList.add("gallery__regular-image");
-    div.appendChild(image);
-    // more += 1;
-    regularImagesArray.push(div);
-    // }
-    clickableRegularImages();
-  }
+const options = {
+  rootMargin: "0px 0px 0px 0px",
+  treshold: 0.5,
 }
 
-galleryExtend();
+let observer = new IntersectionObserver((elements) => {
+  elements.forEach(element => {
+    if (element.isIntersecting) {
+    element.target.src = element.target.getAttribute("data-src");
+    // gsap.fromTo(element.target, {opacity: 0}, {opacity: 1, duration: 1})
+    const coverImage = element.target.nextElementSibling;
+    gsap.fromTo(coverImage, {y: "0%"}, {y: "100%", duration: 3, delay: 0.5});
+    }
+    if (element.isIntersecting) {
+      observer.unobserve(element.target);
+    }
+  })
+}, options)
+
+const targets = document.querySelectorAll(".gallery__regular-image");
+targets.forEach(target => {
+  observer.observe(target);
+})
+
+// const imagesNormal = document.querySelectorAll('[data-src]');
+// imagesNormal.forEach(img => {
+//   observer.observe(img);
+// });
+
+
+// console.log(imagesNormal);
+// function galleryExtend() {
+//   for (let i = 0; i < 48; i++) {
+//     const div = document.createElement("div");
+//     div.classList.add("gallery__regular-wrapper");
+//     // let parent = gallery.querySelector(".gallery__wrapper");
+//     // let parentLastChild = parent.lastElementChild;
+//     // parent.insertBefore(div, parentLastChild);
+//     galleryContent.appendChild(div);
+//     gsap.fromTo(
+//       div,
+//       { opacity: 0 },
+//       {
+//         opacity: 1,
+//         duration: 1,
+//         scrollTrigger: {
+//           trigger: div,
+//           start: "top 30%",
+//         },
+//       }
+//     );
+//     const image = document.createElement("img");
+//     image.setAttribute("src", `./img//img${i + 1}.jpg`);
+//     image.setAttribute('alt', "fryzura, loki, fale, proste włosy");
+//     image.setAttribute("thumbindex", "0");
+//     image.classList.add("gallery__regular-image");
+//     div.appendChild(image);
+//     // more += 1;
+//     regularImagesArray.push(div);
+//     // }
+//     clickableRegularImages();
+//   }
+// }
+
+// galleryExtend();
 
 //Small implementation
 
