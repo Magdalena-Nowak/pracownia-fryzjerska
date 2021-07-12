@@ -14,16 +14,8 @@ body {
   font-size: 10px;
 }
 
-body {
-  width: 100vw;
-}
-
 li {
   list-style-type: none;
-}
-
-main {
-  width: 100vw;
 }
 
 .navigation {
@@ -79,25 +71,61 @@ main {
   object-fit: contain;
 }
 
-.navigation__open-btn {
-  background-color: #191919;
+.navigation__btn {
   position: absolute;
-  border: none;
   top: 50%;
   right: 10%;
   transform: translate(-10%, -50%);
+<<<<<<< HEAD
+=======
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+>>>>>>> header
   cursor: pointer;
+  z-index: 2;
 }
 
-.navigation__open-btn:focus {
-  border: 1px dotted #2b2b2b;
+.navigation__btn-line {
+  width: 4rem;
+  height: 0.4rem;
+  margin: 0.3rem 0;
+  background-color: #f5f5f5;
+  opacity: 0.8;
 }
 
-.navigation__open-icon {
-  font-size: 3.2rem;
-  color: #f5f5f5;
-  pointer-events: none;
-  background-color: transparent;
+.navigation__btn-line--one {
+  transform: rotate(0) translateY(0) translateX(0);
+  transition: all 0.2s ease-in-out;
+  transform-origin: center;
+}
+
+.navigation__btn-line--one.active {
+  transform: rotate(136deg) translateY(-9px) translateX(5px);
+  height: 0.5rem;
+}
+
+.navigation__btn-line--three {
+  transform: rotate(0) translateY(0) translateX(0);
+  transition: all 0.2s ease-in-out;
+  transform-origin: center;
+}
+
+.navigation__btn-line--three.active {
+  transform: rotate(-136deg) translateY(9px) translateX(5px);
+  height: 0.5rem;
+}
+
+.navigation__btn-line--two {
+  transform: translateX(0%);
+  transition: all 0.4s ease-in-out;
+  opacity: 0.8;
+}
+
+.navigation__btn-line--two.active {
+  transform: translateX(-100%);
+  opacity: 0;
 }
 
 .navigation__wrapper {
@@ -115,14 +143,16 @@ main {
   display: none;
 }
 
+<<<<<<< HEAD
 .active {
+=======
+.navigation__wrapper.active {
+>>>>>>> header
   display: flex;
+  background-color: #191919;
 }
 
 @media (min-width: 576px) {
-  .navigation__close-icon, .navigation__open-icon {
-    font-size: 4rem;
-  }
   .navigation__item {
     padding: 1.5rem 2rem;
     font-size: 2.4rem;
@@ -130,9 +160,6 @@ main {
 }
 
 @media (min-width: 768px) {
-  .navigation__close-icon, .navigation__open-icon {
-    font-size: 4.8rem;
-  }
   .navigation__item {
     font-size: 2.8rem;
   }
@@ -140,12 +167,20 @@ main {
 
 @media (min-width: 992px) {
   .navigation {
+<<<<<<< HEAD
+=======
+    height: 15vh;
+>>>>>>> header
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
   }
+<<<<<<< HEAD
   .navigation__close-btn {
+=======
+  .navigation__btn {
+>>>>>>> header
     display: none;
   }
   .navigation__item {
@@ -165,6 +200,7 @@ main {
     justify-content: space-around;
     align-items: center;
     margin: 0;
+<<<<<<< HEAD
     position: absolute;
     top: 50%;
     right: 20%;
@@ -172,11 +208,22 @@ main {
   }
   .navigation__open-btn {
     display: none;
+=======
+    margin-top: 0;
+>>>>>>> header
   }
   .navigation__wrapper {
+    position: initial;
     height: 15vh;
+<<<<<<< HEAD
+=======
+    width: auto;
+>>>>>>> header
     display: flex;
-    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5%;
   }
 }
 
@@ -192,6 +239,13 @@ main {
   }
   .navigation__wrapper {
     height: 17vh;
+    margin-right: 10%;
+  }
+}
+
+@media (min-height: 380px) and (max-width: 991px) {
+  .navigation__list {
+    margin-top: 12rem;
   }
 }
 
@@ -232,6 +286,11 @@ button {
 }
 
 .swiper {
+<<<<<<< HEAD
+=======
+  padding-top: 15vh;
+  background-color: #191919;
+>>>>>>> header
   height: 100vh;
   width: 100%;
   display: flex;
@@ -846,6 +905,11 @@ button {
 }
 
 .swiper {
+<<<<<<< HEAD
+=======
+  padding-top: 15vh;
+  background-color: #191919;
+>>>>>>> header
   height: 100vh;
   width: 100%;
   display: flex;
@@ -1012,6 +1076,10 @@ button {
   margin: 3rem 0;
 }
 
+.contact.inactive {
+  display: none;
+}
+
 @media (min-width: 576px) {
   .contact__copy-rights, .contact__info-text {
     font-size: 1.44rem;
@@ -1076,5 +1144,9 @@ body {
   background-color: #f5f5f5;
   text-decoration: none;
   color: white;
+}
+
+main.inactive {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

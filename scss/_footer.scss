@@ -55,6 +55,10 @@
   }
 }
 
+.contact.inactive {
+  display: none;
+}
+
 @media (min-width: 576px) {
   .contact {
     &__copy-rights,
@@ -169,3 +173,4 @@
 //     }
 //   }
 // }
+
