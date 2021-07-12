@@ -203,16 +203,16 @@ gsap.fromTo(
 
 const options = {
   rootMargin: "0px 0px 0px 0px",
-  treshold: 0.5,
+  treshold: 0,
 }
 
 let observer = new IntersectionObserver((elements) => {
   elements.forEach(element => {
     if (element.isIntersecting) {
     element.target.src = element.target.getAttribute("data-src");
-    // gsap.fromTo(element.target, {opacity: 0}, {opacity: 1, duration: 1})
+    gsap.to(element.target, { duration: 3, clipPath: "circle(150% at 10% 10%)"});
     const coverImage = element.target.nextElementSibling;
-    gsap.fromTo(coverImage, {y: "0%"}, {y: "100%", duration: 3, delay: 0.5});
+    // gsap.to(coverImage, { duration: 3, delay: 0.5, clipPath: "circle(100%)"});
     }
     if (element.isIntersecting) {
       observer.unobserve(element.target);
