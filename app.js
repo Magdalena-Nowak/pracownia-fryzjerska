@@ -2,11 +2,6 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 //VARIABLES
 
-// const menuNav = document.querySelector("#home");
-// const logoNav = document.querySelector(".navigation__link");
-// const descriptionWrapper = document.querySelector(
-//   ".about__description-wrapper"
-// );
 // const photoWrapper = document.querySelector(".about__photo-wrapper");
 // const openPriceBtns = document.querySelectorAll(".price-list__reveal");
 // const hidePriceBtns = document.querySelectorAll(".price-list__hide");
@@ -92,9 +87,6 @@ function openingNavigation() {
   buttonLine2.classList.toggle("active");
   buttonLine3.classList.toggle("active");
 }
-
-openNavBtn.addEventListener("click", openingNavigation);
-closeNavBtn.addEventListener("click", closingNavigation);
 
 navItems.forEach((item, index) => {
   item.addEventListener("click", () => {
