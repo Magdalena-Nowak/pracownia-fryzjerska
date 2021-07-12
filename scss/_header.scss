@@ -11,7 +11,6 @@
     margin-bottom: 1.5rem;
   }
   &__close-icon {
-    // opacity: 0.8;
     font-size: $iconSize * 0.8;
     color: $mainWhite;
     pointer-events: none;
@@ -40,24 +39,48 @@
     height: 100%;
     object-fit: contain;
   }
-  &__open-btn {
-    background-color: $mainBlack;
+  &__btn {
     position: absolute;
-    border: none;
     top: 50%;
     right: 10%;
     transform: translate(-10%, -50%);
+    @include flex(column, center, center);
     cursor: pointer;
+    z-index: 2;
   }
-  &__open-btn:focus {
-    border: 1px dotted rgb(43, 43, 43);
+  &__btn-line {
+    width: 4rem;
+    height: 0.4rem;
+    margin: 0.3rem 0;
+    background-color: $mainWhite;
+    opacity: 0.8;
   }
-  &__open-icon {
-    // opacity: 0.8;
-    font-size: $iconSize * 0.8;
-    color: $mainWhite;
-    pointer-events: none;
-    background-color: transparent;
+  &__btn-line--one {
+    transform: rotate(0) translateY(0) translateX(0);
+    transition: all 0.2s ease-in-out;
+    transform-origin: center;
+  }
+  &__btn-line--one.active {
+    transform: rotate(136deg) translateY(-9px) translateX(5px);
+    height: 0.5rem;
+  }
+  &__btn-line--three {
+    transform: rotate(0) translateY(0) translateX(0);
+    transition: all 0.2s ease-in-out;
+    transform-origin: center;
+  }
+  &__btn-line--three.active {
+    transform: rotate(-136deg) translateY(9px) translateX(5px);
+    height: 0.5rem;
+  }
+  &__btn-line--two {
+    transform: translateX(0%);
+    transition: all 0.4s ease-in-out;
+    opacity: 0.8;
+  }
+  &__btn-line--two.active {
+    transform: translateX(-100%);
+    opacity: 0;
   }
   &__wrapper {
     height: 100vh;
@@ -70,18 +93,14 @@
     left: 0;
     display: none;
   }
-}
-
-.active {
-  display: flex;
+  &__wrapper.active{
+    display: flex;
+    background-color: $mainBlack;
+  }
 }
 
 @media (min-width: 576px) {
   .navigation {
-    &__close-icon,
-    &__open-icon {
-      font-size: $iconSize;
-    }
     &__item {
       padding: 1.5rem 2rem;
       font-size: $fontH1 * 1.2;
@@ -91,10 +110,6 @@
 
 @media (min-width: 768px) {
   .navigation {
-    &__close-icon,
-    &__open-icon {
-      font-size: $iconSize * 1.2;
-    }
     &__item {
       font-size: $fontH1 * 1.4;
     }
@@ -103,8 +118,9 @@
 
 @media (min-width: 992px) {
   .navigation {
+    height: 15vh;
     @include flex(row, flex-start, center);
-    &__close-btn {
+    &__btn {
       display: none;
     }
     &__item {
@@ -118,18 +134,14 @@
     &__list {
       @include flex(row, space-around, center);
       margin: 0;
-      position: absolute;
-      top: 50%;
-      right: 20%;
-      transform: translate(-10%, -50%);
-    }
-    &__open-btn {
-      display: none;
+      margin-top: 0;
     }
     &__wrapper {
+      position: initial;
       height: 15vh;
-      display: flex;
-      position: relative;
+      width: auto;
+      @include flex(row, center, center);
+      margin-right: 5%;
     }
   }
 }
@@ -137,55 +149,33 @@
 @media (min-width: 1200px) {
   .navigation {
     height: 17vh;
-    // &__close-icon,
-    // &__open-icon {
-    //   font-size: $iconSize * 1.4;
-    // }
     &__item {
-      // font-size: $fontH1 * 1.6;
       padding: 1.5rem 1rem;
     }
     &__link {
       width: 80%;
     }
-    // &__list {
-    //   font-size: $fontH1 * 1.4;
-    // }
     &__wrapper {
       height: 17vh;
+      margin-right: 10%;
     }
   }
 }
 
-// @media (min-width: 1200px) and (max-height: 1000px) {
-//   .navigation {
-//     &__close-icon,
-//     &__open-icon {
-//       font-size: $iconSize * 1.2;
-//     }
-//     &__item {
-//       font-size: $fontH1 * 1.4;
-//     }
-//     &__list {
-//       font-size: $fontH1 * 1.2;
-//     }
-//   }
-// }
+@media (min-height: 380px) and (max-width: 991px){
+  .navigation {
+    &__list {
+      margin-top: 12rem;
+    }
+  }
+}
 
 @media (min-width: 1800px) {
   .navigation {
     height: 20vh;
-    // &__close-icon,
-    // &__open-icon {
-    //   font-size: $iconSize * 1.6;
-    // }
     &__item {
-      // font-size: $fontH1 * 1.8;
       min-width: 15rem;
     }
-    // &__list {
-    //   font-size: $fontH1 * 1.6;
-    // }
     &__wrapper {
       height: 20vh;
     }

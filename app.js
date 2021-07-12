@@ -4,10 +4,13 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
 const navigation = document.querySelector(".navigation__wrapper");
 const navItems = document.querySelectorAll(".navigation__item");
 const sections = document.querySelectorAll("#home section");
-const openNavBtn = document.querySelector(".navigation__open-btn");
-const closeNavBtn = document.querySelector(".navigation__close-btn");
+const navButton = document.querySelector(".navigation__btn");
+const buttonLine1 = document.querySelector(".navigation__btn-line--one");
+const buttonLine2 = document.querySelector(".navigation__btn-line--two");
+const buttonLine3 = document.querySelector(".navigation__btn-line--three");
 const menuNav = document.querySelector("#home");
 const logoNav = document.querySelector(".navigation__link");
+const footerContent = document.querySelector(".contact");
 const descriptionWrapper = document.querySelector(
   ".about__description-wrapper"
 );
@@ -25,7 +28,7 @@ const regularImagesArray = [];
 const closeBigGallery = document.querySelector(".gallery__close-icon");
 const bigImage = document.querySelector(".gallery__big-image");
 const mainContent = document.querySelector("main");
-const footerContent = document.querySelector("footer");
+
 const headerContent = document.querySelector("header");
 const rightBtn = document.querySelector(".gallery__right-icon");
 const leftBtn = document.querySelector(".gallery__left-icon");
@@ -42,27 +45,26 @@ const time = 3000;
 let active = 0;
 
 // NAVIGATION
-openNavBtn.addEventListener("click", openingNavigation);
-closeNavBtn.addEventListener("click", closingNavigation);
-
 function openingNavigation() {
-  navigation.classList.add("active");
-  navigation.style.backgroundColor = "#191919";
-  mainContent.style.display = "none";
-  footerContent.style.display = "flex";
-}
-
-function closingNavigation() {
-  navigation.classList.remove("active");
-  mainContent.style.display = "block";
-  footerContent.style.display = "flex";
+  navigation.classList.toggle("active");
+  menuNav.scrollIntoView({
+    behavior: "smooth",
+  });
+  mainContent.classList.toggle("inactive");
+  footerContent.classList.toggle("inactive");
+  buttonLine1.classList.toggle("active");
+  buttonLine2.classList.toggle("active");
+  buttonLine3.classList.toggle("active");
 }
 
 navItems.forEach((item, index) => {
   item.addEventListener("click", () => {
     navigation.classList.remove("active");
-    mainContent.style.display = "block";
-    footerContent.style.display = "flex";
+    mainContent.classList.remove("inactive");
+    footerContent.classList.remove("inactive");
+    buttonLine1.classList.toggle("active");
+    buttonLine2.classList.toggle("active");
+    buttonLine3.classList.toggle("active");
     sections[index].scrollIntoView({
       behavior: "smooth",
     });
@@ -75,15 +77,14 @@ logoNav.addEventListener("click", () => {
   });
 });
 
+navButton.addEventListener("click", openingNavigation);
+
 //SLIDER GALLERY
 const swipeList = [
-    { img: "./img/pracownia_fryzjerska_wnetrze1-large.png" },
-    { img: "./img/pracownia_fryzjerska_wnetrze2-large.png" },
-    { img: "./img/pracownia_fryzjerska_wnetrze3-large.png" },
+  { img: "./img/pracownia_fryzjerska_wnetrze1-large.png" },
+  { img: "./img/pracownia_fryzjerska_wnetrze2-large.png" },
+  { img: "./img/pracownia_fryzjerska_wnetrze3-large.png" },
 ];
-
-// console.log(swiper);
-// console.log(window);
 
 const autoChangeSlides = () => {
   const activeSlide = swipeSlides.findIndex((slide) =>
@@ -101,7 +102,6 @@ const changeSwipe = () => {
   swipeImage.src = swipeList[active].img;
   autoChangeSlides();
 };
-
 
 let timeInterval = setInterval(changeSwipe, time);
 
@@ -204,32 +204,34 @@ gsap.fromTo(
 const options = {
   rootMargin: "0px 0px 0px 0px",
   treshold: 0,
-}
+};
 
 let observer = new IntersectionObserver((elements) => {
-  elements.forEach(element => {
+  elements.forEach((element) => {
     if (element.isIntersecting) {
-    element.target.src = element.target.getAttribute("data-src");
-    gsap.to(element.target, { duration: 3, clipPath: "circle(150% at 10% 10%)"});
-    const coverImage = element.target.nextElementSibling;
-    // gsap.to(coverImage, { duration: 3, delay: 0.5, clipPath: "circle(100%)"});
+      element.target.src = element.target.getAttribute("data-src");
+      gsap.to(element.target, {
+        duration: 3,
+        clipPath: "circle(150% at 10% 10%)",
+      });
+      const coverImage = element.target.nextElementSibling;
+      // gsap.to(coverImage, { duration: 3, delay: 0.5, clipPath: "circle(100%)"});
     }
     if (element.isIntersecting) {
       observer.unobserve(element.target);
     }
-  })
-}, options)
+  });
+}, options);
 
 const targets = document.querySelectorAll(".gallery__regular-image");
-targets.forEach(target => {
+targets.forEach((target) => {
   observer.observe(target);
-})
+});
 
 // const imagesNormal = document.querySelectorAll('[data-src]');
 // imagesNormal.forEach(img => {
 //   observer.observe(img);
 // });
-
 
 // console.log(imagesNormal);
 // function galleryExtend() {
@@ -291,7 +293,7 @@ function clickableRegularImages() {
       footerContent.style.display = "none";
       headerContent.style.display = "none";
       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
-      bigImage.setAttribute('alt', "fryzura, loki, fale, proste włosy");
+      bigImage.setAttribute("alt", "fryzura, loki, fale, proste włosy");
       bigImage.setAttribute("thumbindex", "0");
       dynamicChangeImages();
       // handlingArrows();
@@ -308,7 +310,7 @@ function dynamicChangeImages() {
   thumbImages.forEach((image, index) => {
     image.addEventListener("click", function () {
       bigImage.setAttribute("src", `./img/img${index + 1}.jpg`);
-      bigImage.setAttribute('alt', "fryzura, loki, fale, proste włosy");
+      bigImage.setAttribute("alt", "fryzura, loki, fale, proste włosy");
       bigImage.setAttribute("thumbindex", "0");
     });
   });
@@ -319,12 +321,12 @@ function handlingArrows() {
     if (imageNr >= smallImages.length - 1) {
       imageNr = 0;
       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
-      bigImage.setAttribute('alt', "fryzura, loki, fale, proste włosy");
+      bigImage.setAttribute("alt", "fryzura, loki, fale, proste włosy");
       bigImage.setAttribute("thumbindex", "0");
     } else {
       imageNr++;
       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
-      bigImage.setAttribute('alt', "fryzura, loki, fale, proste włosy");
+      bigImage.setAttribute("alt", "fryzura, loki, fale, proste włosy");
       bigImage.setAttribute("thumbindex", "0");
     }
     // changingPhotoOrder();
@@ -333,12 +335,12 @@ function handlingArrows() {
     if (imageNr <= 0) {
       imageNr = smallImages.length - 1;
       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
-    bigImage.setAttribute('alt', "fryzura, loki, fale, proste włosy");
-    bigImage.setAttribute("thumbindex", "0");  
-  } else {
+      bigImage.setAttribute("alt", "fryzura, loki, fale, proste włosy");
+      bigImage.setAttribute("thumbindex", "0");
+    } else {
       imageNr--;
       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
-      bigImage.setAttribute('alt', "fryzura, loki, fale, proste włosy");
+      bigImage.setAttribute("alt", "fryzura, loki, fale, proste włosy");
       bigImage.setAttribute("thumbindex", "0");
     }
     // changingPhotoOrder();
