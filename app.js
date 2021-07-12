@@ -77,10 +77,13 @@ logoNav.addEventListener("click", () => {
 
 //SLIDER GALLERY
 const swipeList = [
-  { img: "./img/pracownia_fryzjerska_wnetrze1-small.png" },
-  { img: "./img/pracownia_fryzjerska_wnetrze2-small.png" },
-  { img: "./img/pracownia_fryzjerska_wnetrze3-small.png" },
+    { img: "./img/pracownia_fryzjerska_wnetrze1-large.png" },
+    { img: "./img/pracownia_fryzjerska_wnetrze2-large.png" },
+    { img: "./img/pracownia_fryzjerska_wnetrze3-large.png" },
 ];
+
+// console.log(swiper);
+// console.log(window);
 
 const autoChangeSlides = () => {
   const activeSlide = swipeSlides.findIndex((slide) =>
@@ -98,6 +101,7 @@ const changeSwipe = () => {
   swipeImage.src = swipeList[active].img;
   autoChangeSlides();
 };
+
 
 let timeInterval = setInterval(changeSwipe, time);
 
