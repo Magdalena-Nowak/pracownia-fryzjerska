@@ -1,5 +1,5 @@
 .swiper {
-  padding-top: 15vh;
+  // padding-top: 10vh;
   height: 100vh;
   width: 100%;
   @include flex(column, center, center);
@@ -54,14 +54,14 @@
   }
 }
 
-@media (min-width: 1200px) {
-  .swiper {
-    padding-top: 17vh;
-  }
-}
+// @media (min-width: 1200px) {
+//   .swiper {
+//     padding-top: 17vh;
+//   }
+// }
 
-@media (min-width: 1800px) {
-  .swiper {
-    padding-top: 20vh;
-  }
-}
+// @media (min-width: 1800px) {
+//   .swiper {
+//     padding-top: 20vh;
+//   }
+// }

@@ -1,49 +1,50 @@
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 //VARIABLES
+
+// const menuNav = document.querySelector("#home");
+// const logoNav = document.querySelector(".navigation__link");
+// const descriptionWrapper = document.querySelector(
+//   ".about__description-wrapper"
+// );
+// const photoWrapper = document.querySelector(".about__photo-wrapper");
+// const openPriceBtns = document.querySelectorAll(".price-list__reveal");
+// const hidePriceBtns = document.querySelectorAll(".price-list__hide");
+// const cardsContainers = document.querySelectorAll(".price-list__container");
+// const priceSection = document.querySelector("#prices");
+// const galleryContent = document.querySelector(".gallery__wrapper");
+// const gallery = document.querySelector("#gallery");
+// const gallerySlider = document.querySelector(".gallery__swiper");
+// const smallImages = document.querySelectorAll(".gallery__thumb");
+// const regularImages = document.getElementsByClassName("gallery__regular-image");
+// const regularImagesArray = [];
+// const closeBigGallery = document.querySelector(".gallery__close-icon");
+// const bigImage = document.querySelector(".gallery__big-image");
+
+// const rightBtn = document.querySelector(".gallery__right-icon");
+// const leftBtn = document.querySelector(".gallery__left-icon");
+// const sectionAbout = document.querySelector(".about");
+// const allImages = regularImages.length - 1;
+// const thumbsGallery = document.querySelector(".gallery__thumbs");
+// let imageNr;
+// let currentImageNr = 6;
+// let more = 0;
+// const swipeImage = document.querySelector(".swiper__image");
+// const swipeSlides = [...document.querySelectorAll(".swiper__slide")];
+
+// const time = 3000;
+// let active = 0;
+
+// NAVIGATION
+// Variables
 const navigation = document.querySelector(".navigation__wrapper");
-const navItems = document.querySelectorAll(".navigation__item");
-const sections = document.querySelectorAll("#home section");
 const openNavBtn = document.querySelector(".navigation__open-btn");
-const closeNavBtn = document.querySelector(".navigation__close-btn");
-const menuNav = document.querySelector("#home");
-const logoNav = document.querySelector(".navigation__link");
-const descriptionWrapper = document.querySelector(
-  ".about__description-wrapper"
-);
-const photoWrapper = document.querySelector(".about__photo-wrapper");
-const openPriceBtns = document.querySelectorAll(".price-list__reveal");
-const hidePriceBtns = document.querySelectorAll(".price-list__hide");
-const cardsContainers = document.querySelectorAll(".price-list__container");
-const priceSection = document.querySelector("#prices");
-const galleryContent = document.querySelector(".gallery__wrapper");
-const gallery = document.querySelector("#gallery");
-const gallerySlider = document.querySelector(".gallery__swiper");
-const smallImages = document.querySelectorAll(".gallery__thumb");
-const regularImages = document.getElementsByClassName("gallery__regular-image");
-const regularImagesArray = [];
-const closeBigGallery = document.querySelector(".gallery__close-icon");
-const bigImage = document.querySelector(".gallery__big-image");
 const mainContent = document.querySelector("main");
 const footerContent = document.querySelector("footer");
 const headerContent = document.querySelector("header");
-const rightBtn = document.querySelector(".gallery__right-icon");
-const leftBtn = document.querySelector(".gallery__left-icon");
-const sectionAbout = document.querySelector(".about");
-const allImages = regularImages.length - 1;
-const thumbsGallery = document.querySelector(".gallery__thumbs");
-let imageNr;
-let currentImageNr = 6;
-let more = 0;
-const swipeImage = document.querySelector(".swiper__image");
-const swipeSlides = [...document.querySelectorAll(".swiper__slide")];
-
-const time = 3000;
-let active = 0;
-
-// NAVIGATION
-openNavBtn.addEventListener("click", openingNavigation);
-closeNavBtn.addEventListener("click", closingNavigation);
+const sections = document.querySelectorAll("#home section");
+const closeNavBtn = document.querySelector(".navigation__close-btn");
+const navItems = document.querySelectorAll(".navigation__item");
 
 function openingNavigation() {
   navigation.classList.add("active");
@@ -58,6 +59,9 @@ function closingNavigation() {
   footerContent.style.display = "flex";
 }
 
+openNavBtn.addEventListener("click", openingNavigation);
+closeNavBtn.addEventListener("click", closingNavigation);
+
 navItems.forEach((item, index) => {
   item.addEventListener("click", () => {
     navigation.classList.remove("active");
@@ -66,12 +70,6 @@ navItems.forEach((item, index) => {
     sections[index].scrollIntoView({
       behavior: "smooth",
     });
-  });
-});
-
-logoNav.addEventListener("click", () => {
-  menuNav.scrollIntoView({
-    behavior: "smooth",
   });
 });
 
@@ -138,7 +136,6 @@ gsap.fromTo(
     scrollTrigger: {
       trigger: ".about",
       start: "top 50%",
-      // markers: true,
     },
     duration: 3,
   }
@@ -151,7 +148,6 @@ gsap.fromTo(
     scrollTrigger: {
       trigger: photoWrapper,
       start: "top 50%",
-      // markers: true,
     },
     duration: 3,
   }
@@ -166,7 +162,6 @@ gsap.fromTo(
     scrollTrigger: {
       trigger: ".price-list__card--woman",
       start: "top 70%",
-      // markers: true,
     },
   }
 );
@@ -180,7 +175,6 @@ gsap.fromTo(
     scrollTrigger: {
       trigger: ".price-list__card--man",
       start: "top 70%",
-      // markers: true,
     },
   }
 );
