@@ -12,10 +12,17 @@ body {
   font-size: 10px;
 }
 
+body {
+  width: 100vw;
+}
+
 li {
   list-style-type: none;
 }
 
+main {
+  width: 100vw;
+}
 @import "variables";
 @import "header";
 @import "swiper";
@@ -37,4 +44,3 @@ body {
   text-decoration: none;
   color: white;
 }
-

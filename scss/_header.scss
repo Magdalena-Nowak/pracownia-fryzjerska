@@ -11,7 +11,7 @@
     margin-bottom: 1.5rem;
   }
   &__close-icon {
-    opacity: 0.8;
+    // opacity: 0.8;
     font-size: $iconSize * 0.8;
     color: $mainWhite;
     pointer-events: none;
@@ -41,7 +41,9 @@
     object-fit: contain;
   }
   &__open-btn {
+    background-color: $mainBlack;
     position: absolute;
+    border: none;
     top: 50%;
     right: 10%;
     transform: translate(-10%, -50%);
@@ -51,17 +53,18 @@
     border: 1px dotted rgb(43, 43, 43);
   }
   &__open-icon {
-    opacity: 0.8;
+    // opacity: 0.8;
     font-size: $iconSize * 0.8;
     color: $mainWhite;
     pointer-events: none;
+    background-color: transparent;
   }
   &__wrapper {
     height: 100vh;
     width: 100%;
     color: $mainWhite;
     font-family: $headerFamily;
-    position: absolute;
+    position: fixed;
     @include flex(column, center, stretch);
     top: 0;
     left: 0;
@@ -210,4 +213,9 @@
       width: 40%;
     }
   }
+}
+
+button {
+  background-color: $mainBlack;
+  border: none;
 }
