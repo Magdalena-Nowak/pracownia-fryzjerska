@@ -80,18 +80,11 @@
     &__description {
       margin: 1rem 0;
     }
-    &__description--name {
-      font-size: $cardsBodyHeader * 1.1;
-    }
     &__description-wrapper {
       margin: 1rem 2rem;
       margin-left: 4rem;
       padding: 0;
       flex: 1 1 50%;
-      font-size: $fontText * 1.1;
-    }
-    &__header {
-      font-size: $sectionHeader * 1.1;
     }
     &__photo-wrapper {
       flex: 1 1 40%;

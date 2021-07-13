@@ -1,35 +1,5 @@
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-//VARIABLES
-
-// const photoWrapper = document.querySelector(".about__photo-wrapper");
-// const openPriceBtns = document.querySelectorAll(".price-list__reveal");
-// const hidePriceBtns = document.querySelectorAll(".price-list__hide");
-// const cardsContainers = document.querySelectorAll(".price-list__container");
-// const priceSection = document.querySelector("#prices");
-// const galleryContent = document.querySelector(".gallery__wrapper");
-// const gallery = document.querySelector("#gallery");
-// const gallerySlider = document.querySelector(".gallery__swiper");
-// const smallImages = document.querySelectorAll(".gallery__thumb");
-// const regularImages = document.getElementsByClassName("gallery__regular-image");
-// const regularImagesArray = [];
-// const closeBigGallery = document.querySelector(".gallery__close-icon");
-// const bigImage = document.querySelector(".gallery__big-image");
-
-// const rightBtn = document.querySelector(".gallery__right-icon");
-// const leftBtn = document.querySelector(".gallery__left-icon");
-// const sectionAbout = document.querySelector(".about");
-// const allImages = regularImages.length - 1;
-// const thumbsGallery = document.querySelector(".gallery__thumbs");
-// let imageNr;
-// let currentImageNr = 6;
-// let more = 0;
-// const swipeImage = document.querySelector(".swiper__image");
-// const swipeSlides = [...document.querySelectorAll(".swiper__slide")];
-
-// const time = 3000;
-// let active = 0;
-
 // NAVIGATION
 // Variables
 const navigation = document.querySelector(".navigation__wrapper");
@@ -160,75 +130,102 @@ changeSwipe();
 
 //ABOUT
 
-gsap.fromTo(
-  descriptionWrapper,
-  { opacity: 0, x: "-150%" },
-  {
-    opacity: 1,
-    x: "0%",
-    scrollTrigger: {
-      trigger: ".about",
-      start: "top 50%",
-    },
-    duration: 3,
-  }
-);
-gsap.fromTo(
-  photoWrapper,
-  { x: "150%" },
-  {
-    x: "0%",
-    scrollTrigger: {
-      trigger: photoWrapper,
-      start: "top 50%",
-    },
-    duration: 3,
-  }
-);
+const optionsAboutText = {
+  rootMargin: "0px 0px 0px 0px",
+  treshold: 0,
+};
 
-gsap.fromTo(
-  ".price-list__card--woman",
-  { x: "-200%" },
-  {
-    x: "0%",
-    duration: 0.5,
-    scrollTrigger: {
-      trigger: ".price-list__card--woman",
-      start: "top 70%",
-    },
-  }
-);
+let galleryObserver = new IntersectionObserver((element) => {
+    if (element.isIntersecting) {
+      console.log(element.target);
+      // element.target.src = element.target.getAttribute("data-src");
+      // gsap.to(element.target, {
+      //   duration: 3,
+      //   clipPath: "circle(150% at 10% 10%)",
+      // });
+      // const coverImage = element.target.nextElementSibling;
+      // gsap.to(coverImage, { duration: 3, delay: 0.5, clipPath: "circle(100%)"});
+    }
+    if (element.isIntersecting) {
+      galleryObserver.unobserve(element.target);
+    }
+}, optionsGallery);
 
-gsap.fromTo(
-  ".price-list__card--man",
-  { x: "200%" },
-  {
-    x: "0%",
-    duration: 0.5,
-    scrollTrigger: {
-      trigger: ".price-list__card--man",
-      start: "top 70%",
-    },
-  }
-);
+const targets = document.querySelectorAll(".gallery__regular-image");
+targets.forEach((target) => {
+  galleryObserver.observe(target);
+});
 
-gsap.fromTo(
-  ".price-list__card--children",
-  { x: "-200%" },
-  {
-    x: "0%",
-    duration: 0.5,
-    scrollTrigger: {
-      trigger: ".price-list__card--children",
-      start: "top 70%",
-      // markers: true,
-    },
-  }
-);
+
+// gsap.fromTo(
+//   descriptionWrapper,
+//   { opacity: 0, x: "-150%" },
+//   {
+//     opacity: 1,
+//     x: "0%",
+//     scrollTrigger: {
+//       trigger: ".about",
+//       start: "top 50%",
+//     },
+//     duration: 3,
+//   }
+// );
+// gsap.fromTo(
+//   photoWrapper,
+//   { x: "150%" },
+//   {
+//     x: "0%",
+//     scrollTrigger: {
+//       trigger: photoWrapper,
+//       start: "top 50%",
+//     },
+//     duration: 3,
+//   }
+// );
+
+// gsap.fromTo(
+//   ".price-list__card--woman",
+//   { x: "-200%" },
+//   {
+//     x: "0%",
+//     duration: 0.5,
+//     scrollTrigger: {
+//       trigger: ".price-list__card--woman",
+//       start: "top 70%",
+//     },
+//   }
+// );
+
+// gsap.fromTo(
+//   ".price-list__card--man",
+//   { x: "200%" },
+//   {
+//     x: "0%",
+//     duration: 0.5,
+//     scrollTrigger: {
+//       trigger: ".price-list__card--man",
+//       start: "top 70%",
+//     },
+//   }
+// );
+
+// gsap.fromTo(
+//   ".price-list__card--children",
+//   { x: "-200%" },
+//   {
+//     x: "0%",
+//     duration: 0.5,
+//     scrollTrigger: {
+//       trigger: ".price-list__card--children",
+//       start: "top 70%",
+//       // markers: true,
+//     },
+//   }
+// );
 
 //GALLERY
 
-const options = {
+const optionsGallery = {
   rootMargin: "0px 0px 0px 0px",
   treshold: 0,
 };
@@ -242,13 +239,12 @@ let galleryObserver = new IntersectionObserver((elements) => {
         clipPath: "circle(150% at 10% 10%)",
       });
       const coverImage = element.target.nextElementSibling;
-      // gsap.to(coverImage, { duration: 3, delay: 0.5, clipPath: "circle(100%)"});
     }
     if (element.isIntersecting) {
       galleryObserver.unobserve(element.target);
     }
   });
-}, options);
+}, optionsGallery);
 
 const targets = document.querySelectorAll(".gallery__regular-image");
 targets.forEach((target) => {

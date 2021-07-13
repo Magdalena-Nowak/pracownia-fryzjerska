@@ -48,7 +48,6 @@
   &__btn-line--one {
     transform: rotate(0) translateY(0) translateX(0);
     transition: all 0.2s ease-in-out;
-    transform-origin: center;
   }
   &__btn-line--one.active {
     transform: rotate(136deg) translateY(-9px) translateX(5px);
@@ -57,7 +56,6 @@
   &__btn-line--three {
     transform: rotate(0) translateY(0) translateX(0);
     transition: all 0.2s ease-in-out;
-    transform-origin: center;
   }
   &__btn-line--three.active {
     transform: rotate(-136deg) translateY(9px) translateX(5px);
