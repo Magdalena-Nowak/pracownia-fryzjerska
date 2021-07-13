@@ -130,58 +130,60 @@ changeSwipe();
 
 //ABOUT
 
-const optionsAboutText = {
-  rootMargin: "0px 0px 0px 0px",
-  treshold: 0,
-};
+// const optionsAboutText = {
+//   rootMargin: "0px 0px 0px 0px",
+//   treshold: 0,
+// };
 
-let galleryObserver = new IntersectionObserver((element) => {
-    if (element.isIntersecting) {
-      console.log(element.target);
-      // element.target.src = element.target.getAttribute("data-src");
-      // gsap.to(element.target, {
-      //   duration: 3,
-      //   clipPath: "circle(150% at 10% 10%)",
-      // });
-      // const coverImage = element.target.nextElementSibling;
-      // gsap.to(coverImage, { duration: 3, delay: 0.5, clipPath: "circle(100%)"});
-    }
-    if (element.isIntersecting) {
-      galleryObserver.unobserve(element.target);
-    }
-}, optionsGallery);
+// let aboutTextObserver = new IntersectionObserver((element) => {
+//     if (element.isIntersecting) {
+//       console.log(element.target);
+//       // element.target.src = element.target.getAttribute("data-src");
+//       // gsap.to(element.target, {
+//       //   duration: 3,
+//       //   clipPath: "circle(150% at 10% 10%)",
+//       // });
+//       // const coverImage = element.target.nextElementSibling;
+//       // gsap.to(coverImage, { duration: 3, delay: 0.5, clipPath: "circle(100%)"});
+//     }
+//     if (element.isIntersecting) {
+//       aboutTextObserver.unobserve(element.target);
+//     }
+// }, optionsAboutText);
 
-const targets = document.querySelectorAll(".gallery__regular-image");
-targets.forEach((target) => {
-  galleryObserver.observe(target);
-});
+// const aboutTextTarget = document.querySelectorAll(".about__description-wrapper");
+// aboutTextTarget.forEach((target) => {
+//   aboutTextObserver.observe(target);
+// });
 
 
-// gsap.fromTo(
-//   descriptionWrapper,
-//   { opacity: 0, x: "-150%" },
-//   {
-//     opacity: 1,
-//     x: "0%",
-//     scrollTrigger: {
-//       trigger: ".about",
-//       start: "top 50%",
-//     },
-//     duration: 3,
-//   }
-// );
-// gsap.fromTo(
-//   photoWrapper,
-//   { x: "150%" },
-//   {
-//     x: "0%",
-//     scrollTrigger: {
-//       trigger: photoWrapper,
-//       start: "top 50%",
-//     },
-//     duration: 3,
-//   }
-// );
+gsap.fromTo(
+  descriptionWrapper,
+  { opacity: 0, x: "-150%" },
+  {
+    opacity: 1,
+    x: "0%",
+    scrollTrigger: {
+      trigger: ".about",
+      start: "-10% 50%",
+      markers: true,
+    },
+    duration: 1.5,
+  }
+);
+gsap.fromTo(
+  photoWrapper,
+  { x: "150%" },
+  {
+    x: "0%",
+    scrollTrigger: {
+      trigger: photoWrapper,
+      start: "-10% 50%",
+      markers: true,
+    },
+    duration: 1.5,
+  },
+);
 
 // gsap.fromTo(
 //   ".price-list__card--woman",
