@@ -166,7 +166,7 @@ gsap.fromTo(
     scrollTrigger: {
       trigger: ".about",
       start: "-10% 50%",
-      markers: true,
+      // markers: true,
     },
     duration: 1.5,
   }
@@ -179,7 +179,7 @@ gsap.fromTo(
     scrollTrigger: {
       trigger: photoWrapper,
       start: "-10% 50%",
-      markers: true,
+      // markers: true,
     },
     duration: 1.5,
   },
