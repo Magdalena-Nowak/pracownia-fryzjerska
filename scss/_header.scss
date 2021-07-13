@@ -5,16 +5,6 @@
   background-color: $mainBlack;
   position: fixed;
   z-index: 1;
-  // &__close-btn {
-  //   cursor: pointer;
-  //   align-self: flex-end;
-  //   margin-bottom: 1.5rem;
-  // }
-  // &__close-icon {
-  //   font-size: $iconSize * 0.8;
-  //   color: $mainWhite;
-  //   pointer-events: none;
-  // }
   &__item {
     padding: 0.5rem 1rem;
     transition: all 0.6s ease-in-out;
