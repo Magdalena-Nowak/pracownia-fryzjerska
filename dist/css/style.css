@@ -342,6 +342,7 @@ button {
   text-align: justify;
   font-size: 1.3rem;
   padding: 3rem 2rem;
+  opacity: 0;
 }
 
 .about__description--name {
@@ -376,6 +377,7 @@ button {
 
 .about__photo-wrapper {
   width: 100%;
+  opacity: 0;
 }
 
 @media (min-width: 520px) {

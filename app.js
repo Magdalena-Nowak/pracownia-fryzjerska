@@ -129,61 +129,75 @@ window.addEventListener("click", changeSlides);
 changeSwipe();
 
 //ABOUT
+//Text
+const optionsAboutText = {
+  rootMargin: "0px 0px 0px 0px",
+  treshold: 1,
+};
 
-// const optionsAboutText = {
-//   rootMargin: "0px 0px 0px 0px",
-//   treshold: 0,
-// };
+let callback = (entries, aboutTextObserver) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const aboutText = entry.target.parentElement;
+      gsap.fromTo(
+        aboutText,
+        { x: "-150%" },
+        {
+          opacity: 1,
+          x: "0%",
+          duration: 1.5,
+        }
+      );
+    }
+    if (entry.isIntersecting) {
+      aboutTextObserver.unobserve(entry.target);
+    }
+  });
+};
 
-// let aboutTextObserver = new IntersectionObserver((element) => {
-//     if (element.isIntersecting) {
-//       console.log(element.target);
-//       // element.target.src = element.target.getAttribute("data-src");
-//       // gsap.to(element.target, {
-//       //   duration: 3,
-//       //   clipPath: "circle(150% at 10% 10%)",
-//       // });
-//       // const coverImage = element.target.nextElementSibling;
-//       // gsap.to(coverImage, { duration: 3, delay: 0.5, clipPath: "circle(100%)"});
-//     }
-//     if (element.isIntersecting) {
-//       aboutTextObserver.unobserve(element.target);
-//     }
-// }, optionsAboutText);
+let aboutTextObserver = new IntersectionObserver(callback, optionsAboutText);
 
-// const aboutTextTarget = document.querySelectorAll(".about__description-wrapper");
-// aboutTextTarget.forEach((target) => {
-//   aboutTextObserver.observe(target);
-// });
+let targetAbout = document.querySelectorAll(".about__description");
+aboutTextObserver.observe(targetAbout[0]);
 
+//Photo
+const optionsAboutPhoto = {
+  rootMargin: "0px 0px 0px 0px",
+  treshold: 1,
+};
 
-gsap.fromTo(
-  descriptionWrapper,
-  { opacity: 0, x: "-150%" },
-  {
-    opacity: 1,
-    x: "0%",
-    scrollTrigger: {
-      trigger: ".about",
-      start: "-10% 50%",
-      // markers: true,
-    },
-    duration: 1.5,
-  }
+let callbackPhoto = (entries, aboutPhotoObserver) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      gsap.fromTo(entry.target, {x: "150%"}, {opacity: 1, x: "0%", duration: 1.5})
+    }
+    if (entry.isIntersecting) {
+      aboutPhotoObserver.unobserve(entry.target);
+    }
+  });
+};
+
+let aboutPhotoObserver = new IntersectionObserver(
+  callbackPhoto,
+  optionsAboutPhoto
 );
-gsap.fromTo(
-  photoWrapper,
-  { x: "150%" },
-  {
-    x: "0%",
-    scrollTrigger: {
-      trigger: photoWrapper,
-      start: "-10% 50%",
-      // markers: true,
-    },
-    duration: 1.5,
-  },
-);
+
+let targetAboutPhoto = document.querySelector(".about__photo-wrapper");
+aboutPhotoObserver.observe(targetAboutPhoto);
+
+// gsap.fromTo(
+//   photoWrapper,
+//   { x: "150%" },
+//   {
+//     x: "0%",
+//     scrollTrigger: {
+//       trigger: photoWrapper,
+//       start: "top 50%",
+//       // markers: true,
+//     },
+//     duration: 1.5,
+//   }
+// );
 
 // gsap.fromTo(
 //   ".price-list__card--woman",
@@ -228,7 +242,7 @@ gsap.fromTo(
 //GALLERY
 
 const optionsGallery = {
-  rootMargin: "0px 0px 0px 0px",
+  rootMargin: "0px",
   treshold: 0,
 };
 

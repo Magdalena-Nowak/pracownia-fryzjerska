@@ -12,6 +12,7 @@
     text-align: justify;
     font-size: $fontText;
     padding: 3rem 2rem;
+    opacity: 0;
   }
   &__description--name {
     align-self: flex-end;
@@ -40,6 +41,7 @@
   }
   &__photo-wrapper {
     width: 100%;
+    opacity: 0;
   }
 }
 
