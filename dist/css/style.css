@@ -653,6 +653,12 @@ button {
     flex-direction: row;
     flex-wrap: wrap;
   }
+  .price-list__body {
+    font-size: 1.68rem;
+  }
+  .price-list__body-header {
+    font-size: 1.96rem;
+  }
   .price-list__card--children {
     width: 32%;
     margin: 0;
@@ -671,6 +677,7 @@ button {
     display: flex;
   }
   .price-list__header {
+    font-size: 4.2rem;
     width: 100%;
   }
   .price-list__reveal, .price-list__hide {
@@ -678,21 +685,21 @@ button {
   }
 }
 
-@media (min-width: 1500px) {
-  .price-list__card {
-    margin: 2rem 5rem;
-    width: 50%;
-    justify-content: center;
-  }
-}
-
 @media (min-width: 1800px) {
   .price-list__header {
     padding: 2rem 0;
   }
-  .price-list__note {
-    margin: 2rem 0;
-    font-size: 1.2rem;
+  .price-list__card--children {
+    width: 500px;
+    justify-content: flex-start;
+  }
+  .price-list__card--man {
+    width: 500px;
+    margin: 0;
+    margin-right: 8%;
+  }
+  .price-list__card--woman {
+    width: 1000px;
   }
 }
 

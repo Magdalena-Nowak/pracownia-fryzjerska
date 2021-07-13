@@ -186,20 +186,6 @@ let targetAboutPhoto = document.querySelector(".about__photo-wrapper");
 aboutPhotoObserver.observe(targetAboutPhoto);
 
 // gsap.fromTo(
-//   photoWrapper,
-//   { x: "150%" },
-//   {
-//     x: "0%",
-//     scrollTrigger: {
-//       trigger: photoWrapper,
-//       start: "top 50%",
-//       // markers: true,
-//     },
-//     duration: 1.5,
-//   }
-// );
-
-// gsap.fromTo(
 //   ".price-list__card--woman",
 //   { x: "-200%" },
 //   {
