@@ -162,7 +162,7 @@ changeSwipe();
 
 gsap.fromTo(
   descriptionWrapper,
-  { opacity: 0, x: "-100%" },
+  { opacity: 0, x: "-150%" },
   {
     opacity: 1,
     x: "0%",
@@ -175,7 +175,7 @@ gsap.fromTo(
 );
 gsap.fromTo(
   photoWrapper,
-  { x: "100%" },
+  { x: "150%" },
   {
     x: "0%",
     scrollTrigger: {
@@ -233,7 +233,7 @@ const options = {
   treshold: 0,
 };
 
-let observer = new IntersectionObserver((elements) => {
+let galleryObserver = new IntersectionObserver((elements) => {
   elements.forEach((element) => {
     if (element.isIntersecting) {
       element.target.src = element.target.getAttribute("data-src");
@@ -245,14 +245,14 @@ let observer = new IntersectionObserver((elements) => {
       // gsap.to(coverImage, { duration: 3, delay: 0.5, clipPath: "circle(100%)"});
     }
     if (element.isIntersecting) {
-      observer.unobserve(element.target);
+      galleryObserver.unobserve(element.target);
     }
   });
 }, options);
 
 const targets = document.querySelectorAll(".gallery__regular-image");
 targets.forEach((target) => {
-  observer.observe(target);
+  galleryObserver.observe(target);
 });
 
 // const imagesNormal = document.querySelectorAll('[data-src]');
