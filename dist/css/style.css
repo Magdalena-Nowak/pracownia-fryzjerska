@@ -162,10 +162,10 @@ li {
   }
 }
 
-@media (min-height: 800px) {
+@media (min-height: 400px) {
   .navigation__item {
     flex-grow: revert;
-    padding: 3rem 2rem;
+    padding: 1rem 2rem;
   }
   .navigation__list {
     padding-top: 15rem;
