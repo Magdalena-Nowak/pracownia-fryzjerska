@@ -1,6 +1,6 @@
 .price-list {
   background-color: $mainBlack;
-  @include flex(column, center, stretch);
+  @include flex(row, center, center);
   padding-bottom: 4rem;
   color: $mainBlack;
   &__body {
@@ -64,6 +64,11 @@
     pointer-events: none;
     font-size: $iconSize * 0.8;
   }
+  &__wrapper {
+    @include flex(column, center, stretch);
+    padding-bottom: 4rem;
+    width: 100%;
+  }
 }
 
 @media (min-width: 576px) {
@@ -114,8 +119,6 @@
 
 @media (min-width: 1200px) {
   .price-list {
-    flex-direction: row;
-    flex-wrap: wrap;
     &__body {
       font-size: $priceText * 1.4;
     }
@@ -147,36 +150,23 @@
     &__hide {
       display: none;
     }
+    &__wrapper {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   }
 }
 
-// @media (min-width: 1500px) {
-//   .price-list {
-//     &__card {
-//       margin: 2rem 5rem;
-//       width: 50%;
-//       justify-content: center;
-//     }
-//   }
-// }
-
 @media (min-width: 1800px) {
   .price-list {
+    &__body {
+      font-size: $priceText * 1.6;
+    }
+    &__body-header {
+      font-size: $cardsBodyHeader * 1.6;
+    }
     &__header {
-      padding: 2rem 0;
-    }
-    &__card--children {
-      width: 500px;
-      // margin: 10px;
-      justify-content: flex-start;
-    }
-    &__card--man {
-      width: 500px;
-      margin: 0;
-      margin-right: 8%;
-    }
-    &__card--woman {
-      width: 1000px;
+      font-size: $sectionHeader * 1.6;
     }
   }
 }

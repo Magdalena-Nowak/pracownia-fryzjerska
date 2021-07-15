@@ -1,42 +1,20 @@
 .navigation {
-  width: 100vw;
+  width: 100%;
   height: 15vh;
   position: relative;
   background-color: $mainBlack;
   position: fixed;
   z-index: 1;
-  &__item {
-    padding: 0.5rem 1rem;
-    transition: all 0.6s ease-in-out;
-    cursor: pointer;
-    font-size: $fontH1;
-    &:hover {
-      background-color: $hoverBg;
-    }
-  }
-  &__link {
-    display: block;
-    cursor: pointer;
-    width: 60%;
-    height: 100%;
-  }
-  &__list {
-    @include flex(column, flex-start, stretch);
-    margin: 5rem 5rem;
-  }
-  &__logo {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
   &__btn {
     position: absolute;
     top: 50%;
-    right: 10%;
-    transform: translate(-10%, -50%);
+    right: 3rem;
+    transform: translateY(-50%);
     @include flex(column, center, center);
     cursor: pointer;
     z-index: 2;
+    background-color: $mainBlack;
+    border: none;
   }
   &__btn-line {
     width: 4rem;
@@ -70,90 +48,124 @@
     transform: translateX(-100%);
     opacity: 0;
   }
-  &__wrapper {
-    height: 100vh;
+  &__item {
+    width: 70%;
+    @include flex(row, flex-start, center);
+    flex: 1 1 2rem;
+    padding: 0.5rem 1rem;
+    font-size: $fontH1 * 1.4;
+    transition: all 0.6s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      background-color: $hoverBg;
+    }
+  }
+  &__line {
+    width: 70%;
+  }
+  &__link {
+    width: 60%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+  }
+  &__list {
     width: 100%;
-    color: $mainWhite;
-    font-family: $headerFamily;
+    height: 100%;
+    @include flex(column, flex-start, flex-end);
+    padding: 5rem 3rem;
+    padding-top: 10rem;
+  }
+  &__logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  &__wrapper {
+    width: 100%;
+    height: 100vh;
+    @include flex(row, flex-start, flex-end);
     position: fixed;
-    @include flex(column, center, stretch);
     top: 0;
     left: 0;
+    color: $mainWhite;
+    font-family: $headerFamily;
     display: none;
   }
-  &__wrapper.active{
-    display: flex;
+  &__wrapper.active {
+    display: block;
     background-color: $mainBlack;
   }
 }
-
 @media (min-width: 576px) {
   .navigation {
     &__item {
       padding: 1.5rem 2rem;
-      font-size: $fontH1 * 1.2;
     }
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 700px) {
   .navigation {
     &__item {
-      font-size: $fontH1 * 1.4;
+      width: 60%;
+      font-size: $fontH1 * 1.8;
+    }
+    &__line {
+      width: 60%;
     }
   }
 }
 
-@media (min-width: 992px) {
+@media (min-height: 400px) {
   .navigation {
-    height: 15vh;
-    @include flex(row, flex-start, center);
+    &__item {
+      flex-grow: revert;
+      padding: 1rem 2rem;
+    }
+    &__list {
+      padding-top: 15rem;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .navigation {
+    height: 17vh;
+    @include flex(row, center, center);
     &__btn {
       display: none;
     }
     &__item {
-      min-width: 10rem;
-      padding: 1rem 0;
       @include flex(row, center, center);
+      flex: 1 1 15rem;
+      box-sizing: content-box;
+      font-size: $fontH1 * 1.6;
     }
     &__line {
       display: none;
     }
+    &__link {
+      width: 30%;
+      flex: 2 1 20%;
+    }
     &__list {
       @include flex(row, space-around, center);
-      margin: 0;
-      margin-top: 0;
-    }
-    &__wrapper {
-      position: initial;
-      height: 15vh;
-      width: auto;
-      @include flex(row, center, center);
-      margin-right: 5%;
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  .navigation {
-    height: 17vh;
-    &__item {
-      padding: 1.5rem 1rem;
-    }
-    &__link {
-      width: 80%;
+      padding: 0;
+      padding-top: 0 !important;
     }
     &__wrapper {
       height: 17vh;
-      margin-right: 10%;
+      position: initial;
+      @include flex(row, space-between, center);
+      flex: 1 1 40%;
     }
   }
 }
 
-@media (min-height: 380px) and (max-width: 991px){
+@media (min-height: 1400px) {
   .navigation {
     &__list {
-      margin-top: 12rem;
+      padding-top: 20rem;
     }
   }
 }
@@ -161,39 +173,45 @@
 @media (min-width: 1800px) {
   .navigation {
     height: 20vh;
+    &__list {
+      justify-content: flex-end;
+    }
+    &__link {
+      flex: 2 1 40%;
+    }
     &__item {
-      min-width: 15rem;
+      font-size: $fontH1 * 2;
     }
     &__wrapper {
       height: 20vh;
+      flex: 1 1 40%;
     }
   }
 }
 
-@media (min-height: 460px) and (max-width: 991px) {
+@media (min-width: 1800px) and (min-height: 1500px) {
   .navigation {
+    &__logo {
+      width: 100%;
+      padding: 5rem 0;
+    }
     &__item {
-      padding: 1rem 2rem;
+      min-width: 15rem;
+      font-size: $fontH1 * 2.5;
+    }
+  }
+}
+
+@media (min-width: 2000px) {
+  .navigation {
+    &__link {
+      flex-grow: 2;
     }
     &__list {
-      width: 50%;
+      padding-top: 25rem;
     }
     &__wrapper {
-      align-items: flex-end;
-      justify-content: flex-start;
+      margin-right: 15%;
     }
   }
-}
-
-@media (min-height: 640px) and (min-width: 700px) {
-  .navigation {
-    &__list {
-      width: 40%;
-    }
-  }
-}
-
-button {
-  background-color: $mainBlack;
-  border: none;
 }
