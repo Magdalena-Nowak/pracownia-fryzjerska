@@ -306,16 +306,17 @@ var swiper = new Swiper(".mySwiper", {
 
 gsap.fromTo(
   ".navigation",
-  { position: "fixed" },
+  { y: "0%", opacity: 1 },
   {
-    position: "static",
-    duration: 0.5,
+    opacity: 0,
+    y: "-400%",
     scrollTrigger: {
       trigger: ".gallery",
       scrub: true,
       start: "top 20%",
       end: "70% top",
     },
+    duration: 0.5,
   }
 );
 
