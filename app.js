@@ -2,15 +2,16 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 // NAVIGATION
 // Variables
-const navigation = document.querySelector(".navigation__wrapper");
-const navItems = document.querySelectorAll(".navigation__item");
+const navigation = document.querySelector(".navigation__menu-wrapper");
+const navWrapper = document.querySelector(".navigation__wrapper");
+const navItems = document.querySelectorAll(".navigation__menu-item");
 const sections = document.querySelectorAll("#home section");
 const navButton = document.querySelector(".navigation__btn");
 const buttonLine1 = document.querySelector(".navigation__btn-line--one");
 const buttonLine2 = document.querySelector(".navigation__btn-line--two");
 const buttonLine3 = document.querySelector(".navigation__btn-line--three");
 const menuNav = document.querySelector("#home");
-const logoNav = document.querySelector(".navigation__link");
+const navLogo = document.querySelector(".navigation__link");
 const footerContent = document.querySelector(".contact");
 const descriptionWrapper = document.querySelector(
   ".about__description-wrapper"
@@ -48,15 +49,18 @@ let active = 0;
 
 // NAVIGATION
 function openingNavigation() {
-  navigation.classList.toggle("active");
   menuNav.scrollIntoView({
     behavior: "smooth",
   });
   mainContent.classList.toggle("inactive");
   footerContent.classList.toggle("inactive");
+  navigationContent.classList.toggle("active");
+  navigation.classList.toggle("active");
+  navLogo.classList.toggle("inactive");
   buttonLine1.classList.toggle("active");
   buttonLine2.classList.toggle("active");
   buttonLine3.classList.toggle("active");
+  navWrapper.classList.toggle("active");
 }
 
 navItems.forEach((item, index) => {
@@ -64,6 +68,8 @@ navItems.forEach((item, index) => {
     navigation.classList.remove("active");
     mainContent.classList.remove("inactive");
     footerContent.classList.remove("inactive");
+    navigationContent.classList.remove("active");
+    navLogo.classList.remove("inactive");
     buttonLine1.classList.toggle("active");
     buttonLine2.classList.toggle("active");
     buttonLine3.classList.toggle("active");
@@ -73,7 +79,7 @@ navItems.forEach((item, index) => {
   });
 });
 
-logoNav.addEventListener("click", () => {
+navLogo.addEventListener("click", () => {
   menuNav.scrollIntoView({
     behavior: "smooth",
   });
@@ -194,42 +200,42 @@ aboutPhotoObserver.observe(targetAboutPhoto);
 
 gsap.fromTo(
   ".price-list__card--woman",
-  { x: "-200%", opacity: 0 },
+  { y: "100%", opacity: 0 },
   {
-    x: "0%",
+    y: "0%",
     opacity: 1,
     duration: 1,
     scrollTrigger: {
       trigger: ".price-list__card--woman",
-      start: "top 50%",
+      start: "-50% bottom",
     },
   }
 );
 
 gsap.fromTo(
   ".price-list__card--man",
-  { x: "200%", opacity: 0 },
+  { y: "100%", opacity: 0 },
   {
-    x: "0%",
+    y: "0%",
     opacity: 1,
     duration: 1,
     scrollTrigger: {
       trigger: ".price-list__card--man",
-      start: "top 50%",
+      start: "-20% bottom",
     },
   }
 );
 
 gsap.fromTo(
   ".price-list__card--children",
-  { x: "-200%", opacity: 0 },
+  { y: "100%", opacity: 0 },
   {
-    x: "0%",
+    y: "0%",
     opacity: 1,
     duration: 1,
     scrollTrigger: {
       trigger: ".price-list__card--children",
-      start: "top 50%",
+      start: "-20% bottom",
     },
   }
 );
@@ -267,23 +273,23 @@ targets.forEach((target) => {
 
 var swiper = new Swiper(".mySwiper", {
   breakpoints: {
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        1100: {
-          slidesPerView: 3,
-          spaceBetween: 50,
-        },
-        1600: {
-          slidesPerView: 4,
-          spaceBetween: 50,
-        },
-        2000: {
-          slidesPerView: 5,
-          spaceBetween: 50,
-        },
-      },
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1100: {
+      slidesPerView: 3,
+      spaceBetween: 50,
+    },
+    1600: {
+      slidesPerView: 4,
+      spaceBetween: 50,
+    },
+    2000: {
+      slidesPerView: 5,
+      spaceBetween: 50,
+    },
+  },
   slidesPerView: 1,
   spaceBetween: 30,
   slidesPerGroup: 1,
@@ -301,7 +307,6 @@ var swiper = new Swiper(".mySwiper", {
     el: ".swiper-pagination",
     clickable: true,
   },
-
 });
 
 gsap.fromTo(
@@ -319,7 +324,6 @@ gsap.fromTo(
     duration: 0.5,
   }
 );
-
 
 openPriceBtns.forEach((btn, index) => {
   btn.addEventListener("click", () => {
