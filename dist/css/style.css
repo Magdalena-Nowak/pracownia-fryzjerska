@@ -87,7 +87,7 @@ li {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  flex: 1 1 2rem;
+  flex: 1 1 10%;
   padding: 0.5rem 1rem;
   font-size: 2.8rem;
   transition: all 0.6s ease-in-out;
@@ -146,12 +146,6 @@ li {
   background-color: #191919;
 }
 
-@media (min-width: 576px) {
-  .navigation__item {
-    padding: 1.5rem 2rem;
-  }
-}
-
 @media (min-width: 700px) {
   .navigation__item {
     width: 60%;
@@ -165,7 +159,6 @@ li {
 @media (min-height: 400px) {
   .navigation__item {
     flex-grow: revert;
-    padding: 1rem 2rem;
   }
   .navigation__list {
     padding-top: 15rem;
@@ -316,7 +309,7 @@ li {
 
 .salon-gallery__slides {
   width: 100%;
-  height: 2%;
+  height: 1%;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -324,17 +317,18 @@ li {
   flex-direction: row;
   justify-content: stretch;
   align-items: stretch;
-  background-color: #797676;
 }
 
 .salon-gallery__slide {
   flex: 1 1 5rem;
-  border-radius: 5rem;
   cursor: pointer;
+  background-color: #191919;
+  opacity: 0.2;
 }
 
 .salon-gallery__slide.active {
-  background-color: #2a2a2a;
+  background-color: #191919;
+  opacity: 0.8;
 }
 
 .salon-gallery__right-icon {
@@ -1080,7 +1074,7 @@ li {
 
 .salon-gallery__slides {
   width: 100%;
-  height: 2%;
+  height: 1%;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1088,17 +1082,18 @@ li {
   flex-direction: row;
   justify-content: stretch;
   align-items: stretch;
-  background-color: #797676;
 }
 
 .salon-gallery__slide {
   flex: 1 1 5rem;
-  border-radius: 5rem;
   cursor: pointer;
+  background-color: #191919;
+  opacity: 0.2;
 }
 
 .salon-gallery__slide.active {
-  background-color: #2a2a2a;
+  background-color: #191919;
+  opacity: 0.8;
 }
 
 .salon-gallery__right-icon {
