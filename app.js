@@ -295,6 +295,11 @@ var swiper = new Swiper(".mySwiper", {
     enabled: true,
     onlyInViewport: false,
   },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
 });
 
 

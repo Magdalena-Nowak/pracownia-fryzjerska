@@ -2,7 +2,7 @@
   background-color: $mainBlack;
   color: $mainWhite;
   min-height: min-content;
-  width: 100vw;
+  width: 100%;
   @include flex(column, space-between, center);
   &__copy-rights {
     font-size: $priceText;
@@ -151,7 +151,7 @@
     // &__social-item {
     //   font-size: $iconSize * 1.4;
     // }
-}
+  }
 }
 // @media (min-width: 1800px) {
 //   .contact {
@@ -173,4 +173,3 @@
 //     }
 //   }
 // }
-
