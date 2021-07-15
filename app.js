@@ -192,45 +192,47 @@ let aboutPhotoObserver = new IntersectionObserver(
 let targetAboutPhoto = document.querySelector(".about__photo-wrapper");
 aboutPhotoObserver.observe(targetAboutPhoto);
 
-// gsap.fromTo(
-//   ".price-list__card--woman",
-//   { x: "-200%" },
-//   {
-//     x: "0%",
-//     duration: 0.5,
-//     scrollTrigger: {
-//       trigger: ".price-list__card--woman",
-//       start: "top 70%",
-//     },
-//   }
-// );
+gsap.fromTo(
+  ".price-list__card--woman",
+  { x: "-200%", opacity: 0 },
+  {
+    x: "0%",
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".price-list__card--woman",
+      start: "top 50%",
+    },
+  }
+);
 
-// gsap.fromTo(
-//   ".price-list__card--man",
-//   { x: "200%" },
-//   {
-//     x: "0%",
-//     duration: 0.5,
-//     scrollTrigger: {
-//       trigger: ".price-list__card--man",
-//       start: "top 70%",
-//     },
-//   }
-// );
+gsap.fromTo(
+  ".price-list__card--man",
+  { x: "200%", opacity: 0 },
+  {
+    x: "0%",
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".price-list__card--man",
+      start: "top 50%",
+    },
+  }
+);
 
-// gsap.fromTo(
-//   ".price-list__card--children",
-//   { x: "-200%" },
-//   {
-//     x: "0%",
-//     duration: 0.5,
-//     scrollTrigger: {
-//       trigger: ".price-list__card--children",
-//       start: "top 70%",
-//       // markers: true,
-//     },
-//   }
-// );
+gsap.fromTo(
+  ".price-list__card--children",
+  { x: "-200%", opacity: 0 },
+  {
+    x: "0%",
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".price-list__card--children",
+      start: "top 50%",
+    },
+  }
+);
 
 //GALLERY
 
@@ -302,197 +304,21 @@ var swiper = new Swiper(".mySwiper", {
 
 });
 
+gsap.fromTo(
+  ".navigation",
+  { position: "fixed" },
+  {
+    position: "static",
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: ".gallery",
+      scrub: true,
+      start: "top 20%",
+      end: "70% top",
+    },
+  }
+);
 
-function hideNavigation() {
-  navigationContent.style.position = "static";
-  console.log(navigationContent);
-}
-// var swiper = new Swiper(".mySwiper", {
-//   loop: true,
-//   spaceBetween: 10,
-//   slidesPerView: 4,
-//   freeMode: true,
-//   watchSlidesVisibility: true,
-//   watchSlidesProgress: true,
-//   observer: true,
-//   observeParents: true,
-// });
-// var swiper2 = new Swiper(".mySwiper2", {
-//   loop: true,
-//   spaceBetween: 10,
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
-//   thumbs: {
-//     swiper: swiper,
-//   },
-//   observer: true,
-//   observeParents: true,
-// });
-
-// const imagesSwiper = document.querySelectorAll(".gallery__regular-wrapper");
-// const swiperContent = document.querySelector(".gallery_swiper");
-// const bigSwiper = document.querySelector(".mySwiper2");
-// const smallSwiper = document.querySelector(".mySwiper");
-// const bigImagesSwiper = document.querySelectorAll(".swiper-slide__big");
-// const smallSwiperSlides = document.querySelectorAll(".swiper-slide__small");
-// // const bigSwiperSlides = document.querySelectorAll(".swiper-wrapper__big div");
-// console.log(smallSwiperSlides);
-// imagesSwiper.forEach((image, index) => {
-//   image.addEventListener("click", function () {
-//     openingSwiper(image, index);
-//   });
-// });
-
-// // console.log(swiperContent);
-
-// function openingSwiper(image, index) {
-//   swiperContent.classList.add("active");
-//   mainContent.classList.add("inactive");
-//   footerContent.classList.add("inactive");
-//   document.querySelector("body").classList.add("active");
-//   document.querySelector(".navigation").style.display = "none";
-//   bigSwiper.style.display = "block";
-//   smallSwiper.style.display = "flex";
-//   let imageDataSrc = image.firstChild.getAttribute("data-src");
-//   smallImagesSwiper[index].src = imageDataSrc;
-//   smallSwiperSlides[index].style.order = "1";
-//   console.log(imageDataSrc);
-// }
-
-// swiper.centeredSlides(true);
-
-// const imagesNormal = document.querySelectorAll('[data-src]');
-// imagesNormal.forEach(img => {
-//   observer.observe(img);
-// });
-
-// console.log(imagesNormal);
-// function galleryExtend() {
-//   for (let i = 0; i < 48; i++) {
-//     const div = document.createElement("div");
-//     div.classList.add("gallery__regular-wrapper");
-//     // let parent = gallery.querySelector(".gallery__wrapper");
-//     // let parentLastChild = parent.lastElementChild;
-//     // parent.insertBefore(div, parentLastChild);
-//     galleryContent.appendChild(div);
-//     gsap.fromTo(
-//       div,
-//       { opacity: 0 },
-//       {
-//         opacity: 1,
-//         duration: 1,
-//         scrollTrigger: {
-//           trigger: div,
-//           start: "top 30%",
-//         },
-//       }
-//     );
-//     const image = document.createElement("img");
-//     image.setAttribute("src", `./img//img${i + 1}.jpg`);
-//     image.setAttribute('alt', "fryzura, loki, fale, proste włosy");
-//     image.setAttribute("thumbindex", "0");
-//     image.classList.add("gallery__regular-image");
-//     div.appendChild(image);
-//     // more += 1;
-//     regularImagesArray.push(div);
-//     // }
-//     clickableRegularImages();
-//   }
-// }
-
-// galleryExtend();
-
-//Small implementation
-
-// closeBigGallery.addEventListener("click", function () {
-//   gallerySlider.classList.remove("active");
-//   gallerySlider.style.display = "none";
-//   mainContent.style.display = "block";
-//   footerContent.style.display = "flex";
-//   headerContent.style.display = "flex";
-//   galleryContent.scrollIntoView({
-//     behavior: "smooth",
-//   });
-// });
-
-// function clickableRegularImages() {
-//   regularImagesArray.forEach((img, index) => {
-//     img.addEventListener("click", () => {
-//       imageNr = index;
-//       gallerySlider.classList.add("active");
-//       gallerySlider.style.display = "flex";
-//       // gallerySlider.style.zIndex = 100;
-//       mainContent.style.display = "none";
-//       footerContent.style.display = "none";
-//       headerContent.style.display = "none";
-//       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
-//       bigImage.setAttribute("alt", "fryzura, loki, fale, proste włosy");
-//       bigImage.setAttribute("thumbindex", "0");
-//       dynamicChangeImages();
-//       // handlingArrows();
-//       creatingSwiper();
-//     });
-//   });
-// }
-
-//console.log(regularImagesArray);
-
-// const thumbImages = [];
-
-// function dynamicChangeImages() {
-//   thumbImages.forEach((image, index) => {
-//     image.addEventListener("click", function () {
-//       bigImage.setAttribute("src", `./img/img${index + 1}.jpg`);
-//       bigImage.setAttribute("alt", "fryzura, loki, fale, proste włosy");
-//       bigImage.setAttribute("thumbindex", "0");
-//     });
-//   });
-// }
-
-// function handlingArrows() {
-//   rightBtn.addEventListener("click", function () {
-//     if (imageNr >= smallImages.length - 1) {
-//       imageNr = 0;
-//       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
-//       bigImage.setAttribute("alt", "fryzura, loki, fale, proste włosy");
-//       bigImage.setAttribute("thumbindex", "0");
-//     } else {
-//       imageNr++;
-//       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
-//       bigImage.setAttribute("alt", "fryzura, loki, fale, proste włosy");
-//       bigImage.setAttribute("thumbindex", "0");
-//     }
-//     // changingPhotoOrder();
-//   });
-//   leftBtn.addEventListener("click", function () {
-//     if (imageNr <= 0) {
-//       imageNr = smallImages.length - 1;
-//       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
-//       bigImage.setAttribute("alt", "fryzura, loki, fale, proste włosy");
-//       bigImage.setAttribute("thumbindex", "0");
-//     } else {
-//       imageNr--;
-//       bigImage.setAttribute("src", `./img/img${imageNr + 1}.jpg`);
-//       bigImage.setAttribute("alt", "fryzura, loki, fale, proste włosy");
-//       bigImage.setAttribute("thumbindex", "0");
-//     }
-//     // changingPhotoOrder();
-//   });
-// }
-
-// function creatingSwiper() {
-//   regularImagesArray.forEach((image, index) => {
-//     let thumbImage = document.createElement("img");
-//     thumbImage.classList.add("gallery__thumb");
-//     thumbImage.setAttribute("src", `./img/img${index + 1}.jpg`);
-//     thumbImage.setAttribute("alt", "fryzura, loki, fale, proste włosy");
-//     thumbImage.setAttribute("thumbindex", "0");
-//     thumbsGallery.appendChild(thumbImage);
-//     thumbImages.push(thumbImage);
-//   });
-// }
 
 openPriceBtns.forEach((btn, index) => {
   btn.addEventListener("click", () => {
