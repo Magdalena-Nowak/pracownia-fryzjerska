@@ -70,6 +70,7 @@ navItems.forEach((item, index) => {
     footerContent.classList.remove("inactive");
     navigationContent.classList.remove("active");
     navLogo.classList.remove("inactive");
+    navWrapper.classList.remove("active");
     buttonLine1.classList.toggle("active");
     buttonLine2.classList.toggle("active");
     buttonLine3.classList.toggle("active");
