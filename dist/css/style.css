@@ -423,7 +423,7 @@ li {
 @media (min-width: 768px) {
   .about {
     flex-direction: row;
-    padding: 0;
+    padding: 5rem 0;
   }
   .about__description {
     margin: 1rem 0;
@@ -435,9 +435,8 @@ li {
     flex: 1 1 50%;
   }
   .about__photo-wrapper {
+    height: 100%;
     flex: 1 1 40%;
-    margin: 1rem 2rem;
-    margin-right: 4rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -449,18 +448,21 @@ li {
   .about {
     height: 100vh;
   }
+  .about__description {
+    padding: 2rem 0;
+  }
   .about__description-wrapper {
     flex: 1 0 40%;
     padding: 0 5%;
   }
   .about__description-wrapper {
-    font-size: 1.69rem;
-  }
-  .about__description--name {
     font-size: 1.82rem;
   }
+  .about__description--name {
+    font-size: 1.96rem;
+  }
   .about__header {
-    font-size: 3.9rem;
+    font-size: 4.2rem;
   }
   .about__photo {
     height: 90%;
@@ -475,7 +477,7 @@ li {
   .about {
     width: 80%;
     min-height: min-content;
-    height: 80vh;
+    height: 90vh;
     margin: auto;
   }
   .about__description-wrapper {
@@ -494,6 +496,13 @@ li {
   }
   .about__description-wrapper {
     margin-right: 5rem;
+    font-size: 2.34rem;
+  }
+  .about__description--name {
+    font-size: 2.52rem;
+  }
+  .about__header {
+    font-size: 5.4rem;
   }
   .about__photo-wrapper {
     margin-left: 5rem;
@@ -502,35 +511,51 @@ li {
 
 @media (min-width: 1800px) and (min-height: 1000px) {
   .about {
-    height: 65vh;
+    height: 80vh;
+    width: 80%;
   }
 }
 
 @media (min-width: 768px) and (min-height: 600px) {
   .about {
     min-height: auto;
-    height: 80vh;
+    height: 85vh;
   }
 }
 
 @media (min-width: 768px) and (min-height: 800px) {
   .about {
     min-height: auto;
-    height: 65vh;
+    height: 70vh;
   }
 }
 
 @media (min-width: 1000px) and (min-height: 800px) {
   .about {
     min-height: auto;
-    height: 90vh;
+    height: 95vh;
   }
 }
 
-@media (min-width: 768px) and (min-height: 1000px) {
+@media (min-width: 2000px) {
   .about {
-    min-height: auto;
-    height: 55vh;
+    width: 180rem;
+  }
+  .about__description-wrapper {
+    font-size: 2.6rem;
+  }
+  .about__description--name {
+    font-size: 2.8rem;
+  }
+  .about__header {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 2400px) {
+  .about {
+    width: 200rem;
+    height: 70vh;
   }
 }
 
