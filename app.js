@@ -201,7 +201,7 @@ aboutPhotoObserver.observe(targetAboutPhoto);
 
 gsap.fromTo(
   ".price-list__card--woman",
-  { y: "100%", opacity: 0 },
+  { y: "50%", opacity: 0 },
   {
     y: "0%",
     opacity: 1,
@@ -215,7 +215,7 @@ gsap.fromTo(
 
 gsap.fromTo(
   ".price-list__card--man",
-  { y: "100%", opacity: 0 },
+  { y: "50%", opacity: 0 },
   {
     y: "0%",
     opacity: 1,
@@ -229,7 +229,7 @@ gsap.fromTo(
 
 gsap.fromTo(
   ".price-list__card--children",
-  { y: "100%", opacity: 0 },
+  { y: "50%", opacity: 0 },
   {
     y: "0%",
     opacity: 1,
