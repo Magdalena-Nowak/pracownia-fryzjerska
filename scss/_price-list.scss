@@ -1,12 +1,13 @@
 .price-list {
-  background-color: $mainBlack;
+  min-height: 80vh;
+  width: 100%;
   @include flex(row, center, center);
-  padding-bottom: 4rem;
-  color: $mainBlack;
+  background-color: $mainBlack;
+  color: $mainWhite;
   &__body {
     @include flex(column, space-between, stretch);
     font-size: $priceText;
-    width: 98%;
+    width: 95%;
     margin: 2rem auto;
   }
   &__body-header {
@@ -16,24 +17,26 @@
     text-align: center;
   }
   &__card {
+    width: 100%;
+    @include flex(column, space-between, center);
+    margin: 1.5rem auto;
     background-color: $mainWhite;
-    margin: 1rem 1.5rem;
+    color: $mainBlack;
     padding: 2rem 1.5rem;
-    @include flex(column, space-between, stretch);
-    transition: all 2s ease-in-out;
   }
   &__container {
-    @include flex(column, space-between, center);
+    @include flex(column, space-between, stretch);
+    width: 100%;
     display: none;
   }
   &__for {
+    align-self: center;
+    margin: 1.5rem 0;
+    font-size: $cardsHeader;
     font-family: $headerFamily;
     letter-spacing: 0.1rem;
-    text-align: center;
-    font-size: $cardsHeader;
   }
   &__header {
-    color: $mainWhite;
     font-size: $sectionHeader;
     font-family: $headerFamily;
     margin: 2rem 0;
@@ -65,25 +68,25 @@
     font-size: $iconSize * 0.8;
   }
   &__wrapper {
-    @include flex(column, center, stretch);
+    @include flex(column, center, center);
     padding-bottom: 4rem;
-    width: 100%;
+    width: 80%;
   }
 }
 
 @media (min-width: 576px) {
   .price-list {
     &__body {
-      font-size: $priceText * 1.2;
+      font-size: $priceText * 1.3;
     }
     &__body-header {
-      font-size: $cardsBodyHeader * 1.2;
+      font-size: $cardsBodyHeader * 1.3;
     }
     &__for {
-      font-size: $cardsHeader * 1.2;
+      font-size: $cardsHeader * 1.3;
     }
     &__header {
-      font-size: $sectionHeader * 1.2;
+      font-size: $sectionHeader * 1.3;
     }
     &__reveal-icon,
     &__hide-icon {
@@ -125,15 +128,21 @@
     &__body-header {
       font-size: $cardsBodyHeader * 1.4;
     }
+    &__card {
+      margin: 4rem 0;
+    }
     &__card--children {
       width: 32%;
       margin: 0;
+      height: 45rem;
       justify-content: flex-start;
     }
     &__card--man {
       width: 32%;
+      height: 45rem;
       margin: 0;
       margin-right: 8%;
+      justify-content: flex-start;
     }
     &__card--woman {
       order: 3;
@@ -153,11 +162,12 @@
     &__wrapper {
       flex-direction: row;
       flex-wrap: wrap;
+      width: 90%;
     }
   }
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 1500px) {
   .price-list {
     &__body {
       font-size: $priceText * 1.6;
@@ -167,6 +177,40 @@
     }
     &__header {
       font-size: $sectionHeader * 1.6;
+    }
+  }
+}
+
+@media (min-width: 1800px) {
+  .price-list {
+    &__body {
+      font-size: $priceText * 1.8;
+    }
+    &__body-header {
+      font-size: $cardsBodyHeader * 1.8;
+    }
+    &__header {
+      font-size: $sectionHeader * 1.8;
+    }
+    &__wrapper {
+      width: 80%;
+    }
+  }
+}
+
+@media (min-width: 2000px) {
+  .price-list {
+    &__body {
+      font-size: $priceText * 2;
+    }
+    &__body-header {
+      font-size: $cardsBodyHeader * 2;
+    }
+    &__header {
+      font-size: $sectionHeader * 2;
+    }
+    &__wrapper {
+      width: 70%;
     }
   }
 }

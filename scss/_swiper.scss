@@ -45,7 +45,6 @@
   }
   &__slide {
     flex: 1 1 5rem;
-    // border-radius: 5rem;
     cursor: pointer;
     background-color: $mainBlack;
     opacity: 0.2;
@@ -56,5 +55,11 @@
   }
   &__right-icon {
     right: 0;
+  }
+}
+
+@media (min-height: 1000px) {
+  .salon-gallery {
+    height: 80vh;
   }
 }
