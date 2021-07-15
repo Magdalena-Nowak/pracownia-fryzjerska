@@ -22,25 +22,11 @@ const openPriceBtns = document.querySelectorAll(".price-list__reveal");
 const hidePriceBtns = document.querySelectorAll(".price-list__hide");
 const cardsContainers = document.querySelectorAll(".price-list__container");
 const priceSection = document.querySelector("#prices");
-const galleryContent = document.querySelector(".gallery__wrapper");
 const gallery = document.querySelector("#gallery");
-const gallerySlider = document.querySelector(".gallery__swiper");
-const smallImages = document.querySelectorAll(".gallery__thumb");
-const regularImages = document.getElementsByClassName("gallery__regular-image");
-const regularImagesArray = [];
-const closeBigGallery = document.querySelector(".gallery__close-icon");
-const bigImage = document.querySelector(".gallery__big-image");
 const mainContent = document.querySelector("main");
-
 const headerContent = document.querySelector("header");
 const rightBtn = document.querySelector(".gallery__right-icon");
 const leftBtn = document.querySelector(".gallery__left-icon");
-const sectionAbout = document.querySelector(".about");
-const allImages = regularImages.length - 1;
-const thumbsGallery = document.querySelector(".gallery__thumbs");
-let imageNr;
-let currentImageNr = 6;
-let more = 0;
 const swipeImage = document.querySelector(".salon-gallery__image");
 const swipeSlides = [...document.querySelectorAll(".salon-gallery__slide")];
 
@@ -135,7 +121,6 @@ const changeSlides = (e) => {
 };
 
 window.addEventListener("click", changeSlides);
-
 changeSwipe();
 
 //ABOUT
@@ -166,7 +151,6 @@ let callback = (entries, aboutTextObserver) => {
 };
 
 let aboutTextObserver = new IntersectionObserver(callback, optionsAboutText);
-
 let targetAbout = document.querySelectorAll(".about__description");
 aboutTextObserver.observe(targetAbout[0]);
 
@@ -242,7 +226,6 @@ gsap.fromTo(
 );
 
 //GALLERY
-
 const optionsGallery = {
   rootMargin: "0px",
   treshold: 0,
