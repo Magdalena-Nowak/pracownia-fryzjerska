@@ -17,10 +17,6 @@ ul {
   list-style-type: none;
 }
 
-*:focus {
-  outline: dashed 0.8rem #315c2b !important;
-  opacity: 1 !important;
-}
 @import "variables";
 @import "header";
 @import "swiper";
