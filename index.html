@@ -5,9 +5,10 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="Description" content="dobry fryzjer damski i męski Garwolin centrum, modne fryzury na wesela, komunie, chrzciny oraz sesje zdjęciowe, fryzjer bez kolejki, w ofercie produkty NASHI, praca na markowych farbach do włosów Montibello Cromatone, naturalnie wyglądające fale i loki">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-    crossorigin="anonymous" />
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Cinzel:wght@400;600;800&family=Lato:wght@400;700&family=Open+Sans+Condensed:wght@300&family=Stint+Ultra+Condensed&display=swap"
@@ -20,29 +21,30 @@
   <header class="navigation">
     <div class="navigation__wrapper">
       <a href="#home" class="navigation__link"><img class="navigation__logo" src="./img/Frame5.png" alt="logo"></a>
-      <button class="navigation__btn">
+      <button class="navigation__btn" tabindex="0">
         <span class="navigation__btn-line navigation__btn-line--one"></span>
         <span class="navigation__btn-line navigation__btn-line--two"></span>
         <span class="navigation__btn-line navigation__btn-line--three"></span>
       </button>
       <nav class="navigation__menu-wrapper">
         <ul class="navigation__menu-list">
-          <hr class="navigation__menu-line">
-          <li class="navigation__menu-item">Home</li>
-          <hr class="navigation__menu-line">
-          <li class="navigation__menu-item navigation__item--longer">O mnie</li>
-          <hr class="navigation__menu-line">
-          <li class="navigation__menu-item ">Cennik</li>
-          <hr class="navigation__menu-line">
-          <li class="navigation__menu-item">Galeria</li>
-          <hr class="navigation__menu-line">
-          <li class="navigation__menu-item">Kontakt</li>
+          <li class="navigation__menu-line"></li>
+          <li class="navigation__menu-item" tabindex="0">Home</li>
+          <li class="navigation__menu-line"></li>
+          <li class="navigation__menu-item navigation__item--longer" tabindex="0">O mnie</li>
+          <li class="navigation__menu-line"></li>
+          <li class="navigation__menu-item " tabindex="0">Cennik</li>
+          <li class="navigation__menu-line"></li>
+          <li class="navigation__menu-item" tabindex="0">Galeria</li>
+          <li class="navigation__menu-line"></li>
+          <li class="navigation__menu-item" tabindex="0">Kontakt</li>
+          <li class="navigation__menu-line"></li>
         </ul>
       </nav>
     </div>
   </header>
   <main id="home">
-    <section class="salon-gallery" tabindex="0">
+    <section class="salon-gallery">
       <div class="salon-gallery__wrapper">
         <img class="salon-gallery__image active" src="./img/pracownia_fryzjerska_wnetrze1-large.png"
           alt="Pracownia fryzjerska Agnieszka Nowak- wnętrze, wygląd">
@@ -53,26 +55,30 @@
         </div>
         <div class="swiper-button-next salon-gallery__right-icon" tabindex="0"></div>
         <div class="swiper-button-prev salon-gallery__left-icon" tabindex="0"></div>
+      </div>
     </section>
-    <section id="about" class="about" tabindex="0">
+    <section id="about" class="about">
       <div class="about__wrapper">
         <div class="about__description-wrapper">
-          <h1 class="about__header">O mnie</h1>
+          <h1 class="about__header" tabindex="0">O mnie</h1>
           <p class="about__description">Moja pracownia powstała dzięki ogromnej pasji do fryzjerstwa oraz
             kobiecego piękna. Celem założenia tego
-            miejsca była potrzeba stworzenia przestrzeni, gdzie każda z Was będzie mogła poczuć się sobą. Pragnę, aby
-            każdorazowa wizyta sprawiała przyjemność a jej efekty zachwycały.</p>
-          <p class="about__description">Największą moją motywacją jesteście Wy drogie Panie zadowolone z mojej pracy.
+            miejsca była potrzeba stworzenia przestrzeni, gdzie każda z&nbsp;Was będzie mogła poczuć się sobą. Pragnę,
+            aby
+            każdorazowa wizyta sprawiała przyjemność a&nbsp;jej efekty zachwycały.</p>
+          <p class="about__description">Największą moją motywacją jesteście Wy drogie Panie zadowolone z&nbsp;mojej
+            pracy.
             Dlatego stawiam na swój rozwój
-            pod okiem profesjonalistów. Dzięki współpracy z marką Montibello, odbywam regularnie szkolenia z koloryzacji
+            pod okiem profesjonalistów. Dzięki współpracy z&nbsp;marką Montibello, odbywam regularnie szkolenia
+            z&nbsp;koloryzacji
             włosów. Mam również zaszczyt reprezentować tę markę jako <a class="about__link"
               href="https://montibello.pl/salony-montibello/pracownia-fryzjerska-agnieszka-nowak/"
-              target="_blank">Ambasador
-              Montibello</a>.</p>
-          <p class="about__description">Ogromną przyjemność sprawia mi podążanie za aktualnymi trendami w fryzjerstwie
+              target="_blank">Ambasador&nbsp;Montibello</a>.</p>
+          <p class="about__description">Ogromną przyjemność sprawia mi podążanie za aktualnymi trendami
+            w&nbsp;fryzjerstwie
             oraz
-            stosowanie nowych metod u
-            moich klientek. Chętnie służę dobrą radą i pomocą w wyborze nowego koloru oraz upięcia fryzury.</p>
+            stosowanie nowych metod u&nbsp;moich klientek. Chętnie służę dobrą radą i&nbsp;pomocą w&nbsp;wyborze nowego
+            koloru oraz upięcia fryzury.</p>
           <p class="about__description about__description--name">Agnieszka Nowak</p>
         </div>
         <div class="about__photo-wrapper">
@@ -80,207 +86,203 @@
         </div>
       </div>
     </section>
-    <section id="prices" class="price-list" tabindex="0">
+    <section id="prices" class="price-list">
       <div class="price-list__wrapper">
-        <h1 class="price-list__header">Cennik</h1>
+        <h1 class="price-list__header" tabindex="0">Cennik</h1>
         <div class="price-list__card price-list__card--woman">
-          <h2 class="price-list__for">Dla Kobiet</h2>
+          <h2 class="price-list__for" tabindex="0">Dla Kobiet</h2>
           <div class="price-list__container">
             <div class="price-list__body price-list__body--woman">
-              <h3 class="price-list__body-header">Strzyżenie</h3>
+              <h3 class="price-list__body-header" tabindex="0">Strzyżenie</h3>
               <ul>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Włosy krótkie <span class="price-list__price">40zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Włosy średnie <span class="price-list__price">50zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Włosy długie <span class="price-list__price">60 - 70zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Grzywka <span class="price-list__price">15zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
               </ul>
             </div>
             <div class="price-list__body">
-              <h3 class="price-list__body-header">Koloryzacja</h3>
+              <h3 class="price-list__body-header" tabindex="0">Koloryzacja</h3>
               <div class="price-list__note">
                 <p>*cena zawiera podcięcie końcówek</p>
                 <p>*w przypadku bardzo długich i grubych włosów cena może wzrosnąć</p>
               </div>
               <ul>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Jeden kolor <span class="price-list__price">110-160zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Koloryzacja + Strzyżenie + Modelowanie <span
                     class="price-list__price">120-230zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Koloryzacja z reflexem <span class="price-list__price">150-260zł</span>
                 </li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Ombre / Sombre <span class="price-list__price">160-350zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Baleyage <span class="price-list__price">140-300zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Dekoloryzacja odrostu <span class="price-list__price">120-180zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Dekoloryzacja + farba <span class="price-list__price">160-350zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Tonowanie włosów <span class="price-list__price">60-100zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Trwała HEADLINES <span class="price-list__price">100-150zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
               </ul>
             </div>
             <div class="price-list__body">
-              <h3 class="price-list__body-header">Pielęgnacja/Regeneracja</h3>
+              <h3 class="price-list__body-header" tabindex="0">Pielęgnacja/Regeneracja</h3>
               <ul class="price-list__list">
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Ampułka NASHI ARGAN w trakcie koloryzacji <span
                     class="price-list__price">50zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Rekonstrukcja włosów NASHI <span class="price-list__price">80-160zł</span>
                 </li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">PLEX w trakcie koloryzacji <span class="price-list__price">40zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
               </ul>
             </div>
             <div class="price-list__body">
-              <h3 class="price-list__body-header">Keratynowe prostowanie</h3>
+              <h3 class="price-list__body-header" tabindex="0">Keratynowe prostowanie</h3>
               <div>
-                <hr class="price-list__line">
+                <div class="price-list__line"></div>
                 <p class="price-list__item">Cena <span class="price-list__price">250-600zł</span></p>
-                <hr class="price-list__line">
+                <div class="price-list__line"></div>
                 <div class=".price-list__note">
                   <p>*w przypadku bardzo długich i grubych włosów cena może wzrosnąć</p>
                 </div>
               </div>
             </div>
             <div class="price-list__body">
-              <h3 class="price-list__body-header">Okazjonalne</h3>
+              <h3 class="price-list__body-header" tabindex="0">Okazjonalne</h3>
               <ul class="price-list__list">
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Czesanie okolicznościowe <span class="price-list__price">30-65zł</span>
                 </li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Czesanie okolicznościowe + strzyżenie <span
                     class="price-list__price">50-75zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Upięcia okolicznościowe <span class="price-list__price">70-100zł</span>
                 </li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Fale / Loki <span class="price-list__price">60-150zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Fryzura ślubna <span class="price-list__price">100-150zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
               </ul>
             </div>
           </div>
           <div class="price-list__reveal" tabindex="0">
-            <i class="price-list__reveal-icon fas fa-chevron-circle-down"></i>
+            <i class="price-list__reveal-icon fas fa-chevron-circle-down" tabindex="0"></i>
           </div>
           <div class="price-list__hide" tabindex="0">
-            <i class="price-list__hide-icon fas fa-chevron-circle-up"></i>
+            <i class="price-list__hide-icon fas fa-chevron-circle-up" tabindex="0"></i>
           </div>
         </div>
         <div class="price-list__card price-list__card--man">
-          <h2 class="price-list__for">Dla mężczyzn</h2>
+          <h2 class="price-list__for" tabindex="0">Dla mężczyzn</h2>
           <div class="price-list__container">
             <div class="price-list__body price-list__body--men">
               <ul class="price-list__list">
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Strzyżenie maszynką <span class="price-list__price">20zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Strzyżenie maszynką + cieniowanie <span class="price-list__price">25 -
                     30zł</span>
                 </li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Strzyżenie + zabieg odsiwiający <span class="price-list__price">80zł</span>
                 </li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Strzyżenie / konturowanie brody <span class="price-list__price">15 -
                     20zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Mycie włosów <span class="price-list__price">10zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
               </ul>
             </div>
           </div>
           <div class="price-list__reveal" tabindex="0">
-            <i class="price-list__reveal-icon fas fa-chevron-circle-down"></i>
+            <i class="price-list__reveal-icon fas fa-chevron-circle-down" tabindex="0"></i>
           </div>
           <div class="price-list__hide" tabindex="0">
-            <i class="price-list__hide-icon fas fa-chevron-circle-up"></i>
+            <i class="price-list__hide-icon fas fa-chevron-circle-up" tabindex="0"></i>
           </div>
         </div>
         <div class="price-list__card price-list__card--children">
-          <h2 class="price-list__for">Dla dzieci do 10 lat</h2>
+          <h2 class="price-list__for" tabindex="0">Dla dzieci do 10 lat</h2>
           <div class="price-list__container">
             <div class="price-list__body price-list__body--children">
               <ul class="price-list__list">
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Dziewczynki <span class="price-list__price">25zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
                 <li class="price-list__item">Chłopcy <span class="price-list__price">25zł</span></li>
-                <hr class="price-list__line">
+                <li class="price-list__line"></li>
               </ul>
             </div>
           </div>
           <div class="price-list__reveal" tabindex="0">
-            <i class="price-list__reveal-icon fas fa-chevron-circle-down"></i>
+            <i class="price-list__reveal-icon fas fa-chevron-circle-down" tabindex="0"></i>
           </div>
           <div class="price-list__hide" tabindex="0">
-            <i class="price-list__hide-icon fas fa-chevron-circle-up"></i>
+            <i class="price-list__hide-icon fas fa-chevron-circle-up" tabindex="0"></i>
           </div>
         </div>
       </div>
     </section>
-    <section id="gallery" class="gallery" tabindex="0">
-      <h1 class="gallery__header">Galeria</h1>
+    <section id="gallery" class="gallery">
+      <h1 class="gallery__header" tabindex="0">Galeria</h1>
       <div class="swiper-container mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img1.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="keratynowe prostowanie długich blond włosów"></div>
           </div>
           <div class="swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img53.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="farbowanie na naturalny brąz z prostym cięciem"></div>
           </div>
           <div class="swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img2.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="lekkie fale na włosach półdługich na wesele"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img4.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="lekko podkręcone końce długich blond włosów"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img5.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
-          </div>
-          <div class=" swiper-slide">
-            <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img6.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="naturalny rudobrązowy kolor włosów"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img7.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="luźne loki robione prostownicą"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img49.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="delikatne loczki na włosach"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img8.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="regeneracja włosów odżywczą ampułką NASHI"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img9.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="luźne fale na wesele"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img10.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="mocny skręt loków na krótkich włosach"></div>
           </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -289,47 +291,47 @@
         <div class="swiper-wrapper">
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img11.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="wyprostowane długie włosy z ozdobą na specjalną okazję"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img12.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="delikatne fale"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img52.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="piękne loki, fale na blond włosach"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img13.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="piękne loki, fale na blond włosach"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img14.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="piękne loki, fale na blond włosach"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img15.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="piękne loki, fale na blond włosach"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img16.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="wyjątkowe intensywne rude włosy"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img17.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="piękne loki, fale na blond włosach"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img18.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="blond bob na krótkich włosach"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img19.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="intensywne różowe włosy ombre"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img20.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="upięcie komunijne, loki, fale na komunię"></div>
           </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -338,43 +340,39 @@
         <div class="swiper-wrapper">
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img21.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="delikatne fale na krótkich włosach"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img22.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="gęste, drobne loki na jasnoróżowych włosach, liliowe włosy"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img23.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
-          </div>
-          <div class=" swiper-slide">
-            <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img24.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="wyprostowane włosy u blondynki"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img25.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="delikatne upięcie z kręconymi włosami"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img26.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="bordowy intensywny kolor włosów"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img27.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="szkolenie Montibello w Barcelonie"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img28.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="szkolenie Montibello w Barcelonie"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img29.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="piękne długie czekoladowe włosy"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img30.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="weselne upięcie z kręconymi włosami i lekko zaplecionymi warkoczami"></div>
           </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -383,27 +381,27 @@
         <div class="swiper-wrapper">
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img31.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="fale hollywodzkie, hollywood waves"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img32.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="kolorowe ombre, modne kolory"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img33.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="delikatne loki, fale"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img34.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="proste blond włosy półdługie"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img35.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="fale na krótkich włosach"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img36.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="delikatny, nisko upięty kok, fryzura weselna"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img37.jpg"
@@ -411,10 +409,6 @@
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img38.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
-          </div>
-          <div class=" swiper-slide">
-            <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img39.jpg"
                 alt="fryzura, loki, fale, proste włosy"></div>
           </div>
           <div class=" swiper-slide">
@@ -428,47 +422,46 @@
         <div class="swiper-wrapper">
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img41.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="kok klasyczny, messy bun"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img42.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="fale na włosach"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img51.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="fryzura, loki na rudych włosach"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img43.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="piękny nisko upięty kok z ozdobnymi perełkami"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img50.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="weselna fryzura krótkich włosów"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img44.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="długie piękne blond włosy z wplecionymi kwiatami"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img45.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="proste rude włosy"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img46.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="lekkie upięcie na bok z loków z warkoczem"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img47.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="proste krótkie włsosy z modnym brązem"></div>
           </div>
           <div class=" swiper-slide">
             <div class="swiper-zoom-container" data-swiper-zoom="5"><img data-src="./img/img48.jpg"
-                alt="fryzura, loki, fale, proste włosy"></div>
+                alt="modne loki, fale"></div>
           </div>
         </div>
         <div class="swiper-pagination"></div>
-      </div>
       </div>
     </section>
     <section id="geolocation" class="geolocation" tabindex="0">
@@ -477,10 +470,10 @@
         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </section>
   </main>
-  <footer id="contact" class="contact" tabindex="0">
+  <footer id="contact" class="contact">
     <div class="contact__wrapper">
       <div class="contact__info">
-        <h2 class="contact__info-header">Kontakt</h2>
+        <h2 class="contact__info-header" tabindex="0">Kontakt</h2>
         <p class="contact__info-text"><span class="contact__info-icon"><i class="fas fa-phone"></i></span><a
             tabindex="0" href="tel:+48669249106">(+48) 669 249 106</a></p>
         <p class="contact__info-text"><span class="contact__info-icon"><i class="fas fa-envelope"></i></span><a
@@ -497,9 +490,9 @@
       </div>
       <div class="contact__socials">
         <ul class="contact__social-list">
-          <li class="contact__social-item" tabindex="0"><a href="https://www.facebook.com/PracowniaFryzjerskaAg"
-              target="_blank"><i class="fab fa-facebook"></i></a></li>
-          <li class="contact__social-item" tabindex="0"><a href="https://www.instagram.com/pracownia.agnieszkanowak/"
+          <li class="contact__social-item"><a href="https://www.facebook.com/PracowniaFryzjerskaAg" target="_blank"><i
+                class="fab fa-facebook"></i></a></li>
+          <li class="contact__social-item"><a href="https://www.instagram.com/pracownia.agnieszkanowak/"
               target="_blank"><i class="fab fa-instagram-square"></i></a></li>
         </ul>
       </div>

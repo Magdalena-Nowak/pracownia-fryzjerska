@@ -49,7 +49,12 @@
     font-size: $iconSize * 0.8;
   }
   &__line {
+    font-size: $cardsHeader;
+    width: 100%;
+    height: 0.1rem;
     margin: 1rem 0;
+    padding: 0.1rem 0;
+    background-color: $mainBlack;
   }
   &__price {
     font-family: $headerFamily;
@@ -211,7 +216,7 @@
       font-size: $sectionHeader * 2;
     }
     &__wrapper {
-      width: 70%;
+      width: 200rem;
     }
   }
 }

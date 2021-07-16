@@ -100,16 +100,17 @@
   opacity: 0.8;
 }
 
-@media (min-width: 640px) and (min-height: 800px) {
+@media (min-width: 840px) and (min-height: 900px) {
   .swiper-container {
-    height: 60vh;
+    height: 70vh;
   }
   .swiper-pagination-bullet {
     padding: 0.2rem 2.5rem;
   }
 }
 
-@media (min-width: 640px) and (min-height: 900px) {
+
+@media (min-width: 840px) and (min-height: 900px) {
   .swiper-container {
     height: 50vh;
   }

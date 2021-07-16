@@ -14,8 +14,14 @@ body {
   font-size: 10px;
 }
 
-li {
+li,
+ul {
   list-style-type: none;
+}
+
+*:focus {
+  outline: dashed 0.8rem #315c2b !important;
+  opacity: 1 !important;
 }
 
 .navigation {
@@ -146,7 +152,12 @@ li {
   background-color: #3d3d3d;
 }
 
-.navigation__menu-item__line {
+.navigation__menu-line {
+  display: flex;
+  background-color: #f5f5f5;
+  height: 0.2rem;
+  width: auto;
+  padding: 0.1rem 0;
   flex: 1 1 20%;
 }
 
@@ -163,7 +174,14 @@ li {
 
 @media (min-width: 768px) {
   .navigation__menu-item {
-    padding: 1rem 8rem;
+    padding: 1.2rem 8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .navigation__menu-item {
+    padding: 1.5rem 10rem;
+    font-size: 3rem;
   }
 }
 
@@ -242,12 +260,13 @@ li {
 }
 
 .salon-gallery {
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 12vh;
   position: relative;
 }
 
@@ -315,12 +334,6 @@ li {
 
 .salon-gallery__right-icon {
   right: 0;
-}
-
-@media (min-height: 1000px) {
-  .salon-gallery {
-    height: 80vh;
-  }
 }
 
 .about {
@@ -601,7 +614,12 @@ li {
 }
 
 .price-list__line {
+  font-size: 1.6rem;
+  width: 100%;
+  height: 0.1rem;
   margin: 1rem 0;
+  padding: 0.1rem 0;
+  background-color: #191919;
 }
 
 .price-list__price {
@@ -753,7 +771,7 @@ li {
     font-size: 6rem;
   }
   .price-list__wrapper {
-    width: 70%;
+    width: 200rem;
   }
 }
 
@@ -853,28 +871,29 @@ li {
   opacity: 0.8;
 }
 
-@media (min-width: 640px) and (min-height: 800px) {
+@media (min-width: 840px) and (min-height: 900px) {
   .swiper-container {
-    height: 60vh;
+    height: 70vh;
   }
   .swiper-pagination-bullet {
     padding: 0.2rem 2.5rem;
   }
 }
 
-@media (min-width: 640px) and (min-height: 900px) {
+@media (min-width: 840px) and (min-height: 900px) {
   .swiper-container {
     height: 50vh;
   }
 }
 
 .salon-gallery {
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 12vh;
   position: relative;
 }
 
@@ -944,19 +963,13 @@ li {
   right: 0;
 }
 
-@media (min-height: 1000px) {
-  .salon-gallery {
-    height: 80vh;
-  }
-}
-
 .geolocation {
-  width: 100%;
+  width: 100vw;
   height: 80vh;
 }
 
 .geolocation__iframe {
-  width: 100%;
+  width: 100vw;
   height: 100%;
 }
 
@@ -1096,6 +1109,7 @@ li {
     font-size: 1.44rem;
   }
   .contact__social-item {
+    color: #f5f5f5;
     font-size: 5.6rem;
   }
   .contact__wrapper {

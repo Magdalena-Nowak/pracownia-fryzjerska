@@ -88,10 +88,14 @@
     &:hover {
       background-color: $hoverBg;
     }
-    &__line {
-      // width: 140%;
-      flex: 1 1 20%;
-    }
+  }
+  &__menu-line {
+    display: flex;
+    background-color: $mainWhite;
+    height: 0.2rem;
+    width: auto;
+    padding: 0.1rem 0;
+    flex: 1 1 20%;
   }
 }
 
@@ -110,7 +114,15 @@
 @media (min-width: 768px) {
   .navigation {
     &__menu-item {
-      padding: 1rem 8rem;
+      padding: 1.2rem 8rem;
+    }
+  }
+}
+@media (min-width: 992px) {
+  .navigation {
+    &__menu-item {
+      padding: 1.5rem 10rem;
+      font-size: $fontH1 * 1.5;
     }
   }
 }
