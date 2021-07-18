@@ -19,11 +19,6 @@ ul {
   list-style-type: none;
 }
 
-*:focus {
-  outline: dashed 0.8rem #315c2b !important;
-  opacity: 1 !important;
-}
-
 .navigation {
   width: 100%;
   height: 15vh;
@@ -495,7 +490,7 @@ ul {
     font-size: 4.8rem;
   }
   .about__photo-wrapper {
-    height: 70vh;
+    height: 90vh;
   }
 }
 
@@ -616,9 +611,9 @@ ul {
 .price-list__line {
   font-size: 1.6rem;
   width: 100%;
-  height: 0.1rem;
+  height: 0.05rem;
   margin: 1rem 0;
-  padding: 0.1rem 0;
+  padding: 0.08rem 0;
   background-color: #191919;
 }
 
@@ -695,6 +690,9 @@ ul {
   .price-list__body-header {
     font-size: 1.96rem;
   }
+  .price-list__for {
+    font-size: 2.56rem;
+  }
   .price-list__card {
     margin: 4rem 0;
   }
@@ -743,6 +741,9 @@ ul {
   .price-list__header {
     font-size: 4.8rem;
   }
+  .price-list__for {
+    font-size: 2.88rem;
+  }
 }
 
 @media (min-width: 1800px) {
@@ -751,6 +752,9 @@ ul {
   }
   .price-list__body-header {
     font-size: 2.52rem;
+  }
+  .price-list__for {
+    font-size: 3.2rem;
   }
   .price-list__header {
     font-size: 5.4rem;
@@ -770,6 +774,9 @@ ul {
   .price-list__header {
     font-size: 6rem;
   }
+  .price-list__for {
+    font-size: 3.52rem;
+  }
   .price-list__wrapper {
     width: 200rem;
   }
@@ -778,6 +785,7 @@ ul {
 .gallery {
   width: 95%;
   margin: 0 auto;
+  color: #191919;
 }
 
 .gallery__header {

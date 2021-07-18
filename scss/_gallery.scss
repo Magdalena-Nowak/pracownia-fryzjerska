@@ -1,6 +1,7 @@
 .gallery {
   width: 95%;
   margin: 0 auto;
+  color: $mainBlack;
   &__header {
     color: $mainBlack;
     font-size: $sectionHeader;
@@ -9,7 +10,6 @@
     margin: 4rem 0;
   }
 }
-
 
 @media (min-width: 576px) {
   .gallery {
@@ -76,27 +76,27 @@
 }
 
 .swiper-pagination {
-	position: absolute;
-	bottom: 1%;
+  position: absolute;
+  bottom: 1%;
   left: 2%;
-	width: 100% !important;
-	left: auto !important;
-	margin: 0;
+  width: 100% !important;
+  left: auto !important;
+  margin: 0;
 }
 .swiper-pagination-bullet {
-	padding: 0rem 1rem;
-	border-radius: 0;
-	width: auto;
-	height: 1rem;
-	text-align: center;
-	line-height: 30px;
-	font-size: 12px;
-	color: $mainBlack;
-	opacity: 0.2;
+  padding: 0rem 1rem;
+  border-radius: 0;
+  width: auto;
+  height: 1rem;
+  text-align: center;
+  line-height: 30px;
+  font-size: 12px;
+  color: $mainBlack;
+  opacity: 0.2;
 }
 .swiper-pagination-bullet-active {
-	// color:#fff;
-	background: $mainBlack;
+  // color:#fff;
+  background: $mainBlack;
   opacity: 0.8;
 }
 
@@ -108,7 +108,6 @@
     padding: 0.2rem 2.5rem;
   }
 }
-
 
 @media (min-width: 840px) and (min-height: 900px) {
   .swiper-container {
