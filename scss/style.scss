@@ -23,7 +23,6 @@ ul {
 @import "about";
 @import "price-list";
 @import "gallery";
-@import "swiper";
 @import "geolocation";
 @import "footer";
 
@@ -41,4 +40,9 @@ body {
 }
 main.inactive {
   display: none;
+}
+@media (max-width: 991px) {
+  * {
+    outline: none;
+  }
 }
