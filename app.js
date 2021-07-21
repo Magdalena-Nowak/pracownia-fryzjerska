@@ -66,12 +66,6 @@ navItems.forEach((item, index) => {
   });
 });
 
-navLogo.addEventListener("click", () => {
-  menuNav.scrollIntoView({
-    behavior: "smooth",
-  });
-});
-
 navButton.addEventListener("click", openingNavigation);
 
 //SLIDER GALLERY
@@ -279,10 +273,6 @@ var swiper = new Swiper(".mySwiper", {
   slidesPerGroup: 1,
   loop: false,
   loopFillGroupWithBlank: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
   keyboard: {
     enabled: true,
     onlyInViewport: false,
@@ -292,22 +282,6 @@ var swiper = new Swiper(".mySwiper", {
     clickable: true,
   },
 });
-
-gsap.fromTo(
-  ".navigation",
-  { y: "0%", opacity: 1 },
-  {
-    opacity: 0,
-    y: "-400%",
-    scrollTrigger: {
-      trigger: ".gallery",
-      scrub: true,
-      start: "top 20%",
-      end: "70% top",
-    },
-    duration: 0.5,
-  }
-);
 
 openPriceBtns.forEach((btn, index) => {
   btn.addEventListener("click", () => {
