@@ -5,254 +5,23 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 html,
 body {
   font-size: 10px;
 }
 
-li,
-ul {
+li {
   list-style-type: none;
 }
 
 .navigation {
-  width: 100%;
-  height: 15vh;
-  top: 0;
-  left: 0;
-  position: fixed;
-  z-index: 100;
   background-color: #191919;
-}
-
-.navigation__wrapper {
-  width: 80%;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.navigation__wrapper.active {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
+  font-family: "EB Garamond", serif;
+  font-size: 1.8rem;
 }
 
 .navigation__link {
-  height: 100%;
-  display: block;
-  flex: 1 1 40%;
-}
-
-.navigation__link.inactive {
-  display: none;
-}
-
-.navigation__logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: left;
-}
-
-.navigation__btn {
-  flex: 1 1 10%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  background-color: #191919;
-  border: none;
-}
-
-.navigation__btn-line {
-  width: 4rem;
-  height: 0.4rem;
-  margin: 0.3rem 0;
-  background-color: #f5f5f5;
-}
-
-.navigation__btn-line--one {
-  transform: rotate(0) translateY(0) translateX(0);
-  transition: all 0.2s ease-in-out;
-}
-
-.navigation__btn-line--one.active {
-  transform: rotate(136deg) translateY(-9px) translateX(5px);
-  height: 0.5rem;
-}
-
-.navigation__btn-line--three {
-  transform: rotate(0) translateY(0) translateX(0);
-  transition: all 0.2s ease-in-out;
-}
-
-.navigation__btn-line--three.active {
-  transform: rotate(-136deg) translateY(9px) translateX(5px);
-  height: 0.5rem;
-}
-
-.navigation__btn-line--two {
-  transform: translateX(0%);
-  transition: all 0.4s ease-in-out;
-  opacity: 0.8;
-}
-
-.navigation__btn-line--two.active {
-  transform: translateX(-100%);
-  opacity: 0;
-}
-
-.navigation__menu-wrapper {
-  display: none;
-}
-
-.navigation__menu-wrapper.active {
-  flex: 2 1 60%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
-}
-
-.navigation__menu-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-}
-
-.navigation__menu-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex: 1 1 20%;
-  padding: 1rem 4rem;
-  font-size: 2.8rem;
-  font-family: "Open Sans Condensed", sans-serif;
-  transition: all 0.6s ease-in-out;
-  cursor: pointer;
-}
-
-.navigation__menu-item:hover {
-  background-color: #3d3d3d;
-}
-
-.navigation__menu-line {
-  display: flex;
-  background-color: #f5f5f5;
-  height: 0.2rem;
-  width: auto;
-  padding: 0.1rem 0;
-  flex: 1 1 20%;
-}
-
-.navigation.active {
-  width: 100%;
-  height: 100vh;
-}
-
-@media (min-width: 576px) {
-  .navigation__menu-item {
-    padding: 1rem 6rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .navigation__menu-item {
-    padding: 1.2rem 8rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .navigation__menu-item {
-    padding: 1.5rem 10rem;
-    font-size: 3rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .navigation {
-    height: 17vh;
-  }
-  .navigation__btn {
-    display: none;
-  }
-  .navigation__menu-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 15rem;
-    padding: 1rem 0;
-    box-sizing: content-box;
-    font-size: 3.2rem;
-  }
-  .navigation__menu-line {
-    display: none;
-  }
-  .navigation__menu-link {
-    display: flex;
-    flex: 1 1 30%;
-  }
-  .navigation__menu-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  .navigation__menu-wrapper {
-    height: 17vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    flex: 2 1 30%;
-  }
-  .navigation__wrapper {
-    width: 95%;
-  }
-}
-
-@media (min-height: 1500px) {
-  .navigation__menu-item {
-    font-size: 3.6rem;
-  }
-}
-
-@media (min-width: 1800px) {
-  .navigation {
-    height: 20vh;
-  }
-  .navigation__menu-item {
-    font-size: 4rem;
-  }
-  .navigation__wrapper {
-    width: 85%;
-  }
-}
-
-@media (min-width: 2000px) {
-  .navigation {
-    height: 20vh;
-  }
-  .navigation__menu-item {
-    font-size: 4.4rem;
-  }
-  .navigation__wrapper {
-    width: 70%;
-  }
+  color: #f5f5f5;
 }
 
 #home {
@@ -360,7 +129,7 @@ ul {
 
 .about__description--name {
   align-self: flex-end;
-  font-family: "Open Sans Condensed", sans-serif;
+  font-family: "EB Garamond", serif;
   font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: 0.2rem;
@@ -368,7 +137,7 @@ ul {
 
 .about__header {
   font-size: 3rem;
-  font-family: "Open Sans Condensed", sans-serif;
+  font-family: "EB Garamond", serif;
   margin-bottom: 2rem;
 }
 
@@ -563,7 +332,7 @@ ul {
 }
 
 .price-list__body-header {
-  font-family: "Open Sans Condensed", sans-serif;
+  font-family: "EB Garamond", serif;
   letter-spacing: 0.1rem;
   font-size: 1.4rem;
   text-align: center;
@@ -594,13 +363,13 @@ ul {
   align-self: center;
   margin: 1.5rem 0;
   font-size: 1.6rem;
-  font-family: "Open Sans Condensed", sans-serif;
+  font-family: "EB Garamond", serif;
   letter-spacing: 0.1rem;
 }
 
 .price-list__header {
   font-size: 3rem;
-  font-family: "Open Sans Condensed", sans-serif;
+  font-family: "EB Garamond", serif;
   margin: 2rem 0;
   text-align: center;
 }
@@ -623,7 +392,7 @@ ul {
 }
 
 .price-list__price {
-  font-family: "Open Sans Condensed", sans-serif;
+  font-family: "EB Garamond", serif;
   font-weight: 700;
 }
 
@@ -796,7 +565,7 @@ ul {
 .gallery__header {
   color: #191919;
   font-size: 3rem;
-  font-family: "Open Sans Condensed", sans-serif;
+  font-family: "EB Garamond", serif;
   text-align: center;
   margin: 4rem 0;
 }
@@ -943,7 +712,7 @@ ul {
 }
 
 .contact__info-header {
-  font-family: "Open Sans Condensed", sans-serif;
+  font-family: "EB Garamond", serif;
   letter-spacing: 0.1rem;
   font-size: 2rem;
   margin-bottom: 0.5rem;
@@ -1118,23 +887,11 @@ ul {
 a {
   text-decoration: none;
   color: #f5f5f5;
+  transition: all 0.6s ease-in-out;
 }
 
-body {
-  font-family: "Lato", sans-serif;
-  background-color: #f5f5f5;
-  text-decoration: none;
-  color: white;
-  position: relative;
-}
-
-main.inactive {
-  display: none;
-}
-
-@media (max-width: 991px) {
-  * {
-    outline: none;
-  }
+a:hover {
+  color: #f5f5f5;
+  background-color: #3d3d3d;
 }
 /*# sourceMappingURL=style.css.map */

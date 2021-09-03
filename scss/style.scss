@@ -4,16 +4,15 @@
   padding: 0;
   box-sizing: border-box;
 }
-html {
-  scroll-behavior: smooth;
-}
+// html {
+//   scroll-behavior: smooth;
+// }
 html,
 body {
   font-size: 10px;
 }
 
-li,
-ul {
+li {
   list-style-type: none;
 }
 
@@ -29,20 +28,26 @@ ul {
 a {
   text-decoration: none;
   color: $mainWhite;
+  transition: all 0.6s ease-in-out;
 }
 
-body {
-  font-family: $textFamily;
-  background-color: $mainWhite;
-  text-decoration: none;
-  color: white;
-  position: relative;
+a:hover {
+  color: $mainWhite;
+  background-color: $hoverBg;
 }
-main.inactive {
-  display: none;
-}
-@media (max-width: 991px) {
-  * {
-    outline: none;
-  }
-}
+
+// body {
+//   font-family: $textFamily;
+//   background-color: $mainWhite;
+//   text-decoration: none;
+//   color: white;
+//   position: relative;
+// }
+// main.inactive {
+//   display: none;
+// }
+// @media (max-width: 991px) {
+//   * {
+//     outline: none;
+//   }
+// }

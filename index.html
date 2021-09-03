@@ -7,9 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="Description"
     content="Pracownia Fryzjerska Agnieszka Nowak, dobry fryzjer damski i męski Garwolin centrum, modne fryzury na wesela, komunie, chrzciny oraz sesje zdjęciowe, fryzjer bez kolejki, w ofercie produkty NASHI, praca na markowych farbach do włosów Montibello Cromatone, naturalnie wyglądające fale i loki">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Cinzel:wght@400;600;800&family=Lato:wght@400;700&family=Open+Sans+Condensed:wght@300&family=Stint+Ultra+Condensed&display=swap"
@@ -17,33 +22,38 @@
   <link rel="icon" type="image/jpg" href="img/Frame4.png" />
   <link rel="stylesheet" href="./dist/css/style.min.css" type="text/css" />
   <title>Pracownia Fryzjerska | Garwolin</title>
+</head>
 
 <body>
+
   <header class="navigation">
-    <div class="navigation__wrapper">
-      <a href="#home" class="navigation__link"><img class="navigation__logo" src="./img/Frame5.png" alt="logo"></a>
-      <button class="navigation__btn">
-        <span class="navigation__btn-line navigation__btn-line--one"></span>
-        <span class="navigation__btn-line navigation__btn-line--two"></span>
-        <span class="navigation__btn-line navigation__btn-line--three"></span>
-      </button>
-      <nav class="navigation__menu-wrapper">
-        <ul class="navigation__menu-list">
-          <li class="navigation__menu-line"></li>
-          <li class="navigation__menu-item" tabindex="0">Home</li>
-          <li class="navigation__menu-line"></li>
-          <li class="navigation__menu-item navigation__item--longer" tabindex="0">O mnie</li>
-          <li class="navigation__menu-line"></li>
-          <li class="navigation__menu-item " tabindex="0">Cennik</li>
-          <li class="navigation__menu-line"></li>
-          <li class="navigation__menu-item" tabindex="0">Galeria</li>
-          <li class="navigation__menu-line"></li>
-          <li class="navigation__menu-item" tabindex="0">Kontakt</li>
-          <li class="navigation__menu-line"></li>
-        </ul>
+    <div class="pos-f-t p-5">
+      <nav class="navbar navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+          aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       </nav>
+      <div class="navigation__links collapse pt-2 pb-2" id="navbarToggleExternalContent">
+        <li class="nav-item pt-4 pb-2">
+          <a class="nav-link p-3" href="#home">HOME</a>
+        </li>
+        <li class="nav-item pt-2 pb-2">
+          <a class="nav-link p-3" href="#about">O MNIE</a>
+        </li>
+        <li class="nav-item pt-2 pb-2">
+          <a class="nav-link p-3" href="#prices">CENNIK</a>
+        </li>
+        <li class="nav-item pt-2 pb-2">
+          <a class="nav-link p-3" href="#gallery">GALERIA</a>
+        </li>
+        <li class="nav-item pt-2 pb-2">
+          <a class="nav-link p-3" href="#contact">KONTAKT</a>
+        </li>
+      </div>
     </div>
   </header>
+
   <main id="home">
     <section class="salon-gallery">
       <div class="salon-gallery__wrapper">
@@ -58,6 +68,7 @@
         <div class="swiper-button-prev salon-gallery__left-icon" tabindex="0"></div>
       </div>
     </section>
+
     <section id="about" class="about">
       <div class="about__wrapper">
         <div class="about__description-wrapper">
@@ -506,6 +517,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script> -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/TextPlugin.min.js"></script>
