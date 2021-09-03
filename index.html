@@ -27,7 +27,7 @@
 <body>
 
   <header class="navigation">
-    <div class="pos-f-t p-5">
+    <div class="pos-f-t p-5 container">
       <nav class="navbar navbar-dark">
         <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
           aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +89,7 @@
     <section id="about" class="about container">
       <div class="row justify-content-center align-items-center">
         <div class="about__description-wrapper col-12 col-md-10 col-lg-6 mt-5 mb-5 ml-5 mr-5">
-          <h1 class="about__header text-center p-5" tabindex="0">O MNIE</h1>
+          <h1 class="about__header text-center p-5">O MNIE</h1>
           <p class="about__description pt-3 pb-3">Moja pracownia powstała dzięki ogromnej pasji do fryzjerstwa oraz
             kobiecego piękna. Celem założenia tego
             miejsca była potrzeba stworzenia przestrzeni, gdzie każda z&nbsp;Was będzie mogła poczuć się sobą. Pragnę,
@@ -117,162 +117,225 @@
         </div>
       </div>
     </section>
-    <section id="prices" class="price-list">
-      <div class="price-list__wrapper">
-        <h1 class="price-list__header" tabindex="0">Cennik</h1>
-        <div class="price-list__card price-list__card--woman">
-          <h2 class="price-list__for" tabindex="0">Dla Kobiet</h2>
-          <div class="price-list__container">
-            <div class="price-list__body price-list__body--woman">
-              <h3 class="price-list__body-header" tabindex="0">Strzyżenie</h3>
-              <ul>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Włosy krótkie <span class="price-list__price">40zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Włosy średnie <span class="price-list__price">50zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Włosy długie <span class="price-list__price">60 - 70zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Grzywka <span class="price-list__price">15zł</span></li>
-                <li class="price-list__line"></li>
-              </ul>
-            </div>
-            <div class="price-list__body">
-              <h3 class="price-list__body-header" tabindex="0">Koloryzacja</h3>
-              <div class="price-list__note">
-                <p>*cena zawiera podcięcie końcówek</p>
-                <p>*w przypadku bardzo długich i grubych włosów cena może wzrosnąć</p>
+    <section id="prices" class="price-list pt-5 pb-5 pl-2 pr-2 pl-sm-5 pr-sm-5">
+      <div class="container">
+        <h1 class="price-list__header m-5 text-center">CENNIK</h1>
+        <div class="row">
+          <!-- <div class="price-list__wrapper table-responsive"> -->
+          <div class="price-list__card mt-3 mb-3 col-12 col-md-8 ">
+            <h3 class="price-list__for text-center p-5">DLA KOBIET</h3>
+            <div class="price-list__container">
+              <table class="price-list__body table col-12 mt-2 mb-2">
+                <thead class="price-list__body-header">
+                  <tr>
+                    <td colspan="2" class="text-center">STRZYŻENIE </td>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="col-7">Włosy krótkie </td>
+                    <td class="col-5">40zł </td>
+                  </tr>
+                  <tr>
+                    <td>Włosy średnie </td>
+                    <td>50zł </td>
+                  </tr>
+                  <tr>
+                    <td>Włosy długie </td>
+                    <td>60 - 70zł </td>
+                  </tr>
+                  <tr>
+                    <td>Grzywka </td>
+                    <td>15zł </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <td colspan="2" class="text-center">KOLORYZACJA </td>
+                    <caption>*cena zawiera podcięcie końcówek <br> *w przypadku bardzo długich i grubych włosów cena
+                      może
+                      wzrosnąć</caption>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="col-7">Jeden kolor </td>
+                    <td>110-160zł </td>
+                  </tr>
+                  <tr>
+                    <td>Koloryzacja + Strzyżenie + Modelowanie </td>
+                    <td>120 - 230zł </td>
+                  </tr>
+                  <tr>
+                    <td>Koloryzacja z reflexem </td>
+                    <td>150 - 260zł </td>
+                  </tr>
+                  <tr>
+                    <td>Ombre / Sombre </td>
+                    <td>160 - 350zł </td>
+                  </tr>
+                  <tr>
+                    <td>Baleyage </td>
+                    <td>140 - 300zł </td>
+                  </tr>
+                  <tr>
+                    <td>Dekoloryzacja odrostu </td>
+                    <td>120 - 180zł </td>
+                  </tr>
+                  <tr>
+                    <td>Dekoloryzacja + farba </td>
+                    <td>60 - 350zł </td>
+                  </tr>
+                  <tr>
+                    <td>Tonowanie włosów </td>
+                    <td>60 - 100zł </td>
+                  </tr>
+                  <tr>
+                    <td>Trwała HEADLINES </td>
+                    <td>100 - 150zł </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="price-list__body table">
+                <thead class="price-list__body-header">
+                  <tr>
+                    <td colspan="2" class="text-center">PIELĘGNACJA / REGENERACJA </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="col-7">Ampułka NASHI ARGAN w trakcie koloryzacji </td>
+                    <td>50zł </td>
+                  </tr>
+                  <tr>
+                    <td>Rekonstrukcja włosów NASHI </td>
+                    <td>80 - 160zł </td>
+                  </tr>
+                  <tr>
+                    <td>PLEX w trakcie koloryzacji </td>
+                    <td>40zł </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="price-list__body table">
+                <thead class="price-list__body-header">
+                  <tr>
+                    <td colspan="2" class="text-center">KERATYNOWE PROSTOWANIE </td>
+                    <caption>*w przypadku bardzo długich i grubych włosów cena może wzrosnąć</caption>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Cena </td>
+                    <td>250-600zł </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="price-list__body table">
+                <thead class="price-list__body-header">
+                  <tr>
+                    <td colspan="2" class="text-center">OKAZJONALNE </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="col-7">Czesanie okolicznościowe </td>
+                    <td>30 - 65zł </td>
+                  </tr>
+                  <tr>
+                    <td>Czesanie okolicznościowe + strzyżenie </td>
+                    <td>50 - 75zł </td>
+                  </tr>
+                  <tr>
+                    <td>Upięcia okolicznościowe </td>
+                    <td>70 - 100zł </td>
+                  </tr>
+                  <tr>
+                    <td>Fale / Loki </td>
+                    <td>60 - 150zł </td>
+                  </tr>
+                  <tr>
+                    <td>Fryzura ślubna </td>
+                    <td>100 - 150zł </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="price-list__reveal">
+                <i class="price-list__reveal-icon fas fa-chevron-circle-down"></i>
               </div>
-              <ul>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Jeden kolor <span class="price-list__price">110-160zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Koloryzacja + Strzyżenie + Modelowanie <span
-                    class="price-list__price">120-230zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Koloryzacja z reflexem <span class="price-list__price">150-260zł</span>
-                </li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Ombre / Sombre <span class="price-list__price">160-350zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Baleyage <span class="price-list__price">140-300zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Dekoloryzacja odrostu <span class="price-list__price">120-180zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Dekoloryzacja + farba <span class="price-list__price">160-350zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Tonowanie włosów <span class="price-list__price">60-100zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Trwała HEADLINES <span class="price-list__price">100-150zł</span></li>
-                <li class="price-list__line"></li>
-              </ul>
-            </div>
-            <div class="price-list__body">
-              <h3 class="price-list__body-header" tabindex="0">Pielęgnacja/Regeneracja</h3>
-              <ul class="price-list__list">
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Ampułka NASHI ARGAN w trakcie koloryzacji <span
-                    class="price-list__price">50zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Rekonstrukcja włosów NASHI <span class="price-list__price">80-160zł</span>
-                </li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">PLEX w trakcie koloryzacji <span class="price-list__price">40zł</span></li>
-                <li class="price-list__line"></li>
-              </ul>
-            </div>
-            <div class="price-list__body">
-              <h3 class="price-list__body-header" tabindex="0">Keratynowe prostowanie</h3>
-              <div>
-                <div class="price-list__line"></div>
-                <p class="price-list__item">Cena <span class="price-list__price">250-600zł</span></p>
-                <div class="price-list__line"></div>
-                <div class=".price-list__note">
-                  <p>*w przypadku bardzo długich i grubych włosów cena może wzrosnąć</p>
-                </div>
+              <div class="price-list__hide">
+                <i class="price-list__hide-icon fas fa-chevron-circle-up"></i>
               </div>
             </div>
-            <div class="price-list__body">
-              <h3 class="price-list__body-header" tabindex="0">Okazjonalne</h3>
-              <ul class="price-list__list">
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Czesanie okolicznościowe <span class="price-list__price">30-65zł</span>
-                </li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Czesanie okolicznościowe + strzyżenie <span
-                    class="price-list__price">50-75zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Upięcia okolicznościowe <span class="price-list__price">70-100zł</span>
-                </li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Fale / Loki <span class="price-list__price">60-150zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Fryzura ślubna <span class="price-list__price">100-150zł</span></li>
-                <li class="price-list__line"></li>
-              </ul>
+          </div>
+          <div class="price-list__card  mt-3 mb-3 col-12 col-md-10 col-lg-8">
+            <h3 class="price-list__for text-center p-5">DLA MĘŻCZYZN</h3>
+            <div class="price-list__container">
+              <table class="price-list__body table">
+                <tbody>
+                  <tr>
+                    <td class="col-7">Strzyżenie maszynką </td>
+                    <td>20zł </td>
+                  </tr>
+                  <tr>
+                    <td>Strzyżenie maszynką + cieniowanie </td>
+                    <td>25 -
+                      30zł </td>
+                  </tr>
+                  <tr>
+                    <td>Strzyżenie + zabieg odsiwiający </td>
+                    <td>80zł </td>
+                  </tr>
+                  <tr>
+                    <td>Strzyżenie / konturowanie brody </td>
+                    <td>15 - 20zł </td>
+                  </tr>
+                  <tr>
+                    <td>Mycie włosów </td>
+                    <td>10zł </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="price-list__reveal">
+              <i class="price-list__reveal-icon fas fa-chevron-circle-down"></i>
+            </div>
+            <div class="price-list__hide">
+              <i class="price-list__hide-icon fas fa-chevron-circle-up"></i>
             </div>
           </div>
-          <div class="price-list__reveal" tabindex="0">
-            <i class="price-list__reveal-icon fas fa-chevron-circle-down" tabindex="0"></i>
-          </div>
-          <div class="price-list__hide" tabindex="0">
-            <i class="price-list__hide-icon fas fa-chevron-circle-up" tabindex="0"></i>
-          </div>
-        </div>
-        <div class="price-list__card price-list__card--man">
-          <h2 class="price-list__for" tabindex="0">Dla mężczyzn</h2>
-          <div class="price-list__container">
-            <div class="price-list__body price-list__body--men">
-              <ul class="price-list__list">
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Strzyżenie maszynką <span class="price-list__price">20zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Strzyżenie maszynką + cieniowanie <span class="price-list__price">25 -
-                    30zł</span>
-                </li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Strzyżenie + zabieg odsiwiający <span class="price-list__price">80zł</span>
-                </li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Strzyżenie / konturowanie brody <span class="price-list__price">15 -
-                    20zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Mycie włosów <span class="price-list__price">10zł</span></li>
-                <li class="price-list__line"></li>
-              </ul>
+          <div class="price-list__card  mt-3 mb-3  col-12 col-md-10 col-lg-8">
+            <h3 class="price-list__for text-center p-5">DLA DZIECI</h3>
+            <div class="price-list__container">
+              <table class="price-list__body table">
+                <caption>* Dzieci do 10 lat</caption>
+                <tbody>
+                  <tr>
+                    <td class="col-7">Dziewczynki </td>
+                    <td>25zł </td>
+                  </tr>
+                  <tr>
+                    <td>Chłopcy </td>
+                    <td>25zł </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </div>
-          <div class="price-list__reveal" tabindex="0">
-            <i class="price-list__reveal-icon fas fa-chevron-circle-down" tabindex="0"></i>
-          </div>
-          <div class="price-list__hide" tabindex="0">
-            <i class="price-list__hide-icon fas fa-chevron-circle-up" tabindex="0"></i>
-          </div>
-        </div>
-        <div class="price-list__card price-list__card--children">
-          <h2 class="price-list__for" tabindex="0">Dla dzieci do 10 lat</h2>
-          <div class="price-list__container">
-            <div class="price-list__body price-list__body--children">
-              <ul class="price-list__list">
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Dziewczynki <span class="price-list__price">25zł</span></li>
-                <li class="price-list__line"></li>
-                <li class="price-list__item">Chłopcy <span class="price-list__price">25zł</span></li>
-                <li class="price-list__line"></li>
-              </ul>
+            <div class="price-list__reveal">
+              <i class="price-list__reveal-icon fas fa-chevron-circle-down"></i>
             </div>
-          </div>
-          <div class="price-list__reveal" tabindex="0">
-            <i class="price-list__reveal-icon fas fa-chevron-circle-down" tabindex="0"></i>
-          </div>
-          <div class="price-list__hide" tabindex="0">
-            <i class="price-list__hide-icon fas fa-chevron-circle-up" tabindex="0"></i>
+            <div class="price-list__hide">
+              <i class="price-list__hide-icon fas fa-chevron-circle-up"></i>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section id="gallery" class="gallery">
-      <h1 class="gallery__header" tabindex="0">Galeria</h1>
+      <h1 class="gallery__header">Galeria</h1>
       <div class="swiper-container mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -495,7 +558,7 @@
         <div class="swiper-pagination"></div>
       </div>
     </section>
-    <section id="geolocation" class="geolocation" tabindex="0">
+    <section id="geolocation" class="geolocation">
       <iframe class="geolocation__iframe" title="lokalizacja Pracownia Fryzjerska Agnieszka Nowak"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2461.7922672458567!2d21.608665851527263!3d51.90125497960227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4718c7c201e9d7b7%3A0x2481660b09b04b33!2sPracownia%20Fryzjerska%20Agnieszka%20Nowak!5e0!3m2!1sen!2spl!4v1621255925921!5m2!1sen!2spl"
         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -504,11 +567,11 @@
   <footer id="contact" class="contact">
     <div class="contact__wrapper">
       <div class="contact__info">
-        <h2 class="contact__info-header" tabindex="0">Kontakt</h2>
+        <h2 class="contact__info-header">Kontakt</h2>
         <p class="contact__info-text"><span class="contact__info-icon"><i class="fas fa-phone"></i></span><a
-            tabindex="0" href="tel:+48669249106">(+48) 669 249 106</a></p>
+            href="tel:+48669249106">(+48) 669 249 106</a></p>
         <p class="contact__info-text"><span class="contact__info-icon"><i class="fas fa-envelope"></i></span><a
-            tabindex="0" href="mailto:pracownia.agnieszkanowak@gmail.com">pracownia.agnieszkanowak@gmail.com</a></p>
+            href="mailto:pracownia.agnieszkanowak@gmail.com">pracownia.agnieszkanowak@gmail.com</a></p>
         <p class="contact__info-text"><span class="contact__info-icon"><i class="fas fa-home"></i></span>Garwolin, ul.
           Tadeusza Kościuszki 49D</p>
       </div>

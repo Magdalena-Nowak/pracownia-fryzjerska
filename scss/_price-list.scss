@@ -1,234 +1,34 @@
-// .price-list {
-//   min-height: 80vh;
-//   width: 100%;
-//   @include flex(row, center, center);
-//   background-color: $mainBlack;
-//   color: $mainWhite;
-//   &__body {
-//     @include flex(column, space-between, stretch);
-//     font-size: $priceText;
-//     width: 95%;
-//     margin: 2rem auto;
-//   }
-//   &__body-header {
-//     font-family: $headerFamily;
-//     letter-spacing: 0.1rem;
-//     font-size: $cardsBodyHeader;
-//     text-align: center;
-//   }
-//   &__card {
-//     width: 100%;
-//     @include flex(column, space-between, center);
-//     margin: 1.5rem auto;
-//     background-color: $mainWhite;
-//     color: $mainBlack;
-//     padding: 2rem 1.5rem;
-//   }
-//   &__container {
-//     @include flex(column, space-between, stretch);
-//     width: 100%;
-//     display: none;
-//   }
-//   &__for {
-//     align-self: center;
-//     margin: 1.5rem 0;
-//     font-size: $cardsHeader;
-//     font-family: $headerFamily;
-//     letter-spacing: 0.1rem;
-//   }
-//   &__header {
-//     font-size: $sectionHeader;
-//     font-family: $headerFamily;
-//     margin: 2rem 0;
-//     text-align: center;
-//   }
-//   &__hide {
-//     display: none;
-//   }
-//   &__hide-icon {
-//     font-size: $iconSize * 0.8;
-//   }
-//   &__line {
-//     font-size: $cardsHeader;
-//     width: 100%;
-//     height: 0.1rem;
-//     margin: 0.5rem 0;
-//     padding: 0.08rem 0;
-//     background-color: $mainBlack;
-//   }
-//   &__price {
-//     font-family: $headerFamily;
-//     font-weight: 700;
-//   }
-//   &__reveal,
-//   &__hide {
-//     cursor: pointer;
-//     opacity: 0.8;
-//     margin-top: 0.5rem;
-//     align-self: flex-end;
-//   }
+.price-list {
+  background-color: $mainBlack;
+  &__header {
+    font-family: $headerFamily;
+    font-size: $sectionHeaderSize;
+    color: $mainWhite;
+  }
+  &__card {
+    background-color: $mainWhite;
+    font-size: $textSize;
+  }
+  &__container {
+    margin: auto 1rem;
+  }
+  &__for {
+    font-family: $headerFamily;
+  }
+}
 
-//   &__reveal-icon {
-//     pointer-events: none;
-//     font-size: $iconSize * 0.8;
-//   }
-//   &__wrapper {
-//     @include flex(column, center, center);
-//     padding-bottom: 4rem;
-//     width: 80%;
-//   }
-// }
+thead {
+  font-family: $headerFamily;
+  font-weight: 500;
+  background-color: #adadad;
+}
 
-// @media (min-width: 576px) {
-//   .price-list {
-//     &__body {
-//       font-size: $priceText * 1.3;
-//     }
-//     &__body-header {
-//       font-size: $cardsBodyHeader * 1.3;
-//     }
-//     &__for {
-//       font-size: $cardsHeader * 1.3;
-//     }
-//     &__header {
-//       font-size: $sectionHeader * 1.3;
-//     }
-//     &__reveal-icon,
-//     &__hide-icon {
-//       font-size: $iconSize;
-//     }
-//   }
-// }
+table {
+  margin: 3rem 0;
+}
 
-// @media (min-width: 768px) {
-//   .price-list {
-//     &__body {
-//       font-size: $priceText * 1.4;
-//     }
-//     &__body-header {
-//       font-size: $cardsBodyHeader * 1.4;
-//     }
-//     &__card {
-//       padding: 3rem 2rem;
-//       margin: 4rem 10rem;
-//     }
-//     &__for {
-//       font-size: $cardsHeader * 1.4;
-//     }
-//     &__header {
-//       font-size: $sectionHeader * 1.4;
-//     }
-//     &__reveal-icon,
-//     &__hide-icon {
-//       font-size: $iconSize * 1.2;
-//     }
-//   }
-// }
-
-// @media (min-width: 1200px) {
-//   .price-list {
-//     &__body {
-//       font-size: $priceText * 1.4;
-//     }
-//     &__body-header {
-//       font-size: $cardsBodyHeader * 1.4;
-//     }
-//     &__for {
-//       font-size: $cardsHeader * 1.6;
-//     }
-//     &__card {
-//       margin: 4rem 0;
-//     }
-//     &__card--children {
-//       width: 32%;
-//       margin: 0;
-//       height: 45rem;
-//       justify-content: flex-start;
-//     }
-//     &__card--man {
-//       width: 32%;
-//       height: 45rem;
-//       margin: 0;
-//       margin-right: 8%;
-//       justify-content: flex-start;
-//     }
-//     &__card--woman {
-//       order: 3;
-//       width: 72.5%;
-//     }
-//     &__container {
-//       display: flex;
-//     }
-//     &__header {
-//       font-size: $sectionHeader * 1.4;
-//       margin: 6rem 0;
-//       width: 100%;
-//     }
-//     &__reveal,
-//     &__hide {
-//       display: none;
-//     }
-//     &__wrapper {
-//       flex-direction: row;
-//       flex-wrap: wrap;
-//       width: 90%;
-//     }
-//   }
-// }
-
-// @media (min-width: 1500px) {
-//   .price-list {
-//     &__body {
-//       font-size: $priceText * 1.6;
-//     }
-//     &__body-header {
-//       font-size: $cardsBodyHeader * 1.6;
-//     }
-//     &__header {
-//       font-size: $sectionHeader * 1.6;
-//     }
-//     &__for {
-//       font-size: $cardsHeader * 1.8;
-//     }
-//   }
-// }
-
-// @media (min-width: 1800px) {
-//   .price-list {
-//     &__body {
-//       font-size: $priceText * 1.8;
-//     }
-//     &__body-header {
-//       font-size: $cardsBodyHeader * 1.8;
-//     }
-//     &__for {
-//       font-size: $cardsHeader * 2;
-//     }
-//     &__header {
-//       font-size: $sectionHeader * 1.8;
-//     }
-//     &__wrapper {
-//       width: 80%;
-//     }
-//   }
-// }
-
-// @media (min-width: 2000px) {
-//   .price-list {
-//     &__body {
-//       font-size: $priceText * 2;
-//     }
-//     &__body-header {
-//       font-size: $cardsBodyHeader * 2;
-//     }
-//     &__header {
-//       font-size: $sectionHeader * 2;
-//     }
-//     &__for {
-//       font-size: $cardsHeader * 2.2;
-//     }
-//     &__wrapper {
-//       width: 200rem;
-//     }
-//   }
-// }
+.price-list {
+  .row {
+    @include flex(row, center, center);
+  }
+}
