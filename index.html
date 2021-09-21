@@ -14,10 +14,10 @@
 </head>
 
 <body>
-    <nav class="navbar text-light p-fixed">
+    <nav class="navbar text-light position-fixed navbar-expand-lg" id="home">
         <div class="container">
-            <a class="navbar-brand" href="#carouselExampleIndicators">
-                <img src="../dist/images/Frame5.png" width="180" height="70"
+            <a class="navbar-brand" href="#home">
+                <img class="navbar-image" src="../dist/images/Frame5.png" width="180" height="70"
                     alt="Pracownia fryzjerska Agnieszka Nowak | Garwolin logo">
             </a>
             <button class="navbar-toggler btn btn-success" type="button" data-toggle="collapse"
@@ -25,21 +25,21 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#carouselExampleIndicators">Home</a>
+                    <li class="nav-item py-lg-2 px-lg-4">
+                        <a class="nav-link" href="#home">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item py-lg-2 px-lg-4">
                         <a class="nav-link" href="#about">O mnie</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item py-lg-2 px-lg-4">
                         <a class="nav-link" href="#prices">Cennik</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item py-lg-2 px-lg-4">
                         <a class="nav-link" href="#gallery">Galeria</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item py-lg-2 px-lg-4">
                         <a class="nav-link" href="#contacts">Kontakt</a>
                     </li>
                 </ul>
@@ -79,7 +79,7 @@
         </div>
     </header>
     <main>
-        <section id="about" class="py-5">
+        <section id="about" class="pt-5 py-lg-5">
             <div class="container">
                 <div class="about__wrapper row justify-content-center align-items-center">
                     <div class="text-justify col-10 col-sm-12 col-md-10 col-lg-6 pr-lg-5">
@@ -118,18 +118,313 @@
                 </div>
             </div>
         </section>
-    </main>
-    <footer></footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <script src="../dist/js/app.min.js"></script>
+        <section id="prices" class="price-list py-5">
+    <div class="container d-flex flex-column align-items-center">
+        <h1 class="price-list__header text-center text-light display-5 py-5">CENNIK</h1>
+        <div class="accordion col-md-11 col-lg-10" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0 py-4 pl-lg-5">
+                        <button class="btn" type="button" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            DLA KOBIET
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseOne" class="collapse px-1 px-lg-5 py-4" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <table class="table table-hover table-borderless">
+                        <thead>
+                            <tr>
+                                <td colspan="2" class="text-center table-active py-3">STRZYŻENIE </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col-8" scope="row">Włosy krótkie </td>
+                                <td>40zł </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Włosy średnie </td>
+                                <td>50zł </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Włosy długie </td>
+                                <td>60 - 70zł </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Grzywka </td>
+                                <td>15zł </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-hover table-borderless">
+                        <thead>
+                            <tr>
+                                <td colspan="2" class="text-center table-active py-3">KOLORYZACJA </td>
+                                <caption>*cena zawiera podcięcie końcówek <br> *w przypadku bardzo długich i grubych
+                                    włosów cena
+                                    może
+                                    wzrosnąć</caption>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col-8">Jeden kolor </td>
+                                <td>110-160zł </td>
+                            </tr>
+                            <tr>
+                                <td>Koloryzacja + Strzyżenie + Modelowanie </td>
+                                <td>120 - 230zł </td>
+                            </tr>
+                            <tr>
+                                <td>Koloryzacja z reflexem </td>
+                                <td>150 - 260zł </td>
+                            </tr>
+                            <tr>
+                                <td>Ombre / Sombre </td>
+                                <td>160 - 350zł </td>
+                            </tr>
+                            <tr>
+                                <td>Baleyage </td>
+                                <td>140 - 300zł </td>
+                            </tr>
+                            <tr>
+                                <td>Dekoloryzacja odrostu </td>
+                                <td>120 - 180zł </td>
+                            </tr>
+                            <tr>
+                                <td>Dekoloryzacja + farba </td>
+                                <td>60 - 350zł </td>
+                            </tr>
+                            <tr>
+                                <td>Tonowanie włosów </td>
+                                <td>60 - 100zł </td>
+                            </tr>
+                            <tr>
+                                <td>Trwała HEADLINES </td>
+                                <td>100 - 150zł </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-hover table-borderless">
+                        <thead>
+                            <tr>
+                                <td colspan="2" class="text-center table-active py-3">PIELĘGNACJA / REGENERACJA
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col-8">Ampułka NASHI ARGAN w trakcie koloryzacji </td>
+                                <td>50zł </td>
+                            </tr>
+                            <tr>
+                                <td>Rekonstrukcja włosów NASHI </td>
+                                <td>80 - 160zł </td>
+                            </tr>
+                            <tr>
+                                <td>PLEX w trakcie koloryzacji </td>
+                                <td>40zł </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-hover table-borderless">
+                        <thead>
+                            <tr>
+                                <td colspan="2" class="text-center table-active py-3">KERATYNOWE PROSTOWANIE </td>
+                                <caption>*w przypadku bardzo długich i grubych włosów cena może wzrosnąć</caption>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2" class="text-center">Cena 250-600zł </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-hover table-borderless">
+                        <thead>
+                            <tr>
+                                <td colspan="2" class="text-center table-active py-3">OKAZJONALNE </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col-8">Czesanie okolicznościowe </td>
+                                <td>30 - 65zł </td>
+                            </tr>
+                            <tr>
+                                <td>Czesanie okolicznościowe + strzyżenie </td>
+                                <td>50 - 75zł </td>
+                            </tr>
+                            <tr>
+                                <td>Upięcia okolicznościowe </td>
+                                <td>70 - 100zł </td>
+                            </tr>
+                            <tr>
+                                <td>Fale / Loki </td>
+                                <td>60 - 150zł </td>
+                            </tr>
+                            <tr>
+                                <td>Fryzura ślubna </td>
+                                <td>100 - 150zł </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0 py-4 pl-lg-5">
+                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                            aria-expanded="false" aria-controls="collapseTwo">
+                            DLA MĘŻCZYZN
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse show px-1 px-lg-5 py-4" aria-labelledby="headingTwo"
+                    data-parent="#accordionExample">
+                    <table class="table table-hover table-borderless">
+                        <tbody>
+                            <tr>
+                                <td class="col-8">Strzyżenie maszynką </td>
+                                <td>20zł </td>
+                            </tr>
+                            <tr>
+                                <td>Strzyżenie maszynką + cieniowanie </td>
+                                <td>25 -
+                                    30zł </td>
+                            </tr>
+                            <tr>
+                                <td>Strzyżenie + zabieg odsiwiający </td>
+                                <td>80zł </td>
+                            </tr>
+                            <tr>
+                                <td>Strzyżenie / konturowanie brody </td>
+                                <td>15 - 20zł </td>
+                            </tr>
+                            <tr>
+                                <td>Mycie włosów </td>
+                                <td>10zł </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0 py-4 pl-lg-5">
+                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree">
+                            DLA DZIECI
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse px-1 px-lg-5 py-4" aria-labelledby="headingThree"
+                    data-parent="#accordionExample">
+                    <table class="table table-hover table-borderless">
+                        <caption>* Dzieci do 10 lat</caption>
+                        <tbody>
+                            <tr>
+                                <td class="col-8">Dziewczynki </td>
+                                <td>25zł </td>
+                            </tr>
+                            <tr>
+                                <td>Chłopcy </td>
+                                <td>25zł </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</section>
+        <section id="gallery" class="gallery">
+            <div class="container pt-5">
+                <h1 class="text-center py-5">GALERIA</h1>
+                <div class="row">
+                    <img src="../dist/images/img2.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img4.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img1.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img5.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img6.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img7.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img8.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img9.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img10.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img11.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img12.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img13.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img14.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img15.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img16.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img17.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img18.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img19.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img20.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img21.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img22.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img23.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img24.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img25.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img26.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img27.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img28.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img29.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img30.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img31.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img32.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img33.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img34.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img35.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img36.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img37.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img38.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img39.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img40.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img41.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img42.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img43.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img44.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img45.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img46.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img47.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img48.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                    <img src="../dist/images/img49.jpg" class="rounded col-6 col-sm-4 col-md-3 my-3" alt="...">
+                </div>
+            </div>
+        </section>
+        <section>
+            <div id="map"></div>
+        </section>
+        <footer></footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMTQ616V7Ies3NT57mMEXiHCMgP2_ikcQ&callback=initMap&libraries=&v=weekly"
+            async></script>
+        <script>
+            let map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById("map"), {
+                    center: { lat: -50.0038435979174, lng: 18.635918487416163 },
+                    zoom: 8,
+                });
+                marker = new google.maps.Marker({
+                    position: { lat: -50.0038435979174, lng: 18.635918487416163 },
+                    map,
+                    title: "Siedziba Firmy",
+                });
+            }
+        </script>
+        <script src="../dist/js/app.min.js"></script>
 </body>
 
 </html>

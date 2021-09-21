@@ -3,14 +3,12 @@ $mainWhite: #f5f5f5;
 $grayHighlight: #bfc0c0;
 $sectionHeaderSize: 1.6rem;
 $textSize: 1.7rem;
-$cardsHeader: 1.6rem;
-$cardsBodyHeader: 1.6rem;
 $priceText: 1.6rem;
 $iconSize: 1.6rem;
-// $navLinkSize: 1.4rem;
 $headerFamily: "EB Garamond", serif;
 $textFamily: "Lato", sans-serif;
 $hoverBg: #3d3d3d;
+$zindex-fixed: 1080 !default;
 
 @mixin flex($direction, $justify, $align) {
   display: flex;

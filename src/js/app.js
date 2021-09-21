@@ -42,6 +42,8 @@ $(document).click(function (event) {
   });
 
 
+  const key = "AIzaSyDMTQ616V7Ies3NT57mMEXiHCMgP2_ikcQ";
+
 // // NAVIGATION
 // function openingNavigation() {
 //   menuNav.scrollIntoView({
