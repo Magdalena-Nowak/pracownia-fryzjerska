@@ -1,0 +1,25 @@
+/* Main style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  overflow-x: hidden;
+}
+
+@import "variables";
+@import "header";
+@import "swiper";
+@import "about";
+@import "price-list";
+@import "gallery";
+@import "geolocation";
+@import "footer";
+

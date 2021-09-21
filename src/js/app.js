@@ -33,6 +33,15 @@
 // const time = 3000;
 // let active = 0;
 
+$(document).click(function (event) {
+    var clickover = $(event.target);
+    var _opened = $(".navbar-collapse").hasClass("show");
+    if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+      $(".navbar-toggler").click();
+    }
+  });
+
+
 // // NAVIGATION
 // function openingNavigation() {
 //   menuNav.scrollIntoView({
