@@ -1,0 +1,116 @@
+// .gallery {
+//   width: 95%;
+//   margin: 0 auto;
+//   color: $mainBlack;
+//   &__header {
+//     color: $mainBlack;
+//     font-size: $sectionHeader;
+//     font-family: $headerFamily;
+//     text-align: center;
+//     margin: 4rem 0;
+//   }
+// }
+
+// @media (min-width: 576px) {
+//   .gallery {
+//     &__header {
+//       font-size: $sectionHeader * 1.3;
+//     }
+//   }
+// }
+
+// @media (min-width: 1200px) {
+//   .gallery {
+//     &__header {
+//       font-size: $sectionHeader * 1.4;
+//       margin: 6rem 0;
+//     }
+//   }
+// }
+
+// @media (min-width: 1500px) {
+//   .gallery {
+//     &__header {
+//       font-size: $sectionHeader * 1.6;
+//     }
+//   }
+// }
+
+// @media (min-width: 1800px) {
+//   .gallery {
+//     &__header {
+//       font-size: $sectionHeader * 1.8;
+//     }
+//   }
+// }
+
+// @media (min-width: 2000px) {
+//   .gallery {
+//     &__header {
+//       font-size: $sectionHeader * 2;
+//     }
+//   }
+// }
+
+// .swiper-container {
+//   width: 100%;
+//   height: 70vh;
+//   margin: 2rem 0;
+// }
+
+// .swiper-slide {
+//   @include flex(row, center, center);
+// }
+
+// .swiper-slide img {
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   object-position: top;
+// }
+
+// .swiper-button-next,
+// .swiper-button-prev {
+//   color: $mainBlack;
+// }
+
+// .swiper-pagination {
+//   position: absolute;
+//   bottom: 1%;
+//   left: 2%;
+//   width: 100% !important;
+//   left: auto !important;
+//   margin: 0;
+// }
+// .swiper-pagination-bullet {
+//   padding: 0rem 1rem;
+//   border-radius: 0;
+//   width: auto;
+//   height: 1rem;
+//   text-align: center;
+//   line-height: 30px;
+//   font-size: 12px;
+//   color: $mainBlack;
+//   opacity: 0.2;
+// }
+// .swiper-pagination-bullet-active {
+//   // color:#fff;
+//   background: $mainBlack;
+//   opacity: 0.8;
+// }
+
+// @media (min-width: 840px) and (min-height: 900px) {
+//   .swiper-container {
+//     height: 70vh;
+//   }
+//   .swiper-pagination-bullet {
+//     padding: 0.2rem 2.5rem;
+//   }
+// }
+
+// @media (min-width: 840px) and (min-height: 900px) {
+//   .swiper-container {
+//     height: 50vh;
+//   }
+// }
