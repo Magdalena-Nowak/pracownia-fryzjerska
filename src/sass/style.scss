@@ -16,6 +16,7 @@ body {
 }
 
 @import "variables";
+// @import "footer";
 
 //Header
 
@@ -182,6 +183,34 @@ header {
   }
 }
 
+//Meet us
+
+.meet-us {
+  margin: 5rem 0;
+  h1,
+  h2 {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 0.1rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+//Parallax
+
+.parallax {
+  background-image: url("../../dist/images/pracownia_parallax.jpg");
+  min-height: 60vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 //About
 
 .about {
@@ -215,4 +244,34 @@ header {
   height: 25rem;
 }
 
-//
+//Team
+
+.team {
+  margin: 5rem 0;
+  h1,
+  h2,
+  a {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 0.1rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  a {
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    background-color: $mainBlack;
+  }
+  img {
+    max-height: 100vh;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.row div {
+  margin: 5rem 0;
+}
