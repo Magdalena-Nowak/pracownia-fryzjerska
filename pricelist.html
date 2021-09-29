@@ -56,41 +56,18 @@
                 </div>
             </div>
         </nav>
-        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="../dist/images/hairstyle_1.jpg" alt="First slide">
-                </div>
-                <div class="carousel-item carousel--hero">
-                    <img class="d-block w-100" src="../dist/images/accessories_1.jpg" alt="Second slide">
-                    <div class="carousel-text text-center">
-                        <p>Love is <br>in the hair</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="../dist/images/hairstyle_2.jpg" alt="Third slide">
-                </div>
+        <div class="header__subpage-image">
+            <img class="d-block" src="../dist/images/accessories_1.jpg" alt="accessories">
+            <div class="carousel-text text-center">
+                <p>usługi & cennik</p>
             </div>
-            <a class="carousel-control-prev bg-transparent" href="#carouselExampleIndicators" role="button"
-                data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </a>
-            <a class="carousel-control-next bg-transparent" href="#carouselExampleIndicators" role="button"
-                data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </a>
         </div>
     </header>
     <main>
-        <section class="services">
+        <section class="services py-3">
             <div class="container">
                 <div class="row">
-                    <div class="services__card col-12 col-lg-4 m-0">
+                    <div class="services__card col-12 col-md-4 m-0">
                         <div class="services__card-body text-center">
                             <h5 class="services__card-title py-2">strzyżenie & stylizacja</h5>
                             <p class="services__card-text text-muted px-3">Some quick example text to build on the card
@@ -99,7 +76,7 @@
                                 the card's content.</p>
                         </div>
                     </div>
-                    <div class="services__card col-12 col-lg-4 m-0">
+                    <div class="services__card col-12 col-md-4 m-0">
                         <div class="services__card-body text-center">
                             <h5 class="services__card-title py-2">koloryzacja</h5>
                             <p class="services__card-text text-muted px-3">Some quick example text to build on the card
@@ -108,7 +85,7 @@
                                 the card's content.</p>
                         </div>
                     </div>
-                    <div class="services__card col-12 col-lg-4 m-0">
+                    <div class="services__card col-12 col-md-4 m-0">
                         <div class="services__card-body text-center">
                             <h5 class="services__card-title py-2">prostowanie & pielęgnacja</h5>
                             <p class="services__card-text text-muted px-3">Some quick example text to build on the card
@@ -120,35 +97,230 @@
                 </div>
             </div>
         </section>
+        <section class="parallax--woman">
+        </section>
         <section class="women">
-            <div class="container">
-                <h2 class="text-center pt-5">KOBIETY</h2>
-                <div class="row justify-content-center">
-                    <div class="card col-11">
-                        <div class="card-decoration"></div>
-                        <div class="card-body m-0">
+            <div class="women__wrapper">
+                <h2 class="grid-item1 text-center">KOBIETY</h2>
+                <div class="grid-item2 card col-md-10 offset-md-1 my-3">
+                    <div class="card-body m-0">
+                        <table class="table table-hover table-border">
                             <thead>
-                                <tr>
+                                <tr class="service__type">
                                     <td colspan="2" class="text-center table-active py-3">STRZYŻENIE &</td>
                                 </tr>
                             </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-8" scope="row">Włosy krótkie </td>
+                                    <td>40zł </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Włosy średnie </td>
+                                    <td>50zł </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Włosy długie </td>
+                                    <td>60 - 70zł </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Grzywka </td>
+                                    <td>15zł </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="grid-item3 card col-md-10  offset-md-1 my-3">
+                    <div class="card-body m-0">
+                        <table class="table table-hover table-border">
+                            <thead>
+                                <tr class="service__type">
+                                    <td colspan="2" class="text-center table-active py-3">KOLORYZACJA &</td>
+                                    <caption>*cena zawiera podcięcie końcówek <br> *w przypadku bardzo długich i
+                                        grubych
+                                        włosów cena
+                                        może
+                                        wzrosnąć</caption>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-8">Jeden kolor </td>
+                                    <td>110-160zł </td>
+                                </tr>
+                                <tr>
+                                    <td>Koloryzacja + Strzyżenie + Modelowanie </td>
+                                    <td>120 - 230zł </td>
+                                </tr>
+                                <tr>
+                                    <td>Koloryzacja z reflexem </td>
+                                    <td>150 - 260zł </td>
+                                </tr>
+                                <tr>
+                                    <td>Ombre / Sombre </td>
+                                    <td>160 - 350zł </td>
+                                </tr>
+                                <tr>
+                                    <td>Baleyage </td>
+                                    <td>140 - 300zł </td>
+                                </tr>
+                                <tr>
+                                    <td>Dekoloryzacja odrostu </td>
+                                    <td>120 - 180zł </td>
+                                </tr>
+                                <tr>
+                                    <td>Dekoloryzacja + farba </td>
+                                    <td>60 - 350zł </td>
+                                </tr>
+                                <tr>
+                                    <td>Tonowanie włosów </td>
+                                    <td>60 - 100zł </td>
+                                </tr>
+                                <tr>
+                                    <td>Trwała HEADLINES </td>
+                                    <td>100 - 150zł </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="grid-item4 card col-md-10  offset-md-1  my-3">
+                    <div class="card-body m-0">
+                        <table class="table table-hover table-border">
+                            <thead>
+                                <tr class="service__type">
+                                    <td colspan="2" class="text-center table-active py-3">PIELĘGNACJA & REGENERACJA</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-8">Ampułka NASHI ARGAN w trakcie koloryzacji </td>
+                                    <td>50zł </td>
+                                </tr>
+                                <tr>
+                                    <td>Rekonstrukcja włosów NASHI </td>
+                                    <td>80 - 160zł </td>
+                                </tr>
+                                <tr>
+                                    <td>PLEX w trakcie koloryzacji </td>
+                                    <td>40zł </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="grid-item5 card col-md-10  offset-md-1  my-3">
+                    <div class="card-body m-0">
+                        <table class="table table-hover table-border">
+                            <thead>
+                                <tr class="service__type">
+                                    <td colspan="2" class="text-center table-active py-3">OKAZJONALNE &</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-8">Czesanie okolicznościowe </td>
+                                    <td>30 - 65zł </td>
+                                </tr>
+                                <tr>
+                                    <td>Czesanie okolicznościowe + strzyżenie </td>
+                                    <td>50 - 75zł </td>
+                                </tr>
+                                <tr>
+                                    <td>Upięcia okolicznościowe </td>
+                                    <td>70 - 100zł </td>
+                                </tr>
+                                <tr>
+                                    <td>Fale / Loki </td>
+                                    <td>60 - 150zł </td>
+                                </tr>
+                                <tr>
+                                    <td>Fryzura ślubna </td>
+                                    <td>100 - 150zł </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="grid-item6 card  col-md-10  offset-md-1  my-3">
+                    <div class="card-body m-0">
+                        <table class="table table-hover table-border">
+                            <thead>
+                                <tr class="service__type">
+                                    <td colspan="2" class="text-center table-active py-3">KERATYNOWE PROSTOWANIE &</td>
+                                    <caption>*w przypadku bardzo długich i grubych włosów cena może wzrosnąć</caption>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" class="text-center">Cena 250-600zł </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="protection">
+            <div class="container">
+                <h2 class="protection__title text-center">& Nasza pielęgnacja &</h2>
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="protection__item"><i class="fas fa-search"></i></div>
+                    <div class="protection__item"><i class="fas fa-palette"></i></div>
+                    <div class="protection__item"><i class="fas fa-cut"></i></div>
+                    <div class="protection__item"><i class="fas fa-tint"></i></div>
+                </div>
+            </div>
+        </section>
+        <section class="parallax--man">
+        </section>
+        <section class="prices__man-children py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="men col-12 col-md-5">
+                        <h2 class="text-center py-2">Mężczyźni</h2>
+                        <div>
                             <table class="table table-hover table-border">
                                 <tbody>
                                     <tr>
-                                        <td class="col-8" scope="row">Włosy krótkie </td>
-                                        <td>40zł </td>
+                                        <td class="col-8">Strzyżenie maszynką </td>
+                                        <td>20zł </td>
                                     </tr>
                                     <tr>
-                                        <td scope="row">Włosy średnie </td>
-                                        <td>50zł </td>
+                                        <td>Strzyżenie maszynką + cieniowanie </td>
+                                        <td>25 -
+                                            30zł </td>
                                     </tr>
                                     <tr>
-                                        <td scope="row">Włosy długie </td>
-                                        <td>60 - 70zł </td>
+                                        <td>Strzyżenie + zabieg odsiwiający </td>
+                                        <td>80zł </td>
                                     </tr>
                                     <tr>
-                                        <td scope="row">Grzywka </td>
-                                        <td>15zł </td>
+                                        <td>Strzyżenie / konturowanie brody </td>
+                                        <td>15 - 20zł </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mycie włosów </td>
+                                        <td>10zł </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="children col-12 col-md-5">
+                        <h2 class="text-center py-2">dzieci</h2>
+                        <div>
+                            <table class="table table-hover table-border">
+                                <caption>* Dzieci do 10 lat</caption>
+                                <tbody>
+                                    <tr>
+                                        <td class="col-8">Dziewczynki </td>
+                                        <td>25zł </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chłopcy </td>
+                                        <td>25zł </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -157,6 +329,7 @@
                 </div>
             </div>
         </section>
+
     </main>
     <footer id="footer" class="footer">
     <div class="container">
