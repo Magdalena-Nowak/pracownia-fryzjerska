@@ -33,16 +33,29 @@
 // const time = 3000;
 // let active = 0;
 
-$(document).click(function (event) {
-    var clickover = $(event.target);
-    var _opened = $(".navbar-collapse").hasClass("show");
-    if (_opened === true && !clickover.hasClass("navbar-toggler")) {
-      $(".navbar-toggler").click();
-    }
-  });
+// const loader = new Loader({
+//   apiKey: "AIzaSyDMTQ616V7Ies3NT57mMEXiHCMgP2_ikcQ",
+//   version: "weekly",
+//   ...additionalOptions,
+// });
+
+// loader.load().then(() => {
+//   map = new google.maps.Map(document.getElementById("map"), {
+//     center: { lat: -34.397, lng: 150.644 },
+//     zoom: 8,
+//   });
+// });
+
+// $(document).click(function (event) {
+//     var clickover = $(event.target);
+//     var _opened = $(".navbar-collapse").hasClass("show");
+//     if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+//       $(".navbar-toggler").click();
+//     }
+//   });
 
 
-  const key = "AIzaSyDMTQ616V7Ies3NT57mMEXiHCMgP2_ikcQ";
+  // const key = "AIzaSyDMTQ616V7Ies3NT57mMEXiHCMgP2_ikcQ";
 
 // // NAVIGATION
 // function openingNavigation() {

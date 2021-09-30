@@ -5,24 +5,26 @@
   box-sizing: border-box;
 }
 
+@import "variables";
+
 html {
   font-size: 62.5%;
 }
 
 body {
-  font-size: 1.7rem;
   position: relative;
+  font-size: $textSize;
+  font-family: $textFamily;
+  letter-spacing: 0.05rem;
+  line-height: 1.8;
   overflow-x: hidden;
 }
-
-@import "variables";
-// @import "footer";
 
 //Header
 
 header {
   position: relative;
-  height: 100vh;
+  height: 90vh;
 }
 
 .header__subpage {
@@ -39,16 +41,13 @@ header {
     height: 100%;
     object-fit: cover;
   }
-  .carousel-text {
-    font-size: 3rem;
-  }
 }
 
 .navbar {
   background-color: $mainBlack;
   color: $mainWhite;
-  font-size: $textSize;
-  font-family: "Montserrat", sans-serif;
+  font-size: $textSize * 1.2;
+  font-family: $navFamily;
   z-index: 5;
   &-brand:hover {
     background-color: $mainBlack;
@@ -56,11 +55,10 @@ header {
   a {
     color: $mainWhite;
   }
-}
-
-.navbar-toggler-icon {
-  color: $mainWhite;
-  font-size: 2rem;
+  &-toggler-icon {
+    font-size: $iconSize;
+    color: $mainWhite;
+  }
 }
 
 .nav-item {
@@ -73,7 +71,7 @@ header {
 
 @media (min-width: 992px) {
   .navbar {
-    font-family: "Raleway", sans-serif;
+    font-size: $textSize * 1.4;
     background-color: transparent;
     position: absolute;
     top: 0;
@@ -85,17 +83,9 @@ header {
     .navbar.container {
       @include flex(row, space-between, center);
     }
-    &-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
   }
   .nav-item {
-    box-sizing: inherit;
     font-weight: bolder;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
     position: relative;
     border-bottom: none;
   }
@@ -126,14 +116,17 @@ header {
     opacity: 1;
     transform: translateY(0);
   }
+  .photo-header {
+    font-size: $photoHeaderSize * 1.5;
+  }
 }
 
 @media (min-width: 1200px) {
-  .navbar {
-    font-size: $textSize * 1.2;
-  }
   .navbar-nav {
     @include flex(row, flex-end, center);
+  }
+  .photo-header {
+    font-size: $photoHeaderSize * 2;
   }
 }
 
@@ -161,9 +154,9 @@ header {
 
 .carousel-text {
   color: $mainWhite;
-  text-transform: uppercase;
-  font-family: "Playfair Display", serif;
-  font-size: $sectionHeaderSize * 2;
+  // text-transform: uppercase;
+  // font-family: "Playfair Display", serif;
+  // font-size: $sectionHeaderSize * 2;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -173,9 +166,9 @@ header {
 @media (min-width: 992px) {
   .carousel {
     height: 100%;
-    &-text {
-      font-size: $sectionHeaderSize * 3;
-    }
+    // &-text {
+    //   font-size: $sectionHeaderSize * 3;
+    // }
   }
 }
 
@@ -186,9 +179,9 @@ header {
   }
   .carousel {
     width: 1200px;
-    &-text {
-      font-size: $sectionHeaderSize * 4;
-    }
+    // &-text {
+    //   font-size: $sectionHeaderSize * 4;
+    // }
   }
 }
 
@@ -206,20 +199,20 @@ header {
 
 //Meet us
 
-.meet-us {
-  margin: 5rem 0;
-  h1,
-  h2 {
-    font-family: "Playfair Display", serif;
-    letter-spacing: 0.1rem;
-  }
-  h2 {
-    font-size: 1.8rem;
-  }
-  h1 {
-    font-size: 2.5rem;
-  }
-}
+// .meet-us {
+// margin: 5rem 0;
+// h1,
+// h2 {
+//   font-family: "Playfair Display", serif;
+//   letter-spacing: 0.1rem;
+// }
+// h2 {
+//   font-size: 1.8rem;
+// }
+// h1 {
+//   font-size: 2.5rem;
+// }
+// }
 
 //Parallax
 
@@ -234,18 +227,19 @@ header {
 
 //About
 
-.about {
-  h1,
-  h2 {
-    font-family: "Playfair Display", serif;
-    letter-spacing: 0.1rem;
-  }
+.about .section-subtitle {
+  margin-top: 5rem;
 }
+
+.about .btn {
+  font-size: $textSize;
+}
+
 //Price List
 
 .price-list {
   background-color: $mainBlack;
-  font-size: $priceText;
+  // font-size: $priceText;
 }
 
 .card-header {
@@ -253,7 +247,7 @@ header {
 }
 
 .btn {
-  font-size: $priceText;
+  // font-size: $priceText;
   background-color: $mainWhite;
 }
 
@@ -265,23 +259,23 @@ header {
 
 //Team
 
-.team {
-  margin: 5rem 0;
-  h1,
-  h2,
+.about {
+  // margin: 5rem 0;
+  // h1,
+  // h2,
+  // a {
+  //   font-family: "Playfair Display", serif;
+  //   letter-spacing: 0.1rem;
+  // }
+  // h2 {
+  //   font-size: 1.8rem;
+  // }
+  // h1 {
+  //   font-size: 2.5rem;
+  // }
   a {
-    font-family: "Playfair Display", serif;
-    letter-spacing: 0.1rem;
-  }
-  h2 {
-    font-size: 1.8rem;
-  }
-  h1 {
-    font-size: 2.5rem;
-  }
-  a {
-    font-size: 1.4rem;
-    letter-spacing: 0.2rem;
+    // font-size: 1.4rem;
+    // letter-spacing: 0.2rem;
     background-color: $mainBlack;
   }
   img {
@@ -299,9 +293,6 @@ header {
 
 .about {
   padding: 5rem 0;
-  // &__salon-photo {
-  // height: 50vh;
-  // }
 }
 //Footer
 
@@ -314,38 +305,38 @@ header {
     object-fit: cover;
   }
   &__socials a {
-    font-size: 4rem;
+    // font-size: 4rem;
     margin-right: 1rem;
     color: $mainWhite;
   }
   &__directions h2 {
-    font-family: "Playfair Display", serif;
-    letter-spacing: 0.2rem;
-    text-transform: uppercase;
-    font-size: 1.8rem;
+    // font-family: "Playfair Display", serif;
+    // letter-spacing: 0.2rem;
+    // text-transform: uppercase;
+    // font-size: 1.8rem;
     font-weight: lighter;
   }
 }
 
-@media (min-width: 992px) {
-  .footer {
-    &__socials a {
-      font-size: 4.5rem;
-    }
-  }
-}
+// @media (min-width: 992px) {
+//   .footer {
+//     &__socials a {
+//       font-size: 4.5rem;
+//     }
+//   }
+// }
 
 .services {
-  font-size: 1.4rem;
+  // font-size: 1.4rem;
   &__card-body {
     margin: 3rem 0;
   }
-  &__card-title {
-    font-family: "Playfair Display", serif;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-    font-size: 1.6rem;
-  }
+  // &__card-title {
+  //   font-family: "Playfair Display", serif;
+  //   letter-spacing: 0.1rem;
+  //   text-transform: uppercase;
+  //   font-size: 1.6rem;
+  // }
 }
 
 .grid-item1 {
@@ -382,10 +373,10 @@ header {
     "four four four"
     "five five five"
     "six six six";
-  font-size: 1.5rem;
+  // font-size: 1.5rem;
   h2 {
-    font-family: "Playfair Display", serif;
-    letter-spacing: 0.1rem;
+    // font-family: "Playfair Display", serif;
+    // letter-spacing: 0.1rem;
     color: $mainWhite;
   }
 
@@ -429,10 +420,10 @@ header {
     width: 1200px;
   }
 }
-.service__type {
-  font-family: "Playfair Display", serif;
-  letter-spacing: 0.1rem;
-}
+// .service__type {
+//   font-family: "Playfair Display", serif;
+//   letter-spacing: 0.1rem;
+// }
 
 @media (min-width: 776px) {
   .services {
@@ -445,17 +436,17 @@ header {
 .protection {
   background-color: $mainWhite;
   padding: 5rem 0;
-  &__title {
-    font-family: "Playfair Display", serif;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-  }
+  // &__title {
+  //   font-family: "Playfair Display", serif;
+  //   letter-spacing: 0.1rem;
+  //   text-transform: uppercase;
+  // }
   &__item {
     width: 5rem;
     height: 5rem;
     margin: 4rem 1.5rem;
     color: $mainWhite;
-    font-size: 3rem;
+    // font-size: 3rem;
     background-color: $mainBlack;
     @include flex(row, center, center);
     border-radius: 3rem;
@@ -473,17 +464,17 @@ header {
 .prices__man-children {
   background-color: $mainBlack;
   color: $mainWhite;
-  h2 {
-    font-family: "Playfair Display", serif;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-  }
+  // h2 {
+  //   font-family: "Playfair Display", serif;
+  //   letter-spacing: 0.1rem;
+  //   text-transform: uppercase;
+  // }
 }
 .men > div,
 .children > div {
   background-color: $mainWhite;
   color: $mainBlack;
-  font-size: 1.5rem;
+  // font-size: 1.5rem;
   padding: 3rem 2rem;
 }
 
@@ -522,11 +513,12 @@ header {
 .gallery {
   background-color: $mainWhite;
   padding: 5rem 0;
-  h2, h1 {
-    font-family: "Playfair Display", serif;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-  }
+  // h2,
+  // h1 {
+  //   font-family: "Playfair Display", serif;
+  //   letter-spacing: 0.1rem;
+  //   text-transform: uppercase;
+  // }
   img {
     width: 100%;
     height: 40vh;
@@ -540,4 +532,30 @@ video {
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+#map {
+  height: 60vh;
+}
+.map__wrapper {
+  position: relative;
+}
+#content {
+  // font-family: "Montserrat", sans-serif;
+  // letter-spacing: 0.1rem;
+  // font-weight: 600;
+  padding: 0.5rem;
+  // font-size: 1.2rem;
+}
+#firstHeading {
+  // font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+// Footer
+.footer {
+  font-family: $navFamily;
+  &__socials a {
+    font-size: $iconSize;
+  }
 }
