@@ -141,12 +141,6 @@ header {
   width: 100%;
   height: 100%;
 }
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
 
 .carousel--hero {
   position: relative;
@@ -154,9 +148,6 @@ header {
 
 .carousel-text {
   color: $mainWhite;
-  // text-transform: uppercase;
-  // font-family: "Playfair Display", serif;
-  // font-size: $sectionHeaderSize * 2;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -166,9 +157,6 @@ header {
 @media (min-width: 992px) {
   .carousel {
     height: 100%;
-    // &-text {
-    //   font-size: $sectionHeaderSize * 3;
-    // }
   }
 }
 
@@ -179,9 +167,6 @@ header {
   }
   .carousel {
     width: 1200px;
-    // &-text {
-    //   font-size: $sectionHeaderSize * 4;
-    // }
   }
 }
 
@@ -197,36 +182,33 @@ header {
   }
 }
 
-//Meet us
-
-// .meet-us {
-// margin: 5rem 0;
-// h1,
-// h2 {
-//   font-family: "Playfair Display", serif;
-//   letter-spacing: 0.1rem;
-// }
-// h2 {
-//   font-size: 1.8rem;
-// }
-// h1 {
-//   font-size: 2.5rem;
-// }
-// }
-
 //Parallax
 
-.parallax {
+.parallax--salon {
   background-image: url("../../dist/images/pracownia_parallax.jpg");
-  min-height: 50vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
+}
+
+.parallax--woman {
+  background-image: url("../../dist/images/woman_hairstyle1.jpg");
+}
+
+.parallax--man {
+  background-image: url("../../dist/images/man_hairstyle3.jpg");
 }
 
 //About
-
+.about {
+  padding: 5rem 0;
+  a {
+    background-color: $mainBlack;
+  }
+  img {
+    max-height: 100vh;
+    width: 100%;
+    object-fit: cover;
+  }
+}
 .about .section-subtitle {
   margin-top: 5rem;
 }
@@ -239,7 +221,6 @@ header {
 
 .price-list {
   background-color: $mainBlack;
-  // font-size: $priceText;
 }
 
 .card-header {
@@ -247,7 +228,6 @@ header {
 }
 
 .btn {
-  // font-size: $priceText;
   background-color: $mainWhite;
 }
 
@@ -259,41 +239,12 @@ header {
 
 //Team
 
-.about {
-  // margin: 5rem 0;
-  // h1,
-  // h2,
-  // a {
-  //   font-family: "Playfair Display", serif;
-  //   letter-spacing: 0.1rem;
-  // }
-  // h2 {
-  //   font-size: 1.8rem;
-  // }
-  // h1 {
-  //   font-size: 2.5rem;
-  // }
-  a {
-    // font-size: 1.4rem;
-    // letter-spacing: 0.2rem;
-    background-color: $mainBlack;
-  }
-  img {
-    max-height: 100vh;
-    width: 100%;
-    object-fit: cover;
-  }
-}
+
 
 .team.row div {
   margin: 5rem 0;
 }
 
-// About
-
-.about {
-  padding: 5rem 0;
-}
 //Footer
 
 .footer {
@@ -317,14 +268,6 @@ header {
     font-weight: lighter;
   }
 }
-
-// @media (min-width: 992px) {
-//   .footer {
-//     &__socials a {
-//       font-size: 4.5rem;
-//     }
-//   }
-// }
 
 .services {
   // font-size: 1.4rem;
@@ -373,10 +316,7 @@ header {
     "four four four"
     "five five five"
     "six six six";
-  // font-size: 1.5rem;
   h2 {
-    // font-family: "Playfair Display", serif;
-    // letter-spacing: 0.1rem;
     color: $mainWhite;
   }
 
@@ -420,10 +360,6 @@ header {
     width: 1200px;
   }
 }
-// .service__type {
-//   font-family: "Playfair Display", serif;
-//   letter-spacing: 0.1rem;
-// }
 
 @media (min-width: 776px) {
   .services {
@@ -436,17 +372,11 @@ header {
 .protection {
   background-color: $mainWhite;
   padding: 5rem 0;
-  // &__title {
-  //   font-family: "Playfair Display", serif;
-  //   letter-spacing: 0.1rem;
-  //   text-transform: uppercase;
-  // }
   &__item {
     width: 5rem;
     height: 5rem;
     margin: 4rem 1.5rem;
     color: $mainWhite;
-    // font-size: 3rem;
     background-color: $mainBlack;
     @include flex(row, center, center);
     border-radius: 3rem;
@@ -464,17 +394,11 @@ header {
 .prices__man-children {
   background-color: $mainBlack;
   color: $mainWhite;
-  // h2 {
-  //   font-family: "Playfair Display", serif;
-  //   letter-spacing: 0.1rem;
-  //   text-transform: uppercase;
-  // }
 }
 .men > div,
 .children > div {
   background-color: $mainWhite;
   color: $mainBlack;
-  // font-size: 1.5rem;
   padding: 3rem 2rem;
 }
 
@@ -492,33 +416,11 @@ header {
   }
 }
 
-.parallax--woman {
-  background-image: url("../../dist/images/woman_hairstyle1.jpg");
-  min-height: 40vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
-.parallax--man {
-  background-image: url("../../dist/images/man_hairstyle3.jpg");
-  min-height: 40vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 .gallery {
   background-color: $mainWhite;
   padding: 5rem 0;
-  // h2,
-  // h1 {
-  //   font-family: "Playfair Display", serif;
-  //   letter-spacing: 0.1rem;
-  //   text-transform: uppercase;
-  // }
   img {
     width: 100%;
     height: 40vh;
@@ -541,14 +443,9 @@ video {
   position: relative;
 }
 #content {
-  // font-family: "Montserrat", sans-serif;
-  // letter-spacing: 0.1rem;
-  // font-weight: 600;
   padding: 0.5rem;
-  // font-size: 1.2rem;
 }
 #firstHeading {
-  // font-size: 1.4rem;
   margin-bottom: 0.4rem;
 }
 

@@ -30,6 +30,7 @@
 // const swipeImage = document.querySelector(".salon-gallery__image");
 // const swipeSlides = [...document.querySelectorAll(".salon-gallery__slide")];
 
+
 // const time = 3000;
 // let active = 0;
 
