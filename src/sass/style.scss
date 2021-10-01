@@ -5,88 +5,416 @@
   box-sizing: border-box;
 }
 
+@import "variables";
+
 html {
   font-size: 62.5%;
 }
 
 body {
-  font-size: 1.7rem;
+  position: relative;
+  font-size: $textSize;
+  font-family: $textFamily;
+  letter-spacing: 0.05rem;
+  line-height: 1.8;
   overflow-x: hidden;
-}
-
-@import "variables";
-
-//Navigation
-
-.navbar {
-  width: 100%;
-  background-color: $mainBlack;
-  color: $mainWhite;
-  z-index: $zindex-fixed;
-  &-brand:hover {
-    background-color: $mainBlack;
-  }
-  a {
-    color: $mainWhite;
-  }
-  &-toggler {
-    color: $mainWhite;
-    border: 0.1rem solid $mainWhite;
-  }
-  &-toggler-icon{
-    color: $mainWhite;
-    background-color: $mainWhite;
-  }
-}
-
-@media (min-width: 992px) {
-  .navbar {
-    &-image {
-    width: 400px;
-    height: 120px;
-    }
-  }
 }
 
 //Header
 
-header img {
-  height: 80vh;
-  object-fit: cover;
-  object-position: center;
+header {
+  position: relative;
+  height: 90vh;
 }
 
-//About
-
-.about {
-  font-size: $textSize;
-  &__photo {
+.header__subpage {
+  height: 70vh;
+  &-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 }
 
+.navbar {
+  background-color: $mainBlack;
+  color: $mainWhite;
+  font-size: $textSize * 1.2;
+  font-family: $navFamily;
+  z-index: 5;
+  &-brand:hover {
+    background-color: $mainBlack;
+  }
+  a {
+    color: $mainWhite;
+  }
+  &-toggler-icon {
+    font-size: $iconSize;
+    color: $mainWhite;
+  }
+}
+
+.nav-item {
+  border-bottom: solid 0.05rem $mainWhite;
+}
+
+.nav-item:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    font-size: $textSize * 1.4;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    &-brand:hover {
+      background-color: transparent;
+    }
+    .navbar.container {
+      @include flex(row, space-between, center);
+    }
+  }
+  .nav-item {
+    font-weight: bolder;
+    position: relative;
+    border-bottom: none;
+  }
+  ul.topBotomBordersOut li:before,
+  ul.topBotomBordersOut li:after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.1rem;
+    background: $mainWhite;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  ul.topBotomBordersOut li:before {
+    top: 0;
+    transform: translateY(1rem);
+  }
+
+  ul.topBotomBordersOut li:after {
+    bottom: 0;
+    transform: translateY(-1rem);
+  }
+
+  ul.topBotomBordersOut li:hover:before,
+  ul.topBotomBordersOut li:hover:after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .photo-header {
+    font-size: $photoHeaderSize * 1.5;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-nav {
+    @include flex(row, flex-end, center);
+  }
+  .photo-header {
+    font-size: $photoHeaderSize * 2;
+  }
+}
+
+//Hero gallery
+
+.carousel {
+  width: 100%;
+  height: 85%;
+}
+.carousel-inner,
+.carousel-item {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel--hero {
+  position: relative;
+}
+
+.carousel-text {
+  color: $mainWhite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 992px) {
+  .carousel {
+    height: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  header {
+    background-color: $mainBlack;
+    @include flex(row, center, center);
+  }
+  .carousel {
+    width: 1200px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .carousel {
+    width: 1400px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .carousel {
+    width: 1700px;
+  }
+}
+
+//Parallax
+
+.parallax--salon {
+  background-image: url("../../dist/images/pracownia_parallax.jpg");
+}
+
+.parallax--woman {
+  background-image: url("../../dist/images/woman_hairstyle1.jpg");
+}
+
+.parallax--man {
+  background-image: url("../../dist/images/man_hairstyle3.jpg");
+}
+
+//About
+.about {
+  padding: 5rem 0;
+  a {
+    background-color: $mainBlack;
+  }
+  img {
+    max-height: 100vh;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.about .section-subtitle {
+  margin-top: 5rem;
+}
+
+.about .btn {
+  font-size: $textSize;
+}
+
 //Price List
 
 .price-list {
   background-color: $mainBlack;
-  font-size: $priceText;
 }
 
 .card-header {
   background-color: $mainWhite;
 }
 
-.btn {
-  font-size: $priceText;
+.grid-item1 {
+  grid-area: one;
+}
+.grid-item2 {
+  grid-area: two;
+}
+.grid-item3 {
+  grid-area: three;
+}
+.grid-item4 {
+  grid-area: four;
+}
+.grid-item5 {
+  grid-area: five;
+}
+.grid-item6 {
+  grid-area: six;
+}
+.women {
+  background-color: $mainBlack;
+  @include flex(row, center, center);
+  padding: 4rem 0;
+}
+.women__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(7rem, 1fr));
+  grid-template-areas:
+    "one one one"
+    "two two two"
+    "three three three"
+    "four four four"
+    "five five five"
+    "six six six";
+  h2 {
+    color: $mainWhite;
+  }
+}
+
+@media (min-width: 776px) {
+  .women__wrapper {
+    grid-template-areas:
+      "one one"
+      "two three"
+      "four three"
+      "five six";
+  }
+}
+
+@media (min-width: 992px) {
+  .women__wrapper {
+    grid-template-areas:
+      "one one one"
+      "two three five"
+      "four three six";
+  }
+}
+
+@media (min-width: 1200px) {
+  .women__wrapper {
+    width: 1200px;
+  }
+}
+
+.prices__man-children {
+  background-color: $mainBlack;
+  color: $mainWhite;
+}
+.men > div,
+.children > div {
   background-color: $mainWhite;
+  color: $mainBlack;
+  padding: 3rem 2rem;
+}
+
+@media (min-width: 776px) {
+  .children > div,
+  .men > div {
+    min-height: 35rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .children > div,
+  .men > div {
+    min-height: 28rem;
+  }
+}
+
+.protection {
+  background-color: $mainWhite;
+  &__item {
+    width: 6rem;
+    height: 6rem;
+    margin: 3rem 1.5rem 0 1.5rem;
+    font-size: $iconSize;
+    color: $mainWhite;
+    background-color: #2c2c2c;
+    @include flex(row, center, center);
+    border-radius: 3rem;
+  }
+}
+
+@media (min-width: 776px) {
+  .protection {
+    &__item {
+      margin: 3rem 4rem;
+    }
+  }
 }
 
 //Gallery
 
-.gallery img {
-height: 25rem;
+.gallery {
+  background-color: $mainWhite;
+  padding: 5rem 0;
+  img {
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+    padding: 0;
+    margin: 0.5rem;
+  }
+  .row {
+    @include flex(row, center, center);
+  }
 }
 
-//
+@media (min-width: 420) {
+  .gallery {
+    img {
+      height: 40vh;
+    }
+  }
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+//Contact
+
+#map {
+  height: 60vh;
+}
+.map__wrapper {
+  position: relative;
+}
+#content {
+  padding: 0.5rem;
+}
+#firstHeading {
+  margin-bottom: 0.4rem;
+}
+
+// Footer
+
+.footer {
+  background-color: $mainBlack;
+  color: $mainWhite;
+  font-family: $navFamily;
+  &__socials a {
+    margin-right: 1rem;
+    font-size: $iconSize;
+    color: $mainWhite;
+  }
+}
+
+.go-up {
+  width: 5rem;
+  height: 5rem;
+  @include flex(row, center, center);
+  position: fixed;
+  bottom: 5rem;
+  right: 2rem;
+  background-color: #2c2c2c;
+  color: $mainWhite;
+  font-size: $iconSize;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-in-out;
+}
+
+.go-up.active {
+  opacity: 1;
+  pointer-events: all;
+}
