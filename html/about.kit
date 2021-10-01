@@ -64,6 +64,9 @@
         </div>
     </header>
     <main>
+        <div class="go-up">
+            <i class="fas fa-chevron-up"></i>
+        </div>
         <section class="about my-5 d-flex flex-column align-items-center">
             <div class="container">
                 <div class="row d-flex justify-content-center  align-items-center">
@@ -121,23 +124,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMTQ616V7Ies3NT57mMEXiHCMgP2_ikcQ&callback=initMap&libraries=&v=weekly"
-        async></script>
-    <script>
-        let map;
-        function initMap() {
-            map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: -50.0038435979174, lng: 18.635918487416163 },
-                zoom: 8,
-            });
-            marker = new google.maps.Marker({
-                position: { lat: -50.0038435979174, lng: 18.635918487416163 },
-                map,
-                title: "Siedziba Firmy",
-            });
-        }
-    </script>
     <script src="../dist/js/app.min.js"></script>
 </body>
 

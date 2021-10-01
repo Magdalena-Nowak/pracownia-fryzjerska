@@ -323,7 +323,7 @@ header {
     margin: 3rem 1.5rem 0 1.5rem;
     font-size: $iconSize;
     color: $mainWhite;
-    background-color: #b4b4b4;
+    background-color: #2C2C2C;
     @include flex(row, center, center);
     border-radius: 3rem;
   }
@@ -363,10 +363,6 @@ video {
 
 //Contact
 
-.contact a{
-color: $mainBlack;
-}
-
 #map {
   height: 60vh;
 }
@@ -391,4 +387,26 @@ color: $mainBlack;
     font-size: $iconSize;
     color: $mainWhite;
   }
+}
+
+.go-up {
+  width: 5rem;
+  height: 5rem;
+  @include flex(row, center, center);
+  position: fixed;
+  bottom: 5rem;
+  right: 2rem;
+  background-color: #2C2C2C;
+  color: $mainWhite;
+  font-size: $iconSize;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .5s ease-in-out;
+}
+
+.go-up.active {
+  opacity: 1;
+  pointer-events: all;
 }

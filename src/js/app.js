@@ -30,117 +30,35 @@
 // const swipeImage = document.querySelector(".salon-gallery__image");
 // const swipeSlides = [...document.querySelectorAll(".salon-gallery__slide")];
 
-
 // const time = 3000;
 // let active = 0;
 
-// const loader = new Loader({
-//   apiKey: "AIzaSyDMTQ616V7Ies3NT57mMEXiHCMgP2_ikcQ",
-//   version: "weekly",
-//   ...additionalOptions,
-// });
+// Showing go-up button
+const goUpBtn = document.querySelector(".go-up");
+let scrollPosition;
 
-// loader.load().then(() => {
-//   map = new google.maps.Map(document.getElementById("map"), {
-//     center: { lat: -34.397, lng: 150.644 },
-//     zoom: 8,
-//   });
-// });
+const checkScrollPosition = () => {
+  scrollPosition = window.scrollY;
+};
 
-// $(document).click(function (event) {
-//     var clickover = $(event.target);
-//     var _opened = $(".navbar-collapse").hasClass("show");
-//     if (_opened === true && !clickover.hasClass("navbar-toggler")) {
-//       $(".navbar-toggler").click();
-//     }
-//   });
+const scrollPositionInterval = setInterval(checkScrollPosition, 1000);
 
+document.addEventListener("scroll", function () {
+  let newScrollPosition = window.scrollY;
+  if (scrollPosition < newScrollPosition) {
+    goUpBtn.classList.add("active");
+  } else {
+    goUpBtn.classList.remove("active");
+  }
+});
 
-  // const key = "AIzaSyDMTQ616V7Ies3NT57mMEXiHCMgP2_ikcQ";
-
-// // NAVIGATION
-// function openingNavigation() {
-//   menuNav.scrollIntoView({
-//     behavior: "smooth",
-//   });
-//   mainContent.classList.toggle("inactive");
-//   footerContent.classList.toggle("inactive");
-//   navigationContent.classList.toggle("active");
-//   navigation.classList.toggle("active");
-//   navLogo.classList.toggle("inactive");
-//   buttonLine1.classList.toggle("active");
-//   buttonLine2.classList.toggle("active");
-//   buttonLine3.classList.toggle("active");
-//   navWrapper.classList.toggle("active");
-// }
-
-// navItems.forEach((item, index) => {
-//   item.addEventListener("click", () => {
-//     navigation.classList.remove("active");
-//     mainContent.classList.remove("inactive");
-//     footerContent.classList.remove("inactive");
-//     navigationContent.classList.remove("active");
-//     navLogo.classList.remove("inactive");
-//     navWrapper.classList.remove("active");
-//     buttonLine1.classList.toggle("active");
-//     buttonLine2.classList.toggle("active");
-//     buttonLine3.classList.toggle("active");
-//     sections[index].scrollIntoView({
-//       behavior: "smooth",
-//     });
-//   });
-// });
-
-// navButton.addEventListener("click", openingNavigation);
-
-// //SLIDER GALLERY
-// const swipeList = [
-//   { img: "./img/pracownia_fryzjerska_wnetrze1-large.png" },
-//   { img: "./img/pracownia_fryzjerska_wnetrze2-large.png" },
-//   { img: "./img/pracownia_fryzjerska_wnetrze3-large.png" },
-// ];
-
-// const autoChangeSlides = () => {
-//   const activeSlide = swipeSlides.findIndex((slide) =>
-//     slide.classList.contains("active")
-//   );
-//   swipeSlides[activeSlide].classList.remove("active");
-//   swipeSlides[active].classList.add("active");
-// };
-
-// const changeSwipe = () => {
-//   active++;
-//   if (active === swipeList.length) {
-//     active = 0;
-//   }
-//   swipeImage.src = swipeList[active].img;
-//   autoChangeSlides();
-// };
-
-// let timeInterval = setInterval(changeSwipe, time);
-
-// const changeSlides = (e) => {
-//   if (
-//     e.target.classList.contains("salon-gallery__left-icon") ||
-//     e.target.classList.contains("salon-gallery__right-icon")
-//   ) {
-//     clearInterval(timeInterval);
-//     e.target.classList.contains("salon-gallery__left-icon")
-//       ? active--
-//       : active++;
-//     if (active === swipeList.length) {
-//       active = 0;
-//     } else if (active < 0) {
-//       active = swipeList.length - 1;
-//     }
-//     swipeImage.src = swipeList[active].img;
-//     autoChangeSlides();
-//     timeInterval = setInterval(changeSwipe, time);
-//   }
-// };
-
-// window.addEventListener("click", changeSlides);
-// changeSwipe();
+goUpBtn.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+});
 
 // //ABOUT
 // //Text
