@@ -186,7 +186,6 @@ header {
 
 .parallax--salon {
   background-image: url("../../dist/images/pracownia_parallax.jpg");
-
 }
 
 .parallax--woman {
@@ -227,61 +226,6 @@ header {
   background-color: $mainWhite;
 }
 
-.btn {
-  background-color: $mainWhite;
-}
-
-//Gallery
-
-.gallery img {
-  height: 25rem;
-}
-
-//Team
-
-
-
-.team.row div {
-  margin: 5rem 0;
-}
-
-//Footer
-
-.footer {
-  background-color: $mainBlack;
-  color: $mainWhite;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  &__socials a {
-    // font-size: 4rem;
-    margin-right: 1rem;
-    color: $mainWhite;
-  }
-  &__directions h2 {
-    // font-family: "Playfair Display", serif;
-    // letter-spacing: 0.2rem;
-    // text-transform: uppercase;
-    // font-size: 1.8rem;
-    font-weight: lighter;
-  }
-}
-
-.services {
-  // font-size: 1.4rem;
-  &__card-body {
-    margin: 3rem 0;
-  }
-  // &__card-title {
-  //   font-family: "Playfair Display", serif;
-  //   letter-spacing: 0.1rem;
-  //   text-transform: uppercase;
-  //   font-size: 1.6rem;
-  // }
-}
-
 .grid-item1 {
   grid-area: one;
 }
@@ -319,21 +263,6 @@ header {
   h2 {
     color: $mainWhite;
   }
-
-  .card {
-    background-color: $mainWhite;
-    position: relative;
-  }
-  .card-decoration {
-    height: 0.7rem;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    background-color: rgb(153, 153, 153);
-  }
 }
 
 @media (min-width: 776px) {
@@ -358,36 +287,6 @@ header {
 @media (min-width: 1200px) {
   .women__wrapper {
     width: 1200px;
-  }
-}
-
-@media (min-width: 776px) {
-  .services {
-    &__card-body {
-      margin: 5rem 0;
-    }
-  }
-}
-
-.protection {
-  background-color: $mainWhite;
-  padding: 5rem 0;
-  &__item {
-    width: 5rem;
-    height: 5rem;
-    margin: 4rem 1.5rem;
-    color: $mainWhite;
-    background-color: $mainBlack;
-    @include flex(row, center, center);
-    border-radius: 3rem;
-  }
-}
-
-@media (min-width: 776px) {
-  .protection {
-    &__item {
-      margin: 5rem 4rem;
-    }
   }
 }
 
@@ -416,7 +315,33 @@ header {
   }
 }
 
+.protection {
+  background-color: $mainWhite;
+  &__item {
+    width: 6rem;
+    height: 6rem;
+    margin: 3rem 1.5rem 0 1.5rem;
+    font-size: $iconSize;
+    color: $mainWhite;
+    background-color: #b4b4b4;
+    @include flex(row, center, center);
+    border-radius: 3rem;
+  }
+}
 
+@media (min-width: 776px) {
+  .protection {
+    &__item {
+      margin: 3rem 4rem;
+    }
+  }
+}
+
+//Gallery
+
+.gallery img {
+  height: 25rem;
+}
 
 .gallery {
   background-color: $mainWhite;
@@ -436,6 +361,12 @@ video {
   object-position: center;
 }
 
+//Contact
+
+.contact a{
+color: $mainBlack;
+}
+
 #map {
   height: 60vh;
 }
@@ -450,9 +381,14 @@ video {
 }
 
 // Footer
+
 .footer {
+  background-color: $mainBlack;
+  color: $mainWhite;
   font-family: $navFamily;
   &__socials a {
+    margin-right: 1rem;
     font-size: $iconSize;
+    color: $mainWhite;
   }
 }
