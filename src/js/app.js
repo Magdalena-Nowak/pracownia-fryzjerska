@@ -1,4 +1,4 @@
-// gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
 
 // // NAVIGATION
 // // Variables
@@ -29,6 +29,7 @@
 // const leftBtn = document.querySelector(".gallery__left-icon");
 // const swipeImage = document.querySelector(".salon-gallery__image");
 // const swipeSlides = [...document.querySelectorAll(".salon-gallery__slide")];
+
 
 // const time = 3000;
 // let active = 0;
@@ -256,3 +257,5 @@ goUpBtn.addEventListener("click", function () {
 //     });
 //   });
 // });
+
+

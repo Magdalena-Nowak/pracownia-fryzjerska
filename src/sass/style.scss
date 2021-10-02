@@ -343,22 +343,32 @@ header {
   background-color: $mainWhite;
   padding: 5rem 0;
   img {
-    width: 100%;
-    height: 35vh;
-    object-fit: cover;
     padding: 0;
-    margin: 0.5rem;
+    transition: all 0.6s ease-in-out;
+  }
+  img:hover {
+    filter: grayscale(0.75);
+    transform: scale(1.2);
   }
   .row {
     @include flex(row, center, center);
   }
+  .image-box {
+    width: 5rem;
+    height: 15rem;
+    margin: 0.5rem;
+    padding: 0;
+    overflow: hidden;
+  }
 }
 
-@media (min-width: 420) {
-  .gallery {
-    img {
-      height: 40vh;
-    }
+.image-box.active {
+  height: 40vh;
+}
+
+@media (min-width: 996px) {
+  .image-box.active {
+    height: 45vh;
   }
 }
 
