@@ -345,6 +345,7 @@ header {
   img {
     padding: 0;
     transition: all 0.6s ease-in-out;
+    pointer-events: none;
   }
   img:hover {
     filter: grayscale(0.75);
@@ -359,6 +360,7 @@ header {
     margin: 0.5rem;
     padding: 0;
     overflow: hidden;
+    cursor: pointer;
   }
 }
 
@@ -428,3 +430,52 @@ video {
   opacity: 1;
   pointer-events: all;
 }
+
+.full-size-gallery {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: $mainBlack;
+  &__icon {
+    position: absolute;
+    color: $mainWhite;
+    cursor: pointer;
+    font-size: $iconSize;
+  }
+  &__icon--close {
+    top: 1%;
+    right: 4%;
+  }
+  &__icon--left {
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+  }
+  &__icon--right {
+    top: 50%;
+    right: 4%;
+    transform: translateY(-50%);
+  }
+  .container-fluid {
+    height: 20vh;
+    overflow-x: scroll;
+    @include flex(row, center, center);
+  }
+}
+
+.full-size-gallery.active {
+  @include flex(column, center, center);
+}
+
+.inactive {
+  display: none;
+}
+
+.image-height {
+  height: 70vh;
+}
+
