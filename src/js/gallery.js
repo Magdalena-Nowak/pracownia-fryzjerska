@@ -1,8 +1,5 @@
-gsap.registerPlugin(ScrollTrigger);
-
 const headerVideo = document.querySelector("video");
-const galleryImageContainer = document.querySelector(".gallery .row");
-const imageBoxes = document.querySelectorAll(".image-box");
+const images = document.querySelectorAll("#gallery a");
 
 headerVideo.addEventListener("loadeddata", () => {
   headerVideo.playbackRate = 0.5;
@@ -21,7 +18,11 @@ let callback = (entries, observer) => {
       const imageSrc = image.getAttribute("data-src");
       image.src = imageSrc;
       entry.target.classList.add("active");
-      gsap.fromTo(image, {opacity: 0, y: "-200%"}, { opacity: 1, y: "0%", duration: 1 });
+      gsap.fromTo(
+        image,
+        { opacity: 0, y: "100%" },
+        { opacity: 1, y: "0%", duration: 1 }
+      );
     }
     if (entry.isIntersecting) {
       observer.unobserve(entry.target);
@@ -31,6 +32,6 @@ let callback = (entries, observer) => {
 
 let observer = new IntersectionObserver(callback, options);
 
-imageBoxes.forEach((image) => {
+images.forEach((image) => {
   observer.observe(image);
 });
