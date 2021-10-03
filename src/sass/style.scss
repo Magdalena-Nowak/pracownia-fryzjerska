@@ -62,7 +62,7 @@ header {
 }
 
 .nav-item {
-  border-bottom: solid 0.05rem $mainWhite;
+  border-bottom: solid 0.05rem white;
 }
 
 .nav-item:last-child {
@@ -339,7 +339,7 @@ header {
 
 //Gallery
 
-.gallery {
+#gallery {
   background-color: $mainWhite;
   padding: 5rem 0;
   img {
@@ -431,51 +431,88 @@ video {
   pointer-events: all;
 }
 
-.full-size-gallery {
-  display: none;
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  position: relative;
-  top: 0;
-  left: 0;
-  background-color: $mainBlack;
-  &__icon {
-    position: absolute;
-    color: $mainWhite;
-    cursor: pointer;
-    font-size: $iconSize;
-  }
-  &__icon--close {
-    top: 1%;
-    right: 4%;
-  }
-  &__icon--left {
-    top: 50%;
-    left: 4%;
-    transform: translateY(-50%);
-  }
-  &__icon--right {
-    top: 50%;
-    right: 4%;
-    transform: translateY(-50%);
-  }
-  .container-fluid {
-    height: 20vh;
-    overflow-x: scroll;
-    @include flex(row, center, center);
-  }
-}
+// .full-size-gallery {
+//   display: none;
+//   width: 100%;
+//   height: 100vh;
+//   position: absolute;
+//   position: relative;
+//   top: 0;
+//   left: 0;
+//   background-color: $mainBlack;
+//   &__icon {
+//     position: absolute;
+//     color: $mainWhite;
+//     cursor: pointer;
+//     font-size: $iconSize;
+//   }
+//   &__icon--close {
+//     top: 1%;
+//     right: 4%;
+//   }
+//   &__icon--left {
+//     top: 50%;
+//     left: 4%;
+//     transform: translateY(-50%);
+//   }
+//   &__icon--right {
+//     top: 50%;
+//     right: 4%;
+//     transform: translateY(-50%);
+//   }
+//   .container-fluid {
+//     height: 20vh;
+//     overflow-x: scroll;
+//     @include flex(row, center, center);
+//   }
+// }
 
-.full-size-gallery.active {
-  @include flex(column, center, center);
-}
+// .full-size-gallery.active {
+//   @include flex(column, center, center);
+// }
 
-.inactive {
-  display: none;
-}
+// .inactive {
+//   display: none;
+// }
 
 .image-height {
   height: 70vh;
 }
 
+.error-404 {
+  padding: 5rem 0;
+  min-height: 80vh;
+  h2 {
+    font-size: 4rem;
+    margin-top: 3rem;
+  }
+}
+
+.gallery:after {
+  content: '';
+  display: block;
+  height: 2px;
+  margin: .5em 0 1.4em;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(77,77,77,1) 50%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(77,77,77,1) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.gallery img {
+  height: 100%;
+}
+
+.gallery a {
+  width: 240px;
+  height: 180px;
+  display: inline-block;
+  overflow: hidden;
+  margin: 4px 6px;
+  box-shadow: 0 0 4px -1px #000;
+}
+
+.ribbon > img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
