@@ -1,4 +1,4 @@
-const { gulp, series, parallel, src, dest, watch } = require("gulp");
+const { series, parallel, src, dest, watch } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 sass.compiler = require("node-sass");
 const babel = require("gulp-babel");
@@ -94,19 +94,12 @@ function watchForChanges(cb) {
   cb();
 }
 
-// function deployOnGithub(cb) {
-//   src("./dist/**/*").pipe(deploy());
-//   cb();
-// }
-
-gulp.task("deploy", function () {
-  return gulp.src("./**/*").pipe(deploy());
-});
+function deployOnGithub(cb) {
+  src("./**/*").pipe(deploy());
+  cb();
+}
 
 const mainFunctions = parallel(handleKits, sassCompiler, javaScript, minify);
 exports.cleanStuff = cleanStuff;
-exports.default = series(
-  mainFunctions,
-  startBrowserSync,
-  watchForChanges,
-);
+exports.default = series(mainFunctions, startBrowserSync, watchForChanges);
+exports.deployOnGithub = deployOnGithub;
