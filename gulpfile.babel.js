@@ -95,7 +95,7 @@ function watchForChanges(cb) {
 }
 
 function deployOnGithub(cb) {
-  src("./**/*").pipe(
+  src("./*.html", "./dist", "./.htaccess").pipe(
     deploy({
       branch: "main",
     })
