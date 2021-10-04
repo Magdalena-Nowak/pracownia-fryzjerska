@@ -94,12 +94,13 @@ function watchForChanges(cb) {
   cb();
 }
 
-function deployOnGithub(cb) {
-  src("./*.html", "./dist", "./.htaccess").pipe(deploy());
-  cb();
-}
+// function deployOnGithub(cb) {
+//   src("./*.html", "./dist", "./.htaccess").pipe(deploy());
+//   cb();
+// }
+
 
 const mainFunctions = parallel(handleKits, sassCompiler, javaScript, minify);
 exports.cleanStuff = cleanStuff;
 exports.default = series(mainFunctions, startBrowserSync, watchForChanges);
-exports.deployOnGithub = deployOnGithub;
+// exports.deployOnGithub = deployOnGithub;
