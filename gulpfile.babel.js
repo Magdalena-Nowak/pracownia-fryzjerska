@@ -111,4 +111,9 @@ const mainFunctions = parallel(
   minifyHtml
 );
 exports.cleanStuff = cleanStuff;
-exports.default = series(mainFunctions, startBrowserSync, watchForChanges, deployOnGithub);
+exports.default = series(
+  mainFunctions,
+  startBrowserSync,
+  watchForChanges,
+  deployOnGithub
+);
