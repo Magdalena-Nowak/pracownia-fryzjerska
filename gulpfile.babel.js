@@ -95,7 +95,11 @@ function watchForChanges(cb) {
 }
 
 function deploy(cb) {
-  src("./*.html", "./dist", "./.htaccess").pipe(ghPages());
+  src("./*.html", "./dist", "./.htaccess").pipe(
+    ghPages({
+      push: false,
+    })
+  );
   cb();
 }
 
