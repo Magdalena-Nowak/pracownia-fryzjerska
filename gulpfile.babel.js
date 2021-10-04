@@ -99,7 +99,6 @@ function watchForChanges(cb) {
 //   cb();
 // }
 
-
 const mainFunctions = parallel(handleKits, sassCompiler, javaScript, minify);
 exports.cleanStuff = cleanStuff;
 exports.default = series(mainFunctions, startBrowserSync, watchForChanges);
