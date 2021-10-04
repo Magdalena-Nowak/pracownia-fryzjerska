@@ -1,7 +1,7 @@
 const { series, parallel, src, dest, watch } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 sass.compiler = require("node-sass");
-const babel = require('gulp-babel');
+const babel = require("gulp-babel");
 const cssnano = require("gulp-cssnano");
 const autoprefixer = require("gulp-autoprefixer");
 const rename = require("gulp-rename");
@@ -10,6 +10,8 @@ const imagemin = require("gulp-imagemin");
 const sourcemaps = require("gulp-sourcemaps");
 const clean = require("gulp-clean");
 const kit = require("gulp-kit");
+const htmlmin = require("gulp-htmlmin");
+const deploy = require("gulp-gh-pages");
 const browserSync = require("browser-sync").create();
 const reload = browserSync.reload;
 
@@ -27,7 +29,7 @@ const paths = {
 function javaScript(cb) {
   src(paths.js)
     .pipe(sourcemaps.init())
-    .pipe(babel({ presets: ['@babel/env'] }))
+    .pipe(babel({ presets: ["@babel/env"] }))
     .pipe(uglify())
     .pipe(
       rename({
@@ -60,24 +62,30 @@ function minify(cb) {
   cb();
 }
 
-function handleKits(done) {
+function minifyHtml(cb) {
+  src("./*.html")
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(dest(paths.dist));
+  cb();
+}
+
+function handleKits(cb) {
   src(paths.html).pipe(kit()).pipe(dest("./"));
-  done();
+  cb();
 }
 
-function cleanStuff(done) {
-  src(paths.dist, { read: false })
-      .pipe(clean());
-  done()
+function cleanStuff(cb) {
+  src(paths.dist, { read: false }).pipe(clean());
+  cb();
 }
 
-function startBrowserSync(done) {
+function startBrowserSync(cb) {
   browserSync.init({
     server: {
       baseDir: "./",
     },
   });
-  done();
+  cb();
 }
 
 function watchForChanges(cb) {
@@ -86,10 +94,21 @@ function watchForChanges(cb) {
     [paths.html, paths.sass, paths.js],
     parallel(handleKits, sassCompiler, javaScript)
   ).on("change", reload);
-  watch(paths.images, minify).on("change", reload);
+  watch(paths.images, minify, minifyHtml).on("change", reload);
   cb();
 }
 
-const mainFunctions = parallel(handleKits, sassCompiler, javaScript, minify);
+function deployOnGithub(cb) {
+  src("./dist/**/*").pipe(deploy());
+  cb();
+}
+
+const mainFunctions = parallel(
+  handleKits,
+  sassCompiler,
+  javaScript,
+  minify,
+  minifyHtml
+);
 exports.cleanStuff = cleanStuff;
-exports.default = series(mainFunctions, startBrowserSync, watchForChanges);
+exports.default = series(mainFunctions, startBrowserSync, watchForChanges, deployOnGithub);
