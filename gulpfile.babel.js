@@ -95,11 +95,7 @@ function watchForChanges(cb) {
 }
 
 function deployOnGithub(cb) {
-  src("./*.html", "./dist", "./.htaccess").pipe(
-    deploy({
-      branch: "main",
-    })
-  );
+  src("./*.html", "./dist", "./.htaccess").pipe(deploy());
   cb();
 }
 
