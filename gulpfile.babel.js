@@ -95,10 +95,14 @@ function watchForChanges(cb) {
 }
 
 function deployOnGithub(cb) {
-  src("./**/*").pipe(deploy());
+  src("./**/*").pipe(deploy({ 
+    remoteUrl: "https://github.com/magdalena-nowak/magdalena-nowak.github.io.git",
+    branch: "main"
+  }));
   cb();
 }
 
+https://github.com/your_github_username_here/your_github_username_here.github.io.git",
 const mainFunctions = parallel(handleKits, sassCompiler, javaScript, minify);
 exports.cleanStuff = cleanStuff;
 exports.default = series(mainFunctions, startBrowserSync, watchForChanges);
