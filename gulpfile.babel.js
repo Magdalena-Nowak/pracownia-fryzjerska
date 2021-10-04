@@ -102,7 +102,6 @@ function deployOnGithub(cb) {
   cb();
 }
 
-https://github.com/your_github_username_here/your_github_username_here.github.io.git",
 const mainFunctions = parallel(handleKits, sassCompiler, javaScript, minify);
 exports.cleanStuff = cleanStuff;
 exports.default = series(mainFunctions, startBrowserSync, watchForChanges);
