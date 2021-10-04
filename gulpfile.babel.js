@@ -95,10 +95,11 @@ function watchForChanges(cb) {
 }
 
 function deployOnGithub(cb) {
-  src("./**/*").pipe(deploy({ 
-    remoteUrl: "https://github.com/magdalena-nowak/magdalena-nowak.github.io.git",
-    branch: "main"
-  }));
+  src("./**/*").pipe(
+    deploy({
+      branch: "main",
+    })
+  );
   cb();
 }
 
