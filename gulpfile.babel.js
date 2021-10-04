@@ -1,4 +1,4 @@
-const { series, parallel, src, dest, watch } = require("gulp");
+const { gulp, series, parallel, src, dest, watch } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 sass.compiler = require("node-sass");
 const babel = require("gulp-babel");
@@ -62,15 +62,11 @@ function minify(cb) {
   cb();
 }
 
-function minifyHtml(cb) {
-  src("./*.html")
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(dest(paths.dist));
-  cb();
-}
-
 function handleKits(cb) {
-  src(paths.html).pipe(kit()).pipe(dest("./"));
+  src(paths.html)
+    .pipe(kit())
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(dest("./"));
   cb();
 }
 
@@ -94,26 +90,23 @@ function watchForChanges(cb) {
     [paths.html, paths.sass, paths.js],
     parallel(handleKits, sassCompiler, javaScript)
   ).on("change", reload);
-  watch(paths.images, minify, minifyHtml).on("change", reload);
+  watch(paths.images, minify).on("change", reload);
   cb();
 }
 
-function deployOnGithub(cb) {
-  src("./dist/**/*").pipe(deploy());
-  cb();
-}
+// function deployOnGithub(cb) {
+//   src("./dist/**/*").pipe(deploy());
+//   cb();
+// }
 
-const mainFunctions = parallel(
-  handleKits,
-  sassCompiler,
-  javaScript,
-  minify,
-  minifyHtml
-);
+gulp.task("deploy", function () {
+  return gulp.src("./**/*").pipe(deploy());
+});
+
+const mainFunctions = parallel(handleKits, sassCompiler, javaScript, minify);
 exports.cleanStuff = cleanStuff;
 exports.default = series(
   mainFunctions,
   startBrowserSync,
   watchForChanges,
-  deployOnGithub
 );
