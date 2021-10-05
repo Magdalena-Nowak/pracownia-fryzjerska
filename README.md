@@ -1,6 +1,6 @@
 # Pracownia Fryzjerska Agnieszka Nowak
 
-Simple one-page website based on a self-written theme.
+Simple website based on a self-written theme.
 
 https://agnieszkanowak.com/
 
@@ -12,8 +12,8 @@ https://agnieszkanowak.com/
 * [Setup](#setup)
 
 ## General Info
-Simple one-page website based on a self-written theme.
-The theme was created using HTML, CSS, SCSS, JavaScript, BEM, Gsap and basic SEO. 
+Simple website based on a self-written theme.
+Project was created using HTML, CSS, SCSS, JavaScript, BEM, Bootstrap, Gsap and basic SEO. 
 
 The website was designed according to the client's wishes, the colors and design 
 matching the style of the company logo and interior design of the company's headquarters.
@@ -24,10 +24,12 @@ matching the style of the company logo and interior design of the company's head
 * CSS3
 * SASS
 * JavaScript
+* Bootstrap
 
 ## Screenshots
 
-![image](https://user-images.githubusercontent.com/70846864/126460822-03aa329c-c569-4a72-850d-ee322312dd3d.png)
+![image](https://user-images.githubusercontent.com/70846864/136073825-8137891e-76db-4092-ba1b-beb13aee2bca.png)
+![image](https://user-images.githubusercontent.com/70846864/136073842-1aaa98ff-9aa0-4599-9cd3-03669c3a6050.png)
 
 ## Setup
 https://agnieszkanowak.com/
