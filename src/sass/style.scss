@@ -117,16 +117,13 @@ header {
     transform: translateY(0);
   }
   .photo-header {
-    font-size: $photoHeaderSize * 1.5;
+    font-size: $photoHeaderSize * 1.2;
   }
 }
 
 @media (min-width: 1200px) {
   .navbar-nav {
     @include flex(row, flex-end, center);
-  }
-  .photo-header {
-    font-size: $photoHeaderSize * 2;
   }
 }
 
