@@ -165,21 +165,6 @@ header {
     background-color: $mainBlack;
     @include flex(row, center, center);
   }
-  .carousel {
-    width: 1200px;
-  }
-}
-
-@media (min-width: 1500px) {
-  .carousel {
-    width: 1400px;
-  }
-}
-
-@media (min-width: 1800px) {
-  .carousel {
-    width: 1700px;
-  }
 }
 
 //Parallax
