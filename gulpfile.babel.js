@@ -11,7 +11,6 @@ const sourcemaps = require("gulp-sourcemaps");
 const clean = require("gulp-clean");
 const kit = require("gulp-kit");
 const htmlmin = require("gulp-htmlmin");
-// const ghPages = require("gulp-gh-pages");
 const browserSync = require("browser-sync").create();
 const reload = browserSync.reload;
 
@@ -94,16 +93,7 @@ function watchForChanges(cb) {
   cb();
 }
 
-// function deploy(cb) {
-//   src("./*.html", "./dist", "./.htaccess").pipe(
-//     ghPages({
-//       push: false,
-//     })
-//   );
-//   cb();
-// }
-
 const mainFunctions = parallel(handleKits, sassCompiler, javaScript, minify);
 exports.cleanStuff = cleanStuff;
 exports.default = series(mainFunctions, startBrowserSync, watchForChanges);
-// exports.deploy = deploy;
+
